@@ -265,41 +265,6 @@
             breakpoints: [406, 768, 1401]
         });
     </script>
-    <script>
-        function getCookie(name) {
-            // Split cookie string and get all individual name=value pairs in an array
-            var cookieArr = document.cookie.split(";");
-            // Loop through the array elements
-            for (var i = 0; i < cookieArr.length; i++) {
-                var cookiePair = cookieArr[i].split("=");
-                /* Removing whitespace at the beginning of the cookie name
-                        and compare it with the given string */
-                if (name == cookiePair[0].trim()) {
-                    // Decode the cookie value and return
-                    return decodeURIComponent(cookiePair[1]);
-                }
-            }
-            // Return null if not found
-            return null;
 
-        }
-        var vcookie = parseInt(getCookie("visits"), 10);
-        var addedcookie = vcookie + 1;
-        var visits;
-        if (isNaN(vcookie) || vcookie < 1) {
-            document.cookie = "visits=1; expires=Thu, 31 Dec 2099 23:59:59 GMT";
-        } else {
-            document.cookie = "visits=" + addedcookie + "; expires=Thu, 31 Dec 2099 23:59:59 GMT";
-        }
-        visits = parseInt(getCookie("visits"), 10);
-        var visitor = document.getElementById("visitor");
-        if (visits == 1) {
-            visitor.innerHTML = "Welcome!";
-        } else if (visits < 5) {
-            visitor.innerHTML = "Welcome back!";
-        } else {
-            visitor.innerHTML = "Welcome back, you've been here before. " + visits + " times, in fact.";
-        }
-    </script>
 </body>
 </html>
