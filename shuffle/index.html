@@ -7,18 +7,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;300;500;700;800&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-	<script src="https://kit.fontawesome.com/e4d6438e48.js" crossorigin="anonymous"></script>
-	
-	
+	<script src="https://kit.fontawesome.com/7b42fedff3.js" crossorigin="anonymous"></script>
+
+
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
 
     <link rel="manifest" href="manifest.json">
 
-	
-	
+
+
 <link rel="shortcut icon" type="image/jpg" href="images/favicon.png"/>
 	<link rel="apple-touch-icon" href="images/appleicon.png">
 <meta property="og:title" content="Shuffle Project" />
@@ -27,7 +27,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=0.63, user-scalable=no">
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
-	
+
 <!-- Hotjar Tracking Code for https://d7m.tg/shuffle -->
 <script>
     (function(h,o,t,j,a,r){
@@ -57,7 +57,7 @@
 
 <body onload="newpossible()">
 
-	
+
 
   <div id="logo">
   <!-- Generator: Adobe Illustrator 25.0.1, SVG Export Plug-In  -->
@@ -66,7 +66,7 @@
 
   <div id="all">
 
-   
+
 
     <div id="outercustomization" class="settingshiddeninitial"  >
       <div id="mydivheader"></div>
@@ -75,12 +75,12 @@
       <p id="settingsheader" onmousedown="zsettings()"><i class="far fa-bars"></i>&nbsp;Settings</p>
 
       <div id="customization" onmousedown="zsettings()">
-		  
+
 		  <div class="customizationobject" id="splitdiv" >
-				<input type="checkbox" id="split" name="split">			         
+				<input type="checkbox" id="split" name="split">
 
 
-				<label for="checkbox" id="splitcheckbox"><i class="fal fa-fw"></i></label> 
+				<label for="checkbox" id="splitcheckbox"><i class="fal fa-fw"></i></label>
 			<p>Split settings</p>
 
         </div>
@@ -97,7 +97,7 @@
           <input type="radio"  name="normalcy" value="weird">
           <label for="weird"><i class="far fa-meh-blank"></i>&nbsp;Weird</label>
         </div>
-		  
+
 		   <div class="customizationobject" id="firstnormalcydiv">
 
           <p>Normalcy: First Name</p>
@@ -110,7 +110,7 @@
           <input type="radio" name="normalcyFirst" value="weird">
           <label for="weird"><i class="far fa-meh-blank"></i>&nbsp;Weird</label>
         </div>
-        
+
 		   <div class="customizationobject" id="lastnormalcydiv">
 
           <p>Normalcy: Last Name</p>
@@ -123,7 +123,7 @@
           <input type="radio"  name="normalcyLast" value="weird">
           <label for="weird"><i class="far fa-meh-blank"></i>&nbsp;Weird</label>
         </div>
-		  
+
 
         <div class="customizationobject" id="genderdiv">
 
@@ -139,12 +139,12 @@
 
         </div>
 
-       
-		  
-		
-		  
-	    
-		  
+
+
+
+
+
+
   <div class="customizationobject" id="possibleInBox" >
 
 
@@ -173,8 +173,8 @@
 
     </div>
 
-	  
-	  
+
+
     <div id="outerconsole" class="consolehiddeninitial" onclick="document.getElementById('editableconsole').focus()">
       <div id="mydivheadera"></div>
 
@@ -191,10 +191,10 @@
       </div>
 
     </div>
-	  
+
 <div>
     <button  id="go" type="button" name="button" tabindex="-1" onclick="getresult()"><span id="dice"><i  class="fas fa-dice-five"></i></span>&nbsp;Shuffle a name</button>
-	
+
 	</div>
 
 
@@ -219,7 +219,7 @@
 
     <span class='labelbold'>POSSIBLE COMBINATIONS</span> <span id="possiblecombinations">N/A</span><br>
 
-	 
+
     <!--<span class='labelbold'>BINARY:</span> <span id="binary">N/A</span><br>
     <span class='labelbold'>CHAR_CODE:</span> <span id="charcode">N/A</span><br>-->
 
@@ -228,19 +228,19 @@
 </div>
 
 <div id='coderight'>
-	
+
 	<span onclick="changetheme()" id="changetheme" class='iconbutton'>
       <span ><i class="fas fa-magic"></i></span>
     </span>
-	
+
 	 <span onclick="openconsole()" id="showconsole" class='iconbutton'>
       <span><i class="fas fa-terminal"></i></span>
     </span>
-	
+
 	 <span onclick="opencustomization()"id="showsettings" class='iconbutton'>
       <span><i class="fas fa-cog"></i></span>
     </span>
-	
+
 	<a href="../">
 		 <span class='icon'>
 	<i class="fak fa-d7mtg"></i>
@@ -248,19 +248,19 @@
 	</a>
 
 	</div>
-	
-	
+
+
 <script>
 	//https
-	
-	
+
+
 	//split design checkbox
 	var splitcheckbox = document.getElementById('splitcheckbox');
-	
 
-	
-	
-	
+
+
+
+
 function showcopied(){
 document.getElementById("copied").style.display = "block";
 	setTimeout(function(){
@@ -269,26 +269,26 @@ document.getElementById("copied").style.display = "block";
 		sel.removeAllRanges();
 	}, 5000);
 }
-	
-	
+
+
 	function zsettings(){
-	
+
 	document.getElementById('outercustomization').style.zIndex = parseInt(document.getElementById('outerconsole').style.zIndex) + 1
-	
+
 	}
-	
+
 	function zconsole(){
-	
+
 	document.getElementById('outerconsole').style.zIndex = parseInt(document.getElementById('outercustomization').style.zIndex) + 1
 
-	
+
 	}
-	
+
 	document.getElementById('outerconsole').style.zIndex = parseInt(document.getElementById('outercustomization').style.zIndex) + 1
-	
+
 	</script>
   <script type="text/javascript" src="main.js"></script>
-	
+
 
 </body>
 
