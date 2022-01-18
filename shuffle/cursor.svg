@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 56 57">
+  <defs>
+    <style>
+      .cls-1 {
+        isolation: isolate;
+      }
+
+      .cls-2 {
+        opacity: 0.75;
+        mix-blend-mode: multiply;
+      }
+
+      .cls-3 {
+        fill: #10ddff;
+      }
+
+      .cls-4 {
+        fill: #0b072b;
+      }
+    </style>
+  </defs>
+  <g class="cls-1">
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="Layer_1-2" data-name="Layer 1">
+        <g>
+          <g>
+            <image class="cls-2" width="56" height="57" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA5CAYAAABj2ui7AAAACXBIWXMAAAsSAAALEgHS3X78AAAECklEQVRoQ93bS28bVRjG8Z9zaS0wpQgEC64CNm0sFogdXfIFWPJdkdiwQapY0IiWUKkkaZWqbUoQbnFz8bB4ZxJ34suMZ+yJ80hWnIknOf/zvOc578worSRJZOq0u61ef/PswCVQK0kSnXa3hTWsYoATDC4DbOvNqxstrOMaruMI/+Jl+j5Bsqywa+nXq/gQN7GCx3iIA/TR77S7x5bQ1TVk5fkOvsJHAuxPPMJT7OE5XnTa3aVydU0M9kSU4yo+x1sC9plw8p4A3rVkrmYleiic2sE3+BIf45UAuikA71kyV7MUXcV7uIUf8C3eFevxCC8EzJ4pruJCuZo5mIjBPRUO/SMSdU0E0Do6eD/93NK4mgfcEwO+IRxdF+tyVbiZgb6d/vxTbLjAa7WVdTJpmV7H1/ge3+ETXBFJO6xENATHzkrzQICNdVUD++ra2VsDMYgdMcANUZLrzgO2LImrrVwvmg+bW+n3qyPPfl0X0tVhBzkfNgfCmRXnXczrQro6DnBc2BRRy9lkDMM2ksCvlSilw6aokqHXQvfVvIOUC5uiaszVcw5SOWyKaiGujnKQamFTVAtxdRpglbApo7kl8MgSZW5hU0ZV9tVT0HEOMp+wKaNZXN1Jj73otLtHvf7mYCxgr7+ZpDV+4Gym+uIPLVJF1uoNAfgbfsd97Hfa3aNJDrKYsCmjUa5eE7dbPhDXsG+gJ26cHa2M/j2nyofNjijbwaSTFqBhVydqImC6UI/FAr6fvp6nx6buQXNQFjwnzm6n7IrS/Bk/4ba4K3jI5JDJ1HTYMD1R78iFDI57/c1kKmDDYZOBTet0drCv5DYxrEWHTR5sX0AU3v8ylQWcd2czCSwrw1J9aSHAtEzzYfOZKNM6XCwCli/DiT1opkKAqeYVNhlYTzGwQlcRmQoDzilsBuIp1hM8wJaawDIVBkxVZ9hkcA/xK37BXWyrASzTrIBVwyYRg38i4H4UG/SeKNXKYJmmtWqvqcbOZiBAHgjnbuMv/I1Xvf7mSR1wlHeQ6mEzPElboiz38LLX3zyZdOIsKuUgpy6OCpuiMz6qge+ZUwNfGjDVqLDJ9qZpGnluXSWZV1XAspdRVd0vrZkAK4RNfv3uuYiAqcoONnNvX25S5lWeVACcIWyyCdkW3cq2YmVdSTMDpioaNqPc2zfHcMlUF+C0sGnEPSoCFgybxtyjImCqaWHTmHvUADglbBp1jxoAU40LmxMNukf9gPn+8pUG3aMmwDFh80w42Zh7zHa5NE7DYXMXX4hnBlsaco+aHORc2OyKC9g/xG31RtyjXgeJtfifWIt3xG2Mu6JcF+4e8wHsC8cO02OPNeQeEx5hz6pOu7siJu5KeuhQXDFcDkBk/6ZwqiZKM9P/RTq8bgozSqAAAAAASUVORK5CYII="/>
+            <polygon class="cls-3" points="34.67 30.37 25.11 50.53 5.29 0.99 54.84 20.81 34.67 30.37"/>
+          </g>
+          <polygon class="cls-4" points="16.06 11.76 25.58 35.55 30.17 25.87 39.85 21.27 16.06 11.76"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

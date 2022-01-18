@@ -1,0 +1,779 @@
+body, html{
+        margin: 0px;
+        padding: 0px;
+transition: all .2s ease-in-out;
+}
+
+
+	
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(127, 127, 127, 0.1); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #F9D006; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #F9D006; 
+}
+
+#back{
+  padding: 2px;
+  line-height: 1em;
+  vertical-align: middle;
+  font-size: .8em;
+  text-decoration: none;
+  color: #777777;
+}
+
+
+
+
+
+html, #logo, body, .category{
+
+  cursor:url(../../../photos/pointer-light-mode.png), auto;
+
+
+}
+
+@font-face {
+    font-family: 'SF Display';
+    src: url('../../font/SFProDisplay-Black.woff2') format('woff2'),
+        url('../../font/SFProDisplay-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SFMono';
+    src: url('../../SFMono-BoldItalic.woff2') format('woff2'),
+        url('../../SFMono-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'SF Display';
+    src: url('../../font/SFProDisplay-Bold.woff2') format('woff2'),
+        url('../../font/SFProDisplay-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Display';
+    src: url('../../font/SFProDisplay-BlackItalic.woff2') format('woff2'),
+        url('../../font/SFProDisplay-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Display';
+    src: url('../../font/SFProDisplay-BoldItalic.woff2') format('woff2'),
+        url('../../font/SFProDisplay-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Display';
+    src: url('../../font/SFProDisplay-HeavyItalic.woff2') format('woff2'),
+        url('../../font/SFProDisplay-HeavyItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Display';
+    src: url('../../font/SFProDisplay-Heavy.woff2') format('woff2'),
+        url('../../font/SFProDisplay-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Display';
+    src: url('../../font/SFProDisplay-Light.woff2') format('woff2'),
+        url('../../font/SFProDisplay-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Display';
+    src: url('../../font/SFProDisplay-LightItalic.woff2') format('woff2'),
+        url('../../font/SFProDisplay-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Display';
+    src: url('../../font/SFProDisplay-MediumItalic.woff2') format('woff2'),
+        url('../../font/SFProDisplay-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Display';
+    src: url('../../font/SFProDisplay-Medium.woff2') format('woff2'),
+        url('../../font/SFProDisplay-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Display';
+    src: url('../../font/SFProDisplay-RegularItalic.woff2') format('woff2'),
+        url('../../font/SFProDisplay-RegularItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Display';
+    src: url('../../font/SFProDisplay-Regular.woff2') format('woff2'),
+        url('../../font/SFProDisplay-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Display';
+    src: url('../../font/SFProDisplay-Semibold.woff2') format('woff2'),
+        url('../../font/SFProDisplay-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Display';
+    src: url('../../font/SFProDisplay-SemiboldItalic.woff2') format('woff2'),
+        url('../../font/SFProDisplay-SemiboldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Display';
+    src: url('../../font/SFProDisplay-Thin.woff2') format('woff2'),
+        url('../../font/SFProDisplay-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Display';
+    src: url('../../font/SFProDisplay-ThinItalic.woff2') format('woff2'),
+        url('../../font/SFProDisplay-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+
+
+
+
+}
+
+h1{
+  cursor:url(../../../photos/text-light-mode.png), auto;
+
+}
+
+p, span, br, h2{
+  cursor:url(../../../photos/text-light-mode-small.png), auto;
+
+}
+
+
+.button, a, button, .fa-link, .btn{
+
+  cursor:url(../../../photos/link-light-mode.png), auto;
+
+
+}
+
+.yellowbutton{
+  cursor:url(../../../photos/link-yellow-mode.png), auto;
+
+
+}
+
+
+
+body {
+  color: #2A2929;
+  background: white;
+  font-family: SF Display, sans-serif;
+}
+h1 {
+  padding-top: 50px;
+  font-size: 2em;
+  font-weight: 700;
+  margin-left: 15%;
+  max-width: 70%;
+  width: 900px;
+
+
+}
+
+
+
+h2 {
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 5px;
+  margin-block-start: 0px;
+
+}
+
+
+
+
+
+
+
+p {
+  font-size: .9em;
+  font-weight: 400;
+  max-width: 100%;
+}
+
+
+::selection {
+  color: #2A2929;
+  background: #f4cd2a;
+}
+
+
+.allphotos{
+  display: block;
+
+  width: 100%;
+  max-width: 600px;
+  float:right;
+  clear: right;
+  margin-bottom: 50px;
+
+
+}
+
+.lighter {
+ display:none;
+}
+
+.lighter > a{
+   display:none;
+
+
+}
+
+.link {
+  color: black;
+  outline: none;
+  padding: none;
+  border: none;
+}
+.link:visited {
+  color: #757474;
+}
+#logo {
+	content:url("https://d7m.tg/photos/D7MTG-Logo-Animation-non-loop.gif");
+
+
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top: 0px;
+display: block;
+margin-left: auto;
+	 margin-right: auto;
+width: 250px;
+max-width: 70%;
+cursor: url(../../../photos/pointer-light-mode.png), auto;
+position: fixed;
+background: rgb(252,252,252);
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+padding-right: 100%;
+padding-left: 15%;
+
+}
+
+.downloadbutton {
+  font-size: 1em;
+  font-weight: 500;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  padding: 1em;
+  transition: 0.3s;
+  border-radius: 5px;
+  margin-right: 5px;
+
+}
+
+
+
+.graybutton{
+  margin-bottom: 5px;
+
+  border: 2px solid #ccc;
+  background-color: white;
+  color: #2A2929;
+}
+
+
+
+.graybutton:hover{
+	background-color: #E2E2E2;
+}
+
+.graybutton:active {
+	border: 2px solid #ccc;
+	background-color: #ccc;
+}
+
+
+
+
+
+  .yellowbutton{
+
+  margin-bottom: 5px;
+  border: 2px solid #F4CD2A;
+  background-color: white;
+  color: #2A2929;
+
+
+}
+
+.yellowbutton:hover{
+
+
+  background-color: #FFF6D2;
+  color: #2A2929;
+
+}
+
+ .yellowbutton:active{
+
+
+  background-color: #F4CD2A;
+  color: #2A2929;
+
+}
+
+
+.portfoliosource {
+
+
+  width: 100%;
+  border-radius: 6px;
+  transition: 0.3s;
+  filter: saturate(0);
+}
+
+
+.portfolioDIV{
+  width: 400px;
+  max-width: 100%;
+  padding: 25px;
+  background-color: rgba(127, 127, 127, 0.05);
+  border-radius: 15px;
+  margin-bottom: 30px;
+  transition: 0.3s;
+  margin-right: 25px;
+  display: inline-block;
+  position: fixed;
+
+}
+
+
+
+
+
+
+.allportfolio{
+
+  max-width: 70%;
+
+  margin-right: 15%;
+
+  margin-left: 15%;
+
+  margin-bottom: 35px;
+
+  margin-top: 125px;
+
+}
+
+.line{
+  margin-left: 15%;
+  margin-right: 15%;
+
+  padding-top: 35px;
+  margin-bottom: 35px;
+  width: 70%;
+
+
+
+}
+
+.numbers{
+  color: #F4CD2A;
+}
+
+.btn{
+
+  color: #ccc;
+  display: none;
+  transition: 0.3s;
+  background: none;
+  box-shadow: 0px 0px 0px transparent;
+  line-height: 1em;
+  font-size: .7em;
+  border: 0px solid transparent;
+
+  text-shadow: 0px 0px 0px transparent;
+}
+
+.btn:active {
+  color: #666;
+}
+
+
+.category {
+background-color: rgba(127, 127, 127, 0.2);
+border-radius: 5px;
+letter-spacing: 2px;
+padding-right: 10px;
+padding-left: 10px;
+padding-top: 7px;
+padding-bottom: 7px;
+font-weight: 500;
+font-size: .6em;
+display: inline-block;
+width: fit-content;
+}
+
+.category > a{
+  color: inherit;
+}
+.location{
+  background-color:rgba(127, 127, 127, 0.1);
+  cursor:url(../../../photos/link-yellow-mode.png), auto;
+
+  transition: 0.3s;
+}
+.location:hover{
+  background-color:rgba(127, 127, 127, 0.2);
+
+}
+
+@media only screen and (max-width: 1700px) {
+
+  .allphotos{
+
+    max-width: 500px;
+    width: 100%;
+
+
+  }
+
+}
+
+@media only screen and (max-width: 1400px) {
+
+.allportfolio {
+
+margin-left: 5%;
+max-width: 95%;
+}
+
+#logo {
+
+padding-left: 5%;
+}
+
+  .allphotos{
+
+max-width: 400px;
+width: 100%;
+
+
+  }
+
+}
+
+@media only screen and (max-width: 1100px) {
+
+
+    #logo {
+
+
+    position: inherit;
+
+    padding-right: 0%;
+padding-left: 10%;
+    }
+
+
+
+
+  .portfolioDIV{
+    width: calc(100% - 20px);
+    position: relative;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 25px;
+    box-sizing: border-box;
+
+  }
+
+  .allportfolio{
+
+    max-width: 90%;
+
+    margin-right: auto;
+
+    margin-left: auto;
+
+    margin-bottom: 35px;
+    margin-top: 0px;
+  }
+  .allphotos{
+
+        width: calc(50% - 10px);
+    margin: 0rem;
+    margin-left: 5px;
+    margin-right: 5px;
+    clear: none;
+    float: left;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    max-width: 1000px;
+
+
+
+  }
+
+  .line{
+    display: none;
+
+
+
+  }
+
+
+
+
+}
+
+@media only screen and (max-width: 600px) {
+
+#logo{
+position: inherit;
+    padding-right: 0%;
+    padding-left: 0%;
+    margin-left: auto;
+    margin-right: auto;
+      width: 200px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+
+}
+
+  .portfolioDIV{
+    width: calc(100% - 50px);
+    position: relative;
+    display: block;
+    margin-right: 0%;
+	margin-left: 0%;
+    max-width: calc(100% - 50px);
+box-sizing: content-box;
+
+  }
+
+  .allportfolio{
+
+    max-width: 100%;
+
+    margin-right: 0px;
+
+    margin-left: 0px;
+
+    margin-bottom: 35px;
+margin-top: 0px;
+
+  }
+  .allphotos{
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    clear: inherit;
+    float: none;
+    margin: 0rem;
+
+    margin-bottom: 5px;
+    margin-right: 0px;
+
+  }
+
+  .line{
+    border-bottom: 1px solid #ccc;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    padding-top: 0px;
+    margin-bottom: 35px;
+    width: 90%;
+
+
+
+  }
+
+.portfolioDIV{
+  
+  background-color: default;
+  
+  border: none;
+ border-radius: 0px;
+
+}
+
+
+
+}
+
+/* Overrides for Dark Mode. */
+
+@media (prefers-color-scheme: dark) {
+  #logo {
+
+
+    background: rgb(51,51,51);
+background: linear-gradient(180deg, rgba(51,51,51,1) 0%, rgba(51,51,51,0) 100%);
+
+
+  }
+  body {
+    color: white;
+    background: #333333;
+  }
+  .downloadbutton {
+    color: #2A2828;
+  }
+  .link {
+    color: white;
+  }
+  .link:visited {
+    color: #C6C5C6;
+  }
+  .lighter {
+    color: #555555;
+  }
+
+  .line{
+
+
+  }
+
+  .btn{
+    color: #555555;
+
+  }
+  .graybutton   {
+    color: #ccc;
+    background-color: #333333;
+    border: 2px solid #555555;
+
+  }
+
+
+
+
+  .graybutton:hover{
+    color: #ccc;
+    background-color: #424242;
+    border: 2px solid #555555;
+  }
+
+  .graybutton:active{
+    color: #ccc;
+    background-color: #555555;
+    border: 2px solid #555555;
+  }
+
+
+
+    .yellowbutton{
+      color: #ccc;
+      background-color:#333333;
+    }
+
+   
+
+
+
+
+    .yellowbutton:hover{
+      color: #ccc;
+      background-color: #544817;
+    }
+     .yellowbutton:active{
+      background-color: #F4CD2A;
+      color: #2A2929;
+    }
+  .button, a, button, .fa-link, .btn{
+
+    cursor:url(../../../photos/link-dark-mode.png), auto;
+
+
+  }
+
+  .yellowbutton{
+    cursor:url(../../../photos/link-yellow-mode.png), auto;
+
+
+  }
+
+  
+
+  
+
+
+}
+/*ends dark mode*/

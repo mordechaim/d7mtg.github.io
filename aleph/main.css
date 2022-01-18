@@ -1,0 +1,249 @@
+body{
+     font-family: 'Miriam Libre', sans-serif;
+	color: #2A2929;
+      background: #FCFCFC;
+}
+
+
+i{
+
+padding-right: 5px;
+}
+
+.fa-plus{
+	color:#3F6BE8;
+
+}
+.fa-star{
+
+color: #EFD726;
+}
+
+.fa-magic{
+	color: #B423D8;
+}
+
+.fa-wrench{
+ color:  #93B069;
+}
+
+.fa-exclamation-triangle{
+
+color: #DD4551;
+}
+
+.fa-code{
+	color: #E09B2B;
+}
+
+h1{
+
+
+     padding-top: 50px;
+     padding-bottom: 25px;
+     margin-left: 12.5%;
+     margin-right: 12.5%;
+     outline: none;
+    
+}
+
+h5{
+	
+	font-size: 2em;
+     padding-top: 50px;
+    
+     margin-right: 12.5%;
+     outline: none;
+    
+
+}
+
+#hOne{
+
+ padding-top: 100px;
+}
+
+ .input {
+ color: black;
+     text-align: justify;
+     font-size: 1em;
+     font-weight: normal;
+     padding-right: 2.5%;
+     padding-left: 2.5%;
+     width: 70%;
+     padding-top: 25px;
+     padding-bottom: 25px;
+     margin-left: auto;
+     margin-right: auto;
+     outline: none;
+     border: 2px solid #ccc;
+border-radius: 5px;
+     transition: all .1s linear;
+}
+
+ .input:focus {
+     border: 2px solid black;
+}
+ .output {
+     text-align: justify;
+     font-size: 1em;
+     font-weight: normal;
+     padding-right: 2.5%;
+     padding-left: 2.5%;
+     width: 70%;
+
+     padding-top: 25px;
+     padding-bottom: 25px;
+     margin-left: auto;
+     margin-right: auto;
+     margin-bottom: 75px;
+     cursor:pointer;
+     outline: none;
+     transition: all .1s linear;
+     word-wrap: break-word;
+     background: #f9f9f9;
+     border: 2px solid #eee;
+     border-radius: 5px;
+
+
+}
+ .output:active{
+     background: #f5f9ef;
+     border: 2px solid #8bb260;
+     color:#8bb260;
+
+}
+
+.output::selection{
+     background: #f5f9ef;
+     color:#8bb260;
+
+
+}
+ #button {
+     border-radius: 10px;
+     border: 1px solid black;
+     outline: none;
+     background-color: white;
+     color: black;
+     padding: 10px 15px;
+     cursor: pointer;
+     transition: all .1s linear;
+}
+ #button:hover {
+     background-color: #ddd;
+}
+ #button:active {
+     background-color: black;
+     color: white;
+}
+ #logo {
+     position: absolute;
+     display: block;
+     width: 50px;
+     right: 25px;
+}
+ #credits {
+     display: block;
+
+
+
+
+     font-size: .8em;
+     margin-left: 25px;
+     margin-right: auto;
+     bottom: 25px;
+}
+ .menuItem{
+     margin-top: 25px;
+     margin-left: 25px;
+     text-align: center;
+     padding: 10px 25px;
+     text-decoration: none;
+     color: white;
+     line-height: 50px;
+     transition: all .2s linear;
+     outline: none;
+     border: none;
+     font-size: 1em;
+     cursor: pointer;
+}
+ .menuItem:hover {
+}
+ .menuItem:focus {
+}
+ .footer {
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color: #8bb260;
+     color: white;
+     text-align: center;
+}
+ .header {
+     position: fixed;
+     left: 0;
+     top: 0;
+     width: 100%;
+     background-color: #8bb260;
+}
+ #link{
+     color: white;
+}
+ #copyText{
+     opacity: 0;
+}
+ #logtext{
+     margin-top: 75px;
+     width: 80%;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+a{
+
+     color: #8bb260;
+
+} code{
+ 
+  background: #f5f9ef;
+
+     padding: 2px;
+     color: #8bb260;
+font-family: 'Oxygen Mono', monospace;
+}
+
+code::selection{
+background: #8bb260;
+
+     color: #f5f9ef;
+}
+
+ .bold{
+     font-weight: 900;
+}
+
+::selection{
+background: black;
+color: white;
+
+}
+
+.thinline{
+	border-top: 1px solid #ccc;
+	margin-right: 12.5%;
+	margin-left: 12.5%;
+
+
+	padding-top: 0px;
+	margin-top: 75px;
+}
+
+p{
+
+line-height: 2em;
+
+}
+
+

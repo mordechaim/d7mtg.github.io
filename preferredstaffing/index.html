@@ -1,0 +1,105 @@
+<html>
+<head>
+    <title>Preferred Care Job Post AI Generator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2D8Q5R25WZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2D8Q5R25WZ');
+</script>
+</head>
+<body>
+    <h1>Preferred Care Staffing</h1>
+    <h2>AI Job Posting generator</h2>
+    <!-- drop down of locations, with an "other option" Brooklyn, Manhattan, NJ, Bronx, Other -->
+        <label for="location">Location:</label>
+        <select name="location" id="location">
+            <option value="">Select a location</option>
+            <option value="Brooklyn">Brooklyn</option>
+            <option value="Manhattan">Manhattan</option>
+            <option value="New Jersey">New Jersey</option>
+            <option value="Bronx">Bronx</option>
+            <option value="Other" id="otherLocation">Other</option>
+         </select>
+    <!-- drop down of job titles RN, LPN, CNA, Other-->
+        <label for="jobTitle" >Job Title:</label>
+        <select name="jobTitle" id="jobTitle"> 
+            <option value="">Select a job title</option>
+            <option value="RN">RN</option>
+            <option value="LPN">LPN</option>
+            <option value="CNA">CNA</option>
+            <option value="Other" id="otherJobTitle">Other</option>
+        </select>
+        <!-- input field for Title of post -->
+        <label for="title">Title of Post:</label>
+        <input type="text" name="title" id="title" placeholder="Enter title of post">
+        <button onclick="run()">Go</button>
+
+<p id="output">
+    Output will appear here
+</p>
+</body>
+<script>
+    var text, output;
+    output = document.getElementById("output");
+    function run() {
+                //if any field is empty, alert user. otherwise, run "run()"
+                if (document.getElementById("location").value == "" || document.getElementById("jobTitle").value == "" || document.getElementById("title").value == "") {
+                    alert("Please fill out all fields");
+                } else {
+                    run2();
+                }
+    }
+
+    function run2(){
+
+        //while loading, display "loading"
+        output.innerHTML = "Loading...";
+        
+        xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://api.openai.com/v1/engines/davinci/completions");
+        xhr.setRequestHeader("Authorization", "Bearer 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");
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                //get the "text" object, which is in the "choices" object
+                text = JSON.parse(xhr.responseText).choices[0].text;
+                //output the results
+                output.innerHTML = text;
+                
+            }
+        }
+
+    var location = document.getElementById("location").value;
+    var jobTitle = document.getElementById("jobTitle").value;
+    var title = document.getElementById("title").value;
+
+    console.log(location);
+    console.log(jobTitle);
+    console.log(title);
+    api =  {
+        "prompt": "Creative and exciting job postings for Preferred Care Staffing.\nThose ads are really good, because it talks about the time flexibility we offer, and speaks in an uplifting tone of voice.\n1: Position details: LPN - Bronx Facility\n---\nTitle: Why Preferred Care?\nText: At Preferred Care, we're empowering healthcare heroes to transform the way they work. Preferred Care simplifies the scheduling and staffing process to match qualified Licensed practical nurses (LPN) like you with shifts at our nursing facilities. Available shift options include per-diem, contract, short-term, long-term, temporary to permanent. With Preferred, you'll get the pay, freedom, and flexibility you deserve.\n2: Position details: RN - Brooklyn Facility\n---\nTitle: Join our team of healthcare heroes! \nText: At Preferred Care, We're looking for full time and part time caring and dedicated RNs to work at a nursing homes in Brooklyn.\nWe are a growing company, and we have multiple roles open for a skilled RN. You will provide outstanding patient care and physical support for patients and residents on a daily basis. We accommodate and work with YOUR hours, on YOUR terms!\n3: Position details: CNA - New Jersey Facility\n---\nTitle: Are you looking for a career that feels like home? Are you interested in a fulfilling job with top of the line caregiving standards? \nText: Join the amazingly warm and compassionate team at Preferred Care. We are hiring a CNA to join our team of passionate healthcare professionals. You will work directly with residents who enjoy life to the fullest while being provided with an accommodating environment. Apply today and learn more about our outstanding company that promotes personal growth as well as professional advancement.\n4: Position details: RN - Brooklyn Facility\n---\nTitle: Looking for a healthcare hero!\nText: We are looking for a reliable RN  to care for elderly people in a professional and considerate manner. Professionals must be first and foremost qualified and compassionate. The ideal candidate will be experienced in providing diverse basic care to those who need it while remaining patient and calm. It is a demanding job but also very rewarding. Our staff is looking forward to personally welcome you to our team!\n5: Position details: CNA - Manhattan Facility \n---\nTitle: Do you want to capitalize on your spare time? Are you looking for a supplemental job where you have the autonomy and control to create a lucrative client base?\nText: Our company, Preferred Care, is looking to have several CNAs join our team to be available to deliver care to our Manhattan facility patients quickly. With our flexible systems in place, you will be able to easily schedule your time. You will have the freedom to work when you want.\nApply now for this rewarding job at Preferred Care, where we're innovating the way health care is provided.\n6: Position details:" + jobTitle + " - " + location + " Facility" + "\nTitle:" + title + "\nText:",
+        "temperature": 0.71,
+        "max_tokens": 192,
+        "top_p": 1,
+        "frequency_penalty": 0,
+        "presence_penalty": 2,
+        "stop": ["7:"]
+    };
+     //send api json to openai
+    xhr.send(JSON.stringify(api));
+
+    
+}
+    
+    
+
+
+</script>
+
+</html>

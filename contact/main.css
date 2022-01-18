@@ -1,0 +1,451 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #2A2929;
+    background-color: fcfcfc;
+    margin: 0px;
+    padding: 0px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    min-height: 100vh;
+
+}
+
+
+#logo {
+    padding-top: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    max-width: 70%;
+}
+/*h1 large, nice, bold, centered*/
+h1 {
+    display: none;
+    font-size: 3em;
+    text-align: center;
+    font-weight: 500;
+    width: auto;
+}
+/*center container to page*/
+.container {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    max-width: 700px;
+    display: none;
+}
+.firstthinline {
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-top: 0px;
+    margin-top: 75px;
+    margin-block-end: 0em;
+    margin-top: 35px;
+    margin-bottom: 0px;
+    border-top: 1px dotted black;
+    opacity: 0.3;
+}
+a {
+    text-decoration: none;
+}
+/*let's make each app in a row, tops 4 on a row*/
+.app {
+    display: inline-block;
+    height: 142px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+.appicon {
+    height: 100px;
+    width: auto;
+    /*ios style app icons with rounded corners*/
+    border-radius: 23%;
+    /*drop very soft shadow*/
+    box-shadow: 0 5px 28px 0 rgba(0, 0, 0, .1);
+    transition: all 0.1s ease-in-out;
+    margin-right: 12px;
+    margin-left: 12px;
+}
+.appname {
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(67, 67, 67);
+    /*font use sf pro*/
+    font-weight: 300;
+    margin-block-start: 0px;
+    margin-top: 10px;
+}
+/*make app icon larger when hovering on .app*/
+.app:hover .appicon {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
+
+.app:active .appicon {
+    /* darken icon */
+    filter: brightness(0.6);
+}
+/*select icons with class macos*/
+.macos {
+    box-shadow: none;
+    height: 120px;
+    width: auto;
+    margin-right: 5px;
+    margin-left: 5px;
+    transform: scale(1.15);
+
+}
+.android {
+    border-radius: 100% !important;
+}
+.windows {
+    border-radius: 8px !important;
+}
+.app:hover .macos {
+    transform: scale(1.21);
+    box-shadow: none;
+}
+/* ::selection {
+    color: #2A2929;
+    background: #f4cd2a;
+} */
+
+.settingswrapper{
+    /*  full  screen, position stays ignoring scrol */
+
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.187);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: none;
+
+}
+.settingsDiv {
+
+    /* center of wrapper, horizontal and vertical */
+    z-index: 5;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    margin:auto;
+    overflow: scroll;
+    padding-bottom: 10px;
+    /*make the div a bit rounded*/
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    /*background light gray + blur effect so you can sorta see thru the icons*/
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    background-color: rgba(255, 255, 255, 0.8);
+
+}
+
+.settingsDiv:hover {
+    cursor: grab;
+}
+.settingsDiv:active{
+    cursor: grabbing;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
+#settingsheader {
+    /* align to complete top of parent div, with nice soft gray backgroud */
+    height: 29px;
+    /*background light gray + blur effect so you can sorta see thru the icons*/
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    background-color: rgba(255, 255, 255, 0.5);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+#settingsTitleLabel {
+    /* this is the title. align to left, with some margin */
+    margin-left: 10px;
+    font-size: 1em;
+    font-weight: 700;
+    color: black;
+    line-height: 29px;
+    display: inline;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+#settingsCloseLabel {
+    /* this is the close button. */
+    display: inline;
+    /* align to complete right */
+    float: right;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    padding: 0px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    transition: all 0.1s ease-in-out;
+
+}
+#settingsCloseLabel:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.popuptext {
+    text-align: center;
+    font-size: .8em;
+}
+#settingsOSText, #settingsModeText {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: rgba(179, 179, 179, 0.256);
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    border-radius: 10px;
+    margin-top: 25px;
+    font-size: 1em;
+}
+.divider {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+/*settings to change OS, radios, labels, etc*/
+.settingsOSchangeDiv, .settingsModechangeDiv {
+    /* horizontal center within parent div fit-content*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.OSchange, .Modechange {
+    text-align: center;
+    width: 75px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #d3d3d300;
+    transition: all 0.1s ease-in-out;
+}
+.OSchangeimg, .Modechangeimg {
+    height: 50px;
+}
+.selectedOS, .selectedMode {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid #b3b3b351;
+}
+.OSchange:hover, .Modechange:hover {
+    background: rgba(255, 255, 255, 0.297);
+    border: 1px solid #ffffff37;
+}
+.selectedOS:hover, .selectedMode:hover {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid #b3b3b351;
+}
+
+footer{
+    text-align: center;
+    font-size: .8em;
+    margin-top: 50px;
+    bottom: 0;
+    color: #b3b3b3;
+    padding-bottom: 20px;
+    line-height: 1.5em;
+    height: 70px;
+    padding-bottom: 30px;
+
+    
+}
+br{
+    line-height: 2em;
+}
+/*on screens smaller than 700px, make the app icons smaller, so it fits 4 on a row*/
+@media screen and (max-width: 700px) {
+    footer{
+        /* keep to bottom even if content is smaller */
+        position: absolute;
+        bottom: 0;
+        height: auto;
+        padding-bottom: 0px;
+        font-size: .6em;
+        width: 100%;
+
+        
+    }
+
+    footer p{
+       
+
+    }
+    .settingsDiv {
+        height: 100%;
+        border: none;
+        border-radius: 0px;
+        box-shadow: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background-color: rgba(255, 255, 255, 1);
+    }
+    .OSchange, .Modechange {
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    /*move copyright text and the line above it to the bottom of the screen*/
+    .copyright {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin-bottom: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        text-align: center;
+    }
+    .app {
+        height: 60px;
+        margin-right: 5px;
+        margin-left: 5px;
+        margin-bottom: 50px;
+    }
+    .appicon {
+        height: 60px;
+        width: auto;
+        /*ios style app icons with rounded corners*/
+        border-radius: 23%;
+        /*drop very soft shadow*/
+        box-shadow: 0 5px 28px 0 rgba(0, 0, 0, .1);
+        transition: all 0.1s ease-in-out;
+        margin-right: 6px;
+        margin-left: 6px;
+    }
+    .appname {
+        font-size: .7em;
+        text-align: center;
+        text-decoration: none;
+        color: rgb(67, 67, 67);
+        /*font use sf pro*/
+        font-weight: 300;
+        margin-block-start: 0px;
+        margin-top: 5px;
+    }
+    .container {
+        /*max-width: icons + margins + padding + border*/
+        max-width: 350px;
+        /*align items to left*/
+        text-align: left;
+        /*make sure the container is centered*/
+        margin: 0 auto;
+        /*centering issue now that icons are aligned to left, lets fix*/
+        padding-left: 12px;
+        margin-right: auto;
+        
+    }
+    .app:hover .appicon {
+        transform: scale(1.1);
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    }
+    .app:hover .macos {
+        transform: scale(1.05);
+        box-shadow: none;
+    }
+}
+/*dark mode prefers color scheme*/
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #2A2929;
+        color: #fcfcfc;
+    }
+    .firstthinline {
+        border-top: 1px dotted #fcfcfc;
+        opacity: 0.3;
+    }
+    .appname {
+        color: #fcfcfc89;
+    }
+    .settingsDiv {
+        background-color: rgba(50, 50, 50, 0.9);
+        backdrop-filter: blur(30px);
+        /* 1px border bottom right left */
+        border: 1px solid rgba(255, 255, 255, 0.194);
+    }
+    #settingsheader {
+        background-color: rgba(50, 50, 50, 0.434);
+        backdrop-filter: blur(30px);
+        /* 1px border bottom right left */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.194);
+    }
+    #settingsTitleLabel {
+        color: #fcfcfc;
+    }
+    #settingsCloseLabel {
+        color: #fcfcfc;
+    }
+    .selectedOS, .selectedMode {
+        background: rgba(255, 255, 255, 0.173);
+        border: 1px solid #b3b3b351;
+    }
+    .OSchange, .Modechange {
+        border: 1px solid #b3b3b351;
+    }
+    .OSchange:hover, .Modechange:hover {
+        background: rgba(255, 255, 255, 0.077);
+        border: 1px solid #b3b3b351;
+    }
+    .selectedOS:hover, .selectedMode:hover {
+        background: rgba(255, 255, 255, 0.173);
+        border: 1px solid #b3b3b351;
+    }
+    .divider {
+        background: rgba(255, 255, 255, 0.173);
+    }
+}
+/* if dark mode and smaller that 700 */
+@media screen and (prefers-color-scheme: dark) and (max-width: 700px) {
+    .settingsDiv {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background-color: rgb(40, 40, 40);
+    }
+}
+@media only screen and (max-width: 600px) {
+    #logo {
+        width: 200px;
+    }
+}
