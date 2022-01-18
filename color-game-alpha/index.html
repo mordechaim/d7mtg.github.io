@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
 <head>
     <meta charset="UTF-8"><meta name="theme-color" content="rgb(230, 230, 230)">
-	<link href="../photos/favicon.png" rel="shortcut icon" type="image/png">
+	<link href="../../../photos/favicon.png" rel="shortcut icon" type="image/png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
 	<script>
@@ -177,7 +177,7 @@ function generateColor(){
 
 
     if (rgbmode) {
-        document.getElementById("colorCode").innerHTML = 
+        document.getElementById("colorCode").innerHTML =
         "<span style='color:black'>" + correctColor.substring(0, 1) + "</span>" +
         "<span style='color:red'>" + correctColor.substring(1, 3) + "</span>"+
         "<span style='color:green'>" + correctColor.substring(3, 5) + "</span>"+
@@ -247,13 +247,13 @@ for (var i = 0; i < colorboxes.length; i++) {
 document.body.addEventListener("keyup", function(event) {
     if (event.keyCode === 49) {
         event.preventDefault();
-        colorboxes[0].click()    
+        colorboxes[0].click()
     } else if (event.keyCode === 50) {
         event.preventDefault();
-        colorboxes[1].click()    
+        colorboxes[1].click()
     } else if (event.keyCode === 51) {
         event.preventDefault();
-        colorboxes[2].click() 
+        colorboxes[2].click()
     }
 })
 </script>
