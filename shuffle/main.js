@@ -114,12 +114,12 @@ if (settings.split) {
 function splitsettings() {
     var split = document.querySelector('input[name="split"]').checked;
     if (split) {
-        document.getElementById("splitcheckbox").innerHTML = '<i class="far fa-check"></i>';
+        document.getElementById("splitcheckbox").innerHTML = '<i class="fal fa-check"></i>';
         document.getElementById("firstnormalcydiv").style.display = "block";
         document.getElementById("lastnormalcydiv").style.display = "block";
         document.getElementById("normalcydiv").style.display = "none";
     } else {
-        document.getElementById("splitcheckbox").innerHTML = '<i class="far fa-fw"></i>';
+        document.getElementById("splitcheckbox").innerHTML = '<i class="fal fa-fw"></i>';
         document.getElementById("firstnormalcydiv").style.display = "none";
         document.getElementById("lastnormalcydiv").style.display = "none";
         document.getElementById("normalcydiv").style.display = "block";

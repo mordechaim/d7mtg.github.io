@@ -12,6 +12,11 @@
 <link href="https://use.typekit.net/czh2ozp.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="../main.css">
+<script type="text/javascript" src="../main.js" defer ></script>
+<link type="text/css" rel="stylesheet" href="../../../lightGallery-master/dist/css/lightgallery.css" />
+<script src="../../../lightGallery-master/dist/lightgallery.umd.js"></script>
+
+
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -36,10 +41,10 @@
    <!--portfolio 1-->
    <div class='portfolioDIV'>
       <h2>
-        <span ><a id="back" href="../../"><i class="far fa-chevron-left"></i></a></span>
+        <span ><a id="back" href="../../"><i class="fal fa-chevron-left"></i></a></span>
         BHY Property Management
       </h2>
-             <p class="category"><i class="far fa-briefcase"></i>&nbsp;&nbsp;SERVICES</p>
+             <p class="category"><i class="fal fa-briefcase"></i>&nbsp;&nbsp;SERVICES</p>
       <p class='lighter'>
       </p>
 <p>
@@ -55,12 +60,14 @@
 <br><br>
 </p>
 </div>
+<div id="lightgallery">
 <img class="allphotos" src="1.png" alt="logo for bhy management by d7mtg, a branding agency in brooklyn">
 <img class="allphotos" src="2.png" alt="wordmark for bhy management by d7mtg, a branding agency in brooklyn">
 <img class="allphotos" src="3.jpg" alt="brochure design, with the words because you deserve it for bhy management by d7mtg - propoerty management brocure design">
 <img class="allphotos" src="4.jpg" alt="bhy property management business cards, branding by d7mtg">
 <img class="allphotos" src="5.png" alt="envelope design for bhy property management by d7mtg">
 <img class="allphotos" src="6.jpg" alt="sketch for the logo, bhy property management">
+</div>
 <div class="" style="display: none;">
   <!-- preloaders-->
   <!-- cursor preloaders-->
@@ -72,5 +79,14 @@
 </div>
    <!-- Development -->
    <!-- Production -->
-</body>
+<script type="text/javascript">
+      lightGallery(document.getElementById('lightgallery'), {
+          licenseKey: "E6B71A52-081F42BE-9A18C3F9-82A1B717",
+          speed: 200,
+          download: false,
+          getCaptionFromTitleOrAlt: false,
+          mousewheel  : true,
+      });
+  </script>
+ </body>
 </html>
