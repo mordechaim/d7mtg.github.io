@@ -8,7 +8,7 @@ function myFunction() {
     } else if (useragent.indexOf("Android") != -1) {
         android();
     }
-    //on windows remove apple maps and imessage
+    //on windows remove apple maps and divimessage
     else if (useragent.indexOf("Windows") != -1) {
         windows();
     } else {
@@ -35,8 +35,8 @@ function macos() {
 }
 function windows() {
     document.getElementById("windows").classList.add("selectedOS");
-    document.getElementById("imessage").style.display = "none";
-    document.getElementById("applemaps").style.display = "none";
+    document.getElementById("divimessage").style.display = "none";
+    document.getElementById("divapplemaps").style.display = "none";
     for (var i = 0; i < appicons.length; i++) {
         appicons[i].src = "windows/" + appicons[i].id + ".png";
         //remove other OS classes
@@ -53,8 +53,8 @@ function ios() {
 }
 function android() {
     document.getElementById("android").classList.add("selectedOS");
-    document.getElementById("imessage").style.display = "none";
-    document.getElementById("applemaps").style.display = "none";
+    document.getElementById("divimessage").style.display = "none";
+    document.getElementById("divapplemaps").style.display = "none";
     for (var i = 0; i < appicons.length; i++) {
         appicons[i].src = "android/" + appicons[i].id + ".png";
         //remove other OS classes
@@ -92,8 +92,8 @@ function changeos() {
         appicons[i].classList.remove("android");
     }
     //as some of OS remove some icons, we need to loop through the icons again to make sure all are display block
-    document.getElementById("imessage").style.display = "inline-block";
-    document.getElementById("applemaps").style.display = "inline-block";
+    document.getElementById("divimessage").style.display = "inline-block";
+    document.getElementById("divapplemaps").style.display = "inline-block";
     for (var i = 0; i < OSchange.length; i++) {
         OSchange[i].classList.remove("selectedOS");
     }

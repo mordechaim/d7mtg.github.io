@@ -16,7 +16,7 @@
 <meta name="robots" content="noindex" />
 <meta name="googlebot" content="noindex" />
 	<link rel="manifest" href="manifest.json">
-<script src="https://kit.fontawesome.com/7b42fedff3.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/f383a529e7.js" crossorigin="anonymous"></script>
 	<link href="https://use.typekit.net/czh2ozp.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
  <script type="text/javascript">
@@ -32,10 +32,8 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-2D8Q5R25WZ');
 </script>
-
   <style>
   @font-face {
     font-family: 'SFMono';
@@ -57,11 +55,9 @@
     height: 60px;
     padding: 50px;
   }
-  .slick-center img{
-  }
   html, #logo, body, .category{
     cursor:url(../photos/pointer-light-mode.png), auto;
-    overflow-x: hidden; // hide horizontal
+    overflow-x: hidden;
   }
   body{
     animation: fadeIn ease .5s;
@@ -129,7 +125,7 @@
     display: block;
     border-radius: 5px;
     transition: .4s;
-    zindex:100;
+    z-index:100;
   }
   .kosherBox:hover .kosherDownload, .kosherDownload:hover{
     background-color: #f4cd2a;
@@ -489,7 +485,6 @@
   .location:hover{
     background-color:rgba(127, 127, 127, 0.2);
   }
-
   @media only screen and (max-width: 600px) {
     .portfolioDIV{
       width: calc(90% - 50px);
@@ -543,7 +538,6 @@
       padding-top: 50px;
     }
   }
-
   /* Overrides for Dark Mode. */
   @media (prefers-color-scheme: dark) {
     #logo {
@@ -599,7 +593,6 @@
       box-shadow: rgba(0, 0, 0, 0.7) 0px 10px 15px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
     }
     .button, a, button, .fa-link, .btndark{
-
       cursor:url(../photos/link-dark-mode.png), auto;
     }
     .yellowbutton{
@@ -607,8 +600,6 @@
     }
     .portfolioDIV:hover{
       background-color: #222222;
-    }
-    .portfoliosource {
     }
   }
   /*ends dark mode*/
@@ -621,7 +612,6 @@
   <h1>Kosher certification logos</h1>
 </p>
 <div class="searchDIV">
-
 <input
 id="searchbar"
 placeholder="Search here..."
@@ -634,7 +624,6 @@ autocomplete="off"
  autocorrect="off"
  autocapitalize="off"
  spellcheck="false">
-
 	</div>
 <div class="allportfolio">
 </div>
@@ -655,16 +644,18 @@ autocomplete="off"
     <div class="" style="display: none;">
       <!-- preloaders-->
       <!-- cursor preloaders-->
-      <img class="preloader" src="../../../photos/text-light-mode.png" />
-      <img class="preloader" src="../../../photos/text-light-mode-small.png" />
-      <img class="preloader" src="../../../photos/link-light-mode.png" />
-      <img class="preloader" src="../../../photos/link-yellow-mode.png" />
-      <img class="preloader" src="../../../photos/link-dark-mode.png" />
+      <img class="preloader" src="../photos/text-light-mode.png" />
+      <img class="preloader" src="../photos/text-light-mode-small.png" />
+      <img class="preloader" src="../photos/link-light-mode.png" />
+      <img class="preloader" src="../photos/link-yellow-mode.png" />
+      <img class="preloader" src="../photos/link-dark-mode.png" />
     </div>
     <!-- Development -->
-
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
     <!-- Production -->
-
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="../wallpapers/clipboardjs/dist/clipboard.min.js"></script>
     <script>
     tippy('.btn', {
@@ -689,7 +680,6 @@ autocomplete="off"
     </script>
     <script type="text/javascript">
     var kosherArray = [
-
 		{png:"ekstein-belza-1.png", pdf:"ekstein-belza.pdf", title:"Asher Ekstein Belza", hebrewtext:" הרב אשר עקשטיין מחזיקי הדת בעלזא", englishtext:"Machzikei Hadas"},
 {png:"urbach-1.png", pdf:"urbach.pdf", title:"Auerbach", hebrewtext:"אוירבאך, אורבאך - רבנות טבריה", englishtext:""},
 {png:"agudah-1.png", pdf:"agudah.pdf", title:"Badatz Agudah", hebrewtext:"בד״ץ אגודת ישראל, אגודה", englishtext:""},
@@ -844,12 +834,10 @@ autocomplete="off"
     searchBox.addEventListener("change",search)
     searchBox.addEventListener("keyup",search)
     </script>
-
 	<script>
          setTimeout(function(){
             window.location.href = '../kosher';
          }, 1200000);
       </script>
-
   </body>
   </html>
