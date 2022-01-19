@@ -7,7 +7,7 @@ EMAIL;type=INTERNET;type=HOME;type=pref:hello@d7mtg.com
 
 TEL;type=pref:+18456712116
 
-item2.ADR;type=WORK:;;828 Bedford Ave\nSuite 102;Brooklyn;NY;11206;United States
+item2.ADR;type=WORK:;;63 Flushing Ave\nBrooklyn Navy Yard Building 27;Brooklyn;NY;11205;United States
 item2.X-ABADR:us
 item3.URL;type=pref:https://d7m.tg/
 item3.X-ABLabel:_$!<HomePage>!$_
