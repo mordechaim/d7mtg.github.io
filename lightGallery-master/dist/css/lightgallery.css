@@ -535,17 +535,17 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   z-index: 1060;
 }
 
-lg-outer .lg-object {
-  display: inline-block;
-  vertical-align: middle;
-  max-width: 100%;
-  max-height: 90%;
-  width: auto;
-  height: auto;
-  position: relative;
-  margin-bottom: 10%;
-  border-radius: 10px;
-  }
+.lg-outer .lg-object {
+display: inline-block;
+vertical-align: middle;
+max-width: 100%;
+max-height: 90%;
+width: auto;
+height: auto;
+position: relative;
+margin-bottom: 10%;
+border-radius: 10px;
+}
 
 .lg-outer .lg-empty-html.lg-sub-html,
 .lg-outer .lg-empty-html .lg-sub-html {
