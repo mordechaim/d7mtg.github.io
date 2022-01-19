@@ -225,13 +225,14 @@ p {
   margin-bottom: 50px;
   transition: all .2s ease;
   border-radius: 5px;
-  border: 2px solid #f4cc2a00;
 
 }
 
 .allphotos:hover{
   cursor: url(../../../photos/link-yellow-mode.png), pointer;
-  border: 2px solid #f4cd2a;
+  /* darker */
+  filter: brightness(0.9);
+
   
 }
 .lighter {
@@ -395,6 +396,7 @@ p {
   .allphotos {
     max-width: 400px;
     width: 100%;
+
   }
 }
 @media only screen and (max-width: 1100px) {
@@ -470,6 +472,8 @@ p {
     margin: 0rem;
     margin-bottom: 5px;
     margin-right: 0px;
+    border-radius: 0px;
+
   }
   .line {
     border-bottom: 1px solid #ccc;
