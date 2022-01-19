@@ -8,10 +8,7 @@ body {
     -moz-user-select: none;
     -webkit-user-select: none;
     min-height: 100vh;
-
 }
-
-
 #logo {
     padding-top: 50px;
     display: block;
@@ -86,7 +83,6 @@ a {
     transform: scale(1.1);
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
-
 .app:active .appicon {
     /* darken icon */
     filter: brightness(0.6);
@@ -99,7 +95,6 @@ a {
     margin-right: 5px;
     margin-left: 5px;
     transform: scale(1.15);
-
 }
 .android {
     border-radius: 100% !important;
@@ -115,10 +110,8 @@ a {
     color: #2A2929;
     background: #f4cd2a;
 } */
-
 .settingswrapper{
     /*  full  screen, position stays ignoring scrol */
-
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.187);
@@ -127,10 +120,8 @@ a {
     left: 0;
     z-index: 2;
     display: none;
-
 }
 .settingsDiv {
-
     /* center of wrapper, horizontal and vertical */
     z-index: 5;
     position: absolute;
@@ -150,9 +141,7 @@ a {
     -webkit-backdrop-filter: blur(30px);
     backdrop-filter: blur(30px);
     background-color: rgba(255, 255, 255, 0.8);
-
 }
-
 .settingsDiv:hover {
     cursor: grab;
 }
@@ -207,7 +196,6 @@ a {
     margin-top: 5px;
     margin-bottom: 5px;
     transition: all 0.1s ease-in-out;
-
 }
 #settingsCloseLabel:hover {
     background-color: rgba(0, 0, 0, 0.1);
@@ -276,7 +264,6 @@ a {
     background: rgba(255, 255, 255, 0.5);
     border: 1px solid #b3b3b351;
 }
-
 footer{
     text-align: center;
     font-size: .8em;
@@ -287,8 +274,6 @@ footer{
     line-height: 1.5em;
     height: 70px;
     padding-bottom: 30px;
-
-    
 }
 br{
     line-height: 2em;
@@ -303,13 +288,8 @@ br{
         padding-bottom: 0px;
         font-size: .6em;
         width: 100%;
-
-        
     }
-
     footer p{
-       
-
     }
     .settingsDiv {
         height: 100%;
@@ -375,7 +355,6 @@ br{
         /*centering issue now that icons are aligned to left, lets fix*/
         padding-left: 12px;
         margin-right: auto;
-        
     }
     .app:hover .appicon {
         transform: scale(1.1);

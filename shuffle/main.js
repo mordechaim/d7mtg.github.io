@@ -3,9 +3,7 @@ rollDice();
 document.addEventListener('DOMContentLoaded', function() {
   setTimeout(function(){ getresult();}, 1000);//runs main function onload
 
-
 }, false);
-
 
 document.getElementById('outercustomization').style.zIndex = 5; //set default z-index for settings modal
 document.getElementById('outerconsole').style.zIndex = 5; //set default z-index for console modal
@@ -92,10 +90,9 @@ function newpossible() {
 if (settings.split) {
 		console.log("first name normalcy: " + settings.normalcyFirst + "\n last name normalcy: " + settings.normalcyLast +"\n gender: " + settings.gender);
 
-
 } else {
 		console.log("normalcy: " + settings.normalcy + "\n gender: " + settings.gender);
-	
+
 }
 
     fetch(serverurl+"poss", {
@@ -175,16 +172,11 @@ function closeconsole() {
     document.getElementById("outerconsole").className = "consolehidden";
     document.getElementById("showconsole").className = "iconbutton";
 }
-
-
-
 function changetheme() {
 
 
-    
 document.getElementById("changetheme").className = "activebutton";
 setTimeout(function(){
-
 
 var stylesheet = document.getElementById('stylesheet').href;
 	if (stylesheet.includes("modern")){
@@ -198,7 +190,6 @@ var stylesheet = document.getElementById('stylesheet').href;
     document.getElementById("changetheme").className = "iconbutton";
 }, 100);
 
-	
 
 }
 
@@ -342,9 +333,9 @@ function getnext() {
         editableconsole.innerText = "";
     }
 }
-							  
+
 function rollDice(){
-			
+
 let diceObj = {
     "0": "one",
     "1": "two",
@@ -353,10 +344,8 @@ let diceObj = {
     "4": "five",
     "5": "six"
 }
-var dice = diceObj[Math.floor(Math.random() * 6)]			  
-							  
+var dice = diceObj[Math.floor(Math.random() * 6)]
 
 document.getElementById("dice").innerHTML = '<i class="fas fa-dice-' + dice + '" aria-hidden="true"></i>'
-							  
-}					  
-							  
+
+}

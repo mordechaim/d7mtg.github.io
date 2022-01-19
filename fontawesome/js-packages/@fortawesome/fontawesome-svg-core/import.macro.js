@@ -1,10 +1,8 @@
 const { createMacro, MacroError } = require('babel-plugin-macros')
 const { addNamed } = require('@babel/helper-module-imports')
-
 module.exports = createMacro(importer, {
   configName: 'fontawesome-svg-core'
 })
-
 const styles = [
   'solid',
   'regular',
@@ -13,16 +11,13 @@ const styles = [
   'duotone',
   'brands'
 ]
-
 function importer ({references, state, babel, source, config}) {
   const license = (config !== undefined ? config.license : 'free')
-
   if (!['free', 'pro'].includes(license)) {
     throw new Error(
       "config license must be either 'free' or 'pro'"
     )
   }
-
   Object.keys(references).forEach((key) => {
     replace({
       style: key,
@@ -34,39 +29,32 @@ function importer ({references, state, babel, source, config}) {
     })
   })
 }
-
 function replace ({ style, license, references, state, babel, source }) {
   references.forEach((nodePath) => {
     if (canBeReplaced({ nodePath, babel, state, style })) {
       const iconName = nodePath.parentPath.node.arguments[0].value
       const name = `fa${capitalize(camelCase(iconName))}`
       const importFrom = `@fortawesome/${license}-${style}-svg-icons/${name}`
-
       const importName = addNamed(nodePath, name, importFrom)
-
       nodePath.parentPath.replaceWith(importName)
     }
   })
 }
-
 function canBeReplaced ({ nodePath, babel, state, style }) {
   const { types: t } = babel
   const { parentPath } = nodePath
-
   if (!styles.includes(style)) {
     throw parentPath.buildCodeFrameError(
       `${style} is not a valid style. Use one of ${styles.join(', ')}`,
       MacroError
     )
   }
-
   if (parentPath.node.arguments.length !== 1) {
     throw parentPath.buildCodeFrameError(
       `Received an invalid number of arguments (must be 1)`,
       MacroError
     )
   }
-
   if (
     parentPath.node.arguments.length === 1 &&
     t.isStringLiteral(parentPath.node.arguments[0]) &&
@@ -77,21 +65,17 @@ function canBeReplaced ({ nodePath, babel, state, style }) {
       MacroError
     )
   }
-
   if (parentPath.node.arguments.length === 1 && !t.isStringLiteral(parentPath.node.arguments[0])) {
     throw parentPath.buildCodeFrameError(
       'Only string literals are supported when referencing icons (use a string here instead)',
       MacroError
     )
   }
-
   return true
 }
-
 function capitalize (str) {
   return str[0].toUpperCase() + str.slice(1)
 }
-
 function camelCase (str) {
   return str
     .split('-')

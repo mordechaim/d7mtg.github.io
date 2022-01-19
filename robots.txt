@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: 
+Disallow:
 Disallow: /kosher/r2ZAneKbj9!c514n=WxoQaD7105xRb6Y3s37114aVah=pfo9.html
 Sitemap: https://d7m.tg/sitemap.xml
-
-

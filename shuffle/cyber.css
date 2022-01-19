@@ -1,21 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Miriam+Libre:wght@700&display=swap');
 
-
-
-
 body,
 html {
 	background: #0B072B;
 	color: rgba(16, 211, 255, 1);
 	font-family: 'JetBrains Mono', monospace;
-	
+
 background-image: radial-gradient(rgba(16, 211, 255, 0.6) 1%, transparent 40%);
 background-size: 3px 3px;
 }
-
-
-
-
 
 #logo {
 	width: 100%;
@@ -26,10 +19,6 @@ background-size: 3px 3px;
 #logosvg {
   	fill: rgba(16, 211, 255, 1);
 }
-
-
-
-
 
 #blink {
 	animation: blink 1s infinite;
@@ -46,10 +35,10 @@ background-size: 3px 3px;
 }
 
 #go {
-	
+
 	background-color: rgba(16, 211, 255, 0.3);
 	box-shadow: inset 0px 0px 0px 2px #0B072B;
-	
+
 	outline: 1px solid rgba(16, 211, 255, 1);
 	border-radius: 0px;
 	border: none;
@@ -60,18 +49,15 @@ background-size: 3px 3px;
 
 }
 
-
 .activeGo{
 	animation: .6s flicker linear infinite;
 }
 
-
 #nameresult {
-	
+
 font-family: 'Miriam Libre', sans-serif;
 
 }
-
 
 #nameresult:focus {
 background: rgba(16, 211, 255, 0.3);
@@ -91,21 +77,15 @@ h3::selection {
 	letter-spacing: 2px;
 }
 
-
-
-
 .customizationobject {
-	
+
 	text-transform: uppercase;
 
 }
-
-
-
 input {
 	border-radius: 5px;
 }
- 
+
 label {
 	background-color: rgba(16, 211, 255, 0.2);
 	outline: 1px solid rgba(16, 211, 255, 1);
@@ -137,20 +117,14 @@ input:disabled+label {
 	opacity: 0.5;
 	cursor: not-allowed;
 }
-
-
-
 #splitdiv p {
 	font-size: 0.7em;
 	color: #10DDFF;
 }
 
-
-
-
 #outercustomization,
 #outerconsole {
-	border: 1px solid rgba(16, 211, 255, 1);	
+	border: 1px solid rgba(16, 211, 255, 1);
 	background: #0B072B;
 }
 
@@ -164,26 +138,17 @@ input:disabled+label {
 .consolehidden {
 	animation: flickerOutBig .2s linear;
 }
-
-
-
 #outercustomization:active,
 #outerconsole:active {
 
 box-shadow: 0 0 40px 24px rgba(16, 211, 255, 0.12);
 }
-
-
-
 #settingsheader,
 #consoleheader {
 	color: #0B072B;
 	background: rgba(16, 211, 255, 1);
 	text-transform: uppercase;
 }
-
-
-
 .fa-bars {
 	display: inline-block;
 }
@@ -201,45 +166,32 @@ box-shadow: 0 0 40px 24px rgba(16, 211, 255, 0.12);
 	font-size: .8em;
 	cursor: pointer;
 }
-
-
-
 #possibleInBox {
 	border-top: 1px solid rgba(16, 211, 255, 1);
 }
-
-
-
-
 
 
 .iconbutton {
 	animation: flickerOut .4s linear;
 	border: 1px solid rgba(16, 211, 255, 1);
 
-
 }
 
 .icon {
-	
+
 	color: rgba(16, 211, 255, 1);
 
 }
 
 .activebutton {
-	
+
 	animation: flicker .4s linear;
 	background: rgba(16, 211, 255, 1);
 	border: 1px solid rgba(16, 211, 255, 1);
 
-
 	color: #0B072B;
 
 }
-
-
-
-
 
 #editableconsole {
 	color: rgba(16, 211, 255, 0.8);
@@ -250,9 +202,6 @@ box-shadow: 0 0 40px 24px rgba(16, 211, 255, 0.12);
 #oldconsolereturn {
 	color: rgba(16, 211, 255, 0.7);
 }
-
-
-
 @keyframes flicker {
 	0% {
 		background-color: rgba(16, 211, 255, 0);

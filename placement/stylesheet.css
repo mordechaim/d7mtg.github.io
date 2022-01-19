@@ -6,7 +6,6 @@
     font-style: italic;
     font-display: swap;
 }
-
   @font-face {
     font-family: 'SFMono';
     src: url('SFMono-BoldItalic.woff2') format('woff2'),
@@ -15,7 +14,6 @@
     font-style: italic;
     font-display: swap;
   }
- 
   html, #logo, body, .category{
     cursor:url(../photos/pointer-light-mode.png), auto;
     overflow-x: hidden; // hide horizontal
@@ -27,7 +25,6 @@
     -o-animation: fadeIn ease .5s;
     -ms-animation: fadeIn ease .5s;
   }
-
 .contact {
 text-align: right;
 margin-right: 25px;
@@ -35,7 +32,6 @@ opacity: 0.5;
 line-height: 0.3em;
 color
 }
-
 a {
 color: inherit;
 }
@@ -54,12 +50,10 @@ text-align: center;
 display: none;
 margin-bottom: 300px;
   }
-  
   #download {
 position: absolute;
 margin-left: 25px;
 }
-
  .yellowbutton {
 display: block;
 height: 75px;
@@ -77,13 +71,9 @@ line-height: 2.3em;
 transition: 0.3s;
 box-shadow: 0 4px 8px rgba(32,42,62,.06),0 20px 40px rgba(32,42,62,.06);
 }
-
 .yellowbutton:hover{
 box-shadow: 0 4px 8px rgba(32,42,62,.18),0 20px 60px rgba(32,42,62,.16);
-
-
 }
-
 #pubname {
 width: min-content;
 display: block;
@@ -175,7 +165,6 @@ letter-spacing: -2px;
     margin-right: 25%;
     border: none;
 box-shadow: 0 4px 8px rgba(32,42,62,.06),0 20px 40px rgba(32,42,62,.06);
-
     line-height: 2em;
     outline: none;
     padding: 12px 20px;
@@ -188,7 +177,6 @@ box-shadow: 0 4px 8px rgba(32,42,62,.06),0 20px 40px rgba(32,42,62,.06);
   }
   #searchbar:focus{
 box-shadow: 0 4px 8px rgba(32,42,62,.1),0 20px 40px rgba(32,42,62,.1);
-
   }
   .footer{
     margin-bottom: 100px;
@@ -350,11 +338,9 @@ box-shadow: 0 4px 8px rgba(32,42,62,.1),0 20px 40px rgba(32,42,62,.1);
     background-color: white;
     color: #2A2929;
   }
-  
   .graybutton:hover{
     background-color: #E2E2E2;
   }
-  
   .graybutton:active {
     border: 2px solid #ccc;
     background-color: #ccc;
@@ -450,7 +436,6 @@ box-shadow: 0 4px 8px rgba(32,42,62,.1),0 20px 40px rgba(32,42,62,.1);
   .location:hover{
     background-color:rgba(127, 127, 127, 0.2);
   }
-
   @media only screen and (max-width: 600px) {
     .portfolioDIV{
       width: calc(90% - 50px);
@@ -503,7 +488,6 @@ box-shadow: 0 4px 8px rgba(32,42,62,.1),0 20px 40px rgba(32,42,62,.1);
       padding-top: 50px;
     }
   }
-
   /* Overrides for Dark Mode. */
   @media (prefers-color-scheme: dark) {
     #logo {
@@ -544,44 +528,24 @@ box-shadow: 0 4px 8px rgba(32,42,62,.1),0 20px 40px rgba(32,42,62,.1);
       color: #ccc;
       background-color:#333333;
     }
-    
-    
-
 #publicationResult{
       box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-
-
-
   }
  .yellowbutton{
-
 background-color: #333333;
 color: #f4cd2a;
       box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-
-
-
 }
-
   #searchbar{
         box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-
   }
  #searchbar:focus{
       box-shadow: rgba(0, 0, 0, 0.4) 0px 12px 28px 0px, rgba(0, 0, 0, 0.2) 0px 4px 7px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
  }
-
-
-
 .yellowbutton:hover{
       box-shadow: rgba(0, 0, 0, 0.4) 0px 12px 28px 0px, rgba(0, 0, 0, 0.2) 0px 4px 7px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-
-
-
 }
-
     .button, a, button, .fa-link, .btndark{
-
       cursor:url(../photos/link-dark-mode.png), auto;
     }
     .yellowbutton{

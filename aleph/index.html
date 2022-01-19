@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
   <title>Aleph</title >
-
-
   <link href="https://fonts.googleapis.com/css?family=Miriam+Libre:400,700&amp;subset=hebrew" rel="stylesheet">
 	    <link rel="stylesheet" type="text/css" href="main.css">
-
-
   <link rel="shortcut icon" type="image/x-icon" href="fav.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,28 +11,16 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119669212-1">
   </script>
-
     <script src="https://kit.fontawesome.com/7b42fedff3.js" crossorigin="anonymous"></script>
-
 	<link href="https://use.typekit.net/czh2ozp.css" rel="stylesheet">
-
-
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2D8Q5R25WZ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-2D8Q5R25WZ');
 </script>
-
-
-
-
-
-
-
   <!-- Hotjar Tracking Code for d7m.tg -->
   <script>
     (function(h,o,t,j,a,r){
@@ -50,104 +32,48 @@
       a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
   </script>
-
   <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab|Secular+One" rel="stylesheet">
   <link rel="shortcut icon" type="image/x-icon" href="fav.png">
-
-
 </head>
-
 <body>
-
   <div class="header">
-
-
-
-
   </div>
-
-
 	<div><h1 id='hOne'><i class="fal fa-globe-europe"></i>&nbsp;English - Hebrew</h1></div>
-
   <p id="input" class='input' contenteditable="true" dir="rtl" onkeyup="replace()"></p>
   <p id="output" dir="rtl"  class='tooltip btn output'  data-clipboard-target="#output" data-tippy-content="Click here to copy to clipboard">קליק דא צו קאפירן צום קליפבאורד</p>
-
-
 	<h2 class='thinline'>&nbsp;</h2>
-
 	<div><h1 id='toen'><i class="fal fa-globe-americas"></i>&nbsp;Hebrew - English</h1></div>
-
   <p id="inputE" class='input' contenteditable="true" dir="rtl" onkeyup="replaceE()"></p>
   <p id="outputE" dir="rtl"  class='tooltip btn output'  data-clipboard-target="#outputE" data-tippy-content="Click here to copy to clipboard">קליק דא צו קאפירן צום קליפבאורד</p>
-
-
 	<h2 class='thinline'>&nbsp;</h2>
-
-
-
 <div><h1 id='remove'><i class="fal fa-remove-format"></i>&nbsp;Remove Niqqud</h1></div>
-
   <p id="inputN" class='input' contenteditable="true" dir="rtl" onkeyup="replaceN()"></p>
   <p id="outputN" dir="rtl"  class='tooltip btn output'  data-clipboard-target="#outputN" data-tippy-content="Click here to copy to clipboard">קליק דא צו קאפירן צום קליפבאורד</p>
-
-
-
 	<h2 class='thinline'>&nbsp;</h2>
-
-
-
-
-
-
 <div><h1 id='reverse'><i class="fal fa-exchange-alt"></i>&nbsp;Reverse text</h1></div>
-
   <p id="inputR" class='input' contenteditable="true" dir="rtl" onkeyup="replaceR()"></p>
   <p id="outputR" dir="rtl"  class='tooltip btn output'  data-clipboard-target="#outputR" data-tippy-content="Click here to copy to clipboard">קליק דא צו קאפירן צום קליפבאורד</p>
-
-
-
-
 		<h2 class='thinline'>&nbsp;</h2>
-
-
-
 <!--
-
-
 <div><h1 id='atbash'><i class="fas fa-exchange-alt"></i>At Bash</h1></div>
-
   <p id="inputA" class='input' contenteditable="true" dir="rtl"></p>
-
-
 	<button onclick="replaceA()">Click me</button>
-
   <p id="outputA" dir="rtl"  class='tooltip btn output'  data-clipboard-target="#outputA" data-tippy-content="Click here to copy to clipboard">קליק דא צו קאפירן צום קליפבאורד</p>
 -->
-
   <div class="footer">
-
     <p id="credits">Built with JS by <a href="http://d7m.tg" id="link">d7m.tg</a></p>
-
   </div>
-
-
-
 <script type="text/javascript">
   var input = document.getElementById('input'), output = document.getElementById('output'), x, c;
   copyText = document.getElementById('output');
-
   //put cursor  into the input field
   input.focus();
-
   x = copyText.value;
-
   function replace() {
     // remove niqqud
     x = input.innerText.replace(/[\u0591-\u05C7]/g, '');
-
     //make lower case
     x = x.toLowerCase();
-
     //replace charachters
     x = x.replace(/q/g, '/');
     x = x.replace(/w/g, '׳');
@@ -179,35 +105,25 @@
     x = x.replace(/,/g, 'ת');
     x = x.replace(/\./g, '‎ץ');
     x = x.replace(/\//g, '.');
-
     x = x.replace(/'/g, ',');
-
     //export to output
     output.innerText = x;
-
     //put curson back into the input field
     input.focus();
-
-
   }
   </script>
   <script type="text/javascript">
     var inputE = document.getElementById('inputE'),
       outputE = document.getElementById('outputE'), xE, cE;
     var copyTextE = document.getElementById('outputE');
-
     //put cursor  into the input field
     inputE.focus();
-
     xE = copyTextE.value;
-
     function replaceE(){
       // remove niqqud
       xE = inputE.innerText.replace(/[\u0591-\u05C7]/g, '');
-
       //make lower case
       xE = xE.toLowerCase();
-
       //replace charachters
       xE = xE.replace(/\//g, 'q');
       xE = xE.replace(/׳/g, 'w');
@@ -238,115 +154,52 @@
       xE = xE.replace(/צ/g, 'm');
       xE = xE.replace(/ת/g, ',');
       xE = xE.replace(/ץ/g, '.');
-
       x = xE.replace(/,/g, '\'');
-
       //export to output
       outputE.innerText = xE;
-
       //put curson back into the input field
       inputE.focus();
-
-
     }
   </script>
-
-
-
  	<!--niqqud-->
-
 <script type="text/javascript">
   var inputN = document.getElementById('inputN'), outputN = document.getElementById('outputN'), x, c;
   copyTextN = document.getElementById('outputN');
-
   //put cursor  into the input field
-
   xN = copyTextN.value;
-
   function replaceN() {
     // remove niqqud
     xN = inputN.innerText.replace(/[\u0591-\u05C7]/g, '');
-
-
-
-
-
     //export to output
     outputN.innerText = xN;
-
     //put curson back into the input field
     inputN.focus();
-
-
   }
-
-
-
-
 </script>
-
-
-
-
-
-
-
-
 		<!--reverse-->
-
 <script type="text/javascript">
   var inputR = document.getElementById('inputR'), outputR = document.getElementById('outputR'), x, c;
   copyTextR = document.getElementById('outputR');
-
   //put cursor  into the input field
-
   xR = copyTextR.value;
-
 	function ReverseString(str) {
    return str.split('').reverse().join('')
-
 }
-
-
   function replaceR() {
-
-
     xR = ReverseString(inputR.innerText);
-
-
-
     //export to output
     outputR.innerText = xR;
-
     //put curson back into the input field
     inputR.focus();
-
-
   }
-
-
-
-
 </script>
-
-
 		<!--A-->
-
 <script type="text/javascript">
   var inputA = document.getElementById('inputA'), outputA = document.getElementById('outputA'), x, c;
   copyTextA = document.getElementById('outputA');
-
   //put cursor  into the input field
-
-
-
-
-
   function replaceA(){
-
   xA = inputA.innerText;
-
-
   let atBash = {
       א: "ת",
       ב: "ש",
@@ -372,89 +225,44 @@
       ת: "א",
       " ":" ",
   }
-
   let inputtt = "יחיאל שטיינמעטץ"
   const doIt = (text) => {
       let textArray = text.split("")
       console.log(textArray)
-
       let reversed = textArray.map(x => atBash[x]);
       console.log(reversed)
-
       let newText = reversed.join("")
       console.log(newText)
   }
-
-
-
-
     //export to output
     outputA.innerText = xA;
-
     //put curson back into the input field
     inputA.focus();
-
-
   }
-
-
-
-
 </script>
-
-
-
     <!-- Development -->
-    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
-
     <!-- Production -->
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
-
 		 <script>
-
       tippy('.tooltip', {
         delay: [100, 200],
 		    followCursor: true,
-
-
-
       });
-
     </script>
 		 <script>
-
       tippy('.menuItem:not(.firstlink)', {
         delay: [100, 200],
-
-
-
       });
-
     </script>
-
-
-
-
  <script src="clipboardjs/dist/clipboard.min.js"></script>
-
 	 <script>
-
       var btns = document.querySelectorAll('.btn');
       var clipboard = new ClipboardJS(btns);
-
       clipboard.on('success', function(e) {
         console.log(e);
       });
-
       clipboard.on('error', function(e) {
         console.log(e);
       });
-
     </script>
-
 </body>
-
-
 </html>

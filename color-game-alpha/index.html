@@ -31,7 +31,6 @@
             margin-bottom: 40px;
             padding: 25px;
         }
-
         #colorCode{
             border: 5px solid black;
             text-align: center;
@@ -45,14 +44,12 @@
             border-radius: 10px;
             text-transform: uppercase;
             margin-bottom: 40px;
-
         }
         #colorsdiv{
             width: fit-content;
             margin-left: auto;
             margin-right: auto;
         }
-
         .colorbox{
             cursor: pointer;
             height: 100px;
@@ -65,15 +62,12 @@
             line-height: 100px;
             color: white;
             }
-
         .colorbox:hover{
             transform: scale(1.1);
         }
-
         .colorbox:active{
             transform: scale(1.04);
         }
-
         #score{
             position: absolute;
             bottom: 0px;
@@ -96,7 +90,6 @@
             background-color: blue;
             border-radius: 10px;
         }
-
         #current{
             position: block;
             bottom: 0px;
@@ -107,7 +100,6 @@
             text-align: center;
             border-radius: 10px;
         }
-
         * {
             transition: .1s linear;
             margin: 0px;
@@ -125,25 +117,19 @@
     <h1>Choose the right color for this Hex code!</h1>
     <p id="colorCode">#FFFFFF</p>
     <div id="colorsdiv">
-
         <div class="colorbox">1</div>
         <div class="colorbox">2</div>
         <div class="colorbox">3</div>
-
     </div>
     <div id="score">Score: 0%</div>
-
     <div id="scorediv">
         <div id="totalcount">Total: 0</div>
         <div id="rightcount">Right: 0</div>
         <div id="wrongcount">Wrong: 0</div>
-
     </div>
     <div id="current"></div>
-
 </body>
 <script>
-
 let correctColor, colorA, colorB, a,b,c, arr, colorboxes, scorenumber, total;
 let right = 0;
 let wrong = 0;
@@ -153,29 +139,19 @@ var rightcount = document.getElementById("rightcount");
 var totalcount = document.getElementById("totalcount");
 var colorCode = document.getElementById("colorCode");
 var score = document.getElementById("score");
-
 colorboxes = document.getElementsByClassName("colorbox");
-
 document.body.onload = generateColor;
 var current = document.getElementById("current");
-
-
-
 function generateColor(){
-
-
     arr = [0,1,2];
     arr = arr.sort(() => Math.random() - 0.5);
     correctColor = '#'+('00000'+(Math.random()*(1<<24)|0).toString(16)).slice(-6);
     current.style.backgroundColor = "white";
-
     colorboxes[arr[0]].style.backgroundColor = '#'+('00000'+(Math.random()*(1<<24)|0).toString(16)).slice(-6);
     colorboxes[arr[1]].style.backgroundColor = '#'+('00000'+(Math.random()*(1<<24)|0).toString(16)).slice(-6);
     colorboxes[arr[2]].style.backgroundColor = correctColor;
     colorboxes[arr[2]].id = "correct";
     document.getElementById("correct").style.boxShadow = "0 0 0px 0px rgba(0,0,0,0)";
-
-
     if (rgbmode) {
         document.getElementById("colorCode").innerHTML =
         "<span style='color:black'>" + correctColor.substring(0, 1) + "</span>" +
@@ -184,50 +160,33 @@ function generateColor(){
         "<span style='color:blue'>" + correctColor.substring(5, 7) + "</span>";
     } else {
         document.getElementById("colorCode").innerHTML = correctColor;
-
     }
 }
-
 function togglergb(){
     rgbmode = !rgbmode
 }
-
-
 var check = function() {
-
 if (this.id === "correct"){
-
     current.style.backgroundColor = "rgb(28, 189, 28)";
     current.innerText = "Correct!";
-
     right++;
     rightcount.innerText = "Right: " + right;
-
 } else {
     current.style.backgroundColor = "rgba(255, 0, 0, 1)";
     current.innerText = "Wrong!";
-
     wrong++;
     wrongcount.innerText = "Wrong: " + wrong;
 };
-
 if (right > wrong){
     document.getElementById("scorediv").style.backgroundColor = "rgb(28, 189, 28)";
     document.getElementById("score").style.backgroundColor = "rgb(28, 189, 28)";
-
-
 } else if (wrong > right) {
     document.getElementById("scorediv").style.backgroundColor = "red";
     document.getElementById("score").style.backgroundColor = "red";
-
-
 } else {
     document.getElementById("scorediv").style.backgroundColor = "blue";
     document.getElementById("score").style.backgroundColor = "blue";
-
-
 }
-
 scorenumber = right / (right+wrong) *  100 / 1000 * 1000;
 score.innerText = "Score: " + Math.trunc(scorenumber) + "%";
 total = right + wrong;
@@ -235,12 +194,8 @@ totalcount.innerText = "Total: " + total;
 colorboxes[arr[1]].removeAttribute('id');
 colorboxes[arr[0]].removeAttribute('id');
 colorboxes[arr[2]].removeAttribute('id');
-
 setTimeout(generateColor, 300);
-
-
 }
-
 for (var i = 0; i < colorboxes.length; i++) {
     colorboxes[i].addEventListener('click', check, false);
 }

@@ -63,7 +63,6 @@ function android() {
 }
 //settings
 var settingswrapper = document.getElementsByClassName("settingswrapper")[0];
-
 function opensettings() {
     var settingsOSText = document.getElementById("settingsOSText");
     //get the  OS
@@ -82,7 +81,6 @@ function opensettings() {
 function closesettings() {
     settingswrapper.style.display = "none";
 }
-
 //change the OS
 var OSchange = document.getElementsByClassName("OSchange");
 function changeos() {
@@ -120,23 +118,14 @@ function changeos() {
         android();
     }
 }
-
-
-    
-
     //settings div - 400px wide, starts out centered
     //settingswrapper is 100% high and wide
     //lets make the settingsdiv draggable within the settingswrapper div
-    
-    
-
     let settingsDiv = document.getElementsByClassName("settingsDiv")[0];
     dragElement(settingsDiv);
     function dragElement(elmnt) {
-
         //only run on scrrens larger than 600px
         if (window.innerWidth > 701) {
-
         var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
         if (document.getElementsByClassName("settingsDiv")[0]) {
             //if the settings div is present, then we can drag it
@@ -152,7 +141,6 @@ function changeos() {
             // call a function whenever the cursor moves:
             document.onmousemove = elementDrag;
         }
-        
         function elementDrag(e) {
             e = e || window.event;
             e.preventDefault();
@@ -161,16 +149,10 @@ function changeos() {
             pos2 = pos4 - e.clientY;
             pos3 = e.clientX;
             pos4 = e.clientY;
-            
-            
             // set the element's new position:
             elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
             elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-
-          
-
           }
-        
           function closeDragElement() {
             /* stop moving when mouse button is released:*/
             document.onmouseup = null;
@@ -178,7 +160,7 @@ function changeos() {
           }
         }
     }
-    //close settings when clicking on settingswrapper 
+    //close settings when clicking on settingswrapper
     //but not on settingsDiv or its children
     var settingswrapper = document.getElementsByClassName("settingswrapper")[0];
     settingswrapper.onclick = function(e) {
@@ -186,4 +168,3 @@ function changeos() {
             closesettings();
         }
     }
-

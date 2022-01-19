@@ -1,6 +1,6 @@
 body,
 html {
-	
+
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
@@ -53,13 +53,9 @@ display: inline-block;
 animation: diceAnimation cubic-bezier(0.36, 0.71, 0.6, 0.61) 1s infinite;
 }
 
-
 .activeGo {
 animation: activeGoAnimation cubic-bezier(0.36, 0.71, 0.6, 0.61) 1s infinite;
 }
-
-
-
 @keyframes diceAnimation {
 	 from {
         transform:rotate(0deg);
@@ -80,7 +76,7 @@ animation: activeGoAnimation cubic-bezier(0.36, 0.71, 0.6, 0.61) 1s infinite;
 	padding: 20px;
 display: block;
 outline: none;
- 
+
 }
 
 #categorydiv {
@@ -122,7 +118,7 @@ label {
 
 #splitdiv label {
 	padding: 0px 0px;
-	
+
 	height: 20px;
 	width: 20px;
 	line-height: 20px;
@@ -142,7 +138,7 @@ padding-bottom: 20px;
 
 #outercustomization,
 #outerconsole {
-		
+
 		touch-action: none;
 	-webkit-touch-callout: none;
 	width: fit-content;
@@ -293,7 +289,7 @@ cursor: grabbing;
 }
 
 .activebutton {
-	
+
 	padding: 0px 0px;
 	height: 30px;
 	width: 30px;
@@ -321,7 +317,6 @@ cursor: grabbing;
 
 @media only screen and (max-width: 800px) {
 
-
 #coderight {
 bottom: 80px;
 margin-right: 25px;
@@ -339,15 +334,11 @@ margin-top: 25px;
 
 .activebutton {
 
-
 	height: 50px;
 	width: 50px;
 	line-height: 50px;
 	display: block;
 margin-top: 25px;
-
-
-
 }
 
 .icon {
@@ -359,7 +350,7 @@ display: none;
 
 	height: 120px;
 	font-size: .7em;
-	
+
 }
 
 #go, h3 {

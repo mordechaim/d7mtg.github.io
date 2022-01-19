@@ -12,7 +12,6 @@ item2.X-ABADR:us
 item3.URL;type=pref:https://d7m.tg/
 item3.X-ABLabel:_$!<HomePage>!$_
 
-
 item4.IMPP;X-SERVICE-TYPE=WhatsApp;type=pref:x-apple:8456712116
 item4.X-ABLabel:WhatsApp
 item5.IMPP;X-SERVICE-TYPE=Telegram:x-apple:@d7mtg

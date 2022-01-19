@@ -37,13 +37,12 @@ body{
      word-wrap: break-word;
      background: #f9f9f9;
      border: 1px solid #eee;
-     
+
 }
  #output:active{
      background: #f5f9ef;
      border: 1px solid #8bb260;
      color:#8bb260;
-
 }
  #button {
      border-radius: 10px;
@@ -122,30 +121,23 @@ body{
      margin-right: auto;
 }
  code{
- 
-  background: #f5f9ef;
 
+  background: #f5f9ef;
      padding: 2px;
      color: #8bb260;
 font-family: 'Oxygen Mono', monospace;
 }
-
 code::selection{
 background: #8bb260;
-
      color: #f5f9ef;
 }
-
  .bold{
      font-weight: 900;
 }
-
 ::selection{
 background: black;
 color: white;
-
 }
-
 #compass{
 z-index: -1;
  position: absolute;
@@ -157,10 +149,9 @@ z-index: -1;
     -webkit-animation:spin 3s linear infinite;
     -moz-animation:spin 3s linear infinite;
     animation:spin 3s linear infinite;
-    
-  
-}
 
+
+}
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

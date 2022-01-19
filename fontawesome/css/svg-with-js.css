@@ -6,7 +6,6 @@ svg:not(:root).svg-inline--fa {
   overflow: visible;
   -webkit-box-sizing: content-box;
           box-sizing: content-box; }
-
 .svg-inline--fa {
   display: inline-block;
   display: var(--fa-display, inline-block);
@@ -84,7 +83,6 @@ svg:not(:root).svg-inline--fa {
   .svg-inline--fa.fa-fw {
     width: 1.25em;
     width: var(--fa-fw-width, 1.25em); }
-
 .fa-layers svg.svg-inline--fa {
   bottom: 0;
   left: 0;
@@ -92,12 +90,10 @@ svg:not(:root).svg-inline--fa {
   position: absolute;
   right: 0;
   top: 0; }
-
 .fa-layers-text, .fa-layers-counter {
   display: inline-block;
   position: absolute;
   text-align: center; }
-
 .fa-layers {
   display: inline-block;
   height: 1em;
@@ -108,7 +104,6 @@ svg:not(:root).svg-inline--fa {
   .fa-layers svg.svg-inline--fa {
     -webkit-transform-origin: center center;
             transform-origin: center center; }
-
 .fa-layers-text {
   left: 50%;
   top: 50%;
@@ -116,7 +111,6 @@ svg:not(:root).svg-inline--fa {
           transform: translate(-50%, -50%);
   -webkit-transform-origin: center center;
           transform-origin: center center; }
-
 .fa-layers-counter {
   background-color: #ff253a;
   background-color: var(--fa-counter-background-color, #ff253a);
@@ -146,7 +140,6 @@ svg:not(:root).svg-inline--fa {
           transform: scale(var(--fa-counter-scale, 0.25));
   -webkit-transform-origin: top right;
           transform-origin: top right; }
-
 .fa-layers-bottom-right {
   bottom: 0;
   bottom: var(--fa-bottom, 0);
@@ -159,7 +152,6 @@ svg:not(:root).svg-inline--fa {
           transform: scale(var(--fa-layers-scale, 0.25));
   -webkit-transform-origin: bottom right;
           transform-origin: bottom right; }
-
 .fa-layers-bottom-left {
   bottom: 0;
   bottom: var(--fa-bottom, 0);
@@ -173,7 +165,6 @@ svg:not(:root).svg-inline--fa {
           transform: scale(var(--fa-layers-scale, 0.25));
   -webkit-transform-origin: bottom left;
           transform-origin: bottom left; }
-
 .fa-layers-top-right {
   top: 0;
   top: var(--fa-top, 0);
@@ -185,7 +176,6 @@ svg:not(:root).svg-inline--fa {
           transform: scale(var(--fa-layers-scale, 0.25));
   -webkit-transform-origin: top right;
           transform-origin: top right; }
-
 .fa-layers-top-left {
   left: 0;
   left: var(--fa-left, 0);
@@ -198,71 +188,53 @@ svg:not(:root).svg-inline--fa {
           transform: scale(var(--fa-layers-scale, 0.25));
   -webkit-transform-origin: top left;
           transform-origin: top left; }
-
 .fa-1x {
   font-size: 1em; }
-
 .fa-2x {
   font-size: 2em; }
-
 .fa-3x {
   font-size: 3em; }
-
 .fa-4x {
   font-size: 4em; }
-
 .fa-5x {
   font-size: 5em; }
-
 .fa-6x {
   font-size: 6em; }
-
 .fa-7x {
   font-size: 7em; }
-
 .fa-8x {
   font-size: 8em; }
-
 .fa-9x {
   font-size: 9em; }
-
 .fa-10x {
   font-size: 10em; }
-
 .fa-2xs {
   font-size: 0.625em;
   line-height: 0.1em;
   vertical-align: 0.225em; }
-
 .fa-xs {
   font-size: 0.75em;
   line-height: 0.08333em;
   vertical-align: 0.125em; }
-
 .fa-sm {
   font-size: 0.875em;
   line-height: 0.07143em;
   vertical-align: 0.05357em; }
-
 .fa-lg {
   font-size: 1.25em;
   line-height: 0.05em;
   vertical-align: -0.075em; }
-
 .fa-xl {
   font-size: 1.5em;
   line-height: 0.04167em;
   vertical-align: -0.125em; }
-
 .fa-2xl {
   font-size: 2em;
   line-height: 0.03125em;
   vertical-align: -0.1875em; }
-
 .fa-fw {
   text-align: center;
   width: 1.25em; }
-
 .fa-ul {
   list-style-type: none;
   margin-left: 2.5em;
@@ -270,7 +242,6 @@ svg:not(:root).svg-inline--fa {
   padding-left: 0; }
   .fa-ul > li {
     position: relative; }
-
 .fa-li {
   left: calc(2em * -1);
   left: calc(var(--fa-li-width, 2em) * -1);
@@ -279,7 +250,6 @@ svg:not(:root).svg-inline--fa {
   width: 2em;
   width: var(--fa-li-width, 2em);
   line-height: inherit; }
-
 .fa-border {
   border-color: #eee;
   border-color: var(--fa-border-color, #eee);
@@ -291,17 +261,14 @@ svg:not(:root).svg-inline--fa {
   border-width: var(--fa-border-width, 0.08em);
   padding: 0.2em 0.25em 0.15em;
   padding: var(--fa-border-padding, 0.2em 0.25em 0.15em); }
-
 .fa-pull-left {
   float: left;
   margin-right: 0.3em;
   margin-right: var(--fa-pull-margin, 0.3em); }
-
 .fa-pull-right {
   float: right;
   margin-left: 0.3em;
   margin-left: var(--fa-pull-margin, 0.3em); }
-
 .fa-spin {
   -webkit-animation-name: fa-spin;
           animation-name: fa-spin;
@@ -321,10 +288,8 @@ svg:not(:root).svg-inline--fa {
           animation-timing-function: linear;
   -webkit-animation-timing-function: var(--fa-spin-timing, linear);
           animation-timing-function: var(--fa-spin-timing, linear); }
-
 .fa-spin-reverse {
   --fa-spin-direction: reverse; }
-
 .fa-pulse,
 .fa-spin-pulse {
   -webkit-animation-name: fa-spin;
@@ -345,7 +310,6 @@ svg:not(:root).svg-inline--fa {
           animation-timing-function: steps(8);
   -webkit-animation-timing-function: var(--fa-spin-timing, steps(8));
           animation-timing-function: var(--fa-spin-timing, steps(8)); }
-
 @-webkit-keyframes fa-spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -353,7 +317,6 @@ svg:not(:root).svg-inline--fa {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
-
 @keyframes fa-spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -361,45 +324,36 @@ svg:not(:root).svg-inline--fa {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
-
 .fa-rotate-90 {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg); }
-
 .fa-rotate-180 {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg); }
-
 .fa-rotate-270 {
   -webkit-transform: rotate(270deg);
           transform: rotate(270deg); }
-
 .fa-flip-horizontal {
   -webkit-transform: scale(-1, 1);
           transform: scale(-1, 1); }
-
 .fa-flip-vertical {
   -webkit-transform: scale(1, -1);
           transform: scale(1, -1); }
-
 .fa-flip-both,
 .fa-flip-horizontal.fa-flip-vertical {
   -webkit-transform: scale(-1, -1);
           transform: scale(-1, -1); }
-
 .fa-rotate-by {
   -webkit-transform: rotate(none);
           transform: rotate(none);
   -webkit-transform: rotate(var(--fa-rotate-angle, none));
           transform: rotate(var(--fa-rotate-angle, none)); }
-
 .fa-stack {
   display: inline-block;
   vertical-align: middle;
   height: 2em;
   position: relative;
   width: 2.5em; }
-
 .fa-stack-1x,
 .fa-stack-2x {
   bottom: 0;
@@ -410,19 +364,15 @@ svg:not(:root).svg-inline--fa {
   top: 0;
   z-index: auto;
   z-index: var(--fa-stack-z-index, auto); }
-
 .svg-inline--fa.fa-stack-1x {
   height: 1em;
   width: 1.25em; }
-
 .svg-inline--fa.fa-stack-2x {
   height: 2em;
   width: 2.5em; }
-
 .fa-inverse {
   color: #fff;
   color: var(--fa-inverse, #fff); }
-
 .sr-only,
 .fa-sr-only {
   position: absolute;
@@ -434,7 +384,6 @@ svg:not(:root).svg-inline--fa {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0; }
-
 .sr-only-focusable:not(:focus),
 .fa-sr-only-focusable:not(:focus) {
   position: absolute;
@@ -446,31 +395,25 @@ svg:not(:root).svg-inline--fa {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0; }
-
 .svg-inline--fa .fa-primary {
   fill: currentColor;
   fill: var(--fa-primary-color, currentColor);
   opacity: 1;
   opacity: var(--fa-primary-opacity, 1); }
-
 .svg-inline--fa .fa-secondary {
   fill: currentColor;
   fill: var(--fa-secondary-color, currentColor);
   opacity: 0.4;
   opacity: var(--fa-secondary-opacity, 0.4); }
-
 .svg-inline--fa.fa-swap-opacity .fa-primary {
   opacity: 0.4;
   opacity: var(--fa-secondary-opacity, 0.4); }
-
 .svg-inline--fa.fa-swap-opacity .fa-secondary {
   opacity: 1;
   opacity: var(--fa-primary-opacity, 1); }
-
 .svg-inline--fa mask .fa-primary,
 .svg-inline--fa mask .fa-secondary {
   fill: black; }
-
 .fad.fa-inverse,
 .fa-duotone.fa-inverse {
   color: #fff;

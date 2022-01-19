@@ -4,15 +4,12 @@
  */
 (function () {
   'use strict';
-
   var _WINDOW = {};
   var _DOCUMENT = {};
-
   try {
     if (typeof window !== 'undefined') _WINDOW = window;
     if (typeof document !== 'undefined') _DOCUMENT = document;
   } catch (e) {}
-
   var _ref = _WINDOW.navigator || {},
       _ref$userAgent = _ref.userAgent,
       userAgent = _ref$userAgent === void 0 ? '' : _ref$userAgent;
@@ -21,7 +18,6 @@
   var IS_BROWSER = !!WINDOW.document;
   var IS_DOM = !!DOCUMENT.documentElement && !!DOCUMENT.head && typeof DOCUMENT.addEventListener === 'function' && typeof DOCUMENT.createElement === 'function';
   var IS_IE = ~userAgent.indexOf('MSIE') || ~userAgent.indexOf('Trident/');
-
   var NAMESPACE_IDENTIFIER = '___FONT_AWESOME___';
   var PRODUCTION = function () {
     try {
@@ -30,13 +26,11 @@
       return false;
     }
   }();
-
   function bunker(fn) {
     try {
       for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
         args[_key - 1] = arguments[_key];
       }
-
       fn.apply(void 0, args);
     } catch (e) {
       if (!PRODUCTION) {
@@ -44,7 +38,6 @@
       }
     }
   }
-
   function _defineProperty(obj, key, value) {
     if (key in obj) {
       Object.defineProperty(obj, key, {
@@ -56,57 +49,46 @@
     } else {
       obj[key] = value;
     }
-
     return obj;
   }
-
   function _objectSpread(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i] != null ? Object(arguments[i]) : {};
       var ownKeys = Object.keys(source);
-
       if (typeof Object.getOwnPropertySymbols === 'function') {
         ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
           return Object.getOwnPropertyDescriptor(source, sym).enumerable;
         }));
       }
-
       ownKeys.forEach(function (key) {
         _defineProperty(target, key, source[key]);
       });
     }
-
     return target;
   }
-
   var w = WINDOW || {};
   if (!w[NAMESPACE_IDENTIFIER]) w[NAMESPACE_IDENTIFIER] = {};
   if (!w[NAMESPACE_IDENTIFIER].styles) w[NAMESPACE_IDENTIFIER].styles = {};
   if (!w[NAMESPACE_IDENTIFIER].hooks) w[NAMESPACE_IDENTIFIER].hooks = {};
   if (!w[NAMESPACE_IDENTIFIER].shims) w[NAMESPACE_IDENTIFIER].shims = [];
   var namespace = w[NAMESPACE_IDENTIFIER];
-
   function normalizeIcons(icons) {
     return Object.keys(icons).reduce(function (acc, iconName) {
       var icon = icons[iconName];
       var expanded = !!icon.icon;
-
       if (expanded) {
         acc[icon.iconName] = icon.icon;
       } else {
         acc[iconName] = icon;
       }
-
       return acc;
     }, {});
   }
-
   function defineIcons(prefix, icons) {
     var params = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
     var _params$skipHooks = params.skipHooks,
         skipHooks = _params$skipHooks === void 0 ? false : _params$skipHooks;
     var normalized = normalizeIcons(icons);
-
     if (typeof namespace.hooks.addPack === 'function' && !skipHooks) {
       namespace.hooks.addPack(prefix, normalizeIcons(icons));
     } else {
@@ -118,13 +100,10 @@
      * for `fas` so we'll easy the upgrade process for our users by automatically defining
      * this as well.
      */
-
-
     if (prefix === 'fas') {
       defineIcons('fa', icons);
     }
   }
-
   var icons = {
     "0": [320, 512, [], "e089", ["M160 32C71.781 32 0 103.781 0 192V320C0 408.219 71.781 480 160 480S320 408.219 320 320V192C320 103.781 248.219 32 160 32ZM224 320C224 355.281 195.281 384 160 384S96 355.281 96 320V192C96 156.719 124.719 128 160 128S224 156.719 224 192V320Z", ""]],
     "1": [256, 512, [], "e08a", ["M256 432.001C256 458.501 234.516 480 208.001 480H48.004C21.488 480 0.004 458.501 0.004 432.001S21.488 384.003 48.004 384.003H80.003V164.79L72.706 169.165C49.941 182.852 20.488 175.414 6.848 152.696C-6.792 129.978 0.583 100.479 23.301 86.854L103.3 38.855C118.143 29.949 136.627 29.699 151.658 38.231C166.705 46.762 176.001 62.73 176.001 80.011V384.003H208.001C234.516 384.003 256 405.502 256 432.001Z", ""]],
@@ -2552,10 +2531,8 @@
     "yin-yang": [512, 512, [], "f6ad", ["M256.009 16C322.294 16 376.017 69.75 376.017 136S322.294 256 256.009 256S136 309.75 136 376S189.725 496 256.009 496C388.578 496 496.026 388.5 496.026 256S388.578 16 256.009 16ZM256.009 408C238.333 408 224.047 393.625 224.047 376S238.333 344 256.009 344S287.971 358.375 287.971 376S273.685 408 256.009 408ZM256.042 168C273.718 168 288.004 153.625 288.004 136S273.718 104 256.042 104S224.081 118.375 224.081 136S238.367 168 256.042 168Z", "M256.017 16C123.448 16 16 123.5 16 256S123.448 496 256.017 496C189.732 496 136.009 442.25 136.009 376S189.732 256 256.017 256S376.026 202.25 376.026 136S322.301 16 256.017 16ZM256.017 168C238.341 168 224.055 153.625 224.055 136S238.341 104 256.017 104S287.978 118.375 287.978 136S273.692 168 256.017 168ZM255.948 344C238.278 344 223.955 358.326 223.955 376C223.955 393.672 238.278 408 255.948 408S287.941 393.672 287.941 376C287.941 358.326 273.618 344 255.948 344Z"]],
     "z": [384, 512, [], "e2cf", ["M383.998 432C383.998 458.5 362.498 480 335.999 480H48.001C29.47 480 12.564 469.312 4.626 452.562C-3.311 435.781 -0.905 415.969 10.845 401.594L234.718 128H48.001C21.501 128 0.001 106.5 0.001 80S21.501 32 48.001 32H335.999C354.53 32 371.436 42.688 379.373 59.438C387.311 76.219 384.904 96.031 373.155 110.406L149.281 384H335.999C362.498 384 383.998 405.5 383.998 432Z", ""]]
   };
-
   bunker(function () {
     defineIcons('fad', icons);
     defineIcons('fa-duotone', icons);
   });
-
 }());

@@ -3,7 +3,6 @@
  * License - https://fontawesome.com/license (Commercial License)
  */
 @import 'variables';
-
 @font-face {
   font-family: 'Font Awesome 6 Pro';
   font-style: normal;
@@ -13,7 +12,6 @@
     url('#{$fa-font-path}/fa-regular-400.woff') format('woff'),
     url('#{$fa-font-path}/fa-regular-400.ttf') format('truetype');
 }
-
 .far,
 .fa-regular {
   font-family: 'Font Awesome 6 Pro';

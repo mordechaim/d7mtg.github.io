@@ -1,21 +1,16 @@
 // variables
 // --------------------------
-
 $fa-css-prefix          : fa !default;
 $fa-style               : 900 !default;
 $fa-style-family        : "Font Awesome 6 Pro" !default;
-
 $fa-display             : inline-block !default;
-
 $fa-fw-width            : (20em / 16);
 $fa-inverse             : #fff !default;
-
 $fa-border-color        : #eee !default;
 $fa-border-padding      : .2em .25em .15em !default;
 $fa-border-radius       : .1em !default;
 $fa-border-style        : solid !default;
 $fa-border-width        : .08em !default;
-
 $fa-size-scale-2xs      : 10 !default;
 $fa-size-scale-xs       : 12 !default;
 $fa-size-scale-sm       : 14 !default;
@@ -23,7 +18,6 @@ $fa-size-scale-base     : 16 !default;
 $fa-size-scale-lg       : 20 !default;
 $fa-size-scale-xl       : 24 !default;
 $fa-size-scale-2xl      : 32 !default;
-
 $fa-sizes: (
   "2xs"                 : $fa-size-scale-2xs,
   "xs"                  : $fa-size-scale-xs,
@@ -32,27 +26,20 @@ $fa-sizes: (
   "xl"                  : $fa-size-scale-xl,
   "2xl"                 : $fa-size-scale-2xl
 ) !default;
-
 $fa-li-width            : 2em !default;
 $fa-li-margin           : ($fa-li-width * 5/4) !default;
-
 $fa-pull-margin         : .3em !default;
-
 $fa-primary-opacity     : 1 !default;
 $fa-secondary-opacity   : .4 !default;
-
 $fa-stack-vertical-align: middle !default;
 $fa-stack-width         : ($fa-fw-width * 2) !default;
 $fa-stack-z-index       : auto !default;
-
 $fa-font-display        : block !default;
 $fa-font-path           : "../webfonts" !default;
-
 // convenience function used to set content property
 @function fa-content($fa-var) {
   @return unquote("\"#{ $fa-var }\"");
 }
-
 $fa-var-0: \e089;
 $fa-var-1: \e08a;
 $fa-var-2: \e08b;
@@ -3387,7 +3374,6 @@ $fa-var-jpy: \f157;
 $fa-var-rmb: \f157;
 $fa-var-yin-yang: \f6ad;
 $fa-var-z: \e2cf;
-
 $fa-var-500px: \f26e;
 $fa-var-accessible-icon: \f368;
 $fa-var-accusoft: \f369;
@@ -3848,7 +3834,6 @@ $fa-var-yoast: \f2b1;
 $fa-var-youtube: \f167;
 $fa-var-youtube-square: \f431;
 $fa-var-zhihu: \f63f;
-
 $fa-icons: (
   0: $fa-var-0,
   1: $fa-var-1,
@@ -7185,7 +7170,6 @@ $fa-icons: (
   yin-yang: $fa-var-yin-yang,
   z: $fa-var-z,
 );
-
 $fa-brand-icons: (
   500px: $fa-var-500px,
   accessible-icon: $fa-var-accessible-icon,
@@ -7648,4 +7632,3 @@ $fa-brand-icons: (
   youtube-square: $fa-var-youtube-square,
   zhihu: $fa-var-zhihu,
 );
-
