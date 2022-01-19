@@ -223,6 +223,16 @@ p {
   float: right;
   clear: right;
   margin-bottom: 50px;
+  transition: all .2s ease;
+  border-radius: 5px;
+  border: 2px solid #f4cc2a00;
+
+}
+
+.allphotos:hover{
+  cursor: url(../../../photos/link-yellow-mode.png), pointer;
+  border: 2px solid #f4cd2a;
+  
 }
 .lighter {
   display: none;
@@ -255,6 +265,7 @@ p {
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
   padding-right: 100%;
   padding-left: 15%;
+  z-index: 500;
 }
 .downloadbutton {
   font-size: 1em;

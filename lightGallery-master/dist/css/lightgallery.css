@@ -26,9 +26,10 @@
 
 .lg-next,
 .lg-prev {
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
   border-radius: 2px;
-  color: #999;
+  color: rgb(0, 0, 0);
   cursor: pointer;
   display: block;
   font-size: 22px;
@@ -49,7 +50,7 @@
 
 .lg-next:hover:not(.disabled),
 .lg-prev:hover:not(.disabled) {
-  color: #fff;
+  color: rgba(0, 0, 0, 0.797);
 }
 
 .lg-single-item .lg-next, .lg-single-item
@@ -221,7 +222,7 @@
 }
 
 .lg-toolbar .lg-icon:hover {
-  color: #fff;
+  color: rgba(0, 0, 0, 0.797);
 }
 
 .lg-toolbar .lg-close:after {
@@ -542,6 +543,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   width: auto;
   height: auto;
   position: relative;
+  padding-bottom: 25px;
 }
 
 .lg-outer .lg-empty-html.lg-sub-html,
@@ -578,7 +580,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   right: 0;
   bottom: 0;
   z-index: 1040;
-  background-color: #000;
+  background-color: rgba(111, 111, 111, 0.351);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
   opacity: 0;
   will-change: auto;
   -webkit-transition: opacity 333ms ease-in 0s;
