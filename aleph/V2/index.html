@@ -34,9 +34,7 @@
 </script>
     <style>
         body {
-            /*background soft white and light blue gradient, silky animation*/
-            /*background: linear-gradient(to bottom, #f5f5f5 0%, #f8eec0 100%), linear-gradient(to bottom, #f5f5f5 0%, #fae49e 100%);*/
-			background: url(https://d7m.tg/photos/shutterstock_714218764.jpg);
+            background: linear-gradient(to bottom, #f5f5f5 0%, #f8eec0 100%), linear-gradient(to bottom, #f5f5f5 0%, #fae49e 100%);
             background-position: 0 0, 50px 50px;
             background-size: 100% 100%, 100% 100%;
             background-repeat: no-repeat;
@@ -51,6 +49,8 @@
 			overflow-y: scroll;
 			scroll-snap-type: y mandatory;
         }
+
+       
         .header {
             -webkit-touch-callout: none; /* iOS Safari */
                 -webkit-user-select: none; /* Safari */
@@ -100,6 +100,7 @@
         }
         h2{
             font-size: 3em;
+            margin-block-end: 0em;
         }
         /*make the menu look nice*/
         .menu {
@@ -148,9 +149,50 @@ backdrop-filter: blur(30px);
 -webkit-backdrop-filter: blur(30px);
         }
         /*select first container and move it down a bit, because the sticky menu overlays it*/
-        #sumHebrewDiv {
+        #revereseText {
             margin-top: 120px;
         }
+
+        .description{
+            font-size: 0.8em;
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            
+        }
+        *::selection{
+            background: #F4CD2A;
+            color: #000;
+        }
+        .description .code{
+            font-family: monospace;
+            font-size: 1.2em;
+            color: rgb(0, 0, 0);
+            line-height: 1.5em;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .description a{
+            color: rgb(0, 0, 0);
+            display: inline-block;
+            padding: 10px;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(164, 164, 164);
+            text-decoration: none;
+            border-radius: 5px;
+            width: max-content;
+            margin-top: 10px;
+            margin-bottom: 0px;   
+            transition: all 0.05s ease-in-out;         
+
+        }
+        .description a:hover{
+            background-color: rgb(237, 237, 237);
+        }
+
         .container button{
             width: auto;
             /*make it look nice*/
@@ -275,6 +317,16 @@ backdrop-filter: blur(30px);
             .darkbody h2{
                 color: #c9c9c9;
             }
+            .darkbody .description{
+                color: #c9c9c9;
+            }
+            .darkbody .description .code{
+                color: #c9c9c9;
+            }
+            
+            .darkbody .container input {
+                border: 1px solid #c9c9c9;
+            }
             .darkbody .container input {
                 background-color: #cfcfcf;
                 color: #000000;
@@ -351,7 +403,7 @@ backdrop-filter: blur(30px);
                 text-align: center;
                 height: 50px;
             }
-            #sumHebrewDiv{
+            #revereseText{
                 margin-top: 135px;
             }
             .container input {
@@ -368,6 +420,7 @@ backdrop-filter: blur(30px);
                 /*make it fit for mobile*/
                 max-width: 85%;
         }
+    }
     </style>
 </head>
 <body class="">
@@ -381,44 +434,46 @@ backdrop-filter: blur(30px);
         <!--menu that scrolls to all sections-->
         <div class="menu">
             <ul>
-                <li><a class="scroll" href="#hebrewToLatinDiv"><i class="fa-solid fa-book-font"></i>Hebrew to Latin</a></li>
-                <li><a class="scroll" href="#sumHebrewDiv"><i class="fa-solid fa-calculator-simple"></i>Hebrew Sum </a></li>
-                <li><a class="scroll" href="#latinToHebrewDiv"><i class="fa-solid fa-book-tanakh"></i>Latin to Hebrew</a></li>
-                <li><a class="scroll" href="#removeNiqqudDiv"><i class="fa-solid fa-text-slash"></i>Remove Niqqud</a></li>
                 <li><a class="scroll" href="#revereseText"><i class="fa-solid fa-paragraph-left"></i>Reverse Text</a></li>
+                <li><a class="scroll" href="#removeNiqqudDiv"><i class="fa-solid fa-text-slash"></i>Remove Niqqud</a></li>
+                <li><a class="scroll" href="#hebrewToEnglishDiv"><i class="fa-solid fa-book-font"></i>Hebrew to English</a></li>
+                <li><a class="scroll" href="#englishToHebrewDiv"><i class="fa-solid fa-book-tanakh"></i>English to Hebrew</a></li>
+                <li><a class="scroll" href="#sumHebrewDiv"><i class="fa-solid fa-calculator-simple"></i>Hebrew Sum </a></li>
+
                 <li id="darkmode"><i class="fa-solid fa-moon"></i></li>
             </ul>
         </div>
     </div>
-    <div class="container" id="sumHebrewDiv">
-        <h2>Get Hebrew Sum</h2>
-        <div class="form">
-            <label for="sumHebrew">Add hebrew words:</label>
-            <input type="text" id="sumHebrew" name="sumHebrew" placeholder="Add hebrew words">
-            <button type="button" id="sumHebrewBtn" onclick="sumHebrew()"><i class="fa-light fa-calculator-simple"></i>Get Sum</button>
-            <p class="output" id="sumHebrewOutput">&nbsp;</p>
-        </div>
     </div>
-    <div class="container" id="hebrewToLatinDiv">
-        <h2>Hebrew to Latin</h2>
+    <div class="container" id="revereseText">
+        <h2>Reverse Hebrew Text</h2>
+        <p class="description">This function will reverse the order of the words in the text. 
+            <br> 
+            This is useful when you're looking to enter Right to Left text in a software that doesn't support RTL. <br>
+            <span class="code">
+                Accepts: Hebrew, English <br>
+                Output: Hebrew, English in reverse order
+            </span>
+        </p>
         <div class="form">
-            <label for="hebrewToLatin">Add hebrew words:</label>
-            <input type="text" id="hebrewToLatin" name="hebrewToLatin" placeholder="Add hebrew words">
-            <button type="button" id="hebrewToLatinBtn" onclick="hebrewToLatin()"><i class="fa-light fa-book-font"></i>Get Latin</button>
-            <p class="output" id="hebrewToLatinOutput">&nbsp;</p>
-        </div>
-    </div>
-    <div class="container" id="latinToHebrewDiv">
-        <h2>Latin to Hebrew</h2>
-        <div class="form">
-            <label for="latinToHebrew">Add latin words:</label>
-            <input type="text" id="latinToHebrew" name="latinToHebrew" placeholder="Add latin words">
-            <button type="button" id="latinToHebrewBtn" onclick="latinToHebrew()"><i class="fa-light fa-book-tanakh"></i>Get Hebrew</button>
-            <p class="output" id="latinToHebrewOutput">&nbsp;</p>
+            <label for="reverseText">Add text:</label>
+            <input type="text" id="reverseText" name="reverseText" placeholder="Add text">
+            <button type="button" id="reverseTextBtn" onclick="reverseText()"><i class="fa-light fa-paragraph-left"></i>Reverse Text</button>
+            <p class="output" id="reverseTextOutput">&nbsp;</p>
         </div>
     </div>
     <div class="container" id="removeNiqqudDiv">
         <h2>Remove Niqqud</h2>
+        <p class="description">This function will remove the Niqqud from the Hebrew text you enter.
+            <br> 
+            <a href="https://en.wikipedia.org/wiki/Niqqud" target="_blank"><i class="fab fa-wikipedia-w"></i>Niqqud on Wikipedia </a> 
+            <a href="https://en.wikipedia.org/wiki/Ktiv_hasar_niqqud" target="_blank"><i class="fab fa-wikipedia-w"></i>Ktiv hasar Niqqud on Wikipedia</a>
+             <br>
+            <span class="code">
+                Accepts: Hebrew <br>
+                Output: Hebrew without Niqqud
+            </span>
+        </p>
         <div class="form">
             <label for="removeNiqqud">Add hebrew words:</label>
             <input type="text" id="removeNiqqud" name="removeNiqqud" placeholder="Add hebrew words">
@@ -426,13 +481,56 @@ backdrop-filter: blur(30px);
             <p class="output" id="removeNiqqudOutput">&nbsp;</p>
         </div>
     </div>
-    <div class="container" id="revereseText">
-        <h2>Reverse Text</h2>
+    <div class="container" id="hebrewToEnglishDiv">
+        <h2>Hebrew to English</h2>
+        <p class="description">Was your keyboard set to Hebrew and you typed an entire English essay with Hebrew characters?
+            <br> 
+            This function will convert your Hebrew text to English <br>
+            <span class="code">
+                Accepts: Hebrew <br>
+                Output: English
+            </span>
+        </p>
         <div class="form">
-            <label for="reverseText">Add text:</label>
-            <input type="text" id="reverseText" name="reverseText" placeholder="Add text">
-            <button type="button" id="reverseTextBtn" onclick="reverseText()"><i class="fa-light fa-paragraph-left"></i>Reverse Text</button>
-            <p class="output" id="reverseTextOutput">&nbsp;</p>
+            <label for="hebrewToEnglish">Add hebrew words:</label>
+            <input type="text" id="hebrewToEnglish" name="hebrewToEnglish" placeholder="Add hebrew words">
+            <button type="button" id="hebrewToEnglishBtn" onclick="hebrewToEnglish()"><i class="fa-light fa-book-font"></i>Get English</button>
+            <p class="output" id="hebrewToEnglishOutput">&nbsp;</p>
+        </div>
+    </div>
+    <div class="container" id="englishToHebrewDiv">
+        <h2>English to Hebrew</h2>
+        <p class="description">If your software doesn't support typing Hebrew, this function will convert your English text to Hebrew.
+            <br> 
+            <span class="code">
+                Accepts: English <br>
+                Output: Hebrew
+            </span>
+        </p>
+        <div class="form">
+            <label for="englishToHebrew">Add english words:</label>
+            <input type="text" id="englishToHebrew" name="englishToHebrew" placeholder="Add english words">
+            <button type="button" id="englishToHebrewBtn" onclick="englishToHebrew()"><i class="fa-light fa-book-tanakh"></i>Get Hebrew</button>
+            <p class="output" id="englishToHebrewOutput">&nbsp;</p>
+        </div>
+    </div>
+   
+ 
+    <div class="container" id="sumHebrewDiv">
+        <h2>Get Hebrew Sum</h2>
+        <p class="description">This function will return the numerical value of the hebrew string you enter. 
+            <br> 
+            <a href="https://en.wikipedia.org/wiki/Gematria" target="_blank"><i class="fab fa-wikipedia-w"></i>Gematria on Wikipedia</a><br>
+            <span class="code">
+                Accepts: Hebrew <br>
+                Output: Integer
+            </span>
+        </p>
+        <div class="form">
+            <label for="sumHebrew">Add hebrew words:</label>
+            <input type="text" id="sumHebrew" name="sumHebrew" placeholder="Add hebrew words">
+            <button type="button" id="sumHebrewBtn" onclick="sumHebrew()"><i class="fa-light fa-calculator-simple"></i>Get Sum</button>
+            <p class="output" id="sumHebrewOutput">&nbsp;</p>
         </div>
     </div>
     <!-- clear all-->
@@ -488,89 +586,89 @@ backdrop-filter: blur(30px);
            //return the equation AND  the sum like this
            document.getElementById('sumHebrewOutput').innerHTML = equation + ' = ' + sum;
         }
-        //this software takes a hebrew string and returns a latin string from that key on a qwerty keyboard
-        function hebrewToLatin(){
+        //this software takes a hebrew string and returns a english string from that key on a qwerty keyboard
+        function hebrewToEnglish(){
             //create all variables for user input etc
-            var userInput, userInputArray, hebrewToLatinDict;
-            //create a dictionary for the hebrew charachters and their Latin values, "/׳קראטוןםפ][ֿשדגכעיחלךף,זסבהנמצתץ." will become "qwertyuiop[]asdfghjkl;zxcvbnm,./"
-            hebrewToLatinDict = {'/': 'q', '׳': 'w', 'ק': 'e', 'ר': 'r', 'א': 't', 'ט': 'y', 'ו': 'u', 'ן': 'i', 'ם': 'o', 'פ': 'p', 'ש': 'a', 'ד': 's', 'ג': 'd', 'כ': 'f', 'ע': 'g', 'י': 'h', 'ח': 'j', 'ל': 'k', 'ך': 'l', 'ף': ';', 'ז': 'z', 'ס': 'x', 'ב': 'c', 'ה': 'v', 'נ': 'b', 'מ': 'n', 'צ': 'm', 'ת': ',', ' ': ' ', '.': '.', ',': '<', 'ץ': '>'};
+            var userInput, userInputArray, hebrewToEnglishDict;
+            //create a dictionary for the hebrew charachters and their English values, "/׳קראטוןםפ][ֿשדגכעיחלךף,זסבהנמצתץ." will become "qwertyuiop[]asdfghjkl;zxcvbnm,./"
+            hebrewToEnglishDict = {'/': 'q', '׳': 'w', 'ק': 'e', 'ר': 'r', 'א': 't', 'ט': 'y', 'ו': 'u', 'ן': 'i', 'ם': 'o', 'פ': 'p', 'ש': 'a', 'ד': 's', 'ג': 'd', 'כ': 'f', 'ע': 'g', 'י': 'h', 'ח': 'j', 'ל': 'k', 'ך': 'l', 'ף': ';', 'ז': 'z', 'ס': 'x', 'ב': 'c', 'ה': 'v', 'נ': 'b', 'מ': 'n', 'צ': 'm', 'ת': ',', ' ': ' ', '.': '.', ',': '<', 'ץ': '>'};
             //get user input
-            userInput = document.getElementById('hebrewToLatin').value;
+            userInput = document.getElementById('hebrewToEnglish').value;
             //split the string into an array of characters
             userInputArray = userInput.split('');
             //we're including spaces, so we don't need to filter them out
             //if there's nothing to convert, return error
             if(userInputArray.length === 0){
-                document.getElementById('hebrewToLatinOutput').innerHTML = 'Error: Please enter a string';
+                document.getElementById('hebrewToEnglishOutput').innerHTML = 'Error: Please enter a string';
                 //add error class
-                document.getElementById('hebrewToLatinOutput').classList.add('error');
+                document.getElementById('hebrewToEnglishOutput').classList.add('error');
                 return;
             }
             //if there's a non-hebrew character, return error
             if(userInputArray.some(function(item){
-                return hebrewToLatinDict[item] === undefined;
+                return hebrewToEnglishDict[item] === undefined;
             })){
-                document.getElementById('hebrewToLatinOutput').innerHTML = 'Error: Please only use Hebrew characters';
+                document.getElementById('hebrewToEnglishOutput').innerHTML = 'Error: Please only use Hebrew characters';
                 //add error class
-                document.getElementById('hebrewToLatinOutput').classList.add('error');
+                document.getElementById('hebrewToEnglishOutput').classList.add('error');
                 return;
             }
             //remove error class
-            document.getElementById('hebrewToLatinOutput').classList.remove('error');
-            //now for the fun part, we need to loop through the array and replace the hebrew characters with their latin values
+            document.getElementById('hebrewToEnglishOutput').classList.remove('error');
+            //now for the fun part, we need to loop through the array and replace the hebrew characters with their english values
             for (var i = 0; i < userInputArray.length; i++) {
-                userInputArray[i] = hebrewToLatinDict[userInputArray[i]];
+                userInputArray[i] = hebrewToEnglishDict[userInputArray[i]];
             }
-           //return the latin string using a live typing effect, add one letter at a time
+           //return the english string using a live typing effect, add one letter at a time
             var output = '';
             var interval = setInterval(function(){
                 output += userInputArray[0];
                 userInputArray.shift();
-                document.getElementById('hebrewToLatinOutput').innerHTML = output;
+                document.getElementById('hebrewToEnglishOutput').innerHTML = output;
                 if(userInputArray.length === 0){
                     clearInterval(interval);
                 }
             }, 40);
         }
-        //this software takes a latin string and returns a hebrew string from that key on a qwerty keyboard
-        function latinToHebrew(){
+        //this software takes a english string and returns a hebrew string from that key on a qwerty keyboard
+        function englishToHebrew(){
             //create all variables for user input etc
-            var userInput, userInputArray, latinToHebrewDict;
-            //create a dictionary for the latin charachters and their Hebrew values, "qwertyuiop[]asdfghjkl;zxcvbnm,./" will become "/׳קראטוןםפ][ֿשדגכעיחלךף,זסבהנמצתץ."
-            latinToHebrewDict = {'q': '/', 'w': '׳', 'e': 'ק', 'r': 'ר', 't': 'א', 'y': 'ט', 'u': 'ו', 'i': 'ן', 'o': 'ם', 'p': 'פ', 'a': 'ש', 's': 'ד', 'd': 'ג', 'f': 'כ', 'g': 'ע', 'h': 'י', 'j': 'ח', 'k': 'ל', 'l': 'ך', ';': 'ף', 'z': 'ז', 'x': 'ס', 'c': 'ב', 'v': 'ה', 'b': 'נ', 'n': 'מ', 'm': 'צ', ',': 'ת', '.': ' ', '<': ',', ' ': ' ', '>': '.', ',': '<', '.': '>'};
+            var userInput, userInputArray, englishToHebrewDict;
+            //create a dictionary for the english charachters and their Hebrew values, "qwertyuiop[]asdfghjkl;zxcvbnm,./" will become "/׳קראטוןםפ][ֿשדגכעיחלךף,זסבהנמצתץ."
+            englishToHebrewDict = {'q': '/', 'w': '׳', 'e': 'ק', 'r': 'ר', 't': 'א', 'y': 'ט', 'u': 'ו', 'i': 'ן', 'o': 'ם', 'p': 'פ', 'a': 'ש', 's': 'ד', 'd': 'ג', 'f': 'כ', 'g': 'ע', 'h': 'י', 'j': 'ח', 'k': 'ל', 'l': 'ך', ';': 'ף', 'z': 'ז', 'x': 'ס', 'c': 'ב', 'v': 'ה', 'b': 'נ', 'n': 'מ', 'm': 'צ', ',': 'ת', '.': ' ', '<': ',', ' ': ' ', '>': '.', ',': '<', '.': '>'};
             //get user input
-            userInput = document.getElementById('latinToHebrew').value;
+            userInput = document.getElementById('englishToHebrew').value;
             //split the string into an array of characters
             userInputArray = userInput.split('');
             //we're including spaces, so we don't need to filter them out
             //if there's nothing to convert, return error
             if(userInputArray.length === 0){
-                document.getElementById('latinToHebrewOutput').innerHTML = 'Error: Please enter a string';
+                document.getElementById('englishToHebrewOutput').innerHTML = 'Error: Please enter a string';
                 //add error class
-                document.getElementById('latinToHebrewOutput').classList.add('error');
+                document.getElementById('englishToHebrewOutput').classList.add('error');
                 return;
             }
-            //if there's a non-latin character, return error
+            //if there's a non-english character, return error
             if(userInputArray.some(function(item){
-                return latinToHebrewDict[item] === undefined;
+                return englishToHebrewDict[item] === undefined;
             })){
-                document.getElementById('latinToHebrewOutput').innerHTML = 'Error: Please only use Latin characters';
+                document.getElementById('englishToHebrewOutput').innerHTML = 'Error: Please only use English characters';
                 //add error class
-                document.getElementById('latinToHebrewOutput').classList.add('error');
+                document.getElementById('englishToHebrewOutput').classList.add('error');
                 return;
             }
             //remove error class
-            document.getElementById('latinToHebrewOutput').classList.remove('error');
-            //now for the fun part, we need to loop through the array and replace the latin characters with their hebrew values
+            document.getElementById('englishToHebrewOutput').classList.remove('error');
+            //now for the fun part, we need to loop through the array and replace the english characters with their hebrew values
             for (var i = 0; i < userInputArray.length; i++) {
-                userInputArray[i] = latinToHebrewDict[userInputArray[i]];
+                userInputArray[i] = englishToHebrewDict[userInputArray[i]];
             }
             //return the hebrew string using a live typing effect, add one letter at a time
             var output = '';
             var interval = setInterval(function(){
                 output += userInputArray[0];
                 userInputArray.shift();
-                document.getElementById('latinToHebrewOutput').innerHTML = output;
+                document.getElementById('englishToHebrewOutput').innerHTML = output;
                 if(userInputArray.length === 0){
                     clearInterval(interval);
                 }
@@ -654,16 +752,16 @@ backdrop-filter: blur(30px);
                 sumHebrew();
             }
         });
-        document.getElementById('hebrewToLatin').addEventListener('keyup', function(event) {
+        document.getElementById('hebrewToEnglish').addEventListener('keyup', function(event) {
             event.preventDefault();
             if (event.keyCode === 13) {
-                hebrewToLatin();
+                hebrewToEnglish();
             }
         });
-        document.getElementById('latinToHebrew').addEventListener('keyup', function(event) {
+        document.getElementById('englishToHebrew').addEventListener('keyup', function(event) {
             event.preventDefault();
             if (event.keyCode === 13) {
-                latinToHebrew();
+                englishToHebrew();
             }
         });
         document.getElementById('removeNiqqud').addEventListener('keyup', function(event) {
@@ -682,18 +780,18 @@ backdrop-filter: blur(30px);
         function clearAll(){
             document.getElementById('sumHebrew').value = '';
             document.getElementById('sumHebrewOutput').innerHTML = '&nbsp;';
-            document.getElementById('hebrewToLatin').value = '';
-            document.getElementById('hebrewToLatinOutput').innerHTML = '&nbsp;';
-            document.getElementById('latinToHebrew').value = '';
-            document.getElementById('latinToHebrewOutput').innerHTML = '&nbsp;';
+            document.getElementById('hebrewToEnglish').value = '';
+            document.getElementById('hebrewToEnglishOutput').innerHTML = '&nbsp;';
+            document.getElementById('englishToHebrew').value = '';
+            document.getElementById('englishToHebrewOutput').innerHTML = '&nbsp;';
             document.getElementById('removeNiqqud').value = '';
             document.getElementById('removeNiqqudOutput').innerHTML = '&nbsp;';
             document.getElementById('reverseText').value = '';
             document.getElementById('reverseTextOutput').innerHTML = '&nbsp;';
             //remove error class
             document.getElementById('sumHebrewOutput').classList.remove('error');
-            document.getElementById('hebrewToLatinOutput').classList.remove('error');
-            document.getElementById('latinToHebrewOutput').classList.remove('error');
+            document.getElementById('hebrewToEnglishOutput').classList.remove('error');
+            document.getElementById('englishToHebrewOutput').classList.remove('error');
             document.getElementById('removeNiqqudOutput').classList.remove('error');
             document.getElementById('reverseTextOutput').classList.remove('error');
         }
@@ -712,7 +810,6 @@ backdrop-filter: blur(30px);
                 document.getElementById('darkmode').innerHTML = '<i class="fa-solid fa-moon"></i>';
             }
         });
-        //when <li id="darkmode"><i class="fa-solid fa-moon"></i></li> is clicked, toggle the .darkbody class on the body
         document.getElementById('darkmode').addEventListener('click', function(){
             document.body.classList.toggle('darkbody');
             //change moon and lightbulb-on icon based on whether the class is present or not
@@ -729,6 +826,7 @@ backdrop-filter: blur(30px);
             //change icon to <i class="fa-solid fa-lightbulb-on">
             document.getElementById('darkmode').innerHTML = '<i class="fa-solid fa-lightbulb-on"></i>';
         }
+    
     </script>
 </body>
 </html>
