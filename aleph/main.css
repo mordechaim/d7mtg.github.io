@@ -21,7 +21,7 @@ padding-right: 5px;
      padding-left: 15px;
      
      border-radius: 15px;
-     box-shadow: 0 0 20px rgba(0, 0, 0, 0.187);
+     box-shadow: 0 0 200px rgba(0, 0, 0, 0.502);
      display: none;
      z-index: 10;
      text-align: center;
@@ -38,6 +38,7 @@ padding-right: 5px;
      width: 70%;
      margin: 0 auto;
      padding-bottom:  15px;
+     font-size: .8em;
 }
 /* checkbox label */
 #modal label{  

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +11,11 @@
     <meta name="msapplication-TileColor" content="#2d2d2e">
     <!--favicon-->
     <link rel="apple-touch-icon" sizes="180x180" href="apple.png">
-    <link rel="icon" type="image/png"  href="favicon.png">
+    <link rel="icon" type="image/png" href="favicon.png">
     <!--og:-->
     <meta property="og:title" content="Aleph Tools | D7mtg">
-    <meta property="og:description" content="Aleph Tools is a collection of tools for designers, typographers, and developers, created by D7mtg.">
+    <meta property="og:description"
+        content="Aleph Tools is a collection of tools for designers, typographers, and developers, created by D7mtg.">
     <meta property="og:image" content="og.png">
     <meta property="og:url" content="https://d7m.tg/aleph/v2">
     <meta property="og:type" content="website">
@@ -25,13 +27,16 @@
     <meta name="description" content="Aleph Tools is a collection of tools for the Aleph system.">
     <script src="https://kit.fontawesome.com/7b42fedff3.js" crossorigin="anonymous"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2D8Q5R25WZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-2D8Q5R25WZ');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2D8Q5R25WZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-2D8Q5R25WZ');
+    </script>
     <style>
         body {
             background: linear-gradient(to bottom, #f5f5f5 0%, #f8eec0 100%), linear-gradient(to bottom, #f5f5f5 0%, #fae49e 100%);
@@ -40,29 +45,38 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             animation: gradientBG 5s ease infinite;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            ;
             margin: 0;
             padding: 0;
             /*disallow side scroll*/
             overflow-x: hidden;
-			/*snap*/
-			overflow-y: scroll;
-			scroll-snap-type: y mandatory;
+            /*snap*/
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
         }
 
-       
+
         .header {
-            -webkit-touch-callout: none; /* iOS Safari */
-                -webkit-user-select: none; /* Safari */
-                -khtml-user-select: none; /* Konqueror HTML */
-                -moz-user-select: none; /* Old versions of Firefox */
-                    -ms-user-select: none; /* Internet Explorer/Edge */
-                        user-select: none; /* Non-prefixed version, currently
+            -webkit-touch-callout: none;
+            /* iOS Safari */
+            -webkit-user-select: none;
+            /* Safari */
+            -khtml-user-select: none;
+            /* Konqueror HTML */
+            -moz-user-select: none;
+            /* Old versions of Firefox */
+            -ms-user-select: none;
+            /* Internet Explorer/Edge */
+            user-select: none;
+            /* Non-prefixed version, currently
                                             supported by Chrome, Edge, Opera and Firefox */
-            }
-        i{
+        }
+
+        i {
             margin-right: 5px;
         }
+
         .header {
             margin-top: 0;
             background: linear-gradient(to bottom, #F4CD2A, #ffbf0f);
@@ -74,6 +88,7 @@
             width: 100%;
             z-index: 1;
         }
+
         h1 {
             font-size: 2em;
             margin-left: 20px;
@@ -81,7 +96,8 @@
             height: 50px;
             width: min-content;
         }
-        .header p{
+
+        .header p {
             margin-left: 20px;
             display: inline;
             height: 70px;
@@ -89,19 +105,23 @@
             font-size: 1em;
             margin-top: 20px;
         }
-        .header svg{
+
+        .header svg {
             margin-right: 10px;
             /*change viewbox to make the icon smaller*/
             width: 50px;
         }
+
         /*remove link styling from svg*/
-        .header a{
+        .header a {
             text-decoration: none;
         }
-        h2{
+
+        h2 {
             font-size: 3em;
             margin-block-end: 0em;
         }
+
         /*make the menu look nice*/
         .menu {
             margin-top: 0;
@@ -111,14 +131,17 @@
             text-align: right;
             display: inline;
         }
+
         .menu a {
             color: rgb(0, 0, 0);
             text-decoration: none;
         }
+
         .menu a:hover {
             color: rgb(0, 0, 0);
             text-decoration: underline;
         }
+
         .menu ul {
             list-style: none;
             margin: 0;
@@ -126,11 +149,13 @@
             display: inline;
             float: right;
         }
+
         .menu li {
             display: inline-block;
             /* add some nice space between the links */
             margin: 0 1em;
         }
+
         .container {
             display: flex;
             flex-direction: column;
@@ -143,30 +168,31 @@
             border-radius: 5px;
             margin-bottom: 30px;
             background: rgba(255, 255, 255, 0.5);
-			scroll-snap-align: start;
-			scroll-margin-top: 120px;
-backdrop-filter: blur(30px);
--webkit-backdrop-filter: blur(30px);
+            scroll-snap-align: start;
+            scroll-margin-top: 120px;
         }
+
         /*select first container and move it down a bit, because the sticky menu overlays it*/
         #revereseText {
             margin-top: 120px;
         }
 
-        .description{
+        .description {
             font-size: 0.8em;
             text-align: center;
             padding-left: 10px;
             padding-right: 10px;
             margin-top: 50px;
             margin-bottom: 50px;
-            
+
         }
-        *::selection{
+
+        *::selection {
             background: #F4CD2A;
             color: #000;
         }
-        .description .code{
+
+        .description .code {
             font-family: monospace;
             font-size: 1.2em;
             color: rgb(0, 0, 0);
@@ -175,7 +201,7 @@ backdrop-filter: blur(30px);
             margin-top: 10px;
         }
 
-        .description a{
+        .description a {
             color: rgb(0, 0, 0);
             display: inline-block;
             padding: 10px;
@@ -185,15 +211,16 @@ backdrop-filter: blur(30px);
             border-radius: 5px;
             width: max-content;
             margin-top: 10px;
-            margin-bottom: 0px;   
-            transition: all 0.05s ease-in-out;         
+            margin-bottom: 0px;
+            transition: all 0.05s ease-in-out;
 
         }
-        .description a:hover{
+
+        .description a:hover {
             background-color: rgb(237, 237, 237);
         }
 
-        .container button{
+        .container button {
             width: auto;
             /*make it look nice*/
             border-radius: 5px;
@@ -211,13 +238,16 @@ backdrop-filter: blur(30px);
             margin-top: 40px;
             transition: 0.2s;
         }
+
         /*hover effect, transition and darker*/
         .container button:hover {
             background: #f4cd2a;
         }
+
         .container button:active {
             background: #eeb109;
         }
+
         .container input {
             height: 30px;
             /*make it look nice*/
@@ -237,14 +267,17 @@ backdrop-filter: blur(30px);
             /*center the text*/
             text-align: center;
         }
-       .container input:focus{
-           outline: none;
+
+        .container input:focus {
+            outline: none;
             border: 1px solid rgba(0, 0, 0, 0.3);
         }
-        .container label{
-           display: none;
+
+        .container label {
+            display: none;
         }
-        .container .output{
+
+        .container .output {
             font-family: 'Miriam Libre', sans-serif;
             /*make it look nice*/
             border-radius: 5px;
@@ -263,119 +296,237 @@ backdrop-filter: blur(30px);
             margin-top: 20px;
             cursor: pointer;
         }
-        .container .error{
+
+        .container .error {
             color: red;
             background: rgb(255, 0, 0, 0.1);
         }
-       #clearAllDiv{
-        height: 100px;
-       }
-       #clearAllDiv button{
-        margin-top: 0px;
-       }
-       /* smooth scroll on all links, compatible with all browsers */
-       a {
-           scroll-behavior: smooth;
-           /*safari doesn't support this property, so let's polyfill it*/
-                           -webkit-scroll-behavior: smooth;
-       }
-       /*dark mode*/
-       .darkbody  {
-                background: #000000;
-            }
-            .darkbody .container {
-                background: #2d2d2e;
-                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-            }
-            .darkbody .header {
-                color: white;
-                -webkit-backdrop-filter: blur(2em);
-                backdrop-filter: blur(2em);
-                background: #444446ad;
-            }
-            .darkbody .header svg{
-                fill: white;
-            }
-            .darkbody .header a{
-                color: white;
-            }
-            .darkbody .header a:hover{
-                color: white;
-            }
-            .darkbody .container button {
-                background:  transparent;
-                color:  #F4CD2A;
-            }
-            .darkbody .container button:hover {
-                background: #F4CD2A;
-                color:  #2d2d2e;
-            }
-            .darkbody .container button:active {
-                background: #f4b42a;
-                color:  #2d2d2e;
-            }
-            .darkbody h2{
-                color: #c9c9c9;
-            }
-            .darkbody .description{
-                color: #c9c9c9;
-            }
-            .darkbody .description .code{
-                color: #c9c9c9;
-            }
+
+        #clearAllDiv {
+            height: 100px;
+        }
+
+        #clearAllDiv button {
+            margin-top: 0px;
+        }
+
+        /* smooth scroll on all links, compatible with all browsers */
+        a {
+            scroll-behavior: smooth;
+            /*safari doesn't support this property, so let's polyfill it*/
+            -webkit-scroll-behavior: smooth;
+        }
+        
+
+        #modal {
+            position: fixed;
+            z-index: 1;
+            width: 400px;
+            background: rgba(255, 255, 255, .9);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            padding: 10px;
+            border-radius: 15px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            -webkit-box-shadow: 0px 0px 50px 9px rgba(0,0,0,0.2); 
+        }
+       
+        #modalheader {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding-bottom: 10px;
+            line-height: 1.5em;
+            margin-block-start: 0em;
+
+        }
+
+        #modalbody {
+            font-size: 0.9em;
+            color: rgb(0, 0, 0);
+            margin-block-start: 0em;
+            margin-block-end: 0em;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+        #modalbutton{
+           padding: 10px;
+            background-color: #F4CD2A;
+            border: 1px solid #F4CD2A;
+            border-radius: 5px;
+            margin-top: 30px;
+            font-size: 1.2em;
+            transition: 0.2s;
+            cursor: pointer;
+
+
+        }
+        #modalbutton:hover{
+            border: 1px solid #745605;
+
+
+        }
+
+        #modalbutton:focus, #modalbutton:active {
+            background-color: #eeb109;
+        }
+        #modalfooter {
+            font-size: 0.6em;
+            color: rgb(0, 0, 0);
+            padding-top: 20px;
+            margin-bottom: 10px;
+            margin-right: 25px;
+            margin-left: 25px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        #modalfooter a{
+            color: rgb(0, 0, 0);
             
-            .darkbody .container input {
-                border: 1px solid #c9c9c9;
-            }
-            .darkbody .container input {
-                background-color: #cfcfcf;
-                color: #000000;
-            }
-            .darkbody .container input:focus {
-                background-color: #ffffff;
-                border: 1px solid #adadad;
-                outline: none;
-            }
-            /*placeholder text*/
-            .darkbody .container input::-webkit-input-placeholder {
-                color: #00000077;
-            }
-            .darkbody .container input::-moz-placeholder {
-                color: #00000077;
-            }
-            .darkbody .container input:-ms-input-placeholder {
-                color: #00000077;
-            }
-            /*output text*/
-            .darkbody .container .output {
-                color:  #ffffff;
-            }
-            .darkbody .container .error{
-                color: rgb(250, 116, 116);
-                background: rgba(247, 182, 182, 0.192);
-            }
-            .darkbody #darkmode{
-                color: #F4CD2A;
-                cursor: pointer;
-            }
-            #darkmode{
-                cursor: pointer;
-            }
-       /*mobile menu*/
-       @media screen and (max-width: 1200px) {
+        }
+        #modalfooter a:hover{
+            color: #eeb109;
+            
+        }
+        /* dark page when modal is open */
+        #modal-bg{
+            position: fixed;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .darkbody {
+            background: #000000;
+        }
+
+        .darkbody .container {
+            background: #2d2d2e;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .darkbody .header {
+            color: white;
+            -webkit-backdrop-filter: blur(2em);
+            backdrop-filter: blur(2em);
+            background: #444446ad;
+        }
+
+        .darkbody .header svg {
+            fill: white;
+        }
+
+        .darkbody .header a {
+            color: white;
+        }
+
+        .darkbody .header a:hover {
+            color: white;
+        }
+
+        .darkbody .container button {
+            background: transparent;
+            color: #F4CD2A;
+        }
+
+        .darkbody .container button:hover {
+            background: #F4CD2A;
+            color: #2d2d2e;
+        }
+
+        .darkbody .container button:active {
+            background: #f4b42a;
+            color: #2d2d2e;
+        }
+
+        .darkbody h2 {
+            color: #c9c9c9;
+        }
+
+        .darkbody .description {
+            color: #c9c9c9;
+        }
+
+        .darkbody .description .code {
+            color: #c9c9c9;
+        }
+
+        .darkbody .container input {
+            border: 1px solid #c9c9c9;
+        }
+
+        .darkbody .container input {
+            background-color: #cfcfcf;
+            color: #000000;
+        }
+
+        .darkbody .container input:focus {
+            background-color: #ffffff;
+            border: 1px solid #adadad;
+            outline: none;
+        }
+
+        /*placeholder text*/
+        .darkbody .container input::-webkit-input-placeholder {
+            color: #00000077;
+        }
+
+        .darkbody .container input::-moz-placeholder {
+            color: #00000077;
+        }
+
+        .darkbody .container input:-ms-input-placeholder {
+            color: #00000077;
+        }
+
+        /*output text*/
+        .darkbody .container .output {
+            color: #ffffff;
+        }
+
+        .darkbody .container .error {
+            color: rgb(250, 116, 116);
+            background: rgba(247, 182, 182, 0.192);
+        }
+
+        .darkbody #darkmode {
+            color: #F4CD2A;
+            cursor: pointer;
+        }
+
+        #darkmode {
+            cursor: pointer;
+        }
+
+        /*mobile menu*/
+        @media screen and (max-width: 1200px) {
             .menu {
                 width: 100%;
                 text-align: center;
                 margin-bottom: 0;
             }
+
             .menu ul {
                 display: none;
             }
+
             .menu li {
                 display: inline;
                 margin: 0;
             }
-            h1{
+
+            h1 {
                 text-align: center;
                 margin-left: 0;
                 margin-right: 0;
@@ -385,6 +536,7 @@ backdrop-filter: blur(30px);
                 margin-top: 10;
                 margin-bottom: 0;
             }
+
             .header {
                 display: block;
                 margin-left: 0;
@@ -393,6 +545,7 @@ backdrop-filter: blur(30px);
                 width: 100%;
                 margin-bottom: 0;
             }
+
             .header p {
                 /*center the p and the svg*/
                 display: block;
@@ -403,52 +556,93 @@ backdrop-filter: blur(30px);
                 text-align: center;
                 height: 50px;
             }
-            #revereseText{
+
+            #revereseText {
                 margin-top: 135px;
             }
+
             .container input {
-               /*make it fit for mobile*/
-               max-width: 300px;
-               /*center it*/
+                /*make it fit for mobile*/
+                max-width: 300px;
+                /*center it*/
                 margin: auto;
             }
-            h2{
+
+            h2 {
                 text-align: center;
                 margin-left: 0;
             }
-            .container  {
+
+            .container {
                 /*make it fit for mobile*/
                 max-width: 85%;
+            }
         }
-    }
     </style>
 </head>
+
 <body class="">
+    <div id="modal-bg">
+    </div>
+    <div id="modal">
+        <p id="modalheader">
+            Welcome to the new Aleph!
+        </p>
+
+        <p id="modalbody">
+            This is a new version of the Aleph that is designed to be more user friendly and easy&nbsp;to&nbsp;use.
+            <br><br>
+            We built these tools for ourselves, but we couldn't resist releasing them to&nbsp;the&nbsp;public.
+            <br>
+            <button id="modalbutton"><i class="fal fa-thumbs-up"></i>&nbsp;Continue to site</button>
+        </p>
+        <p id="modalfooter">
+            Aleph V2.1 • D7mtg • <a href="https://github.com/d7mtg/d7mtg.github.io/tree/main/aleph/V2"><i class="fab fa-github"></i>Open Source</a>
+
+        </p>
+    </div>
     <div class="header">
         <h1>Aleph Tools</h1>
         <p class="subtitle">A toolset by
             <a href="https://d7m.tg/?utm_source=aleph&utm_medium=tools&utm_campaign=aleph-tools">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165.24 38.43"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M0,1.11V5.6A1.11,1.11,0,0,0,1.11,6.71H13.48a12.1,12.1,0,0,1,6.06,1.42,9.08,9.08,0,0,1,3.73,4.14,16.27,16.27,0,0,1,1.3,6.88,16.62,16.62,0,0,1-1.29,7,9.11,9.11,0,0,1-3.71,4.17,11.88,11.88,0,0,1-6.09,1.44H8.07A1.11,1.11,0,0,1,7,30.43l1.8-11.49a1.12,1.12,0,0,0-1.1-1.28H1.11A1.11,1.11,0,0,0,0,18.77V37.32a1.11,1.11,0,0,0,1.11,1.11H14.18A19.93,19.93,0,0,0,24,36.13a15.37,15.37,0,0,0,6.3-6.66,23,23,0,0,0,2.17-10.4A22.43,22.43,0,0,0,30.29,8.78L30,8.18a1.11,1.11,0,0,1,1-1.62H47.25a1.11,1.11,0,0,1,1,1.5L37.41,36.92a1.11,1.11,0,0,0,1,1.51h6.86a1.12,1.12,0,0,0,1.06-.77L58.15,1.45A1.11,1.11,0,0,0,57.1,0h-56A1.11,1.11,0,0,0,0,1.11Z"/><path d="M88.77.7,81.39,19.11a1.12,1.12,0,0,1-2.07,0L72,.7a1.12,1.12,0,0,0-1-.7H65.13a1.12,1.12,0,0,0-1.06.77L52.29,37a1.11,1.11,0,0,0,1.05,1.46h7.54A1.13,1.13,0,0,0,62,37.55l5.46-25.14a1.11,1.11,0,0,1,2.12-.17l9.77,24.53a1.11,1.11,0,0,0,2.07,0l9.77-24.53a1.11,1.11,0,0,1,2.12.17l5.47,25.14a1.11,1.11,0,0,0,1.08.88h7.54A1.12,1.12,0,0,0,108.43,37L96.64.77A1.11,1.11,0,0,0,95.58,0H89.8A1.11,1.11,0,0,0,88.77.7Z"/><path d="M145.71,8.13a12,12,0,0,1,6-1.42h12.37a1.11,1.11,0,0,0,1.11-1.11V1.11A1.11,1.11,0,0,0,164.13,0H102a1.12,1.12,0,0,0-1.06,1.47L102.45,6a.82.82,0,0,0,.78.55h10.45a1.11,1.11,0,0,1,1.11,1.11l0,29.65a1.11,1.11,0,0,0,1.11,1.11h7.43a1.11,1.11,0,0,0,1.11-1.19L122.29,7.75a1.12,1.12,0,0,1,1.11-1.19h10.87a1.11,1.11,0,0,1,1,1.62l-.31.6a22.51,22.51,0,0,0-2.18,10.34,23,23,0,0,0,2.16,10.35,15.37,15.37,0,0,0,6.3,6.66,20,20,0,0,0,9.83,2.3h13.07a1.11,1.11,0,0,0,1.11-1.11V18.77a1.11,1.11,0,0,0-1.11-1.11h-6.56a1.1,1.1,0,0,0-1.09,1.28l1.79,11.49a1.1,1.1,0,0,1-1.09,1.28h-5.42a11.88,11.88,0,0,1-6.09-1.44A9.22,9.22,0,0,1,142,26.1a16.7,16.7,0,0,1-1.29-7,16.19,16.19,0,0,1,1.3-6.83A9.1,9.1,0,0,1,145.71,8.13Z" /></g></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165.24 38.43">
+                    <g id="Layer_2" data-name="Layer 2">
+                        <g id="Layer_1-2" data-name="Layer 1">
+                            <path
+                                d="M0,1.11V5.6A1.11,1.11,0,0,0,1.11,6.71H13.48a12.1,12.1,0,0,1,6.06,1.42,9.08,9.08,0,0,1,3.73,4.14,16.27,16.27,0,0,1,1.3,6.88,16.62,16.62,0,0,1-1.29,7,9.11,9.11,0,0,1-3.71,4.17,11.88,11.88,0,0,1-6.09,1.44H8.07A1.11,1.11,0,0,1,7,30.43l1.8-11.49a1.12,1.12,0,0,0-1.1-1.28H1.11A1.11,1.11,0,0,0,0,18.77V37.32a1.11,1.11,0,0,0,1.11,1.11H14.18A19.93,19.93,0,0,0,24,36.13a15.37,15.37,0,0,0,6.3-6.66,23,23,0,0,0,2.17-10.4A22.43,22.43,0,0,0,30.29,8.78L30,8.18a1.11,1.11,0,0,1,1-1.62H47.25a1.11,1.11,0,0,1,1,1.5L37.41,36.92a1.11,1.11,0,0,0,1,1.51h6.86a1.12,1.12,0,0,0,1.06-.77L58.15,1.45A1.11,1.11,0,0,0,57.1,0h-56A1.11,1.11,0,0,0,0,1.11Z" />
+                            <path
+                                d="M88.77.7,81.39,19.11a1.12,1.12,0,0,1-2.07,0L72,.7a1.12,1.12,0,0,0-1-.7H65.13a1.12,1.12,0,0,0-1.06.77L52.29,37a1.11,1.11,0,0,0,1.05,1.46h7.54A1.13,1.13,0,0,0,62,37.55l5.46-25.14a1.11,1.11,0,0,1,2.12-.17l9.77,24.53a1.11,1.11,0,0,0,2.07,0l9.77-24.53a1.11,1.11,0,0,1,2.12.17l5.47,25.14a1.11,1.11,0,0,0,1.08.88h7.54A1.12,1.12,0,0,0,108.43,37L96.64.77A1.11,1.11,0,0,0,95.58,0H89.8A1.11,1.11,0,0,0,88.77.7Z" />
+                            <path
+                                d="M145.71,8.13a12,12,0,0,1,6-1.42h12.37a1.11,1.11,0,0,0,1.11-1.11V1.11A1.11,1.11,0,0,0,164.13,0H102a1.12,1.12,0,0,0-1.06,1.47L102.45,6a.82.82,0,0,0,.78.55h10.45a1.11,1.11,0,0,1,1.11,1.11l0,29.65a1.11,1.11,0,0,0,1.11,1.11h7.43a1.11,1.11,0,0,0,1.11-1.19L122.29,7.75a1.12,1.12,0,0,1,1.11-1.19h10.87a1.11,1.11,0,0,1,1,1.62l-.31.6a22.51,22.51,0,0,0-2.18,10.34,23,23,0,0,0,2.16,10.35,15.37,15.37,0,0,0,6.3,6.66,20,20,0,0,0,9.83,2.3h13.07a1.11,1.11,0,0,0,1.11-1.11V18.77a1.11,1.11,0,0,0-1.11-1.11h-6.56a1.1,1.1,0,0,0-1.09,1.28l1.79,11.49a1.1,1.1,0,0,1-1.09,1.28h-5.42a11.88,11.88,0,0,1-6.09-1.44A9.22,9.22,0,0,1,142,26.1a16.7,16.7,0,0,1-1.29-7,16.19,16.19,0,0,1,1.3-6.83A9.1,9.1,0,0,1,145.71,8.13Z" />
+                        </g>
+                    </g>
+                </svg>
             </a>
         </p>
         <!--menu that scrolls to all sections-->
         <div class="menu">
             <ul>
-                <li><a class="scroll" href="#revereseText"><i class="fa-solid fa-paragraph-left"></i>Reverse Text</a></li>
-                <li><a class="scroll" href="#removeNiqqudDiv"><i class="fa-solid fa-text-slash"></i>Remove Niqqud</a></li>
-                <li><a class="scroll" href="#hebrewToEnglishDiv"><i class="fa-solid fa-book-font"></i>Hebrew to English</a></li>
-                <li><a class="scroll" href="#englishToHebrewDiv"><i class="fa-solid fa-book-tanakh"></i>English to Hebrew</a></li>
-                <li><a class="scroll" href="#sumHebrewDiv"><i class="fa-solid fa-calculator-simple"></i>Hebrew Sum </a></li>
+                <li><a class="scroll" href="#revereseText"><i class="fa-solid fa-paragraph-left"></i>Reverse Text</a>
+                </li>
+                <li><a class="scroll" href="#removeNiqqudDiv"><i class="fa-solid fa-text-slash"></i>Remove Niqqud</a>
+                </li>
+                <li><a class="scroll" href="#hebrewToEnglishDiv"><i class="fa-solid fa-book-font"></i>Hebrew to
+                        English</a></li>
+                <li><a class="scroll" href="#englishToHebrewDiv"><i class="fa-solid fa-book-tanakh"></i>English to
+                        Hebrew</a></li>
+                <li><a class="scroll" href="#sumHebrewDiv"><i class="fa-solid fa-calculator-simple"></i>Hebrew Sum </a>
+                </li>
 
                 <li id="darkmode"><i class="fa-solid fa-moon"></i></li>
             </ul>
         </div>
     </div>
+
     </div>
     <div class="container" id="revereseText">
         <h2>Reverse Hebrew Text</h2>
-        <p class="description">This function will reverse the order of the words in the text. 
-            <br> 
+        <p class="description">This function will reverse the order of the words in the text.
+            <br>
             This is useful when you're looking to enter Right to Left text in a software that doesn't support RTL. <br>
             <span class="code">
                 Accepts: Hebrew, English <br>
@@ -458,17 +652,20 @@ backdrop-filter: blur(30px);
         <div class="form">
             <label for="reverseText">Add text:</label>
             <input type="text" id="reverseText" name="reverseText" placeholder="Add text">
-            <button type="button" id="reverseTextBtn" onclick="reverseText()"><i class="fa-light fa-paragraph-left"></i>Reverse Text</button>
+            <button type="button" id="reverseTextBtn" onclick="reverseText()"><i
+                    class="fa-light fa-paragraph-left"></i>Reverse Text</button>
             <p class="output" id="reverseTextOutput">&nbsp;</p>
         </div>
     </div>
     <div class="container" id="removeNiqqudDiv">
         <h2>Remove Niqqud</h2>
         <p class="description">This function will remove the Niqqud from the Hebrew text you enter.
-            <br> 
-            <a href="https://en.wikipedia.org/wiki/Niqqud" target="_blank"><i class="fab fa-wikipedia-w"></i>Niqqud on Wikipedia </a> 
-            <a href="https://en.wikipedia.org/wiki/Ktiv_hasar_niqqud" target="_blank"><i class="fab fa-wikipedia-w"></i>Ktiv hasar Niqqud on Wikipedia</a>
-             <br>
+            <br>
+            <a href="https://en.wikipedia.org/wiki/Niqqud" target="_blank"><i class="fab fa-wikipedia-w"></i>Niqqud on
+                Wikipedia </a>
+            <a href="https://en.wikipedia.org/wiki/Ktiv_hasar_niqqud" target="_blank"><i
+                    class="fab fa-wikipedia-w"></i>Ktiv hasar Niqqud on Wikipedia</a>
+            <br>
             <span class="code">
                 Accepts: Hebrew <br>
                 Output: Hebrew without Niqqud
@@ -477,14 +674,16 @@ backdrop-filter: blur(30px);
         <div class="form">
             <label for="removeNiqqud">Add hebrew words:</label>
             <input type="text" id="removeNiqqud" name="removeNiqqud" placeholder="Add hebrew words">
-            <button type="button" id="removeNiqqudBtn" onclick="removeNiqqud()"><i class="fa-light fa-text-slash"></i>Remove Niqqud</button>
+            <button type="button" id="removeNiqqudBtn" onclick="removeNiqqud()"><i
+                    class="fa-light fa-text-slash"></i>Remove Niqqud</button>
             <p class="output" id="removeNiqqudOutput">&nbsp;</p>
         </div>
     </div>
     <div class="container" id="hebrewToEnglishDiv">
         <h2>Hebrew to English</h2>
-        <p class="description">Was your keyboard set to Hebrew and you typed an entire English essay with Hebrew characters?
-            <br> 
+        <p class="description">Was your keyboard set to Hebrew and you typed an entire English essay with Hebrew
+            characters?
+            <br>
             This function will convert your Hebrew text to English <br>
             <span class="code">
                 Accepts: Hebrew <br>
@@ -494,14 +693,16 @@ backdrop-filter: blur(30px);
         <div class="form">
             <label for="hebrewToEnglish">Add hebrew words:</label>
             <input type="text" id="hebrewToEnglish" name="hebrewToEnglish" placeholder="Add hebrew words">
-            <button type="button" id="hebrewToEnglishBtn" onclick="hebrewToEnglish()"><i class="fa-light fa-book-font"></i>Get English</button>
+            <button type="button" id="hebrewToEnglishBtn" onclick="hebrewToEnglish()"><i
+                    class="fa-light fa-book-font"></i>Get English</button>
             <p class="output" id="hebrewToEnglishOutput">&nbsp;</p>
         </div>
     </div>
     <div class="container" id="englishToHebrewDiv">
         <h2>English to Hebrew</h2>
-        <p class="description">If your software doesn't support typing Hebrew, this function will convert your English text to Hebrew.
-            <br> 
+        <p class="description">If your software doesn't support typing Hebrew, this function will convert your English
+            text to Hebrew.
+            <br>
             <span class="code">
                 Accepts: English <br>
                 Output: Hebrew
@@ -510,17 +711,19 @@ backdrop-filter: blur(30px);
         <div class="form">
             <label for="englishToHebrew">Add english words:</label>
             <input type="text" id="englishToHebrew" name="englishToHebrew" placeholder="Add english words">
-            <button type="button" id="englishToHebrewBtn" onclick="englishToHebrew()"><i class="fa-light fa-book-tanakh"></i>Get Hebrew</button>
+            <button type="button" id="englishToHebrewBtn" onclick="englishToHebrew()"><i
+                    class="fa-light fa-book-tanakh"></i>Get Hebrew</button>
             <p class="output" id="englishToHebrewOutput">&nbsp;</p>
         </div>
     </div>
-   
- 
+
+
     <div class="container" id="sumHebrewDiv">
         <h2>Get Hebrew Sum</h2>
-        <p class="description">This function will return the numerical value of the hebrew string you enter. 
-            <br> 
-            <a href="https://en.wikipedia.org/wiki/Gematria" target="_blank"><i class="fab fa-wikipedia-w"></i>Gematria on Wikipedia</a><br>
+        <p class="description">This function will return the numerical value of the hebrew string you enter.
+            <br>
+            <a href="https://en.wikipedia.org/wiki/Gematria" target="_blank"><i class="fab fa-wikipedia-w"></i>Gematria
+                on Wikipedia</a><br>
             <span class="code">
                 Accepts: Hebrew <br>
                 Output: Integer
@@ -529,43 +732,101 @@ backdrop-filter: blur(30px);
         <div class="form">
             <label for="sumHebrew">Add hebrew words:</label>
             <input type="text" id="sumHebrew" name="sumHebrew" placeholder="Add hebrew words">
-            <button type="button" id="sumHebrewBtn" onclick="sumHebrew()"><i class="fa-light fa-calculator-simple"></i>Get Sum</button>
+            <button type="button" id="sumHebrewBtn" onclick="sumHebrew()"><i
+                    class="fa-light fa-calculator-simple"></i>Get Sum</button>
             <p class="output" id="sumHebrewOutput">&nbsp;</p>
         </div>
     </div>
     <!-- clear all-->
     <div class="container" id="clearAllDiv">
         <div class="form">
-            <button type="button" id="clearAllBtn" onclick="clearAll()"><i class="fa-light fa-arrow-rotate-left"></i>Clear All</button>
+            <button type="button" id="clearAllBtn" onclick="clearAll()"><i
+                    class="fa-light fa-arrow-rotate-left"></i>Clear All</button>
         </div>
     </div>
+    
     <script>
+        document.getElementById("modal").style.display = "none";
+            document.getElementById("modal-bg").style.display = "none";
+        //start by chekcing if hide modal button, #modalbutton is clicked
+        document.getElementById("modalbutton").addEventListener("click", function () {
+            //set cookie to hide modal
+            localStorage.setItem("hideModal", "true");
+            document.getElementById("modal").style.display = "none";
+            document.getElementById("modal-bg").style.display = "none";
+        });
+
+        //check if cookie is set to hide modal
+        if (localStorage.getItem("hideModal") !== "true") {
+            document.getElementById("modal").style.display = "block";
+            document.getElementById("modal-bg").style.display = "block";
+        }
+        function showModal() {
+            //show modal
+            document.getElementById("modal").style.display = "block";
+            document.getElementById("modal-bg").style.display = "block";
+        }
+        function closeModal() {
+            //close modal
+            document.getElementById("modal").style.display = "none";
+            document.getElementById("modal-bg").style.display = "none";
+        }
+
+
         //this software takes a hebrew string and returns a numerical value
-        function sumHebrew(){
+        function sumHebrew() {
             //create all variables for user input etc
             var userInput, userInputArray, hebrewDict;
             var equation = [];
             //create a dictionary for the hebrew charachters and their numerical values
-            hebrewDict = {'א': 1, 'ב': 2, 'ג': 3, 'ד': 4, 'ה': 5, 'ו': 6, 'ז': 7, 'ח': 8, 'ט': 9, 'י': 10, 'כ': 20, 'ל': 30, 'מ': 40, 'נ': 50, 'ס': 60, 'ע': 70, 'פ': 80, 'צ': 90, 'ק': 100, 'ר': 200, 'ש': 300, 'ת': 400, 'ך': 20, 'ם': 40, 'ן': 50, 'ף': 80, 'ץ': 90};
+            hebrewDict = {
+                'א': 1,
+                'ב': 2,
+                'ג': 3,
+                'ד': 4,
+                'ה': 5,
+                'ו': 6,
+                'ז': 7,
+                'ח': 8,
+                'ט': 9,
+                'י': 10,
+                'כ': 20,
+                'ל': 30,
+                'מ': 40,
+                'נ': 50,
+                'ס': 60,
+                'ע': 70,
+                'פ': 80,
+                'צ': 90,
+                'ק': 100,
+                'ר': 200,
+                'ש': 300,
+                'ת': 400,
+                'ך': 20,
+                'ם': 40,
+                'ן': 50,
+                'ף': 80,
+                'ץ': 90
+            };
             //get the user input
             userInput = document.getElementById('sumHebrew').value;
             //we need to split the string into an array of charachters
             userInputArray = userInput.split('');
             //account for spaces, basically don't count them
-            userInputArray = userInputArray.filter(function(item){
+            userInputArray = userInputArray.filter(function (item) {
                 return item !== ' ';
             });
             //if there's nothing to convert, return error
-            if(userInputArray.length === 0){
+            if (userInputArray.length === 0) {
                 document.getElementById('sumHebrewOutput').innerHTML = 'Please enter a string of hebrew characters';
                 //add error class
                 document.getElementById('sumHebrewOutput').classList.add('error');
                 return;
             }
             //return error if there are any non-hebrew characters
-            if(userInputArray.some(function(item){
-                return hebrewDict[item] === undefined;
-            })){
+            if (userInputArray.some(function (item) {
+                    return hebrewDict[item] === undefined;
+                })) {
                 document.getElementById('sumHebrewOutput').innerHTML = 'Error: Please only use Hebrew charachters';
                 //add error class
                 document.getElementById('sumHebrewOutput').classList.add('error');
@@ -583,31 +844,64 @@ backdrop-filter: blur(30px);
             }
             //add a plus symbol between each number
             equation = equation.join(' + ');
-           //return the equation AND  the sum like this
-           document.getElementById('sumHebrewOutput').innerHTML = equation + ' = ' + sum;
+            //return the equation AND  the sum like this
+            document.getElementById('sumHebrewOutput').innerHTML = equation + ' = ' + sum;
         }
         //this software takes a hebrew string and returns a english string from that key on a qwerty keyboard
-        function hebrewToEnglish(){
+        function hebrewToEnglish() {
             //create all variables for user input etc
             var userInput, userInputArray, hebrewToEnglishDict;
             //create a dictionary for the hebrew charachters and their English values, "/׳קראטוןםפ][ֿשדגכעיחלךף,זסבהנמצתץ." will become "qwertyuiop[]asdfghjkl;zxcvbnm,./"
-            hebrewToEnglishDict = {'/': 'q', '׳': 'w', 'ק': 'e', 'ר': 'r', 'א': 't', 'ט': 'y', 'ו': 'u', 'ן': 'i', 'ם': 'o', 'פ': 'p', 'ש': 'a', 'ד': 's', 'ג': 'd', 'כ': 'f', 'ע': 'g', 'י': 'h', 'ח': 'j', 'ל': 'k', 'ך': 'l', 'ף': ';', 'ז': 'z', 'ס': 'x', 'ב': 'c', 'ה': 'v', 'נ': 'b', 'מ': 'n', 'צ': 'm', 'ת': ',', ' ': ' ', '.': '.', ',': '<', 'ץ': '>'};
+            hebrewToEnglishDict = {
+                '/': 'q',
+                '׳': 'w',
+                'ק': 'e',
+                'ר': 'r',
+                'א': 't',
+                'ט': 'y',
+                'ו': 'u',
+                'ן': 'i',
+                'ם': 'o',
+                'פ': 'p',
+                'ש': 'a',
+                'ד': 's',
+                'ג': 'd',
+                'כ': 'f',
+                'ע': 'g',
+                'י': 'h',
+                'ח': 'j',
+                'ל': 'k',
+                'ך': 'l',
+                'ף': ';',
+                'ז': 'z',
+                'ס': 'x',
+                'ב': 'c',
+                'ה': 'v',
+                'נ': 'b',
+                'מ': 'n',
+                'צ': 'm',
+                'ת': ',',
+                ' ': ' ',
+                '.': '.',
+                ',': '<',
+                'ץ': '>'
+            };
             //get user input
             userInput = document.getElementById('hebrewToEnglish').value;
             //split the string into an array of characters
             userInputArray = userInput.split('');
             //we're including spaces, so we don't need to filter them out
             //if there's nothing to convert, return error
-            if(userInputArray.length === 0){
+            if (userInputArray.length === 0) {
                 document.getElementById('hebrewToEnglishOutput').innerHTML = 'Error: Please enter a string';
                 //add error class
                 document.getElementById('hebrewToEnglishOutput').classList.add('error');
                 return;
             }
             //if there's a non-hebrew character, return error
-            if(userInputArray.some(function(item){
-                return hebrewToEnglishDict[item] === undefined;
-            })){
+            if (userInputArray.some(function (item) {
+                    return hebrewToEnglishDict[item] === undefined;
+                })) {
                 document.getElementById('hebrewToEnglishOutput').innerHTML = 'Error: Please only use Hebrew characters';
                 //add error class
                 document.getElementById('hebrewToEnglishOutput').classList.add('error');
@@ -619,40 +913,76 @@ backdrop-filter: blur(30px);
             for (var i = 0; i < userInputArray.length; i++) {
                 userInputArray[i] = hebrewToEnglishDict[userInputArray[i]];
             }
-           //return the english string using a live typing effect, add one letter at a time
+            //return the english string using a live typing effect, add one letter at a time
             var output = '';
-            var interval = setInterval(function(){
+            var interval = setInterval(function () {
                 output += userInputArray[0];
                 userInputArray.shift();
                 document.getElementById('hebrewToEnglishOutput').innerHTML = output;
-                if(userInputArray.length === 0){
+                if (userInputArray.length === 0) {
                     clearInterval(interval);
                 }
             }, 40);
         }
         //this software takes a english string and returns a hebrew string from that key on a qwerty keyboard
-        function englishToHebrew(){
+        function englishToHebrew() {
             //create all variables for user input etc
             var userInput, userInputArray, englishToHebrewDict;
             //create a dictionary for the english charachters and their Hebrew values, "qwertyuiop[]asdfghjkl;zxcvbnm,./" will become "/׳קראטוןםפ][ֿשדגכעיחלךף,זסבהנמצתץ."
-            englishToHebrewDict = {'q': '/', 'w': '׳', 'e': 'ק', 'r': 'ר', 't': 'א', 'y': 'ט', 'u': 'ו', 'i': 'ן', 'o': 'ם', 'p': 'פ', 'a': 'ש', 's': 'ד', 'd': 'ג', 'f': 'כ', 'g': 'ע', 'h': 'י', 'j': 'ח', 'k': 'ל', 'l': 'ך', ';': 'ף', 'z': 'ז', 'x': 'ס', 'c': 'ב', 'v': 'ה', 'b': 'נ', 'n': 'מ', 'm': 'צ', ',': 'ת', '.': ' ', '<': ',', ' ': ' ', '>': '.', ',': '<', '.': '>'};
+            englishToHebrewDict = {
+                'q': '/',
+                'w': '׳',
+                'e': 'ק',
+                'r': 'ר',
+                't': 'א',
+                'y': 'ט',
+                'u': 'ו',
+                'i': 'ן',
+                'o': 'ם',
+                'p': 'פ',
+                'a': 'ש',
+                's': 'ד',
+                'd': 'ג',
+                'f': 'כ',
+                'g': 'ע',
+                'h': 'י',
+                'j': 'ח',
+                'k': 'ל',
+                'l': 'ך',
+                ';': 'ף',
+                'z': 'ז',
+                'x': 'ס',
+                'c': 'ב',
+                'v': 'ה',
+                'b': 'נ',
+                'n': 'מ',
+                'm': 'צ',
+                ',': 'ת',
+                '.': ' ',
+                '<': ',',
+                ' ': ' ',
+                '>': '.',
+                ',': '<',
+                '.': '>'
+            };
             //get user input
             userInput = document.getElementById('englishToHebrew').value;
             //split the string into an array of characters
             userInputArray = userInput.split('');
             //we're including spaces, so we don't need to filter them out
             //if there's nothing to convert, return error
-            if(userInputArray.length === 0){
+            if (userInputArray.length === 0) {
                 document.getElementById('englishToHebrewOutput').innerHTML = 'Error: Please enter a string';
                 //add error class
                 document.getElementById('englishToHebrewOutput').classList.add('error');
                 return;
             }
             //if there's a non-english character, return error
-            if(userInputArray.some(function(item){
-                return englishToHebrewDict[item] === undefined;
-            })){
-                document.getElementById('englishToHebrewOutput').innerHTML = 'Error: Please only use English characters';
+            if (userInputArray.some(function (item) {
+                    return englishToHebrewDict[item] === undefined;
+                })) {
+                document.getElementById('englishToHebrewOutput').innerHTML =
+                'Error: Please only use English characters';
                 //add error class
                 document.getElementById('englishToHebrewOutput').classList.add('error');
                 return;
@@ -665,30 +995,30 @@ backdrop-filter: blur(30px);
             }
             //return the hebrew string using a live typing effect, add one letter at a time
             var output = '';
-            var interval = setInterval(function(){
+            var interval = setInterval(function () {
                 output += userInputArray[0];
                 userInputArray.shift();
                 document.getElementById('englishToHebrewOutput').innerHTML = output;
-                if(userInputArray.length === 0){
+                if (userInputArray.length === 0) {
                     clearInterval(interval);
                 }
             }, 40);
         }
-         //this software takes a hebrew string and removes all punctuation (niqqud). it does this by running a regex replace
-         function removeNiqqud(){
+        //this software takes a hebrew string and removes all punctuation (niqqud). it does this by running a regex replace
+        function removeNiqqud() {
             //create all variables for user input etc
             var userInput, userInputArray, removeNiqqudDict;
             //get user input
             userInput = document.getElementById('removeNiqqud').value;
             //if there's nothing to convert, return error
-            if(userInput === ''){
+            if (userInput === '') {
                 document.getElementById('removeNiqqudOutput').innerHTML = 'Error: Please enter a string';
                 //add error class
                 document.getElementById('removeNiqqudOutput').classList.add('error');
                 return;
             }
             //if the are absolutely no hebrew characters, return error
-            if(userInput.match(/[\u0590-\u05FF]/g) === null){
+            if (userInput.match(/[\u0590-\u05FF]/g) === null) {
                 document.getElementById('removeNiqqudOutput').innerHTML = 'Error: Please only use Hebrew characters';
                 //add error class
                 document.getElementById('removeNiqqudOutput').classList.add('error');
@@ -700,29 +1030,29 @@ backdrop-filter: blur(30px);
             userInputArray = userInput.split('');
             //replace all chachters in the ranges of U+059x through U+05Cx, 0 through F hex
             for (var i = 0; i < userInputArray.length; i++) {
-                if(userInputArray[i].match(/[\u0590-\u05C0]/g)){
+                if (userInputArray[i].match(/[\u0590-\u05C0]/g)) {
                     userInputArray[i] = userInputArray[i].replace(/[\u0591-\u05C7]/g, '');
                 }
             }
-                //return the hebrew string using a live typing effect, add one letter at a time
+            //return the hebrew string using a live typing effect, add one letter at a time
             var output = '';
-            var interval = setInterval(function(){
+            var interval = setInterval(function () {
                 output += userInputArray[0];
                 userInputArray.shift();
                 document.getElementById('removeNiqqudOutput').innerHTML = output;
-                if(userInputArray.length === 0){
+                if (userInputArray.length === 0) {
                     clearInterval(interval);
                 }
             }, 40);
         }
         //this software takes any string and reverses it
-        function reverseText(){
+        function reverseText() {
             //create all variables for user input etc
             var userInput, userInputArray, reverseTextDict;
             //get user input
             userInput = document.getElementById('reverseText').value;
             //if there's nothing to convert, return error
-            if(userInput === ''){
+            if (userInput === '') {
                 document.getElementById('reverseTextOutput').innerHTML = 'Error: Please enter a string';
                 //add error class
                 document.getElementById('reverseTextOutput').classList.add('error');
@@ -736,48 +1066,48 @@ backdrop-filter: blur(30px);
             userInputArray.reverse();
             //return the reversed string using a live typing effect, start with the last letter
             var output = '';
-            var interval = setInterval(function(){
+            var interval = setInterval(function () {
                 output += userInputArray[0];
                 userInputArray.shift();
                 document.getElementById('reverseTextOutput').innerHTML = output;
-                if(userInputArray.length === 0){
+                if (userInputArray.length === 0) {
                     clearInterval(interval);
                 }
             }, 40);
         }
         // add a single event listener that works across all input fields, if user presses enter, run the function. we can do this because we know that the input fields have the same names as the functions
-        document.getElementById('sumHebrew').addEventListener('keyup', function(event) {
+        document.getElementById('sumHebrew').addEventListener('keyup', function (event) {
             event.preventDefault();
             if (event.keyCode === 13) {
                 sumHebrew();
             }
         });
-        document.getElementById('hebrewToEnglish').addEventListener('keyup', function(event) {
+        document.getElementById('hebrewToEnglish').addEventListener('keyup', function (event) {
             event.preventDefault();
             if (event.keyCode === 13) {
                 hebrewToEnglish();
             }
         });
-        document.getElementById('englishToHebrew').addEventListener('keyup', function(event) {
+        document.getElementById('englishToHebrew').addEventListener('keyup', function (event) {
             event.preventDefault();
             if (event.keyCode === 13) {
                 englishToHebrew();
             }
         });
-        document.getElementById('removeNiqqud').addEventListener('keyup', function(event) {
+        document.getElementById('removeNiqqud').addEventListener('keyup', function (event) {
             event.preventDefault();
             if (event.keyCode === 13) {
                 removeNiqqud();
             }
         });
-        document.getElementById('reverseText').addEventListener('keyup', function(event) {
+        document.getElementById('reverseText').addEventListener('keyup', function (event) {
             event.preventDefault();
             if (event.keyCode === 13) {
                 reverseText();
             }
         });
         //clear all input, replace output with non-breaking space
-        function clearAll(){
+        function clearAll() {
             document.getElementById('sumHebrew').value = '';
             document.getElementById('sumHebrewOutput').innerHTML = '&nbsp;';
             document.getElementById('hebrewToEnglish').value = '';
@@ -799,34 +1129,32 @@ backdrop-filter: blur(30px);
         //use above syntax to check if the user prefers dark mode, if so, add .darkbody class to body - and right when they change back to light mode, remove the class
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
             const newColorScheme = e.matches ? "dark" : "light";
-            if(newColorScheme === 'dark'){
+            if (newColorScheme === 'dark') {
                 document.body.classList.add('darkbody');
                 //change icon to <i class="fa-solid fa-lightbulb-on">
                 document.getElementById('darkmode').innerHTML = '<i class="fa-solid fa-lightbulb-on"></i>';
-            }
-            else{
+            } else {
                 document.body.classList.remove('darkbody');
                 //change icon to <i class="fa-solid fa-moon">
                 document.getElementById('darkmode').innerHTML = '<i class="fa-solid fa-moon"></i>';
             }
         });
-        document.getElementById('darkmode').addEventListener('click', function(){
+        document.getElementById('darkmode').addEventListener('click', function () {
             document.body.classList.toggle('darkbody');
             //change moon and lightbulb-on icon based on whether the class is present or not
-            if(document.body.classList.contains('darkbody')){
+            if (document.body.classList.contains('darkbody')) {
                 document.getElementById('darkmode').innerHTML = '<i class="fa-solid fa-lightbulb-on"></i>';
-            }
-            else{
+            } else {
                 document.getElementById('darkmode').innerHTML = '<i class="fa-solid fa-moon"></i>';
             }
         });
         //there's a minor issue, that when the page first loads and the user is in dark mode, it's still set to light so we need to check prefers-color-scheme: dark, if it's dark, add the .darkbody class to the body
-        if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.body.classList.add('darkbody');
             //change icon to <i class="fa-solid fa-lightbulb-on">
             document.getElementById('darkmode').innerHTML = '<i class="fa-solid fa-lightbulb-on"></i>';
         }
-    
     </script>
 </body>
+
 </html>
