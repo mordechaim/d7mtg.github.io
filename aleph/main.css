@@ -6,6 +6,73 @@ body{
 i{
 padding-right: 5px;
 }
+
+#modal{
+        width: 400px;
+     height: fit-content;
+     background: #fff;
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     margin: auto;
+     padding-right: 15px;
+     padding-left: 15px;
+     
+     border-radius: 15px;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.187);
+     display: none;
+     z-index: 10;
+     text-align: center;
+}
+
+#modal h1{
+     font-size: 30px;
+     font-weight: 600;
+     margin-bottom: 15px;
+     padding-bottom:  15px;
+     border-bottom: 1px solid #E5E5E5;
+}
+#modal p{
+     width: 70%;
+     margin: 0 auto;
+     padding-bottom:  15px;
+}
+/* checkbox label */
+#modal label{  
+     font-size: 14px;
+     font-weight: 900;
+     color: #262626;
+     margin-bottom: 10px;
+}
+
+#modal a{
+     display: block;
+     width: 100%;
+     padding-top: 10px;
+     padding-bottom: 10px;
+     margin-bottom: 15px;
+     background: #2A2929;
+     color: #fff;
+     text-decoration: none;
+     border-radius: 5px;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.187);
+     margin-top: 15px;
+     font-size: 20px;
+     font-weight: 300;
+     text-align: center;
+     cursor: pointer;
+     transition: all 0.3s ease;
+}
+#modal #v2buttoncancel {
+     background: #8c8c8c;
+     color: #ffffff;
+}
+#modal a:hover, #modal #v2buttoncancel:hover{
+    transform: scale(1.05);
+}
+
 .fa-plus{
 	color:#3F6BE8;
 }
@@ -24,7 +91,7 @@ color: #DD4551;
 .fa-code{
 	color: #E09B2B;
 }
-h1{
+h3{
      padding-top: 50px;
      padding-bottom: 25px;
      margin-left: 12.5%;
