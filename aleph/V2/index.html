@@ -225,7 +225,7 @@
             /*make it look nice*/
             border-radius: 5px;
             border: none;
-            background: transparent;
+            background: #feefb3;
             border: 1px solid #f4cd2a;
             color: black;
             font-size: 14px;
@@ -436,7 +436,8 @@
         }
 
         .darkbody .container button {
-            background: transparent;
+            background: #342a04;
+
             color: #F4CD2A;
         }
 
@@ -449,7 +450,42 @@
             background: #f4b42a;
             color: #2d2d2e;
         }
+        .darkbody #modal{
+            background: #2d2d2e;
+            
+        }
+        .darkbody #modalheader{
+            color: white;
+            border-color: rgba(255, 255, 255, 0.1);
 
+        }
+        .darkbody #modalbody{
+            color: rgb(220, 220, 220);
+        }
+        .darkbody #modalbutton{
+            background: #342a04;
+            border: 1px solid #F4CD2A;
+            color: #F4CD2A;
+        }
+        .darkbody #modalbutton:hover{
+            background: #F4CD2A;
+            color: #2d2d2e;
+        }
+
+        .darkbody #modalbutton:active{
+            background: #f4b42a;
+            color: #2d2d2e;
+        }
+        .darkbody #modalfooter{
+            color: white;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        .darkbody #modalfooter a{
+            color: white;
+        }
+        .darkbody #modalfooter a:hover{
+            color: #eeb109;
+        }
         .darkbody h2 {
             color: #c9c9c9;
         }
@@ -497,7 +533,7 @@
 
         .darkbody .container .error {
             color: rgb(250, 116, 116);
-            background: rgba(247, 182, 182, 0.192);
+            background: rgba(62, 5, 5, 0.192);
         }
 
         .darkbody #darkmode {
@@ -508,6 +544,7 @@
         #darkmode {
             cursor: pointer;
         }
+
 
         /*mobile menu*/
         @media screen and (max-width: 1200px) {
@@ -595,6 +632,7 @@
             We built these tools for ourselves, but we couldn't resist releasing them to&nbsp;the&nbsp;public.
             <br>
             <button id="modalbutton"><i class="fal fa-thumbs-up"></i>&nbsp;Continue to site</button>
+            <!-- <a id="modallink" href=""><i class="fal fa-thumbs-up"></i>&nbsp;Continue to site</a> -->
         </p>
         <p id="modalfooter">
             Aleph V2.1 • D7mtg • <a href="https://github.com/d7mtg/d7mtg.github.io/tree/main/aleph/V2"><i class="fab fa-github"></i>Open Source</a>
