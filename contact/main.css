@@ -363,6 +363,11 @@ br{
         padding-left: 12px;
         margin-right: auto;
     }
+
+    .macos{
+        box-shadow: none;
+        transform: scale(1.25);
+    }
     .app:hover .appicon {
         transform: scale(1.1);
         box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
