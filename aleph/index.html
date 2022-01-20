@@ -38,19 +38,28 @@
 <body>
   <div class="header">
   </div>
-	<div><h1 id='hOne'><i class="fal fa-globe-europe"></i>&nbsp;English - Hebrew</h1></div>
+  <div id="modal">
+    <h1>Heads up!</h1>
+    <p>Alphh V1 is no longer being updated and will lose support in the near future. <br> Please visit the new and improved Aleph V2</p>
+    <!-- checkbox never show again -->
+    <input type="checkbox" id="checkbox">
+    <label for="checkbox">Don't show this again</label>
+    <a id="v2button" href="V2">Go to Aleph V2</a>
+    <a id="v2buttoncancel" href="javascript:closeModal()">Stay on V1</a>
+  </div>
+	<div><h3 id='hOne'><i class="fal fa-globe-europe"></i>&nbsp;English - Hebrew</h3></div>
   <p id="input" class='input' contenteditable="true" dir="rtl" onkeyup="replace()"></p>
   <p id="output" dir="rtl"  class='tooltip btn output'  data-clipboard-target="#output" data-tippy-content="Click here to copy to clipboard">קליק דא צו קאפירן צום קליפבאורד</p>
 	<h2 class='thinline'>&nbsp;</h2>
-	<div><h1 id='toen'><i class="fal fa-globe-americas"></i>&nbsp;Hebrew - English</h1></div>
+	<div><h3 id='toen'><i class="fal fa-globe-americas"></i>&nbsp;Hebrew - English</h3></div>
   <p id="inputE" class='input' contenteditable="true" dir="rtl" onkeyup="replaceE()"></p>
   <p id="outputE" dir="rtl"  class='tooltip btn output'  data-clipboard-target="#outputE" data-tippy-content="Click here to copy to clipboard">קליק דא צו קאפירן צום קליפבאורד</p>
 	<h2 class='thinline'>&nbsp;</h2>
-<div><h1 id='remove'><i class="fal fa-remove-format"></i>&nbsp;Remove Niqqud</h1></div>
+<div><h3 id='remove'><i class="fal fa-remove-format"></i>&nbsp;Remove Niqqud</h3></div>
   <p id="inputN" class='input' contenteditable="true" dir="rtl" onkeyup="replaceN()"></p>
   <p id="outputN" dir="rtl"  class='tooltip btn output'  data-clipboard-target="#outputN" data-tippy-content="Click here to copy to clipboard">קליק דא צו קאפירן צום קליפבאורד</p>
 	<h2 class='thinline'>&nbsp;</h2>
-<div><h1 id='reverse'><i class="fal fa-exchange-alt"></i>&nbsp;Reverse text</h1></div>
+<div><h3 id='reverse'><i class="fal fa-exchange-alt"></i>&nbsp;Reverse text</h3></div>
   <p id="inputR" class='input' contenteditable="true" dir="rtl" onkeyup="replaceR()"></p>
   <p id="outputR" dir="rtl"  class='tooltip btn output'  data-clipboard-target="#outputR" data-tippy-content="Click here to copy to clipboard">קליק דא צו קאפירן צום קליפבאורד</p>
 		<h2 class='thinline'>&nbsp;</h2>
@@ -64,6 +73,33 @@
     <p id="credits">Built with JS by <a href="http://d7m.tg" id="link">d7m.tg</a></p>
   </div>
 <script type="text/javascript">
+    //check if the user has clicked on never show again
+      if (document.getElementById('checkbox').checked) {
+        localStorage.setItem('dontShow', 'true');
+      
+    }
+
+    //if user has not clicked on never show again, show the modal on page load
+    if (localStorage.getItem('dontShow') !== 'true') {
+      showModal();
+    }
+
+   //show the modal
+    function showModal() {
+      document.getElementById('modal').style.display = "block";
+    }
+
+    //hide the modal
+    function closeModal() {
+      document.getElementById('modal').style.display = "none";
+    }
+
+   
+
+
+
+
+
   var input = document.getElementById('input'), output = document.getElementById('output'), x, c;
   copyText = document.getElementById('output');
   //put cursor  into the input field
