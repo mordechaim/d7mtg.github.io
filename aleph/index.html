@@ -40,7 +40,7 @@
   </div>
   <div id="modal">
     <h1>Heads up!</h1>
-    <p>Alphh V1 is no longer being updated and will lose support in the near future. <br> Please visit the new and improved Aleph V2</p>
+    <p>Aleph V1 is no longer being updated and will lose support in the near future. <br> Please visit the new and improved Aleph V2</p>
     <!-- checkbox never show again -->
     <input type="checkbox" id="checkbox">
     <label for="checkbox">Don't show this again</label>
@@ -74,10 +74,15 @@
   </div>
 <script type="text/javascript">
     //check if the user has clicked on never show again
-      if (document.getElementById('checkbox').checked) {
+    //event listener
+    document.getElementById("checkbox").addEventListener("click", function(){
+      //if the checkbox is checked
+      if(this.checked){
+        //set the cookie
         localStorage.setItem('dontShow', 'true');
-      
-    }
+      }
+    });
+
 
     //if user has not clicked on never show again, show the modal on page load
     if (localStorage.getItem('dontShow') !== 'true') {
