@@ -47,7 +47,16 @@ h1 {
 }
 a {
     text-decoration: none;
+    color: inherit;
 }
+
+footer a{
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #f4cd2a;
+  }
 /*let's make each app in a row, tops 4 on a row*/
 .app {
     display: inline-block;
