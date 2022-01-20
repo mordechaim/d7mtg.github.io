@@ -368,12 +368,14 @@ br{
         box-shadow: none;
         transform: scale(1.25);
     }
+
+
     .app:hover .appicon {
-        transform: scale(1.1);
+        transform: scale(1.2);
         box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
     }
     .app:hover .macos {
-        transform: scale(1.05);
+        transform: scale(1.29);
         box-shadow: none;
     }
 }
