@@ -73,7 +73,7 @@ footer a:hover {
     border-radius: 23%;
     /*drop very soft shadow*/
     box-shadow: 0 5px 28px 0 rgba(0, 0, 0, .1);
-    transition: all 0.1s ease-in-out;
+    transition: all .25s ease-in-out;
     margin-right: 12px;
     margin-left: 12px;
 }
@@ -204,7 +204,7 @@ footer a:hover {
     margin-right: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.25s ease-in-out;
 }
 #settingsCloseLabel:hover {
     background-color: rgba(0, 0, 0, 0.1);
@@ -256,7 +256,7 @@ footer a:hover {
     border-radius: 10px;
     cursor: pointer;
     border: 1px solid #d3d3d300;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.25s ease-in-out;
 }
 .OSchangeimg, .Modechangeimg {
     height: 50px;
@@ -338,7 +338,7 @@ br{
         border-radius: 23%;
         /*drop very soft shadow*/
         box-shadow: 0 5px 28px 0 rgba(0, 0, 0, .1);
-        transition: all 0.1s ease-in-out;
+        transition: all 0.25s ease-in-out;
         margin-right: 6px;
         margin-left: 6px;
     }

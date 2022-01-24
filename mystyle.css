@@ -10,7 +10,7 @@ body {
   background-image: url('photos/background.png');
   font-family: SF Display, sans-serif;
   font-weight: 400;
-  transition: .3s;
+  transition: .25s;
 }
 .imageDIV {
   width: 300px;
@@ -39,10 +39,9 @@ body {
   background-color: rgba(127, 127, 127, 0.05);
   border-radius: 15px;
   margin-bottom: 30px;
-  transition: 0.3s;
+  transition: .25s;
   border: 1px solid rgba(127, 127, 127, 0.1);
   margin-right: 25px;
-  transition: 0.3s;
   display: inline-block;
 }
 .portfolioDIV:hover {
@@ -78,8 +77,8 @@ body {
   max-height: 100px;
   height: auto;
   width: auto;
-  transition: 0.3s;
-  position: absolute;
+  transition: .25s;
+    position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -135,7 +134,7 @@ html {
 }
 #alephproject {
   display: none;
-  transition: 2s;
+  transition: .25s;
   opacity: 0;
 }
 .button,
@@ -281,7 +280,7 @@ p:not(.tag):not(.tag2) {
   padding: 1rem 1rem;
   border-radius: 5px;
   margin-right: 5px;
-  transition: 0.13s;
+  transition: .25s;
 }
 #buttonOne {
   margin-left: auto;
@@ -300,7 +299,7 @@ p:not(.tag):not(.tag2) {
   display: inline-block;
   border: none;
   margin-right: 100px;
-  transition: 0.2s;
+  transition: .25s;
 }
 .graybutton {
   border: 2px solid #ccc;

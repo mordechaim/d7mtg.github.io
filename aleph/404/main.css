@@ -14,7 +14,7 @@ body{
      margin-right: auto;
      outline: none;
      border-bottom: 2px solid #ccc;
-     transition: all .1s linear;
+     transition: all .25s ease;
 }
  #input:focus {
      border-bottom: 2px solid black;
@@ -33,7 +33,7 @@ body{
      margin-bottom: 25px;
      cursor:pointer;
      outline: none;
-     transition: all .1s linear;
+     transition: all .25s ease;
      word-wrap: break-word;
      background: #f9f9f9;
      border: 1px solid #eee;
@@ -52,7 +52,7 @@ body{
      color: black;
      padding: 10px 15px;
      cursor: pointer;
-     transition: all .1s linear;
+     transition: all .25s ease;
 }
  #button:hover {
      background-color: #ddd;
@@ -82,7 +82,7 @@ body{
      text-decoration: none;
      color: white;
      line-height: 50px;
-     transition: all .2s linear;
+     transition: all .25s ease;
      outline: none;
      border: none;
      font-size: 1em;
