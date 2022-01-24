@@ -87,6 +87,22 @@
             /* Non-prefixed version, currently
                                             supported by Chrome, Edge, Opera and Firefox */
         }
+        /* footer{
+            font-size: 0.5em;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            margin-right: 10%;
+            margin-left: 10%;
+            color: rgba(0, 0, 0, 0.5);
+        }
+        footer a{
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        footer a:hover{
+            color: rgba(0, 0, 0, 1);
+        } */
 
         i {
             margin-right: 5px;
@@ -587,6 +603,23 @@
             cursor: pointer;
         }
 
+        .darkbody footer{
+            font-size: 0.5em;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            margin-right: 10%;
+            margin-left: 10%;
+            color: #c9c9c9;
+        }
+        .darkbody footer a{
+            color:  #F4CD2A;
+        }
+
+        .darkbody footer a:hover{
+            color: #eeb109;
+        }
+
 
         /*mobile menu*/
         @media screen and (max-width: 1200px) {
@@ -676,7 +709,7 @@
         <p id="modalbody">
             This is a new version of Aleph that is designed to be more user friendly and easy&nbsp;to&nbsp;use.
             <br><br>
-            We built these tools to help you with basic test tasks, like reversing the order of Hebrew words, removing niqqud,&nbsp;and&nbsp;more.
+            We built these tools to help you with basic text tasks, like reversing the order of Hebrew words, removing niqqud,&nbsp;and&nbsp;more.
             <br>
             <!-- <button id="modalbutton"><i class="fal fa-thumbs-up"></i>&nbsp;Continue to site</button> -->
             <!-- <a id="modallink" href=""><i class="fal fa-thumbs-up"></i>&nbsp;Continue to site</a> -->
@@ -823,7 +856,28 @@
                     class="fa-light fa-arrow-rotate-left"></i>Clear All</button>
         </div>
     </div>
-    
+    <!-- <footer>
+        <p>
+            Aleph Tools V2.1 is a set of free tools that can help with basic text tasks, created by <a href="https://d7m.tg">D7mtg</a>. If you've ever tried to type in English but the result was in Hebrew - or vice versa - you know how annoying it can be. Instead of שלום you see "akuo". Instead of Hello you're getting יקךךם. This is because the keyboard layout was in a wrong language, and you didn't use alt-shift on Windows, or caps-lock on macOS. With Aleph Tools V2, you can paste text in and it will automatically change the Latin text to the Hebrew text, or the other way around. Other tools include the Reverse Hebrew Text, which solves the common problem of Hebrew text appearing backwards on a Latin keyboard, and the Gematria Calculator, which calculates the numerical value of Hebrew letters. Aleph V2 is open source. Please report all bugs by creating an issue on GitHub at <a href="https://github.com/d7mtg/d7mtg.github.io/tree/main/aleph/V2">https://github.com/d7mtg/d7mtg.github.io/tree/main/aleph/V2</a>.
+       
+       
+<br>
+<br>
+<span dir="rtl">
+אלף הוא תוכנה חופשית המאפשרת לך לעשות פעולות בסיסיות בכתב, עשוי ע״י ד7מטג. אם אתה מקליד באנגלית אבל התוצאה היא בעברית - או להיפך - אתה יודע כמה זה מעצבן. 
+
+במקום "שלום" אתה רואה "akuo", ובמקום "Hello" אתה רואה "יקךךם". זה מקרה כי המקלדת היא בשפה לא נכונה, ואתה לא השתמש באלף-שיפוט במערכת הWindows, או בקופסה הלטינית במערכת הmacOS.
+
+ עם אלף אתה יכול להדביק את הכתוב והוא יעבור מאותיות בעברית לאנגלית, או מאותיות באנגלית לעברית, והוא גם יכול לעשות גמטריה של אותיות בעברית. אלף הוא פתוח לגישה חופשית. בכל מקרה נא צור ביקורת בדף הביקורות של GitHub בע״נ <a href="https://github.com/d7mtg/d7mtg.github.io/tree/main/aleph/V2">https://github.com/d7mtg/d7mtg.github.io/tree/main/aleph/V2</a>.
+</span>
+<span dir="rtl">
+
+
+</span>
+
+
+</p>
+    </footer> -->
     <script>
         document.getElementById("modal").style.display = "none";
             document.getElementById("modal-bg").style.display = "none";
@@ -1142,7 +1196,8 @@
             //remove error class
             document.getElementById('reverseTextOutput').classList.remove('error');
             //array all the characters in the string
-            userInputArray = userInput.split('');
+            userInputArray = userInput.match(/.[\u0590-\u05C7]*/g);
+
             //reverse the array
             userInputArray.reverse();
             //return the reversed string using a live typing effect, start with the last letter
