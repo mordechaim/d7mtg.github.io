@@ -1049,6 +1049,8 @@ body{
             };
             //get user input
             userInput = document.getElementById('englishToHebrew').value;
+            //convert to lowercase
+            userInput = userInput.toLowerCase();            
             //split the string into an array of characters
             userInputArray = userInput.split('');
             //we're including spaces, so we don't need to filter them out
