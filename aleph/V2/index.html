@@ -772,6 +772,7 @@
                 Accepts: Hebrew <br>
                 Output: English
             </span>
+             
         </p>
         <div class="form">
             <label for="hebrewToEnglish">Add hebrew words:</label>
@@ -861,7 +862,7 @@
             //create all variables for user input etc
             var userInput, userInputArray, hebrewDict;
             var equation = [];
-            //create a dictionary for the hebrew charachters and their numerical values
+            //create a dictionary for the hebrew characters and their numerical values
             hebrewDict = {
                 'א': 1,
                 'ב': 2,
@@ -893,7 +894,7 @@
             };
             //get the user input
             userInput = document.getElementById('sumHebrew').value;
-            //we need to split the string into an array of charachters
+            //we need to split the string into an array of characters
             userInputArray = userInput.split('');
             //account for spaces, basically don't count them
             userInputArray = userInputArray.filter(function (item) {
@@ -910,7 +911,7 @@
             if (userInputArray.some(function (item) {
                     return hebrewDict[item] === undefined;
                 })) {
-                document.getElementById('sumHebrewOutput').innerHTML = 'Error: Please only use Hebrew charachters';
+                document.getElementById('sumHebrewOutput').innerHTML = 'Error: Please only use Hebrew characters';
                 //add error class
                 document.getElementById('sumHebrewOutput').classList.add('error');
                 return;
@@ -934,7 +935,7 @@
         function hebrewToEnglish() {
             //create all variables for user input etc
             var userInput, userInputArray, hebrewToEnglishDict;
-            //create a dictionary for the hebrew charachters and their English values, "/׳קראטוןםפ][ֿשדגכעיחלךף,זסבהנמצתץ." will become "qwertyuiop[]asdfghjkl;zxcvbnm,./"
+            //create a dictionary for the hebrew characters and their English values, "/׳קראטוןםפ][ֿשדגכעיחלךף,זסבהנמצתץ." will become "qwertyuiop[]asdfghjkl;zxcvbnm,./"
             hebrewToEnglishDict = {
                 '/': 'q',
                 '׳': 'w',
@@ -1011,7 +1012,7 @@
         function englishToHebrew() {
             //create all variables for user input etc
             var userInput, userInputArray, englishToHebrewDict;
-            //create a dictionary for the english charachters and their Hebrew values, "qwertyuiop[]asdfghjkl;zxcvbnm,./" will become "/׳קראטוןםפ][ֿשדגכעיחלךף,זסבהנמצתץ."
+            //create a dictionary for the english characters and their Hebrew values, "qwertyuiop[]asdfghjkl;zxcvbnm,./" will become "/׳קראטוןםפ][ֿשדגכעיחלךף,זסבהנמצתץ."
             englishToHebrewDict = {
                 'q': '/',
                 'w': '׳',
