@@ -15,11 +15,27 @@
     <!--og:-->
     <meta property="og:title" content="Aleph Tools | D7mtg">
     <meta property="og:description"
-        content="Aleph Tools is a collection of tools for designers, typographers, and developers, created by D7mtg.">
+        content="Aleph Tools is a collection of tools to reverse Hebrew text, remove niqqud and more; for designers, typographers, and developers, created by D7mtg.">
     <meta property="og:image" content="og.png">
     <meta property="og:url" content="https://d7m.tg/aleph/v2">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Aleph Tools">
+    <meta property="og:locale" content="en_US">
+    <!--twitter:-->
+    <meta name="twitter:card" content="og.png">
+    <meta name="twitter:site" content="@d7mtg">
+    <meta name="twitter:creator" content="@d7mtg">
+    <meta name="twitter:title" content="Aleph Tools | D7mtg">
+    <meta name="twitter:description"
+        content="Aleph Tools is a collection of tools to reverse Hebrew text, remove niqqud and more; for designers, typographers, and developers, created by D7mtg.">
+    <meta name="twitter:image" content="og.png">
+    <meta name="twitter:url" content="https://d7m.tg/aleph/v2">
+    <meta name="twitter:domain" content="d7m.tg">
+    <!-- instagram:-->
+    <meta name="instagram:title" content="Aleph Tools | D7mtg">
+
+
+
     <!-- mobile friendly-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <!--get  monospaced google font-->
@@ -46,7 +62,6 @@
             background-attachment: fixed;
             animation: gradientBG 5s ease infinite;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-            ;
             margin: 0;
             padding: 0;
             /*disallow side scroll*/
@@ -313,20 +328,20 @@
         /* smooth scroll on all links, compatible with all browsers */
         a {
             scroll-behavior: smooth;
-            /*safari doesn't support this property, so let's polyfill it*/
             -webkit-scroll-behavior: smooth;
+            
+
         }
         
 
         #modal {
             position: fixed;
             z-index: 1;
-            width: 400px;
+            width: 360px;
             background: rgba(255, 255, 255, .9);
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            text-align: center;
             padding: 10px;
             border-radius: 15px;
             backdrop-filter: blur(20px);
@@ -336,15 +351,38 @@
         }
        
         #modalheader {
-            font-size: 1.5em;
+            width: 90%;
             font-weight: bold;
             color: rgb(0, 0, 0);
             margin-bottom: 10px;
+            margin-left: 10px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            padding-bottom: 10px;
-            line-height: 1.5em;
-            margin-block-start: 0em;
+            line-height: 1em;
+            margin-right: 25px;
+    margin-left: 25px;
+        }
 
+        
+       
+        #modalheadertitle{
+            font-size: 1.4em;
+        
+        }
+        /* x button, right */
+
+        #modalheaderclose{
+            cursor: pointer;
+            position: absolute;
+            right: calc(7%);
+            top: 20px;
+            font-size: 1em;
+            opacity: 0.5;
+            
+
+        }
+
+        #modalheaderclose:hover{
+            opacity: 1;
         }
 
         #modalbody {
@@ -623,16 +661,17 @@
     <div id="modal-bg">
     </div>
     <div id="modal">
-        <p id="modalheader">
-            Welcome to the new Aleph!
-        </p>
+        <div id="modalheader">
+            <p id="modalheadertitle">Welcome to the new Aleph!</p> 
+            <p id="modalheaderclose">&times;</p>
+        </div>
 
         <p id="modalbody">
-            This is a new version of the Aleph that is designed to be more user friendly and easy&nbsp;to&nbsp;use.
+            This is a new version of Aleph that is designed to be more user friendly and easy&nbsp;to&nbsp;use.
             <br><br>
-            We built these tools for ourselves, but we couldn't resist releasing them to&nbsp;the&nbsp;public.
+            We built these tools to help you with basic test tasks, like reversing the order of Hebrew words, removing niqqud,&nbsp;and&nbsp;more.
             <br>
-            <button id="modalbutton"><i class="fal fa-thumbs-up"></i>&nbsp;Continue to site</button>
+            <!-- <button id="modalbutton"><i class="fal fa-thumbs-up"></i>&nbsp;Continue to site</button> -->
             <!-- <a id="modallink" href=""><i class="fal fa-thumbs-up"></i>&nbsp;Continue to site</a> -->
         </p>
         <p id="modalfooter">
@@ -788,7 +827,7 @@
         document.getElementById("modal").style.display = "none";
             document.getElementById("modal-bg").style.display = "none";
         //start by chekcing if hide modal button, #modalbutton is clicked
-        document.getElementById("modalbutton").addEventListener("click", function () {
+        document.getElementById("modalheaderclose").addEventListener("click", function () {
             //set cookie to hide modal
             localStorage.setItem("hideModal", "true");
             document.getElementById("modal").style.display = "none";
