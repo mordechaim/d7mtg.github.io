@@ -1116,7 +1116,7 @@
             userInputArray = userInput.split('');
             //replace all chachters in the ranges of U+059x through U+05Cx, 0 through F hex
             for (var i = 0; i < userInputArray.length; i++) {
-                if (userInputArray[i].match(/[\u0590-\u05C0]/g)) {
+                if (userInputArray[i].match(/[\u0590-\u05C7]/g)) {
                     userInputArray[i] = userInputArray[i].replace(/[\u0591-\u05C7]/g, '');
                 }
             }
