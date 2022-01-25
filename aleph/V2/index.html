@@ -43,683 +43,793 @@
     <script src="https://kit.fontawesome.com/7b42fedff3.js" crossorigin="anonymous"></script>
     <<script type="text/javascript">
         (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "9yg6bsle5u");
-    </script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2D8Q5R25WZ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-2D8Q5R25WZ');
-    </script>
-    <style>
-        body {
-            background: linear-gradient(to bottom, #f5f5f5 0%, #f8eec0 100%), linear-gradient(to bottom, #f5f5f5 0%, #fae49e 100%);
-            background-position: 0 0, 50px 50px;
-            background-size: 100% 100%, 100% 100%;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-             animation: gradientBG 5s ease infinite;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-            margin: 0;
-            padding: 0;
-            /*disallow side scroll*/
-            overflow-x: hidden;
-            /*snap*/
-            overflow-y: scroll;
-            scroll-snap-type: y mandatory;
-        }
-
-
-        .header {
-            -webkit-touch-callout: none;
-            /* iOS Safari */ 
-            -webkit-user-select: none;
-            /* Safari */
-            -khtml-user-select: none;
-            /* Konqueror HTML */
-            -moz-user-select: none;
-            /* Old versions of Firefox */
-            -ms-user-select: none;
-            /* Internet Explorer/Edge */
-            user-select: none;
-            /* Non-prefixed version, currently
-                                            supported by Chrome, Edge, Opera and Firefox */
-        }
-        footer{
-            font-size: 0.5em;
-            text-align: center;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            margin-right: 10%;
-            margin-left: 10%;
-            color: rgba(0, 0, 0, 0.5);
-        }
-        footer a{
-            color: rgba(0, 0, 0, 0.5);
-        }
-
-        footer a:hover{
-            color: rgba(0, 0, 0, 1);
-        }
-
-        i {
-            margin-right: 5px;
-        }
-
-        .header {
-            margin-top: 0;
-            background: linear-gradient(to bottom, #F4CD2A, #ffbf0f);
-            color: rgb(0, 0, 0);
-            /*freeze the header at the top of the page*/
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1;
-        }
-
-        h1 {
-            font-size: 2em;
-            margin-left: 20px;
-            display: inline;
-            height: 50px;
-            width: min-content;
-        }
-
-        .header p {
-            margin-left: 20px;
-            display: inline;
-            height: 70px;
-            width: min-content;
-            font-size: 1em;
-            margin-top: 20px;
-        }
-
-        .header svg {
-            margin-right: 10px;
-            /*change viewbox to make the icon smaller*/
-            width: 50px;
-        }
-
-        /*remove link styling from svg*/
-        .header a {
-            text-decoration: none;
-        }
-
-        h2 {
-            font-size: 3em;
-            margin-block-end: 0em;
-        }
-
-        /*make the menu look nice*/
-        .menu {
-            margin-top: 0;
-            margin-bottom: 0.5em;
-            color: rgb(0, 0, 0);
-            line-height: 50px;
-            text-align: right;
-            display: inline;
-        }
-
-        .menu a {
-            color: rgb(0, 0, 0);
-            text-decoration: none;
-        }
-
-        .menu a:hover {
-            color: rgb(0, 0, 0);
-            text-decoration: underline;
-        }
-
-        .menu ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: inline;
-            float: right;
-        }
-
-        .menu li {
-            display: inline-block;
-            /* add some nice space between the links */
-            margin: 0 1em;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 600px;
-            width: 90%;
-            margin: 0px auto;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 30px;
-            background: rgba(255, 255, 255, 0.5);
-            scroll-snap-align: start;
-            scroll-margin-top: 120px;
-        }
-
-        /*select first container and move it down a bit, because the sticky menu overlays it*/
-        #revereseText {
-            margin-top: 120px;
-        }
-
-        .description {
-            font-size: 0.8em;
-            text-align: center;
-            padding-left: 10px;
-            padding-right: 10px;
-            margin-top: 50px;
-            margin-bottom: 50px;
-            width: 350px;
-
-        }
-
-        *::selection {
-            background: #F4CD2A;
-            color: #000;
-        }
-
-        .description .code {
-            font-family: monospace;
-            font-size: 1.2em;
-            color: rgb(0, 0, 0);
-            line-height: 1.5em;
-            display: block;
-            margin-top: 10px;
-        }
-
-        .description a {
-            color: rgb(0, 0, 0);
-            display: inline-block;
-            padding: 10px;
-            background-color: rgb(255, 255, 255);
-            border: 1px solid rgb(164, 164, 164);
-            text-decoration: none;
-            border-radius: 5px;
-            width: max-content;
-            margin-top: 10px;
-            margin-bottom: 0px;
-            transition: all .25s ease;
-
-        }
-
-        .description a:hover {
-            background-color: rgb(237, 237, 237);
-        }
-
-        .container button {
-            width: auto;
-            /*make it look nice*/
-            border-radius: 5px;
-            border: none;
-            background: #feefb3;
-            border: 1px solid #f4cd2a;
-            color: black;
-            font-size: 14px;
-            cursor: pointer;
-            padding: 10px;
-            /*get it on a new line, center it*/
-            display: block;
-            margin: 0 auto;
-            /*some space on top of it*/
-            margin-top: 40px;
-            transition: all .25s ease;
-
-        }
-
-        /*hover effect, transition and darker*/
-        .container button:hover {
-            background: #f4cd2a;
-        }
-
-        .container button:active {
-            background: #eeb109;
-        }
-
-        .container input {
-            height: 30px;
-            /*make it look nice*/
-            border-radius: 5px;
-            border: none;
-            background-color: #fafafa;
-            color: #333;
-            font-size: 14px;
-            padding: 5px;
-            /*get it on a new line, center it*/
-            display: block;
-            margin: 0;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            transition: all .25s ease;
-            /*width*/
-            width: 100%;
-            /*center the text*/
-            text-align: center;
-        }
-
-        .container input:focus {
-            outline: none;
-            border: 1px solid rgba(0, 0, 0, 0.3);
-        }
-
-        .container label {
-            display: none;
-        }
-
-        .container .output {
-            font-family: 'Miriam Libre', sans-serif;
-            /*make it look nice*/
-            border-radius: 5px;
-            border: none;
-            color: #333;
-            font-size: 14px;
-            /*get it on a new line, center it*/
-            width: 500px;
-            display: block;
-            margin: 0 auto;
-            border: 1px solid transparent;
-            transition: all .25s ease;
-            padding: 5px;
-            /*center the text*/
-            text-align: center;
-            margin-top: 20px;
-            cursor: pointer;
-        }
-
-        .container .error {
-            color: red;
-            background: rgb(255, 0, 0, 0.1);
-        }
-
-        #clearAllDiv {
-            height: 100px;
-        }
-
-        #clearAllDiv button {
-            margin-top: 0px;
-        }
-
-        /* smooth scroll on all links, compatible with all browsers */
-        a {
-            scroll-behavior: smooth;
-            -webkit-scroll-behavior: smooth;
-            
-
-        }
-        
-
-        #modal {
-            position: fixed;
-            z-index: 1;
-            width: 360px;
-            background: rgba(255, 255, 255, .9);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 10px;
-            border-radius: 15px;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            -webkit-box-shadow: 0px 0px 50px 9px rgba(0,0,0,0.2); 
-            box-shadow: 0px 0px 50px 9px rgba(0,0,0,0.2);
-        }
-       
-        #modalheader {
-            width: 90%;
-            font-weight: bold;
-            color: rgb(0, 0, 0);
-            margin-bottom: 10px;
-            margin-left: 10px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            line-height: 1em;
-            margin-right: 25px;
-    margin-left: 25px;
-        }
-
-        
-       
-        #modalheadertitle{
-            font-size: 1.4em;
-        
-        }
-        /* x button, right */
-
-        #modalheaderclose{
-            cursor: pointer;
-            position: absolute;
-            right: calc(7%);
-            top: 20px;
-            font-size: 1em;
-            opacity: 0.5;
-            
-
-        }
-
-        #modalheaderclose:hover{
-            opacity: 1;
-        }
-
-        #modalbody {
-            font-size: 0.9em;
-            color: rgb(0, 0, 0);
-            margin-block-start: 0em;
-            margin-block-end: 0em;
-            margin-top: 40px;
-            margin-bottom: 40px;
-            width: 90%;
-            margin-left: auto;
-            margin-right: auto;
-
-        }
-        #modalbutton{
-           padding: 10px;
-            background-color: #F4CD2A;
-            border: 1px solid #F4CD2A;
-            border-radius: 5px;
-            margin-top: 30px;
-            font-size: 1.2em;
-            transition: all .25s ease;
-            cursor: pointer;
-            color: black;
-
-
-        }
-        #modalbutton:hover{
-            border: 1px solid #745605;
-
-
-        }
-
-        #modalbutton:focus, #modalbutton:active {
-            background-color: #eeb109;
-        }
-        #modalfooter {
-            font-size: 0.6em;
-            color: rgb(0, 0, 0);
-            padding-top: 20px;
-            margin-bottom: 10px;
-            margin-right: 25px;
-            margin-left: 25px;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        #modalfooter a{
-            color: rgb(0, 0, 0);
-            
-        }
-        #modalfooter a:hover{
-            color: #eeb109;
-            
-        }
-        /* dark page when modal is open */
-        #modal-bg{
-            position: fixed;
-            z-index: 0;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: rgba(0, 0, 0, 0.3);
-        }
-        .darkbody {
-            background: #000000;
-        }
-
-        .darkbody .container {
-            background: #2d2d2e;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .darkbody .header {
-            color: white;
-            -webkit-backdrop-filter: blur(2em);
-            backdrop-filter: blur(2em);
-            background: #444446ad;
-        }
-
-        .darkbody .header svg {
-            fill: white;
-        }
-
-        .darkbody .header a {
-            color: white;
-        }
-
-        .darkbody .header a:hover {
-            color: white;
-        }
-
-        .darkbody .container button {
-            background: #342a04;
-
-            color: #F4CD2A;
-        }
-
-        .darkbody .container button:hover {
-            background: #F4CD2A;
-            color: #2d2d2e;
-        }
-
-        .darkbody .container button:active {
-            background: #f4b42a;
-            color: #2d2d2e;
-        }
-        .darkbody #modal{
-            background: #2d2d2e;
-            
-        }
-        .darkbody #modalheader{
-            color: white;
-            border-color: rgba(255, 255, 255, 0.1);
-
-        }
-        .darkbody #modalbody{
-            color: rgb(220, 220, 220);
-        }
-        .darkbody #modalbutton{
-            background: #342a04;
-            border: 1px solid #F4CD2A;
-            color: #F4CD2A;
-        }
-        .darkbody #modalbutton:hover{
-            background: #F4CD2A;
-            color: #2d2d2e;
-        }
-
-        .darkbody #modalbutton:active{
-            background: #f4b42a;
-            color: #2d2d2e;
-        }
-        .darkbody #modalfooter{
-            color: white;
-            border-color: rgba(255, 255, 255, 0.1);
-        }
-        .darkbody #modalfooter a{
-            color: white;
-        }
-        .darkbody #modalfooter a:hover{
-            color: #eeb109;
-        }
-        .darkbody h2 {
-            color: #c9c9c9;
-        }
-
-        .darkbody .description {
-            color: #c9c9c9;
-        }
-
-        .darkbody .description .code {
-            color: #c9c9c9;
-        }
-
-        .darkbody .container input {
-            border: 1px solid #c9c9c9;
-        }
-
-        .darkbody .container input {
-            background-color: #cfcfcf;
-            color: #000000;
-        }
-
-        .darkbody .container input:focus {
-            background-color: #ffffff;
-            border: 1px solid #adadad;
-            outline: none;
-        }
-
-        /*placeholder text*/
-        .darkbody .container input::-webkit-input-placeholder {
-            color: #00000077;
-        }
-
-        .darkbody .container input::-moz-placeholder {
-            color: #00000077;
-        }
-
-        .darkbody .container input:-ms-input-placeholder {
-            color: #00000077;
-        }
-
-        /*output text*/
-        .darkbody .container .output {
-            color: #ffffff;
-        }
-
-        .darkbody .container .error {
-            color: rgb(250, 116, 116);
-            background: rgba(62, 5, 5, 0.192);
-        }
-
-        .darkbody #darkmode {
-            color: #F4CD2A;
-            cursor: pointer;
-        }
-
-        #darkmode {
-            cursor: pointer;
-        }
-
-        .darkbody footer{
-            font-size: 0.5em;
-            text-align: center;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            margin-right: 10%;
-            margin-left: 10%;
-            color: #c9c9c9;
-        }
-        .darkbody footer a{
-            color:  #F4CD2A;
-        }
-
-        .darkbody footer a:hover{
-            color: #eeb109;
-        }
-
-
-        /*mobile menu*/
-        @media screen and (max-width: 1200px) {
-            .menu {
-                width: 100%;
-                text-align: center;
-                margin-bottom: 0;
+        </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2D8Q5R25WZ"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
             }
-                body{
+            gtag('js', new Date());
 
-                scroll-snap-type: none;
+            gtag('config', 'G-2D8Q5R25WZ');
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
 
-                }
-            .menu ul {
-                display: none;
-            }
-
-            .menu li {
-                display: inline;
+        <style>
+            body {
+                background: linear-gradient(to bottom, #f5f5f5 0%, #f8eec0 100%), linear-gradient(to bottom, #f5f5f5 0%, #fae49e 100%);
+                background-position: 0 0, 50px 50px;
+                background-size: 100% 100%, 100% 100%;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                animation: gradientBG 5s ease infinite;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
                 margin: 0;
+                padding: 0;
+                /*disallow side scroll*/
+                overflow-x: hidden;
+                /*snap*/
+                overflow-y: scroll;
+                scroll-snap-type: y mandatory;
             }
 
-            h1 {
+            #copied {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: -webkit-fit-content;
+                width: -moz-fit-content;
+                z-index: 9999;
+                padding: 10px;
+                border-radius: 5px;
                 text-align: center;
-                margin-left: 0;
-                margin-right: 0;
-                display: block;
-                height: 50px;
-                width: 100%;
-                margin-top: 10;
-                margin-bottom: 0;
+                /* fade in */
+                /* fade out after a few seconds*/
+
+                /* center horizontally */
+                left: 50%;
+                transform: translate(-50%, 0);
+                background: #00000058;
+                backdrop-filter: blur(25px);
+                color: #fff;
+
+            }
+
+            .copiedactive {
+                animation: slideUpFadeIn 2s ease-in-out forwards;
+
+            }
+
+            @keyframes slideUpFadeIn {
+                0% {
+                    transform: translate(-50%, 50px);
+                    opacity: 0;
+                }
+
+                30% {
+                    transform: translate(-50%, 0);
+                    opacity: 1;
+                }
+
+                85% {
+                    transform: translate(-50%, 0);
+                    opacity: 1;
+                }
+
+                90% {
+                    transform: translate(-50%, 0);
+                    opacity: .8;
+                }
+
+                100% {
+                    transform: translate(-50%, -50px);
+                    opacity: 0;
+                }
+            }
+
+            .inactive {
+                transform: translate(-50%, -50px);
+                opacity: 0;
+
+            }
+
+
+
+            .header {
+                -webkit-touch-callout: none;
+                /* iOS Safari */
+                -webkit-user-select: none;
+                /* Safari */
+                -khtml-user-select: none;
+                /* Konqueror HTML */
+                -moz-user-select: none;
+                /* Old versions of Firefox */
+                -ms-user-select: none;
+                /* Internet Explorer/Edge */
+                user-select: none;
+                /* Non-prefixed version, currently
+                                            supported by Chrome, Edge, Opera and Firefox */
+            }
+
+            footer {
+                font-size: 0.5em;
+                text-align: center;
+                margin-top: 10px;
+                margin-bottom: 20px;
+                margin-right: 10%;
+                margin-left: 10%;
+                color: rgba(0, 0, 0, 0.5);
+            }
+
+            footer a {
+                color: rgba(0, 0, 0, 0.5);
+            }
+
+            footer a:hover {
+                color: rgba(0, 0, 0, 1);
+            }
+
+            i {
+                margin-right: 5px;
             }
 
             .header {
-                display: block;
-                margin-left: 0;
-                margin-right: 0;
                 margin-top: 0;
+                background: linear-gradient(to bottom, #F4CD2A, #ffbf0f);
+                color: rgb(0, 0, 0);
+                /*freeze the header at the top of the page*/
+                position: fixed;
+                top: 0;
+                left: 0;
                 width: 100%;
-                margin-bottom: 0;
+                z-index: 1;
+            }
+
+            h1 {
+                font-size: 2em;
+                margin-left: 20px;
+                display: inline;
+                height: 50px;
+                width: min-content;
             }
 
             .header p {
-                /*center the p and the svg*/
-                display: block;
-                margin: 0 auto;
-                margin-top: 5px;
-                margin-bottom: 0;
-                width: 100%;
-                text-align: center;
-                height: 50px;
+                margin-left: 20px;
+                display: inline;
+                height: 70px;
+                width: min-content;
+                font-size: 1em;
+                margin-top: 20px;
             }
 
-            #revereseText {
-                margin-top: 135px;
+            .header svg {
+                margin-right: 10px;
+                /*change viewbox to make the icon smaller*/
+                width: 50px;
             }
 
-            .container input {
-                /*make it fit for mobile*/
-                max-width: 300px;
-                /*center it*/
-                margin: auto;
+            /*remove link styling from svg*/
+            .header a {
+                text-decoration: none;
             }
 
             h2 {
-                text-align: center;
-                margin-left: 0;
+                font-size: 3em;
+                margin-block-end: 0em;
+            }
+
+            /*make the menu look nice*/
+            .menu {
+                margin-top: 0;
+                margin-bottom: 0.5em;
+                color: rgb(0, 0, 0);
+                line-height: 50px;
+                text-align: right;
+                display: inline;
+            }
+
+            .menu a {
+                color: rgb(0, 0, 0);
+                text-decoration: none;
+            }
+
+            .menu a:hover {
+                color: rgb(0, 0, 0);
+                text-decoration: underline;
+            }
+
+            .menu ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: inline;
+                float: right;
+            }
+
+            .menu li {
+                display: inline-block;
+                /* add some nice space between the links */
+                margin: 0 1em;
             }
 
             .container {
-                /*make it fit for mobile*/
-                max-width: 85%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 600px;
+                width: 90%;
+                margin: 0px auto;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 30px;
+                background: rgba(255, 255, 255, 0.5);
+                scroll-snap-align: start;
+                scroll-margin-top: 120px;
             }
-        }
-    </style>
+
+            /*select first container and move it down a bit, because the sticky menu overlays it*/
+            #revereseText {
+                margin-top: 120px;
+            }
+
+            .description {
+                font-size: 0.8em;
+                text-align: center;
+                padding-left: 10px;
+                padding-right: 10px;
+                margin-top: 50px;
+                margin-bottom: 50px;
+                width: 350px;
+
+            }
+
+            *::selection {
+                background: #F4CD2A;
+                color: #000;
+            }
+
+            .description .code {
+                font-family: monospace;
+                font-size: 1.2em;
+                color: rgb(0, 0, 0);
+                line-height: 1.5em;
+                display: block;
+                margin-top: 10px;
+            }
+
+            .description a {
+                color: rgb(0, 0, 0);
+                display: inline-block;
+                padding: 10px;
+                background-color: rgb(255, 255, 255);
+                border: 1px solid rgb(164, 164, 164);
+                text-decoration: none;
+                border-radius: 5px;
+                width: max-content;
+                margin-top: 10px;
+                margin-bottom: 0px;
+                transition: all .25s ease;
+
+            }
+
+            .description a:hover {
+                background-color: rgb(237, 237, 237);
+            }
+
+            .container button {
+                width: auto;
+                /*make it look nice*/
+                border-radius: 5px;
+                border: none;
+                background: #feefb3;
+                border: 1px solid #f4cd2a;
+                color: black;
+                font-size: 14px;
+                cursor: pointer;
+                padding: 10px;
+                /*get it on a new line, center it*/
+                display: block;
+                margin: 0 auto;
+                /*some space on top of it*/
+                margin-top: 40px;
+                transition: all .25s ease;
+
+            }
+
+            /*hover effect, transition and darker*/
+            .container button:hover {
+                background: #f4cd2a;
+            }
+
+            .container button:active {
+                background: #eeb109;
+            }
+
+            .container input {
+                height: 30px;
+                /*make it look nice*/
+                border-radius: 5px;
+                border: none;
+                background-color: #fafafa;
+                color: #333;
+                font-size: 14px;
+                padding: 5px;
+                /*get it on a new line, center it*/
+                display: block;
+                margin: 0;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                transition: all .25s ease;
+                /*width*/
+                width: 80vw;
+                margin: 0 auto;
+
+                /*center the text*/
+                text-align: center;
+            }
+
+            .container input:focus {
+                outline: none;
+                border: 1px solid rgba(0, 0, 0, 0.3);
+            }
+
+            .container label {
+                display: none;
+            }
+
+            .container .output {
+                font-family: 'Miriam Libre', sans-serif;
+                /*make it look nice*/
+                border-radius: 5px;
+                border: none;
+                color: #333;
+                font-size: 14px;
+                /*get it on a new line, center it*/
+                width: 90%;
+                display: block;
+                margin: 0 auto;
+                border: 1px solid transparent;
+                transition: all .25s ease;
+                padding: 5px;
+                /*center the text*/
+                text-align: center;
+                margin-top: 20px;
+                cursor: pointer;
+            }
+
+            #removeNiqqudOutput {
+                /* rtl */
+                direction: rtl;
+                text-align: right;
+            }
+
+            .container .error {
+                text-align: center !important;
+                color: red;
+                background: rgb(255, 0, 0, 0.1);
+            }
+
+            #clearAllDiv {
+                height: 100px;
+            }
+
+            #clearAllDiv button {
+                margin-top: 0px;
+            }
+
+            /* smooth scroll on all links, compatible with all browsers */
+            a {
+                scroll-behavior: smooth;
+                -webkit-scroll-behavior: smooth;
+
+
+            }
+
+
+            #modal {
+                position: fixed;
+                z-index: 1;
+                width: 360px;
+                background: rgba(255, 255, 255, .9);
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding: 10px;
+                border-radius: 15px;
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                -webkit-box-shadow: 0px 0px 50px 9px rgba(0, 0, 0, 0.2);
+                box-shadow: 0px 0px 50px 9px rgba(0, 0, 0, 0.2);
+            }
+
+            #modalheader {
+                width: 90%;
+                font-weight: bold;
+                color: rgb(0, 0, 0);
+                margin-bottom: 10px;
+                margin-left: 10px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                line-height: 1em;
+                margin-right: 25px;
+                margin-left: 25px;
+            }
+
+
+
+            #modalheadertitle {
+                font-size: 1.4em;
+
+            }
+
+            /* x button, right */
+
+            #modalheaderclose {
+                cursor: pointer;
+                position: absolute;
+                right: calc(7%);
+                top: 20px;
+                font-size: 1em;
+                opacity: 0.5;
+
+
+            }
+
+            #modalheaderclose:hover {
+                opacity: 1;
+            }
+
+            #modalbody {
+                font-size: 0.9em;
+                color: rgb(0, 0, 0);
+                margin-block-start: 0em;
+                margin-block-end: 0em;
+                margin-top: 40px;
+                margin-bottom: 40px;
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+
+            }
+
+            #modalbutton {
+                padding: 10px;
+                background-color: #F4CD2A;
+                border: 1px solid #F4CD2A;
+                border-radius: 5px;
+                margin-top: 30px;
+                font-size: 1.2em;
+                transition: all .25s ease;
+                cursor: pointer;
+                color: black;
+
+
+            }
+
+            #modalbutton:hover {
+                border: 1px solid #745605;
+
+
+            }
+
+            #modalbutton:focus,
+            #modalbutton:active {
+                background-color: #eeb109;
+            }
+
+            #modalfooter {
+                font-size: 0.6em;
+                color: rgb(0, 0, 0);
+                padding-top: 20px;
+                margin-bottom: 10px;
+                margin-right: 25px;
+                margin-left: 25px;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            #modalfooter a {
+                color: rgb(0, 0, 0);
+
+            }
+
+            #modalfooter a:hover {
+                color: #eeb109;
+
+            }
+
+            /* dark page when modal is open */
+            #modal-bg {
+                position: fixed;
+                z-index: 0;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: rgba(0, 0, 0, 0.3);
+            }
+
+            .darkbody {
+                background: #000000;
+            }
+
+            .darkbody .container {
+                background: #2d2d2e;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            .darkbody .header {
+                color: white;
+                -webkit-backdrop-filter: blur(2em);
+                backdrop-filter: blur(2em);
+                background: #444446ad;
+            }
+
+            .darkbody .header svg {
+                fill: white;
+            }
+
+            .darkbody .header a {
+                color: white;
+            }
+
+            .darkbody .header a:hover {
+                color: white;
+            }
+
+            .darkbody .container button {
+                background: #342a04;
+
+                color: #F4CD2A;
+            }
+
+            .darkbody .container button:hover {
+                background: #F4CD2A;
+                color: #2d2d2e;
+            }
+
+            .darkbody .container button:active {
+                background: #f4b42a;
+                color: #2d2d2e;
+            }
+
+            .darkbody #modal {
+                background: #2d2d2e;
+
+            }
+
+            .darkbody #modalheader {
+                color: white;
+                border-color: rgba(255, 255, 255, 0.1);
+
+            }
+
+            .darkbody #modalbody {
+                color: rgb(220, 220, 220);
+            }
+
+            .darkbody #modalbutton {
+                background: #342a04;
+                border: 1px solid #F4CD2A;
+                color: #F4CD2A;
+            }
+
+            .darkbody #modalbutton:hover {
+                background: #F4CD2A;
+                color: #2d2d2e;
+            }
+
+            .darkbody #modalbutton:active {
+                background: #f4b42a;
+                color: #2d2d2e;
+            }
+
+            .darkbody #modalfooter {
+                color: white;
+                border-color: rgba(255, 255, 255, 0.1);
+            }
+
+            .darkbody #modalfooter a {
+                color: white;
+            }
+
+            .darkbody #modalfooter a:hover {
+                color: #eeb109;
+            }
+
+            .darkbody h2 {
+                color: #c9c9c9;
+            }
+
+            .darkbody #copied {
+
+                background: #F4CD2A;
+                color: #2d2d2e;
+
+            }
+
+            .darkbody .description {
+                color: #c9c9c9;
+            }
+
+            .darkbody .description .code {
+                color: #c9c9c9;
+            }
+
+            .darkbody .container input {
+                border: 1px solid #c9c9c9;
+            }
+
+            .darkbody .container input {
+                background-color: #cfcfcf;
+                color: #000000;
+            }
+
+            .darkbody .container input:focus {
+                background-color: #ffffff;
+                border: 1px solid #adadad;
+                outline: none;
+            }
+
+            /*placeholder text*/
+            .darkbody .container input::-webkit-input-placeholder {
+                color: #00000077;
+            }
+
+            .darkbody .container input::-moz-placeholder {
+                color: #00000077;
+            }
+
+            .darkbody .container input:-ms-input-placeholder {
+                color: #00000077;
+            }
+
+            /*output text*/
+            .darkbody .container .output {
+                color: #ffffff;
+            }
+
+            .darkbody .container .error {
+                color: rgb(250, 116, 116);
+                background: rgba(62, 5, 5, 0.192);
+            }
+
+            .darkbody #darkmode {
+                color: #F4CD2A;
+                cursor: pointer;
+            }
+
+            #darkmode {
+                cursor: pointer;
+            }
+
+            .darkbody footer {
+                font-size: 0.5em;
+                text-align: center;
+                margin-top: 10px;
+                margin-bottom: 20px;
+                margin-right: 10%;
+                margin-left: 10%;
+                color: #c9c9c9;
+            }
+
+            .darkbody footer a {
+                color: #F4CD2A;
+            }
+
+            .darkbody footer a:hover {
+                color: #eeb109;
+            }
+
+
+            /*mobile menu*/
+            @media screen and (max-width: 1200px) {
+                .menu {
+                    width: 100%;
+                    text-align: center;
+                    margin-bottom: 0;
+                }
+
+                body {
+
+                    scroll-snap-type: none;
+
+                }
+
+                .menu ul {
+                    display: none;
+                }
+
+                .menu li {
+                    display: inline;
+                    margin: 0;
+                }
+
+                h1 {
+                    text-align: center;
+                    margin-left: 0;
+                    margin-right: 0;
+                    display: block;
+                    height: 50px;
+                    width: 100%;
+                    margin-top: 10;
+                    margin-bottom: 0;
+                }
+
+                .header {
+                    display: block;
+                    margin-left: 0;
+                    margin-right: 0;
+                    margin-top: 0;
+                    width: 100%;
+                    margin-bottom: 0;
+                }
+
+                .header p {
+                    /*center the p and the svg*/
+                    display: block;
+                    margin: 0 auto;
+                    margin-top: 5px;
+                    margin-bottom: 0;
+                    width: 100%;
+                    text-align: center;
+                    height: 50px;
+                }
+
+                #revereseText {
+                    margin-top: 135px;
+                }
+
+                .container input {
+                    /*make it fit for mobile*/
+                    max-width: 300px;
+                    /*center it*/
+                    margin: auto;
+                }
+
+                h2 {
+                    text-align: center;
+                    margin-left: 0;
+                }
+
+                .container {
+                    /*make it fit for mobile*/
+                    max-width: 85%;
+                }
+            }
+        </style>
 </head>
 
 <body class="">
+    <div>
+        <p id="copied" class="inactive">Copied to clipboard!</p>
+    </div>
     <div id="modal-bg">
     </div>
     <div id="modal">
         <div id="modalheader">
-            <p id="modalheadertitle">Welcome to the new Aleph!</p> 
+            <p id="modalheadertitle">Welcome to the new Aleph!</p>
             <p id="modalheaderclose">&times;</p>
         </div>
 
         <p id="modalbody">
             This is a new version of Aleph that is designed to be more user friendly and easy&nbsp;to&nbsp;use.
             <br><br>
-            We built these tools to help you with basic text tasks, like reversing the order of Hebrew words, removing niqqud,&nbsp;and&nbsp;more.
+            We built these tools to help you with basic text tasks, like reversing the order of Hebrew words, removing
+            niqqud,&nbsp;and&nbsp;more.
             <br>
             <!-- <button id="modalbutton"><i class="fal fa-thumbs-up"></i>&nbsp;Continue to site</button> -->
             <!-- <a id="modallink" href=""><i class="fal fa-thumbs-up"></i>&nbsp;Continue to site</a> -->
         </p>
         <p id="modalfooter">
-            Aleph V2.1 • D7mtg • <a href="https://github.com/d7mtg/d7mtg.github.io/tree/main/aleph/V2"><i class="fab fa-github"></i>Open Source</a>
+            Aleph V2.1 • D7mtg • <a href="https://github.com/d7mtg/d7mtg.github.io/tree/main/aleph/V2"><i
+                    class="fab fa-github"></i>Open Source</a>
 
         </p>
     </div>
@@ -763,7 +873,9 @@
     </div>
     <div class="container" id="revereseText">
         <h2>Reverse Hebrew Text</h2>
-        <p class="description">When working with Hebrew text, a common problem is that a text editor will treat the Hebrew as English text, reversing its direction from right-to-left to left-to-right. <br>This tool can help by mirroring the words, making the first letter the last, and the last the first.<br>
+        <p class="description">When working with Hebrew text, a common problem is that a text editor will treat the
+            Hebrew as English text, reversing its direction from right-to-left to left-to-right. <br>This tool can help
+            by mirroring the words, making the first letter the last, and the last the first.<br>
             <span class="code">
                 Accepts: Hebrew, English <br>
                 Output: Hebrew, English in inverted order
@@ -774,14 +886,17 @@
             <input type="text" id="reverseText" name="reverseText" placeholder="Paste or type">
             <button type="button" id="reverseTextBtn" onclick="reverseText()"><i
                     class="fa-light fa-paragraph-left"></i>Reverse Text</button>
-            <p class="output" id="reverseTextOutput">&nbsp;</p>
+            <p class="output" id="reverseTextOutput" data-clipboard-target="#reverseTextOutput">&nbsp;</p>
         </div>
     </div>
     <div class="container" id="removeNiqqudDiv">
         <h2>Remove Niqqud</h2>
-        <p class="description"> This tool removes the niqqud, or vowel markings, from Hebrew text. This can be useful for making text more legible, or for creating text that will be used in a context where the niqqud is not needed.
+        <p class="description"> This tool removes the niqqud, or vowel markings, from Hebrew text. This can be useful
+            for making text more legible, or for creating text that will be used in a context where the niqqud is not
+            needed.
             <br>
-            <a href="https://en.wikipedia.org/wiki/Niqqud" target="_blank"><i class="fab fa-wikipedia-w"></i>Niqqud on Wikipedia </a>
+            <a href="https://en.wikipedia.org/wiki/Niqqud" target="_blank"><i class="fab fa-wikipedia-w"></i>Niqqud on
+                Wikipedia </a>
             <a href="https://en.wikipedia.org/wiki/Ktiv_hasar_niqqud" target="_blank"><i
                     class="fab fa-wikipedia-w"></i>Ktiv hasar Niqqud on Wikipedia</a>
             <br>
@@ -795,29 +910,33 @@
             <input type="text" id="removeNiqqud" name="removeNiqqud" placeholder="Paste or type Hebrew">
             <button type="button" id="removeNiqqudBtn" onclick="removeNiqqud()"><i
                     class="fa-light fa-text-slash"></i>Remove Niqqud</button>
-            <p class="output" id="removeNiqqudOutput">&nbsp;</p>
+            <p class="output" id="removeNiqqudOutput" data-clipboard-target="#removeNiqqudOutput">&nbsp;</p>
         </div>
     </div>
     <div class="container" id="hebrewToEnglishDiv">
         <h2>Hebrew to English</h2>
-        <p class="description">If your keyboard was set to type in Hebrew, but you wanted to type in English, you can find yourself frustrated after typing a document and seeing gibberish on the screen. Just paste the text into this tool, and it will automatically translate the Hebrew keycodes into their English equivalents.<br>
+        <p class="description">If your keyboard was set to type in Hebrew, but you wanted to type in English, you can
+            find yourself frustrated after typing a document and seeing gibberish on the screen. Just paste the text
+            into this tool, and it will automatically translate the Hebrew keycodes into their English equivalents.<br>
             <span class="code">
                 Accepts: Hebrew <br>
                 Output: English
             </span>
-             
+
         </p>
         <div class="form">
             <label for="hebrewToEnglish">Paste or type Hebrew</label>
             <input type="text" id="hebrewToEnglish" name="hebrewToEnglish" placeholder="Paste or type Hebrew">
             <button type="button" id="hebrewToEnglishBtn" onclick="hebrewToEnglish()"><i
                     class="fa-light fa-book-font"></i>Get English</button>
-            <p class="output" id="hebrewToEnglishOutput">&nbsp;</p>
+            <p class="output" id="hebrewToEnglishOutput" data-clipboard-target="#hebrewToEnglishOutput">&nbsp;</p>
         </div>
     </div>
     <div class="container" id="englishToHebrewDiv">
         <h2>English to Hebrew</h2>
-        <p class="description">If you want to type in English, but see the text appear in Hebrew, this tool will translate the text back into Hebrew keycodes. This can be helpful if you want to type a document in Hebrew, but you forgot to change your keyboard settings.
+        <p class="description">If you want to type in English, but see the text appear in Hebrew, this tool will
+            translate the text back into Hebrew keycodes. This can be helpful if you want to type a document in Hebrew,
+            but you forgot to change your keyboard settings.
             <br>
             <span class="code">
                 Accepts: English <br>
@@ -829,14 +948,17 @@
             <input type="text" id="englishToHebrew" name="englishToHebrew" placeholder="Paste or type English">
             <button type="button" id="englishToHebrewBtn" onclick="englishToHebrew()"><i
                     class="fa-light fa-book-tanakh"></i>Get Hebrew</button>
-            <p class="output" id="englishToHebrewOutput">&nbsp;</p>
+            <p class="output" id="englishToHebrewOutput" data-clipboard-target="#englishToHebrewOutput">&nbsp;</p>
         </div>
     </div>
 
 
     <div class="container" id="sumHebrewDiv">
         <h2>Get Hebrew Sum</h2>
-        <p class="description">This is a calculator for the numeric value of Hebrew words or phrases, based on the traditional Jewish method of (Numerology), where each letter of the alphabet has a corresponding number value, essentially assigning a numerical value to a name, word or phrase according to an alphanumerical cipher; for example: the letter Aleph is 1, the letter Beth is 2, and so on.
+        <p class="description">This is a calculator for the numeric value of Hebrew words or phrases, based on the
+            traditional Jewish method of (Numerology), where each letter of the alphabet has a corresponding number
+            value, essentially assigning a numerical value to a name, word or phrase according to an alphanumerical
+            cipher; for example: the letter Aleph is 1, the letter Beth is 2, and so on.
             <br>
             <a href="https://en.wikipedia.org/wiki/Gematria" target="_blank"><i class="fab fa-wikipedia-w"></i>Gematria
                 on Wikipedia</a><br>
@@ -850,7 +972,7 @@
             <input type="text" id="sumHebrew" name="sumHebrew" placeholder="Paste or type Hebrew">
             <button type="button" id="sumHebrewBtn" onclick="sumHebrew()"><i
                     class="fa-light fa-calculator-simple"></i>Get Sum</button>
-            <p class="output" id="sumHebrewOutput">&nbsp;</p>
+            <p class="output" id="sumHebrewOutput" data-clipboard-target="#sumHebrewOutput">&nbsp;</p>
         </div>
     </div>
     <!-- clear all-->
@@ -862,29 +984,43 @@
     </div>
     <footer>
         <p>
-            Aleph Tools V2.1 is a set of free tools that can help with basic text tasks, created by <a href="https://d7m.tg">D7mtg</a>. If you've ever tried to type in English but the result was in Hebrew - or vice versa - you know how annoying it can be. Instead of שלום you see "akuo". Instead of Hello you're getting יקךךם. This is because the keyboard layout was in a wrong language, and you didn't use alt-shift on Windows, or caps-lock on macOS. With Aleph Tools V2, you can paste text in and it will automatically change the Latin text to the Hebrew text, or the other way around. Other tools include the Reverse Hebrew Text, which solves the common problem of Hebrew text appearing backwards, with flipped words, on a Latin keyboard, and the Gematria Calculator, which calculates the numerical value of Hebrew letters. Aleph V2 is open source. Please report all bugs by creating an issue on GitHub at <a href="https://github.com/d7mtg/d7mtg.github.io/tree/main/aleph/V2">https://github.com/d7mtg/d7mtg.github.io/tree/main/aleph/V2</a>.
-       
-       
-<br>
-<br>
-<span dir="rtl">
-אלף הוא תוכנה חופשית המאפשרת לך לעשות פעולות בסיסיות בכתב, עשוי ע״י ד7מטג. אם אתה מקליד באנגלית אבל התוצאה היא בעברית - או להיפך - אתה יודע כמה זה מעצבן. 
-
-במקום "שלום" אתה רואה "akuo", ובמקום "Hello" אתה רואה "יקךךם". זה מקרה כי המקלדת היא בשפה לא נכונה, ואתה לא השתמש באלף-שיפוט במערכת הWindows, או בקופסה הלטינית במערכת הmacOS.
-
- עם אלף אתה יכול להדביק את הכתוב והוא יעבור מאותיות בעברית לאנגלית, או מאותיות באנגלית לעברית, והוא גם יכול לעשות גמטריה של אותיות בעברית. אלף הוא פתוח לגישה חופשית. בכל מקרה נא צור ביקורת בדף הביקורות של GitHub בע״נ <a href="https://github.com/d7mtg/d7mtg.github.io/tree/main/aleph/V2">https://github.com/d7mtg/d7mtg.github.io/tree/main/aleph/V2</a>.
-</span>
-<span dir="rtl">
+            Aleph Tools V2.1 is a set of free tools that can help with basic text tasks, created by <a
+                href="https://d7m.tg">D7mtg</a>. If you've ever tried to type in English but the result was in Hebrew -
+            or vice versa - you know how annoying it can be. Instead of שלום you see "akuo". Instead of Hello you're
+            getting יקךךם. This is because the keyboard layout was in a wrong language, and you didn't use alt-shift on
+            Windows, or caps-lock on macOS. With Aleph Tools V2, you can paste text in and it will automatically change
+            the Latin text to the Hebrew text, or the other way around. Other tools include the Reverse Hebrew Text,
+            which solves the common problem of Hebrew text appearing backwards, with flipped words, on a Latin keyboard,
+            and the Gematria Calculator, which calculates the numerical value of Hebrew letters. Aleph V2 is open
+            source. Please report all bugs by creating an issue on GitHub at <a
+                href="https://github.com/d7mtg/d7mtg.github.io/tree/main/aleph/V2">https://github.com/d7mtg/d7mtg.github.io/tree/main/aleph/V2</a>.
 
 
-</span>
+            <br>
+            <br>
+            <span dir="rtl">
+                אלף הוא תוכנה חופשית המאפשרת לך לעשות פעולות בסיסיות בכתב, עשוי ע״י ד7מטג. אם אתה מקליד באנגלית אבל
+                התוצאה היא בעברית - או להיפך - אתה יודע כמה זה מעצבן.
+
+                במקום "שלום" אתה רואה "akuo", ובמקום "Hello" אתה רואה "יקךךם". זה מקרה כי המקלדת היא בשפה לא נכונה, ואתה
+                לא השתמש באלף-שיפוט במערכת הWindows, או בקופסה הלטינית במערכת הmacOS.
+
+                עם אלף אתה יכול להדביק את הכתוב והוא יעבור מאותיות בעברית לאנגלית, או מאותיות באנגלית לעברית, והוא גם
+                יכול לעשות גמטריה של אותיות בעברית. אלף הוא פתוח לגישה חופשית. בכל מקרה נא צור ביקורת בדף הביקורות של
+                GitHub בע״נ <a
+                    href="https://github.com/d7mtg/d7mtg.github.io/tree/main/aleph/V2">https://github.com/d7mtg/d7mtg.github.io/tree/main/aleph/V2</a>.
+            </span>
+            <span dir="rtl">
 
 
-</p>
+            </span>
+
+
+        </p>
     </footer>
     <script>
         document.getElementById("modal").style.display = "none";
-            document.getElementById("modal-bg").style.display = "none";
+        document.getElementById("modal-bg").style.display = "none";
         //start by chekcing if hide modal button, #modalbutton is clicked
         document.getElementById("modalheaderclose").addEventListener("click", function () {
             //set cookie to hide modal
@@ -898,11 +1034,13 @@
             document.getElementById("modal").style.display = "block";
             document.getElementById("modal-bg").style.display = "block";
         }
+
         function showModal() {
             //show modal
             document.getElementById("modal").style.display = "block";
             document.getElementById("modal-bg").style.display = "block";
         }
+
         function closeModal() {
             //close modal
             document.getElementById("modal").style.display = "none";
@@ -1059,7 +1197,7 @@
                 if (userInputArray.length === 0) {
                     clearInterval(interval);
                 }
-            }, 40);
+            }, 4);
         }
         //this software takes a english string and returns a hebrew string from that key on a qwerty keyboard
         function englishToHebrew() {
@@ -1105,7 +1243,7 @@
             //get user input
             userInput = document.getElementById('englishToHebrew').value;
             //convert to lowercase
-            userInput = userInput.toLowerCase();            
+            userInput = userInput.toLowerCase();
             //split the string into an array of characters
             userInputArray = userInput.split('');
             //we're including spaces, so we don't need to filter them out
@@ -1121,7 +1259,7 @@
                     return englishToHebrewDict[item] === undefined;
                 })) {
                 document.getElementById('englishToHebrewOutput').innerHTML =
-                'Error: Please only use English characters';
+                    'Error: Please only use English characters';
                 //add error class
                 document.getElementById('englishToHebrewOutput').classList.add('error');
                 return;
@@ -1141,7 +1279,7 @@
                 if (userInputArray.length === 0) {
                     clearInterval(interval);
                 }
-            }, 40);
+            }, 4);
         }
         //this software takes a hebrew string and removes all punctuation (niqqud). it does this by running a regex replace
         function removeNiqqud() {
@@ -1158,7 +1296,7 @@
             }
             //if the are absolutely no hebrew characters, return error
             if (userInput.match(/[\u0590-\u05FF]/g) === null) {
-                document.getElementById('removeNiqqudOutput').innerHTML = 'Error: Please only use Hebrew characters';
+                document.getElementById('removeNiqqudOutput').innerHTML = 'Error: Please use Hebrew characters';
                 //add error class
                 document.getElementById('removeNiqqudOutput').classList.add('error');
                 return;
@@ -1182,7 +1320,7 @@
                 if (userInputArray.length === 0) {
                     clearInterval(interval);
                 }
-            }, 40);
+            }, 4);
         }
         //this software takes any string and reverses it
         function reverseText() {
@@ -1213,7 +1351,7 @@
                 if (userInputArray.length === 0) {
                     clearInterval(interval);
                 }
-            }, 40);
+            }, 4);
         }
         // add a single event listener that works across all input fields, if user presses enter, run the function. we can do this because we know that the input fields have the same names as the functions
         document.getElementById('sumHebrew').addEventListener('keyup', function (event) {
@@ -1294,6 +1432,21 @@
             //change icon to <i class="fa-solid fa-lightbulb-on">
             document.getElementById('darkmode').innerHTML = '<i class="fa-solid fa-lightbulb-on"></i>';
         }
+
+
+        //let's copy to clipboard using clipboard.js - class name is "output"
+        var clipboard = new ClipboardJS('.output');
+        clipboard.on('success', function (e) {
+            //.copiedactive is added to the #copied element
+            document.getElementById('copied').classList.remove('inactive');
+            document.getElementById('copied').classList.add('copiedactive');
+            //add .inactive class after 3 seconds
+            setTimeout(function () {
+                document.getElementById('copied').classList.remove('copiedactive');
+                document.getElementById('copied').classList.add('inactive');
+            }, 3000);
+
+        });
     </script>
 </body>
 
