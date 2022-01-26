@@ -1423,7 +1423,7 @@
                 document.getElementById('darkmode').innerHTML = '<i class="fa-solid fa-moon"></i>';
             }
         });
-        //there's a minor issue, that when the page first loads and the user is in dark mode, it's still set to light so we need to check prefers-color-scheme: dark, if it's dark, add the .darkbody class to the body
+        //when the page first loads and the user is in dark mode, it's still set to light so we need to check prefers-color-scheme: dark, if it's dark, add the .darkbody class to the body
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.body.classList.add('darkbody');
             //change icon to <i class="fa-solid fa-lightbulb-on">
@@ -1431,7 +1431,7 @@
         }
 
 
-        //let's copy to clipboard using clipboard.js - class name is "output"
+        // copy to clipboard using clipboard.js - class name is "output"
         var clipboard = new ClipboardJS('.output:not(.error)');
         clipboard.on('success', function (e) {
             //.copiedactive is added to the #copied element
