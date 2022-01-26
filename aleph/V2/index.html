@@ -1432,7 +1432,7 @@
 
 
         //let's copy to clipboard using clipboard.js - class name is "output"
-        var clipboard = new ClipboardJS('.output');
+        var clipboard = new ClipboardJS('.output:not(.error)');
         clipboard.on('success', function (e) {
             //.copiedactive is added to the #copied element
             document.getElementById('copied').classList.remove('inactive');
