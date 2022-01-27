@@ -11,6 +11,7 @@ body {
   font-family: SF Display, sans-serif;
   font-weight: 400;
   transition: .25s;
+  font-display: swap;
 }
 .imageDIV {
   width: 300px;
