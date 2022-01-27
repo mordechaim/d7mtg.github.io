@@ -20,14 +20,14 @@ body {
 }
 .verticalthinline {
   width: 1px;
-  height: 150px;
+  height: 120px;
   display: block;
   border-right: 1px solid rgb(42, 41, 41);
   opacity: 1;
   margin: auto;
   margin-bottom: 50px;
   /* position: relative; */
-  margin-top: 45px;
+  margin-top: 75px;
 }
 .projectcard {
   padding-top: 75px;
