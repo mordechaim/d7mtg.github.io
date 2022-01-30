@@ -1,5 +1,6 @@
 var appicons = document.getElementsByClassName("appicon");
-function myFunction() {
+function showicons() {
+
     var useragent = navigator.userAgent;
     if (useragent.indexOf("iPhone") != -1 || useragent.indexOf("iPad") != -1 || useragent.indexOf("iPod") != -1) {
         ios();
@@ -16,14 +17,13 @@ function myFunction() {
         ios();
     }
     //wait until all icons are loaded before we show the .container
-    var interval = setInterval(function () {
-        if (document.readyState === 'complete') {
-            document.getElementsByClassName("container")[0].style.display = "block";
-            clearInterval(interval);
-        }
-    }, 10);
+    document.getElementsByClassName("container")[0].style.display = "block";
+
 }
-window.onload = myFunction;
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    showicons();
+});
 function macos() {
     document.getElementById("macos").classList.add("selectedOS");
     //all icons have the class appicon, so we can loop through them and change the path
