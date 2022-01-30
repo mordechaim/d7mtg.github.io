@@ -9,6 +9,7 @@ body {
     -webkit-user-select: none;
     min-height: 100vh;
 }
+
 #logo {
     padding-top: 50px;
     display: block;
@@ -17,6 +18,7 @@ body {
     width: 250px;
     max-width: 70%;
 }
+
 /*h1 large, nice, bold, centered*/
 h1 {
     display: none;
@@ -25,6 +27,7 @@ h1 {
     font-weight: 500;
     width: auto;
 }
+
 /*center container to page*/
 .container {
     margin: 0 auto;
@@ -34,6 +37,7 @@ h1 {
     max-width: 700px;
     display: none;
 }
+
 .firstthinline {
     margin-left: 15%;
     margin-right: 15%;
@@ -45,18 +49,20 @@ h1 {
     border-top: 1px dotted black;
     opacity: 0.3;
 }
+
 a {
     text-decoration: none;
     color: inherit;
 }
 
-footer a{
+footer a {
     text-decoration: underline;
 }
 
 footer a:hover {
     color: #f4cd2a;
-  }
+}
+
 /*let's make each app in a row, tops 4 on a row*/
 .app {
     display: inline-block;
@@ -66,6 +72,7 @@ footer a:hover {
     margin-bottom: 50px;
     cursor: pointer;
 }
+
 .appicon {
     height: 100px;
     width: auto;
@@ -77,6 +84,7 @@ footer a:hover {
     margin-right: 12px;
     margin-left: 12px;
 }
+
 .appname {
     font-size: 1em;
     text-align: center;
@@ -87,15 +95,17 @@ footer a:hover {
     margin-block-start: 0px;
     margin-top: 10px;
 }
+
 /*make app icon larger when hovering on .app*/
-.app:hover .appicon {
+/* .app:hover .appicon {
     transform: scale(1.1);
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
-}
+} */
 .app:active .appicon {
     /* darken icon */
     filter: brightness(0.6);
 }
+
 /*select icons with class macos*/
 .macos {
     box-shadow: none;
@@ -105,21 +115,108 @@ footer a:hover {
     margin-left: 5px;
     transform: scale(1.15);
 }
+
 .android {
     border-radius: 100% !important;
 }
+
 .windows {
     border-radius: 8px !important;
 }
-.app:hover .macos {
-    transform: scale(1.21);
+
+/* .app:hover .macos {
+    transform: scale(1);
     box-shadow: none;
-}
+} */
+
+
 /* ::selection {
     color: #2A2929;
     background: #f4cd2a;
 } */
-.settingswrapper{
+
+
+#divcalendar {
+    position: relative;
+}
+
+#month,
+#day {
+    /* position complete top of parent */
+    position: absolute;
+    z-index: 1;
+
+}
+
+.macos~#month {
+    /* absolute top, center */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.4em;
+    font-weight: 500;
+    line-height: 0em;
+    color: #ffffff;
+    /* uppercase */
+    text-transform: uppercase;
+
+
+}
+
+.macos~#day {
+
+
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0px;
+    font-size: 4.3em;
+    font-weight: 300;
+    line-height: 0em;
+    color: black;
+}
+
+.ios~#month {
+    /* absolute top, center */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2em;
+    font-weight: 500;
+    line-height: 0em;
+    color: #eb4e45;
+    /* uppercase */
+    text-transform: uppercase;
+
+
+}
+
+.ios~#day {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 25px;
+    font-size: 3.5em;
+    font-weight: 300;
+    line-height: 0em;
+    color: black;
+}
+
+.windows~#month,
+.windows~#day,
+.android~#month {
+    display: none;
+}
+
+.android~#day {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 70px;
+    font-size: 1.4em;
+    font-weight: 600;
+    line-height: 0em;
+    color: #4285f4;
+}
+
+.settingswrapper {
     /*  full  screen, position stays ignoring scrol */
     width: 100vw;
     height: 100vh;
@@ -130,6 +227,7 @@ footer a:hover {
     z-index: 2;
     display: none;
 }
+
 .settingsDiv {
     /* center of wrapper, horizontal and vertical */
     z-index: 5;
@@ -140,7 +238,7 @@ footer a:hover {
     max-width: 600px;
     width: 100%;
     height: auto;
-    margin:auto;
+    margin: auto;
     overflow: scroll;
     padding-bottom: 10px;
     /*make the div a bit rounded*/
@@ -152,15 +250,18 @@ footer a:hover {
     background-color: rgba(255, 255, 255, 0.8);
     /* no scrolling! */
     overflow: hidden;
-    
+
 }
+
 .settingsDiv:hover {
     cursor: grab;
 }
-.settingsDiv:active{
+
+.settingsDiv:active {
     cursor: grabbing;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
+
 #settingsheader {
     /* align to complete top of parent div, with nice soft gray backgroud */
     height: 29px;
@@ -175,6 +276,7 @@ footer a:hover {
     border-radius: 10px 10px 0px 0px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 #settingsTitleLabel {
     /* this is the title. align to left, with some margin */
     margin-left: 10px;
@@ -188,6 +290,7 @@ footer a:hover {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
+
 #settingsCloseLabel {
     /* this is the close button. */
     display: inline;
@@ -209,14 +312,18 @@ footer a:hover {
     margin-bottom: 5px;
     transition: all 0.25s ease-in-out;
 }
+
 #settingsCloseLabel:hover {
     background-color: rgba(0, 0, 0, 0.1);
 }
+
 .popuptext {
     text-align: center;
     font-size: .8em;
 }
-#settingsOSText, #settingsModeText {
+
+#settingsOSText,
+#settingsModeText {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -229,6 +336,7 @@ footer a:hover {
     margin-top: 25px;
     font-size: 1em;
 }
+
 .divider {
     height: 1px;
     background: rgba(0, 0, 0, 0.1);
@@ -237,8 +345,10 @@ footer a:hover {
     margin-left: 0px;
     margin-right: 0px;
 }
+
 /*settings to change OS, radios, labels, etc*/
-.settingsOSchangeDiv, .settingsModechangeDiv {
+.settingsOSchangeDiv,
+.settingsModechangeDiv {
     /* horizontal center within parent div fit-content*/
     display: flex;
     justify-content: center;
@@ -246,7 +356,9 @@ footer a:hover {
     margin-top: 50px;
     margin-bottom: 50px;
 }
-.OSchange, .Modechange {
+
+.OSchange,
+.Modechange {
     text-align: center;
     width: 75px;
     display: inline-block;
@@ -261,22 +373,31 @@ footer a:hover {
     border: 1px solid #d3d3d300;
     transition: all 0.25s ease-in-out;
 }
-.OSchangeimg, .Modechangeimg {
+
+.OSchangeimg,
+.Modechangeimg {
     height: 50px;
 }
-.selectedOS, .selectedMode {
+
+.selectedOS,
+.selectedMode {
     background: rgba(255, 255, 255, 0.5);
     border: 1px solid #b3b3b351;
 }
-.OSchange:hover, .Modechange:hover {
+
+.OSchange:hover,
+.Modechange:hover {
     background: rgba(255, 255, 255, 0.297);
     border: 1px solid #ffffff37;
 }
-.selectedOS:hover, .selectedMode:hover {
+
+.selectedOS:hover,
+.selectedMode:hover {
     background: rgba(255, 255, 255, 0.5);
     border: 1px solid #b3b3b351;
 }
-footer{
+
+footer {
     text-align: center;
     font-size: .8em;
     margin-top: 50px;
@@ -287,12 +408,55 @@ footer{
     height: 70px;
     padding-bottom: 30px;
 }
-br{
+
+br {
     line-height: 2em;
 }
+
+
 /*on screens smaller than 700px, make the app icons smaller, so it fits 4 on a row*/
 @media screen and (max-width: 700px) {
-    footer{
+
+    .macos~#month {
+        /* absolute top, center */
+        top: -1px;
+        font-size: .7em;
+        line-height: 0em;
+        color: #ffffff;
+        /* uppercase */
+
+
+    }
+
+    .macos~#day {
+
+
+        top: -3px;
+        font-size: 2.5em;
+        font-weight: 300;
+
+
+    }
+
+    .ios~#month {
+
+        font-size: .7em;
+
+
+
+    }
+
+    .ios~#day {
+        top: 0px;
+        font-size: 2.2em;
+        font-weight: 300;
+    }
+
+    .android~#day {
+        font-size: 1em;
+        top: 15px;
+    }
+    footer {
         /* keep to bottom even if content is smaller */
         position: absolute;
         bottom: 0;
@@ -301,6 +465,7 @@ br{
         font-size: .6em;
         width: 100%;
     }
+
     .settingsDiv {
         height: 100%;
         border: none;
@@ -310,10 +475,13 @@ br{
         -webkit-backdrop-filter: none;
         background-color: rgba(255, 255, 255, 1);
     }
-    .OSchange, .Modechange {
+
+    .OSchange,
+    .Modechange {
         margin-right: 5px;
         margin-left: 5px;
     }
+
     /*move copyright text and the line above it to the bottom of the screen*/
     .copyright {
         position: absolute;
@@ -328,12 +496,14 @@ br{
         width: fit-content;
         text-align: center;
     }
+
     .app {
         height: 60px;
         margin-right: 5px;
         margin-left: 5px;
         margin-bottom: 50px;
     }
+
     .appicon {
         height: 60px;
         width: auto;
@@ -345,6 +515,7 @@ br{
         margin-right: 6px;
         margin-left: 6px;
     }
+
     .appname {
         font-size: .7em;
         text-align: center;
@@ -355,6 +526,7 @@ br{
         margin-block-start: 0px;
         margin-top: 5px;
     }
+
     .container {
         /*max-width: icons + margins + padding + border*/
         max-width: 350px;
@@ -367,71 +539,90 @@ br{
         margin-right: auto;
     }
 
-    .macos{
+    .macos {
         box-shadow: none;
         transform: scale(1.25);
     }
 
 
-    .app:hover .appicon {
+    /* .app:hover .appicon {
         transform: scale(1.2);
         box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
     }
     .app:hover .macos {
         transform: scale(1.29);
         box-shadow: none;
-    }
+    } */
+
+
 }
+
 /*dark mode prefers color scheme*/
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #2A2929;
         color: #fcfcfc;
     }
+
     .firstthinline {
         border-top: 1px dotted #fcfcfc;
         opacity: 0.3;
     }
+
     .appname {
         color: #fcfcfc89;
     }
+
     .settingsDiv {
         background-color: rgba(50, 50, 50, 0.9);
         backdrop-filter: blur(30px);
         /* 1px border bottom right left */
         border: 1px solid rgba(255, 255, 255, 0.194);
     }
+
     #settingsheader {
         background-color: rgba(50, 50, 50, 0.434);
         backdrop-filter: blur(30px);
         /* 1px border bottom right left */
         border-bottom: 1px solid rgba(255, 255, 255, 0.194);
     }
+
     #settingsTitleLabel {
         color: #fcfcfc;
     }
+
     #settingsCloseLabel {
         color: #fcfcfc;
     }
-    .selectedOS, .selectedMode {
+
+    .selectedOS,
+    .selectedMode {
         background: rgba(255, 255, 255, 0.173);
         border: 1px solid #b3b3b351;
     }
-    .OSchange, .Modechange {
+
+    .OSchange,
+    .Modechange {
         border: 1px solid #b3b3b351;
     }
-    .OSchange:hover, .Modechange:hover {
+
+    .OSchange:hover,
+    .Modechange:hover {
         background: rgba(255, 255, 255, 0.077);
         border: 1px solid #b3b3b351;
     }
-    .selectedOS:hover, .selectedMode:hover {
+
+    .selectedOS:hover,
+    .selectedMode:hover {
         background: rgba(255, 255, 255, 0.173);
         border: 1px solid #b3b3b351;
     }
+
     .divider {
         background: rgba(255, 255, 255, 0.173);
     }
 }
+
 /* if dark mode and smaller that 700 */
 @media screen and (prefers-color-scheme: dark) and (max-width: 700px) {
     .settingsDiv {
@@ -440,6 +631,7 @@ br{
         background-color: rgb(40, 40, 40);
     }
 }
+
 @media only screen and (max-width: 600px) {
     #logo {
         width: 200px;
