@@ -168,3 +168,15 @@ function changeos() {
             closesettings();
         }
     }
+
+    //get date
+    var today = new Date();
+    //get day and month. abbreviate the month like this: JAN FEB
+    var month = today.toLocaleString("en-us", { month: "short" });
+    var day = today.getDate();
+    //send this to the #month and #day p tags
+    document.getElementById("month").innerHTML = month;
+    document.getElementById("day").innerHTML = day;
+    
+    
+    
