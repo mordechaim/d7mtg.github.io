@@ -1,5 +1,69 @@
+@font-face {
+    font-family: 'SF Display';
+    src: url('../font/SFProDisplay-Black.woff2') format('woff2'),
+        url('../font/SFProDisplay-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SF Display';
+    src: url('../font/SFProDisplay-Bold.woff2') format('woff2'),
+        url('../font/SFProDisplay-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SF Display';
+    src: url('../font/SFProDisplay-Heavy.woff2') format('woff2'),
+        url('../font/SFProDisplay-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SF Display';
+    src: url('../font/SFProDisplay-Light.woff2') format('woff2'),
+        url('../font/SFProDisplay-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SF Display';
+    src: url('../font/SFProDisplay-Medium.woff2') format('woff2'),
+        url('../font/SFProDisplay-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SF Display';
+    src: url('../font/SFProDisplay-Regular.woff2') format('woff2'),
+        url('../font/SFProDisplay-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SF Display';
+    src: url('../font/SFProDisplay-Semibold.woff2') format('woff2'),
+        url('../font/SFProDisplay-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SF Display';
+    src: url('../font/SFProDisplay-Thin.woff2') format('woff2'),
+        url('../font/SFProDisplay-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SF Display';
+    src: url('../font/SFProDisplay-Ultralight.woff2') format('woff2'),
+        url('../font/SFProDisplay-Ultralight.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: 'SF Display', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     color: #2A2929;
     background-color: fcfcfc;
     margin: 0px;
