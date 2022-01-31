@@ -1,71 +1,88 @@
-var appicons = document.getElementsByClassName("appicon");
-function showicons() {
+let today = new Date(),
+    month = today.toLocaleString("en-us", {
+        month: "short"
+    }),
+    day = today.getDate(),
+    weekday = today.toLocaleString("en-us", {
+        weekday: "short"
+    }),
+    monthText = document.getElementById("month"),
+    dayText = document.getElementById("day"),
+    imessage = document.getElementById("divimessage"),
+    applemaps = document.getElementById("divapplemaps"),
+    macosIcon = document.getElementById("macos"),
+    windowsIcon = document.getElementById("windows"),
+    androidIcon = document.getElementById("android"),
+    iosIcon = document.getElementById("ios"),
+    appicons = document.getElementsByClassName("appicon");
 
-    var useragent = navigator.userAgent;
-    if (useragent.indexOf("iPhone") != -1 || useragent.indexOf("iPad") != -1 || useragent.indexOf("iPod") != -1) {
-        ios();
-    } else if (useragent.indexOf("Macintosh") != -1) {
-        macos();
-    } else if (useragent.indexOf("Android") != -1) {
-        android();
-    }
-    //on windows remove apple maps and divimessage
-    else if (useragent.indexOf("Windows") != -1) {
-        windows();
-    } else {
-        //if the user is using a browser that is not ios, mac, or android, then we place the ios icons.
-        ios();
-    }
-    //wait until all icons are loaded before we show the .container
-    document.getElementsByClassName("container")[0].style.display = "block";
 
+var useragent = navigator.userAgent;
+if (useragent.indexOf("iPhone") != -1 || useragent.indexOf("iPad") != -1 || useragent.indexOf("iPod") != -1) {
+    ios();
+} else if (useragent.indexOf("Macintosh") != -1) {
+    macos();
+} else if (useragent.indexOf("Android") != -1) {
+    android();
+} else if (useragent.indexOf("Windows") != -1) {
+    windows();
+} else {
+    ios();
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    showicons();
+//wait until all icons are loaded before we show the .container
+document.addEventListener('readystatechange', event => {
+    if (event.target.readyState === "complete") {
+        document.getElementsByClassName("container")[0].style.display = "block";
+    }
 });
+
 function macos() {
-    document.getElementById("macos").classList.add("selectedOS");
-    //all icons have the class appicon, so we can loop through them and change the path
+    macosIcon.classList.add("selectedOS");
     for (var i = 0; i < appicons.length; i++) {
         appicons[i].src = "macos/" + appicons[i].id + ".png";
-        //remove other OS classes
         appicons[i].classList.add("macos");
     }
+    monthText.innerText = month;
+    dayText.innerText = day;
 }
+
 function windows() {
-    document.getElementById("windows").classList.add("selectedOS");
-    document.getElementById("divimessage").style.display = "none";
-    document.getElementById("divapplemaps").style.display = "none";
+    windowsIcon.classList.add("selectedOS");
+    imessage.style.display = "none";
+    applemaps.style.display = "none";
     for (var i = 0; i < appicons.length; i++) {
         appicons[i].src = "windows/" + appicons[i].id + ".png";
         //remove other OS classes
         appicons[i].classList.add("windows");
     }
 }
+
 function ios() {
-    document.getElementById("ios").classList.add("selectedOS");
+    iosIcon.classList.add("selectedOS");
     for (var i = 0; i < appicons.length; i++) {
         appicons[i].src = "ios/" + appicons[i].id + ".png";
         //remove other OS classes
         appicons[i].classList.add("ios");
     }
+    monthText.innerText = weekday;
+    dayText.innerText = day;
 }
+
 function android() {
-    document.getElementById("android").classList.add("selectedOS");
-    document.getElementById("divimessage").style.display = "none";
-    document.getElementById("divapplemaps").style.display = "none";
+    androidIcon.classList.add("selectedOS");
+    imessage.style.display = "none";
+    applemaps.style.display = "none";
     for (var i = 0; i < appicons.length; i++) {
         appicons[i].src = "android/" + appicons[i].id + ".png";
-        //remove other OS classes
         appicons[i].classList.add("android");
     }
 }
 //settings
 var settingswrapper = document.getElementsByClassName("settingswrapper")[0];
+
 function opensettings() {
     var settingsOSText = document.getElementById("settingsOSText");
-    //get the  OS
     var userAgent = window.navigator.userAgent;
     var OSName = "an unknown OS";
     if (userAgent.indexOf("Win") != -1) OSName = "Windows";
@@ -78,11 +95,13 @@ function opensettings() {
     //show the settings
     settingswrapper.style.display = "block";
 }
+
 function closesettings() {
     settingswrapper.style.display = "none";
 }
 //change the OS
 var OSchange = document.getElementsByClassName("OSchange");
+
 function changeos() {
     //remove all os classes from all icons
     for (var i = 0; i < appicons.length; i++) {
@@ -91,9 +110,8 @@ function changeos() {
         appicons[i].classList.remove("ios");
         appicons[i].classList.remove("android");
     }
-    //as some of OS remove some icons, we need to loop through the icons again to make sure all are display block
-    document.getElementById("divimessage").style.display = "inline-block";
-    document.getElementById("divapplemaps").style.display = "inline-block";
+    imessage.style.display = "inline-block";
+    applemaps.style.display = "inline-block";
     for (var i = 0; i < OSchange.length; i++) {
         OSchange[i].classList.remove("selectedOS");
     }
@@ -118,19 +136,24 @@ function changeos() {
         android();
     }
 }
-    //settings div - 400px wide, starts out centered
-    //settingswrapper is 100% high and wide
-    //lets make the settingsdiv draggable within the settingswrapper div
-    let settingsDiv = document.getElementsByClassName("settingsDiv")[0];
-    dragElement(settingsDiv);
-    function dragElement(elmnt) {
-        //only run on scrrens larger than 600px
-        if (window.innerWidth > 701) {
-        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+//settings div - 400px wide, starts out centered
+//settingswrapper is 100% high and wide
+//lets make the settingsdiv draggable within the settingswrapper div
+let settingsDiv = document.getElementsByClassName("settingsDiv")[0];
+dragElement(settingsDiv);
+
+function dragElement(elmnt) {
+    //only run on scrrens larger than 600px
+    if (window.innerWidth > 701) {
+        var pos1 = 0,
+            pos2 = 0,
+            pos3 = 0,
+            pos4 = 0;
         if (document.getElementsByClassName("settingsDiv")[0]) {
             //if the settings div is present, then we can drag it
             elmnt.onmousedown = dragMouseDown;
         }
+
         function dragMouseDown(e) {
             e = e || window.event;
             e.preventDefault();
@@ -141,6 +164,7 @@ function changeos() {
             // call a function whenever the cursor moves:
             document.onmousemove = elementDrag;
         }
+
         function elementDrag(e) {
             e = e || window.event;
             e.preventDefault();
@@ -152,31 +176,19 @@ function changeos() {
             // set the element's new position:
             elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
             elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-          }
-          function closeDragElement() {
+        }
+
+        function closeDragElement() {
             /* stop moving when mouse button is released:*/
             document.onmouseup = null;
             document.onmousemove = null;
-          }
         }
     }
-    //close settings when clicking on settingswrapper
-    //but not on settingsDiv or its children
-    var settingswrapper = document.getElementsByClassName("settingswrapper")[0];
-    settingswrapper.onclick = function(e) {
-        if (e.target == settingswrapper && !e.target.classList.contains("settingsDiv")) {
-            closesettings();
-        }
+}
+//close settings when clicking on settingswrapper
+var settingswrapper = document.getElementsByClassName("settingswrapper")[0];
+settingswrapper.onclick = function (e) {
+    if (e.target == settingswrapper && !e.target.classList.contains("settingsDiv")) {
+        closesettings();
     }
-
-    //get date
-    var today = new Date();
-    //get day and month. abbreviate the month like this: JAN FEB
-    var month = today.toLocaleString("en-us", { month: "short" });
-    var day = today.getDate();
-    //send this to the #month and #day p tags
-    document.getElementById("month").innerHTML = month;
-    document.getElementById("day").innerHTML = day;
-    
-    
-    
+};
