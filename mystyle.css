@@ -450,7 +450,7 @@ width: auto;
   background-color: #f4cd2a;
   color: #443704;
 }
-
+/* remeber to add the mobile links */
 #paragraph_container{
   background-image: url(photos/project-covers/paragraph.png);
 }
@@ -522,6 +522,13 @@ width: auto;
   }
   #yaayin_container{
     background: rgba(0, 0, 0, 0.5) url('photos/project-covers/yaayin.png');
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    
+  }
+  #vendors_container{
+    background: rgba(0, 0, 0, 0.5) url('photos/project-covers/vendors.png');
     background-blend-mode: darken;
     background-size: cover;
     background-position: center;
