@@ -113,7 +113,7 @@ html {
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #f4cd2a;
+  background: #ffffff;
 }
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
@@ -138,6 +138,7 @@ html {
   display: none;
   transition: .25s;
   opacity: 0;
+  padding-left: 15%;
 }
 .button,
 a,
@@ -205,6 +206,7 @@ h2 {
 }
 .thinlinetwo {
   margin-top: 35px;
+  margin-left: 15%;
 }
 p:not(.tag):not(.tag2) {
   font-size: 1em;
@@ -213,7 +215,7 @@ p:not(.tag):not(.tag2) {
   margin-top: 25px;
   margin-bottom: 25px
 }
-::selection {
+*::selection {
   color: #2A2929;
   background: #f4cd2a;
 }
@@ -271,7 +273,7 @@ p:not(.tag):not(.tag2) {
   max-width: 70%;
   filter: brightness(0);
 }
-.button {
+.button, .project_link{
   cursor: pointer;
   margin-bottom: 10px;
   font-size: 1em;
@@ -334,9 +336,9 @@ p:not(.tag):not(.tag2) {
   color: #ccc;
   margin-bottom: 0px;
   cursor: pointer;
+  margin-left: 15%;
 }
 #div {
-  padding-left: 15%;
   background: #fcfcfc;
 }
 .note {
@@ -357,6 +359,122 @@ p:not(.tag):not(.tag2) {
 #hiddenlogo {
   display: none;
 }
+
+
+
+
+.home_page_project_container{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right; 
+  /* parralex */
+  background-attachment: fixed;
+
+  color: #E2E2E2;
+  transition: .25s;
+}
+
+.project_inner_container{
+  margin-right: 15%;
+  margin-left: 15%;
+}
+.project_inner_container h3{
+  font-size: 3em;
+  font-weight: 700;
+  margin-bottom: 0px;
+  margin-top: 150px;
+  color: #E2E2E2;
+}
+.project_inner_container h4{
+  opacity: 0.5;
+  font-weight: 300;
+  font-size: .7em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.label_container{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.project_inner_container label{
+  background-color: rgba(127, 127, 127, 0.1);
+  border: 1px solid rgba(127, 127, 127, 0.2);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+  width: fit-content
+
+}
+.project_inner_container label svg, .project_link svg{
+  margin-right: 5px;
+  font-size: .9em;
+}
+.project_description{
+  width: 400px;
+  max-width: 90%;
+   letter-spacing: .03em;
+  line-height: 1.5em; */
+}
+
+.project_logo{
+  max-width: 145px;
+max-height: 60px;
+height: auto;
+width: auto;
+  float: right;
+  filter: brightness(100);
+  opacity: .5;
+  
+ 
+}
+.project_link{
+  margin-top: 50px;
+  margin-bottom: 150px;
+
+  border: 2px solid #f4cd2a;
+  background-color: rgba(0, 0, 0, 0.466);
+  color: #f4cd2a;
+}
+
+.project_link:hover{
+  background-color: #f4cd2a;
+  color: #443704;
+}
+
+#paragraph_container{
+  background-image: url(photos/project-covers/paragraph.png);
+}
+#paskes_container{
+  background-image: url(photos/project-covers/paskes.png);
+}
+#yaayin_container{
+  background-image: url(photos/project-covers/yaayin.png);
+}
+#vendors_container{
+  background-image: url(photos/project-covers/vendors.png);
+}
+
+
+.more_projects{
+  text-align: center;
+  height: 50px;
+  margin-top: 0px;
+  margin-bottom: 50px;
+  padding-top: 50px;  
+
+
+}
+
 @media only screen and (max-width: 1400px) {
   body {
     background-image: none;
@@ -379,8 +497,36 @@ p:not(.tag):not(.tag2) {
   .verticalthinline {
     display: none;
   }
+  .project_logo{
+   display: none;
+    
+   
+  }
 }
 @media only screen and (max-width: 900px) {
+ 
+  #paragraph_container{
+    background: rgba(0, 0, 0, 0.5) url('photos/project-covers/paragraph.png');
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    
+  }
+
+  #paskes_container{
+    background: rgba(0, 0, 0, 0.5) url('photos/project-covers/paskes.png');
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    
+  }
+  #yaayin_container{
+    background: rgba(0, 0, 0, 0.5) url('photos/project-covers/yaayin.png');
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    
+  }
   .verticalthinline {
     margin-top: 0px;
     display: block;
