@@ -407,7 +407,7 @@ p:not(.tag):not(.tag2) {
   padding-right: 10px;
   padding-left: 10px;
   padding-top: 5px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   border-radius: 5px;
   margin-right: 5px;
   margin-bottom: 5px;
@@ -506,7 +506,7 @@ width: auto;
 @media only screen and (max-width: 900px) {
  
   #paragraph_container{
-    background: rgba(0, 0, 0, 0.5) url('photos/project-covers/paragraph.png');
+    background: rgba(0, 0, 0, 0.3) url('photos/project-covers/paragraph.png');
     background-blend-mode: darken;
     background-size: cover;
     background-position: center;
@@ -514,21 +514,21 @@ width: auto;
   }
 
   #paskes_container{
-    background: rgba(0, 0, 0, 0.5) url('photos/project-covers/paskes.png');
+    background: rgba(0, 0, 0, 0.3) url('photos/project-covers/paskes.png');
     background-blend-mode: darken;
     background-size: cover;
     background-position: center;
     
   }
   #yaayin_container{
-    background: rgba(0, 0, 0, 0.5) url('photos/project-covers/yaayin.png');
+    background: rgba(0, 0, 0, 0.3) url('photos/project-covers/yaayin.png');
     background-blend-mode: darken;
     background-size: cover;
     background-position: center;
     
   }
   #vendors_container{
-    background: rgba(0, 0, 0, 0.5) url('photos/project-covers/vendors.png');
+    background: rgba(0, 0, 0, 0.3) url('photos/project-covers/vendors.png');
     background-blend-mode: darken;
     background-size: cover;
     background-position: center;
