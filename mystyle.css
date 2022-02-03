@@ -9,7 +9,6 @@ body {
   background-position: right;
   background-size: auto 100%;
   font-family: "SF Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
   font-weight: 400;
   transition: .25s;
   font-display: swap;
@@ -101,7 +100,7 @@ radial-gradient(at 0% 0%, rgb(255, 233, 184) 0, transparent 50%),
 radial-gradient(at 35% 100%, hsla(0,0%,100%,1) 0, transparent 50%);
 
 
-animation: gradient 10s ease-in-out infinite alternate;
+animation: gradient 50s ease-in-out infinite alternate;
   background-size: 200% 200%;
   background-position: left top;
 }
@@ -394,13 +393,14 @@ p:not(.tag):not(.tag2) {
 
 #home_page_all_projects_container{
   background-color: #fcfcfc;
+
   
 }
 
 
 .home_page_project_container{
   width: 100%;
-  height: auto;
+  min-height: 100vh;
   overflow: hidden;
   background-repeat: no-repeat;
   background-size: cover;
@@ -413,6 +413,8 @@ p:not(.tag):not(.tag2) {
 }
 
 .project_inner_container{
+
+
   margin-right: 15%;
   margin-left: 15%;
 }
@@ -566,8 +568,7 @@ width: auto;
 }
 
   .home_page_project_container{
-    width: 100%;
-    height: auto;
+    min-height: auto;
     overflow: hidden;
     background-repeat: no-repeat;
     /* parralex */
