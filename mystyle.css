@@ -549,19 +549,19 @@ width: auto;
     transition: .25s;
   }
   #paragraph_container{
-    background-image: linear-gradient(161deg, #262525, #26252500), url(photos/project-covers/mobile/paragraph.png);
+    background-image: linear-gradient(90deg, #262525, #26252500), url(photos/project-covers/mobile/paragraph.png);
 
   }
   #paskes_container{
-    background-image: linear-gradient(161deg, #000000, #00000000), url(photos/project-covers/mobile/paskes.png);
+    background-image: linear-gradient(90deg, #000000, #00000000), url(photos/project-covers/mobile/paskes.png);
 
   }
   #yaayin_container{
-    background-image: linear-gradient(161deg, #00000000, #00000000), url(photos/project-covers/mobile/yaayin.png);
+    background-image: linear-gradient(90deg, #00000000, #00000000), url(photos/project-covers/mobile/yaayin.png);
 
   }
   #vendors_container{
-    background-image: linear-gradient(161deg, #e43237, #e4323800), url(photos/project-covers/mobile/vendors.png);
+    background-image: linear-gradient(90deg, #e43237, #e4323800), url(photos/project-covers/mobile/vendors.png);
   }
   
   .project_inner_container h3 {
