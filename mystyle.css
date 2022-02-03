@@ -372,7 +372,7 @@ p:not(.tag):not(.tag2) {
   overflow: hidden;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: right; 
+  background-position: center; 
   /* parralex */
   background-attachment: fixed;
 
@@ -384,14 +384,15 @@ p:not(.tag):not(.tag2) {
   margin-right: 15%;
   margin-left: 15%;
 }
+
 .project_inner_container h3{
   font-size: 3em;
   font-weight: 700;
   margin-bottom: 0px;
   margin-top: 150px;
-  line-height: 1em;
   color: #E2E2E2;
 }
+
 .project_inner_container h4{
   opacity: 0.5;
   font-weight: 300;
@@ -518,6 +519,18 @@ width: auto;
 
     
   }
+
+.project_inner_container h3{
+ 
+  margin-top: 75px;
+ 
+}
+
+.project_link{
+
+  margin-bottom: 75px;
+}
+
   .home_page_project_container{
     width: 100%;
     height: auto;
@@ -525,7 +538,7 @@ width: auto;
     background-repeat: no-repeat;
     background-position: 100%;
     /* parralex */
-    background-attachment: fixed;
+    background-attachment: scroll;
     width: calc(100vw - 30px);
     margin-left: 15px;
     margin-top: 15px;
