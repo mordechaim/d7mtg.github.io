@@ -107,7 +107,7 @@ body {
   padding-left: 15%;
   padding-bottom: 50px;
 background-color: #f5d12e;
-  /* background-image: #ffffff;
+  background-image: #ffffff;
   background-image:
     radial-gradient(at 57% 52%, #f5d12e 0, transparent 50%),
     radial-gradient(at 80% 0%, hsla(0, 0%, 100%, 1) 0, transparent 50%),
@@ -117,11 +117,11 @@ background-color: #f5d12e;
     radial-gradient(at 35% 100%, hsla(0, 0%, 100%, 1) 0, transparent 50%);
 
 
-  animation: gradient 50s ease-in-out infinite alternate; */
+  animation: gradient 50s ease-in-out infinite alternate;
   background-size: 200% 200%;
   background-position: left top;
 }
-/* 
+
 @keyframes gradient {
   0% {
     background-position: left top;
@@ -140,7 +140,7 @@ background-color: #f5d12e;
     background-position: left bottom;
 
   }
-} */
+}
 
 
 body,
