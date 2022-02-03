@@ -13,9 +13,6 @@ body {
   font-weight: 400;
   transition: .25s;
   margin: 0%;
-  scroll-snap-type: y proximity;
-  overflow-y: unset;
-  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
 
   
@@ -476,7 +473,6 @@ p:not(.tag):not(.tag2) {
 
   color: #E2E2E2;
   transition: .25s;
-  scroll-snap-align: start;
 }
 
 
