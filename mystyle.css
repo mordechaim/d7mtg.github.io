@@ -110,14 +110,14 @@ background-color: #f5d12e;
   background-image: #ffffff;
   background-image:
     radial-gradient(at 57% 52%, #f5d12e 0, transparent 50%),
-    radial-gradient(at 80% 0%, hsla(0, 0%, 100%, 1) 0, transparent 50%),
-    radial-gradient(at 20% 50%, rgb(255, 208, 0) 0, transparent 50%),
-    radial-gradient(at 9% 88%, rgb(255, 255, 255) 0, transparent 50%),
+    radial-gradient(at 80% 0%, #fff4c4, transparent 50%),
+    radial-gradient(at 20% 50%, #ffd000 0, transparent 50%),
+    radial-gradient(at 9% 88%, #fff3bd, transparent 50%),
     radial-gradient(at 0% 0%, rgb(255, 233, 184) 0, transparent 50%),
-    radial-gradient(at 35% 100%, hsla(0, 0%, 100%, 1) 0, transparent 50%);
+    radial-gradient(at 35% 100%, #fffae2, transparent 50%);
 
 
-  animation: gradient 50s ease-in-out infinite alternate;
+  animation: gradient 10s ease-in-out infinite alternate;
   background-size: 200% 200%;
   background-position: left top;
 }
