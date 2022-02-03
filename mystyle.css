@@ -463,7 +463,7 @@ p:not(.tag):not(.tag2) {
   min-height: 100vh;
   overflow: hidden;
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
   background-position: center;
   /* parralex */
   background-attachment: fixed;
@@ -472,9 +472,7 @@ p:not(.tag):not(.tag2) {
   transition: .25s;
 }
 
-.home_page_project_container:hover {
-  background-size:  115% auto;
-}
+
 .project_inner_container {
 
 
