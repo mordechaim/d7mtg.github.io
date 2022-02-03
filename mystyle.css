@@ -527,9 +527,9 @@ width: auto;
     height: auto;
     overflow: hidden;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: 100%;
     /* parralex */
-    background-attachment: fixed;
+    background-attachment: scroll;
     width: calc(100vw - 30px);
     margin-left: 15px;
     margin-top: 15px;
