@@ -360,7 +360,10 @@ p:not(.tag):not(.tag2) {
   display: none;
 }
 
-
+#home_page_all_projects_container{
+  background-color: white;
+  
+}
 
 
 .home_page_project_container{
@@ -386,6 +389,7 @@ p:not(.tag):not(.tag2) {
   font-weight: 700;
   margin-bottom: 0px;
   margin-top: 150px;
+  line-height: 1em;
   color: #E2E2E2;
 }
 .project_inner_container h4{
@@ -402,15 +406,15 @@ p:not(.tag):not(.tag2) {
 .project_inner_container label{
   background-color: rgba(127, 127, 127, 0.1);
   border: 1px solid rgba(127, 127, 127, 0.2);
-  backdrop-filter: blur(50px);
-  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   padding-right: 10px;
   padding-left: 10px;
   padding-top: 5px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   border-radius: 5px;
   margin-right: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   display: inline-block;
   width: fit-content
 
@@ -441,9 +445,13 @@ width: auto;
   margin-top: 50px;
   margin-bottom: 150px;
 
-  border: 2px solid #f4cd2a;
-  background-color: rgba(0, 0, 0, 0.466);
-  color: #f4cd2a;
+  border: 2px solid rgba(255,255,255, 0.1);
+  background:  rgba(255,255,255, 0.3);
+
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+
+  color: white
 }
 
 .project_link:hover{
@@ -504,36 +512,31 @@ width: auto;
   }
 }
 @media only screen and (max-width: 900px) {
- 
-  #paragraph_container{
-    background: rgba(0, 0, 0, 0.3) url('photos/project-covers/paragraph.png');
-    background-blend-mode: darken;
-    background-size: cover;
-    background-position: center;
+  #home_page_all_projects_container{
+    padding-top: 1px;
+    padding-bottom: 15px;
+
     
+  }
+  .home_page_project_container{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: 100%;
+    /* parralex */
+    background-attachment: fixed;
+    width: calc(100vw - 30px);
+    margin-left: 15px;
+    margin-top: 15px;
+    
+    border-radius: 7.5px;
+    color: #E2E2E2;
+    transition: .25s;
   }
 
-  #paskes_container{
-    background: rgba(0, 0, 0, 0.3) url('photos/project-covers/paskes.png');
-    background-blend-mode: darken;
-    background-size: cover;
-    background-position: center;
+  
     
-  }
-  #yaayin_container{
-    background: rgba(0, 0, 0, 0.3) url('photos/project-covers/yaayin.png');
-    background-blend-mode: darken;
-    background-size: cover;
-    background-position: center;
-    
-  }
-  #vendors_container{
-    background: rgba(0, 0, 0, 0.3) url('photos/project-covers/vendors.png');
-    background-blend-mode: darken;
-    background-size: cover;
-    background-position: center;
-    
-  }
   .verticalthinline {
     margin-top: 0px;
     display: block;
