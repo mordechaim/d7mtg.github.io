@@ -69,7 +69,7 @@
         </p>
         <h2 class='verticalthinline'>&nbsp;</h2>
         <a class='button buttonOne yellowbutton' id='buttonOne' href='contact'>
-            <i class="fal fa-envelope"></i>
+            <i class="fa-solid fa-paper-plane-top"></i>
             &nbsp;&nbsp;Contact us
         </a>
     </div>
@@ -153,7 +153,7 @@
     <div id='div'>
         <div class="projectcard more_projects">
             <a class='button yellowbutton firstbutton' href='portfolio'>
-                <i class="fal fa-plus"></i>
+                <i class="fa-solid fa-rectangle-vertical-history"></i>
                 &nbsp;&nbsp;More projects
             </a>
         </div>
@@ -167,7 +167,7 @@
         <!--end project-->
         <div id='subheader'>
             <p onclick="showmore()">
-                <i class="fal fa-plus-circle"></i>
+                <i class="fa-light fa-plus-circle"></i>
                 &nbsp;SHOW ALEPH&nbsp;
             </p>
         </div>
@@ -185,19 +185,19 @@
             <br>
             <div class='buttondiv'>
                 <a class='button yellowbutton' href='/kosher/'>
-                    <i class="fal fa-file-certificate"></i>
+                    <i class="fa-light fa-file-certificate"></i>
                     &nbsp;&nbsp;Kosher Project
                 </a>
                 <a class='button yellowbutton ' href='/aleph/'>
-                    <i class="fal fa-paragraph-rtl"></i>
+                    <i class="fa-light fa-paragraph-rtl"></i>
                     &nbsp;&nbsp;Aleph Project V1
                 </a>
                 <a class='button yellowbutton ' href='/aleph/V2'>
-                    <i class="fal fa-star-christmas"></i>
+                    <i class="fa-light fa-star-christmas"></i>
                     &nbsp;&nbsp;Aleph Project V2
                 </a>
                 <a class='button yellowbutton' href='/placement/'>
-                    <i class="fal fa-clone"></i>
+                    <i class="fa-light fa-clone"></i>
                     &nbsp;&nbsp;Publication Sizes &bull; Early Beta
                 </a>
                 <a class='button graybutton' href='/shuffle/'>
@@ -240,14 +240,14 @@
     <script>
         function showmore() {
             document.getElementById("subheader").innerHTML =
-                '<p  onclick="showless()"><i class="fal fa-minus-circle"></i>&nbsp;HIDE ALEPH&nbsp;</p>';
+                '<p  onclick="showless()"><i class="fa-light fa-minus-circle"></i>&nbsp;HIDE ALEPH&nbsp;</p>';
             document.getElementById("alephproject").style.display = "block";
             document.getElementById("alephproject").style.opacity = "1";
         }
 
         function showless() {
             document.getElementById("subheader").innerHTML =
-                '<p  onclick="showmore()"><i class="fal fa-plus-circle"></i>&nbsp;SHOW ALEPH&nbsp;</p>';
+                '<p  onclick="showmore()"><i class="fa-light fa-plus-circle"></i>&nbsp;SHOW ALEPH&nbsp;</p>';
             document.getElementById("alephproject").style.display = "0";
             document.getElementById("alephproject").style.display = "none";
         }

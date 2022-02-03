@@ -445,34 +445,36 @@ width: auto;
 .project_link{
   margin-top: 50px;
   margin-bottom: 150px;
-
-  border: 2px solid rgba(255,255,255, 0.1);
-  background:  rgba(255,255,255, 0.3);
+  /* border soft gradient */
+  border: 1px solid rgba(255, 255, 255, 0.171);
+  background:  rgba(255,255,255, 0.1);
 
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
-
+  
   color: white
 }
 
 .project_link:hover{
-  background-color: #f4cd2a;
-  color: #443704;
+
+  background:  rgba(255,255,255, 0.2);
 }
 /* remeber to add the mobile links */
 #paragraph_container{
-  background-image: url(photos/project-covers/paragraph.png);
+  background-image: linear-gradient(161deg, #262525, #26252500), url(photos/project-covers/paragraph.png);
+
 }
 #paskes_container{
-  background-image: url(photos/project-covers/paskes.png);
+  background-image: linear-gradient(161deg, #000000, #00000000), url(photos/project-covers/paskes.png);
+
 }
 #yaayin_container{
-  background-image: url(photos/project-covers/yaayin.png);
+  background-image: linear-gradient(161deg, #00000000, #00000000), url(photos/project-covers/yaayin.png);
+
 }
 #vendors_container{
-  background-image: url(photos/project-covers/vendors.png);
+  background-image: linear-gradient(161deg, #e43237, #e4323800), url(photos/project-covers/vendors.png);
 }
-
 
 .more_projects{
   text-align: center;
@@ -536,7 +538,6 @@ width: auto;
     height: auto;
     overflow: hidden;
     background-repeat: no-repeat;
-    background-position: 100%;
     /* parralex */
     background-attachment: scroll;
     width: calc(100vw - 30px);
@@ -547,7 +548,22 @@ width: auto;
     color: #E2E2E2;
     transition: .25s;
   }
+  #paragraph_container{
+    background-image: linear-gradient(161deg, #262525, #26252500), url(photos/project-covers/mobile/paragraph.png);
 
+  }
+  #paskes_container{
+    background-image: linear-gradient(161deg, #000000, #00000000), url(photos/project-covers/mobile/paskes.png);
+
+  }
+  #yaayin_container{
+    background-image: linear-gradient(161deg, #00000000, #00000000), url(photos/project-covers/mobile/yaayin.png);
+
+  }
+  #vendors_container{
+    background-image: linear-gradient(161deg, #e43237, #e4323800), url(photos/project-covers/mobile/vendors.png);
+  }
+  
   .project_inner_container h3 {
     margin-top: 75px;
   }
@@ -697,11 +713,11 @@ width: auto;
   }
   .thinline {
     width: 90%;
-    margin-left: 0%;
+    margin-left: 15%;
     margin-top: 25px;
     margin-bottom: 0px;
-    margin-right: 5%;
-    max-width: 90%;
+    margin-right: 15%;
+    max-width: 70%;
   }
   h1 {
     font-size: 7em;
