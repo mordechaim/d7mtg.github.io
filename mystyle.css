@@ -384,6 +384,15 @@ p:not(.tag):not(.tag2) {
   margin-right: 15%;
   margin-left: 15%;
 }
+
+.project_inner_container h3{
+  font-size: 3em;
+  font-weight: 700;
+  margin-bottom: 0px;
+  margin-top: 150px;
+  color: #E2E2E2;
+}
+
 .project_inner_container h4{
   opacity: 0.5;
   font-weight: 300;
