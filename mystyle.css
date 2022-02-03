@@ -372,7 +372,7 @@ p:not(.tag):not(.tag2) {
   overflow: hidden;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: right; 
+  background-position: center; 
   /* parralex */
   background-attachment: fixed;
 
@@ -527,7 +527,7 @@ width: auto;
     height: auto;
     overflow: hidden;
     background-repeat: no-repeat;
-    background-position: 100%;
+    background-position: center;
     /* parralex */
     background-attachment: fixed;
     width: calc(100vw - 30px);
