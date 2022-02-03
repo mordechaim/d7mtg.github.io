@@ -1,17 +1,19 @@
 html,
 body {
   background: #f4cd2a;
+  
 }
 body {
   color: #2A2929;
   background-repeat: no-repeat;
   background-position: right;
   background-size: auto 100%;
-  background-image: url('photos/background.png');
-  font-family: SF Display, sans-serif;
+  font-family: "SF Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
   font-weight: 400;
   transition: .25s;
   font-display: swap;
+  margin: 0%;
 }
 .imageDIV {
   width: 300px;
@@ -89,8 +91,38 @@ body {
   padding-right: 15%;
   padding-left: 15%;
   padding-bottom: 50px;
-  background: #f4cd2a;
+ 
+  background-image:#ffffff;background-image:  
+radial-gradient(at 57% 52%, #f5d12e 0, transparent 50%),  
+radial-gradient(at 80% 0%, hsla(0,0%,100%,1) 0, transparent 50%),  
+radial-gradient(at 20% 50%, rgb(255, 208, 0) 0, transparent 50%),  
+radial-gradient(at 9% 88%, rgb(255, 255, 255) 0, transparent 50%),  
+radial-gradient(at 0% 0%, rgb(255, 233, 184) 0, transparent 50%),
+radial-gradient(at 35% 100%, hsla(0,0%,100%,1) 0, transparent 50%);
+
+
+animation: gradient 10s ease-in-out infinite alternate;
+  background-size: 200% 200%;
+  background-position: left top;
 }
+@keyframes gradient {
+  0% {
+    background-position: left top;
+
+  }
+  25% {
+    background-position: right top;
+  }
+  50% {
+    background-position: right bottom;
+  }
+  
+  100% {
+    background-position: left bottom;
+
+  }
+}
+  
 
 body,
 html {
@@ -159,7 +191,7 @@ a,
 }
 h1 {
   margin-block-start: 0px;
-  font-family: SF Display;
+  font-family: "SF Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: white;
   padding-top: 0px;
   font-size: 25em;
@@ -361,7 +393,7 @@ p:not(.tag):not(.tag2) {
 }
 
 #home_page_all_projects_container{
-  background-color: white;
+  background-color: #fcfcfc;
   
 }
 
@@ -603,7 +635,6 @@ width: auto;
     background-repeat: no-repeat;
     background-position: right;
     background-size: auto 100%;
-    background-image: url('photos/background.png');
   }
   #div {
     background-color: #333333;
@@ -673,6 +704,13 @@ width: auto;
   }
   #subheader {
     color: #555555;
+  }
+  #lighter a {
+   color: #555;
+  }
+  #home_page_all_projects_container{
+    background-color: #fcfcfc;
+    
   }
   @media only screen and (max-width: 1200px) {
     body {
