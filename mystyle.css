@@ -12,8 +12,13 @@ body {
   font-family: "SF Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 400;
   transition: .25s;
-  font-display: swap;
   margin: 0%;
+  scroll-snap-type: y proximity;
+  overflow-y: unset;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+
+  
 }
 
 .imageDIV {
@@ -80,6 +85,7 @@ body {
 }
 
 .allportfolio {
+
   margin: auto;
   width: 100%;
 }
@@ -470,6 +476,7 @@ p:not(.tag):not(.tag2) {
 
   color: #E2E2E2;
   transition: .25s;
+  scroll-snap-align: start;
 }
 
 
