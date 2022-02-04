@@ -326,7 +326,7 @@ p:not(.tag):not(.tag2) {
 }
 
 #lighter a:hover {
-  color: #f4cd2a;
+  color: #222222;
 }
 
 
@@ -534,6 +534,10 @@ p:not(.tag):not(.tag2) {
   width: fit-content;
   text-decoration: none;
   color: #fff;
+}
+.footer_label:hover{
+  background-color: rgba(167, 167, 167, 0.2);
+  c
 }
 .project_inner_container label svg,
 .project_link svg {
@@ -841,6 +845,9 @@ p:not(.tag):not(.tag2) {
     color: #555;
   }
 
+  #lighter a:hover {
+    color: #fcfcfc;
+  }
   #home_page_all_projects_container {
     background-color: #fcfcfc;
 

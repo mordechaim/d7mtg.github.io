@@ -248,34 +248,7 @@
     <!-- Production -->
 
 
-    <script type="text/javascript">
-        function showlogo() {
-            document.getElementById('hiddenlogo').style.display = 'inline';
-            document.getElementById('showmorebutton').style.display = 'none';
-            document.getElementById('hidebutton').style.display = 'inline-block';
-        }
-
-        function hide() {
-            document.getElementById('hiddenlogo').style.display = 'none';
-            document.getElementById('showmorebutton').style.display = 'inline-block';
-            document.getElementById('hidebutton').style.display = 'none';
-        }
-    </script>
-    <script>
-        function showmore() {
-            document.getElementById("subheader").innerHTML =
-                '<p  onclick="showless()"><i class="fa-light fa-minus-circle"></i>&nbsp;HIDE ALEPH&nbsp;</p>';
-            document.getElementById("alephproject").style.display = "block";
-            document.getElementById("alephproject").style.opacity = "1";
-        }
-
-        function showless() {
-            document.getElementById("subheader").innerHTML =
-                '<p  onclick="showmore()"><i class="fa-light fa-plus-circle"></i>&nbsp;SHOW ALEPH&nbsp;</p>';
-            document.getElementById("alephproject").style.display = "0";
-            document.getElementById("alephproject").style.display = "none";
-        }
-    </script>
+   
     <script src="rellax.js"></script>
     <script>
         var rellax = new Rellax('.slower', {
