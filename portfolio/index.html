@@ -63,6 +63,60 @@
             --black: #2A2929;
             --neutral-gray: #828382;
         }
+
+        #lighter {
+  margin: 0px;
+  font-size: .8em;
+  color: #ccc;
+  padding-bottom: 50px;
+  padding-left: 15%;
+  padding-right: 15%;
+    padding-top: 50px;
+    border-top: 1px dotted #ccc;
+}
+
+#lighter a:not(.footer_label) {
+
+  color: #ccc;
+    text-decoration: underline;
+}
+
+#lighter a:hover {
+  color: #222222;
+}
+#link {
+  color: black;
+  outline: none;
+  padding: none;
+  border: none;
+  cursor: pointer;
+}
+
+#link:visited {
+  color: #757474;
+}
+.footer_label {
+  background-color: rgba(167, 167, 167, 0.3);
+
+  border: 1px solid rgba(167, 167, 167, 0.4);
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  display: inline-block;
+  width: fit-content;
+  text-decoration: none;
+  color: rgb(138, 138, 138);
+  transition: .25s;
+}
+
+.footer_label:hover {
+  background-color: rgba(167, 167, 167, 0.5);
+
+}
         .header {
             position: fixed;
             top: -48px;
@@ -548,8 +602,17 @@
             .portfolioDIV:hover {
                 background-color: #222222;
             }
-         
-          
+         #lighter{
+            color: #555;
+
+         }
+            #lighter a:not(.footer_label) {
+    color: #555;
+  }
+
+  #lighter a:hover {
+    color: #fcfcfc;
+  }
             /* from here - slider logos*/
             .slick-center #jw {
                 content: url("../photos//client-logos/dark-jw.png");
@@ -856,11 +919,24 @@
             <div class="slide"><img id="seridim" alt="seridim brand identity, logo"
                     src="../photos//client-logos/seridim.png"></div>
         </div>
+        <p id="lighter">
+            D7mtg is a branding agency based in Brooklyn, N.Y.
+            <br><br>
+            Reach us at <a href='mailto:hello@d7mtg.com'>hello@d7mtg.com</a> or by phone at <a
+                href='tel:8456712116'>845-671-2116</a>. We're located at <a href="https://maps.apple.com/?q=d7mtg">63
+                Flushing Avenue</a> Building 27 in the Brooklyn Navy Yard.
+            <br><br>
+            <a class="footer_label" href="/"><i class="fa-light fa-hand-wave"></i>&nbsp;Home</a>
+            <a class="footer_label" href="/portfolio/"><i class="fa-light fa-folder-open"></i>&nbsp;Portfolio</a>
+            <a class="footer_label" href="/contact/"><i class="fa-light fa-envelope"></i>&nbsp;Contact us</a>
+            <a class="footer_label" href="https://instagram.com/d7mtg"><i class="fab fa-instagram"></i>&nbsp;Instagram</a>
+            <a class="footer_label" href="/aleph/V2/"><i class="fa-light fa-paragraph-rtl"></i>&nbsp;Aleph Project</a>
+            <a class="footer_label" href="/kosher/"><i class="fa-light fa-file-certificate"></i>&nbsp;Kosher Project</a>
+        </p>
+  
+
     </div>
-    <div class="" style="display: none;">
       
-       
-    </div>
     <!-- Development -->
     <!-- Production -->
     <script type="text/javascript" src="slick/slick.min.js"></script>
@@ -908,7 +984,7 @@
             });
         });
     </script>
-    <script>
+    <!-- <script>
         var allprojects = document.querySelectorAll('.portfolioDIV'),
             project;
         //filter projects based on dataattribute array
@@ -946,6 +1022,6 @@
                 }
             }
         });
-    </script>
+    </script> -->
 </body>
 </html>

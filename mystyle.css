@@ -1,27 +1,21 @@
+/* some variables for color */
+:root {
+  --yellow: #f4cd2a;
+}
+
 html,
 body {
   background: #f4cd2a;
-
-}
-
-body {
   color: #2A2929;
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: auto 100%;
   font-family: "SF Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 400;
   transition: .25s;
   margin: 0%;
   -webkit-font-smoothing: antialiased;
+  margin: 0px;
+  padding: 0px;
+  -webkit-tap-highlight-color: transparent;
 
-  
-}
-
-.imageDIV {
-  width: 300px;
-  height: 300px;
-  position: relative;
 }
 
 .verticalthinline {
@@ -40,73 +34,12 @@ body {
   padding-top: 75px;
 }
 
-.portfolioDIV {
-  width: 300px;
-  height: 300px;
-  /* max-width: 95%; */
-  /* padding: 25px; */
-  background-color: rgba(127, 127, 127, 0.05);
-  border-radius: 15px;
-  margin-bottom: 30px;
-  transition: .25s;
-  border: 1px solid rgba(127, 127, 127, 0.1);
-  margin-right: 25px;
-  display: inline-block;
-}
-
-.portfolioDIV:hover {
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0 4px 8px rgba(32, 42, 62, .06), 0 20px 40px rgba(32, 42, 62, .06);
-  border: 1px solid rgba(127, 127, 127, 0.1);
-}
-
-.portfolioDIV:hover .portfoliosource {
-  opacity: 100%;
-}
-
-.portfolioDIV:hover .yellowbutton {
-  margin-bottom: 5px;
-  border: 2px solid #f4cd2a;
-  background-color: white;
-  color: #2A2929;
-}
-
-.portfolioDIV:hover .yellowbutton:hover {
-  background-color: #FFF6D2;
-  color: #2A2929;
-}
-
-.portfolioDIV:hover .yellowbutton:active {
-  background-color: #f4cd2a;
-  color: #2A2929;
-}
-
-.allportfolio {
-
-  margin: auto;
-  width: 100%;
-}
-
-.portfoliosource {
-  position: env();
-  display: -webkit-flex;
-  max-width: 45%;
-  max-height: 100px;
-  height: auto;
-  width: auto;
-  transition: .25s;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 #banner {
   min-height: 100vh;
   padding-right: 15%;
   padding-left: 15%;
   padding-bottom: 50px;
-background-color: #f5d12e;
+  background-color: #f5d12e;
   background-image: #ffffff;
   background-image:
     radial-gradient(at 57% 52%, #f5d12e 0, transparent 50%),
@@ -115,8 +48,6 @@ background-color: #f5d12e;
     radial-gradient(at 9% 88%, #fff3bd, transparent 50%),
     radial-gradient(at 0% 0%, rgb(255, 233, 184) 0, transparent 50%),
     radial-gradient(at 35% 100%, #fffae2, transparent 50%);
-
-
   animation: gradient 10s ease-in-out infinite alternate;
   background-size: 200% 200%;
   background-position: left top;
@@ -143,20 +74,6 @@ background-color: #f5d12e;
 }
 
 
-body,
-html {
-  margin: 0px;
-  padding: 0px;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.header {
-  position: fixed;
-  top: -48px;
-  z-index: 1;
-  width: 100%;
-}
-
 ::-webkit-scrollbar {
   width: 2px;
 }
@@ -182,24 +99,10 @@ html {
   background: rgba(127, 127, 127, 0.1);
 }
 
-.progress-bar {
-  height: 50px;
-  background: #f9ac06;
-  width: 0%;
-}
 
-.content {
-  padding: 100px 0;
-  margin: 50px auto 0 auto;
-  width: 80%;
-}
 
-#alephproject {
-  display: none;
-  transition: .25s;
-  opacity: 0;
-  padding-left: 15%;
-}
+
+
 
 .button,
 a,
@@ -243,19 +146,8 @@ h2 {
   font-weight: 500;
 }
 
-.tag {
-  display: inline-block;
-  letter-spacing: 3px;
-  font-size: 0.2em;
-  border: 1px solid #ccc;
-  padding: .3em .8em;
-  border-radius: 3px;
-}
 
-.tag2 {
-  color: #f4cd2a;
-  border: 1px solid #f4cd2a;
-}
+
 
 .thinline {
   border-top: 1px dotted #ccc;
@@ -297,50 +189,13 @@ p:not(.tag):not(.tag2) {
   color: default;
 }
 
-.descriptphoto {
-  font-weight: 400;
-  margin-right: 15%;
-  float: right;
-  padding-bottom: 25px;
-  max-width: 85%;
-  width: 450px;
-  margin-left: 15%;
-}
+
 
 .buttondiv {
   max-width: 85%;
 }
 
-#lighter {
-  margin: 0px;
-  font-size: .8em;
-  color: #ccc;
-  background-color: #fcfcfc;
-  padding-bottom: 50px;
-  padding-left: 15%;
-  padding-right: 15%;
-}
 
-#lighter a {
-  color: #ccc;
-}
-
-#lighter a:hover {
-  color: #222222;
-}
-
-
-#link {
-  color: black;
-  outline: none;
-  padding: none;
-  border: none;
-  cursor: pointer;
-}
-
-#link:visited {
-  color: #757474;
-}
 
 #logo {
   padding-top: 50px;
@@ -379,21 +234,8 @@ p:not(.tag):not(.tag2) {
   color: #2A2929;
 }
 
-.client-logo {
-  height: 50px;
-  margin-bottom: 125px;
-  text-decoration: none;
-  display: inline-block;
-  border: none;
-  margin-right: 100px;
-  transition: .25s;
-}
 
-.graybutton {
-  border: 2px solid #ccc;
-  background-color: white;
-  color: #2A2929;
-}
+
 
 .yellowbutton {
   border: 2px solid #f4cd2a;
@@ -401,9 +243,6 @@ p:not(.tag):not(.tag2) {
   color: #2A2929;
 }
 
-.graybutton:hover {
-  background-color: #E2E2E2;
-}
 
 .yellowbutton:hover {
   background-color: #FFF6D2;
@@ -433,18 +272,8 @@ p:not(.tag):not(.tag2) {
   background: #fcfcfc;
 }
 
-.note {
-  font-size: .8em;
-  color: #ccc;
-  padding-left: 25px;
-  border-left: 1px solid;
-  margin-top: 0px;
-  margin-bottom: 20px;
-}
 
-.yellowWord {
-  color: #f4cd2a;
-}
+
 
 .definition {
   text-decoration: underline;
@@ -457,11 +286,7 @@ p:not(.tag):not(.tag2) {
 
 #home_page_all_projects_container {
   background-color: #fcfcfc;
-
-
 }
-
-
 .home_page_project_container {
   width: 100%;
   min-height: 100vh;
@@ -475,11 +300,7 @@ p:not(.tag):not(.tag2) {
   color: #E2E2E2;
   transition: .25s;
 }
-
-
 .project_inner_container {
-
-
   margin-right: 15%;
   margin-left: 15%;
 }
@@ -505,7 +326,7 @@ p:not(.tag):not(.tag2) {
   margin-bottom: 50px;
 }
 
-.project_inner_container label{
+.project_inner_container label {
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(5px);
@@ -520,9 +341,40 @@ p:not(.tag):not(.tag2) {
   display: inline-block;
   width: fit-content
 }
-.footer_label{
-  background-color: rgba(167, 167, 167, 0.1);
-  border: 1px solid rgba(167, 167, 167, 0.2);
+
+#lighter {
+  margin: 0px;
+  font-size: .8em;
+  color: #ccc;
+  background-color: #fcfcfc;
+  padding-bottom: 50px;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+#lighter a:not(.footer_label) {
+
+  color: #ccc;
+}
+
+#lighter a:hover {
+  color: #222222;
+}
+#link {
+  color: black;
+  outline: none;
+  padding: none;
+  border: none;
+  cursor: pointer;
+}
+
+#link:visited {
+  color: #757474;
+}
+.footer_label {
+  background-color: rgba(167, 167, 167, 0.3);
+
+  border: 1px solid rgba(167, 167, 167, 0.4);
   padding-right: 10px;
   padding-left: 10px;
   padding-top: 5px;
@@ -533,12 +385,15 @@ p:not(.tag):not(.tag2) {
   display: inline-block;
   width: fit-content;
   text-decoration: none;
-  color: #fff;
+  color: rgb(138, 138, 138);
+  transition: .25s;
 }
-.footer_label:hover{
-  background-color: rgba(167, 167, 167, 0.2);
-  c
+
+.footer_label:hover {
+  background-color: rgba(167, 167, 167, 0.5);
+
 }
+
 .project_inner_container label svg,
 .project_link svg {
   margin-right: 5px;
@@ -560,8 +415,6 @@ p:not(.tag):not(.tag2) {
   float: right;
   filter: brightness(100);
   opacity: .5;
-
-
 }
 
 .project_link {
@@ -612,8 +465,6 @@ p:not(.tag):not(.tag2) {
   margin-top: 0px;
   margin-bottom: 50px;
   padding-top: 50px;
-
-
 }
 
 @media only screen and (max-width: 1400px) {
@@ -644,8 +495,6 @@ p:not(.tag):not(.tag2) {
 
   .project_logo {
     display: none;
-
-
   }
 }
 
@@ -653,8 +502,6 @@ p:not(.tag):not(.tag2) {
   #home_page_all_projects_container {
     padding-top: 1px;
     padding-bottom: 15px;
-
-
   }
 
   .project_inner_container h3 {
@@ -705,6 +552,7 @@ p:not(.tag):not(.tag2) {
   #curesse_container {
     background-image: linear-gradient(90deg, #58573d, #58573d00), url(photos/project-covers/mobile/curesse.png);
   }
+
   .project_inner_container h3 {
     margin-top: 75px;
   }
@@ -783,24 +631,6 @@ p:not(.tag):not(.tag2) {
     color: #555555;
   }
 
-  .graybutton {
-    color: #ccc;
-    background-color: #333333;
-    border: 2px solid #555555;
-  }
-
-  .graybutton:hover {
-    color: #ccc;
-    background-color: #424242;
-    border: 2px solid #555555;
-  }
-
-  .graybutton:active {
-    color: #ccc;
-    background-color: #555555;
-    border: 2px solid #555555;
-  }
-
   .yellowbutton {
     color: #ccc;
     background-color: #333333;
@@ -841,13 +671,14 @@ p:not(.tag):not(.tag2) {
     color: #555555;
   }
 
-  #lighter a {
+  #lighter a:not(.footer_label) {
     color: #555;
   }
 
   #lighter a:hover {
     color: #fcfcfc;
   }
+
   #home_page_all_projects_container {
     background-color: #fcfcfc;
 
