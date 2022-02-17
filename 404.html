@@ -153,6 +153,22 @@
             window.open(link, "_self");
         }
     </script>
+    <script>
+
+        var linksDict = {
+            "homepage": "https://d7m.tg/",
+            "portfoliohello": "https://d7m.tg/portfolio/",
+            "contactpage": "https://d7m.tg/contact"
+        };
+        var url = window.location.href;
+        for (var key in linksDict) {
+            if (url.endsWith(key)) {
+                //if it does, open the url
+                window.open(linksDict[key], "_self");
+            }
+        }
+    
+    </script>
 </BODY>
 </HTML>
 <!--
