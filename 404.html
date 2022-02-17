@@ -2,6 +2,26 @@
 
 <HEAD>
     <TITLE>404 Not Found</TITLE>
+    <script>
+        var linksDict = {
+            "homepage": "https://d7m.tg/",
+            "portfoliohello": "https://d7m.tg/portfolio/",
+            "contactpage": "https://d7m.tg/contact",
+            "whatasapp": "https://d7m.tg/whatsapp",
+            "WhatsApp": "https://d7m.tg/whatsapp"
+            
+        };
+        var url = window.location.href;
+        //get only the last part of the url
+        url = url.replace("https://d7m.tg/", "");
+        //lower case
+        url = url.toLowerCase();
+        for (var key in linksDict) {
+            if (url.includes(key)) {
+                window.open(linksDict[key], "_self");
+            }
+        }
+    </script>
     <script type="text/javascript">
         (function (c, l, a, r, i, t, y) {
             c[a] = c[a] || function () {
@@ -162,27 +182,7 @@
             window.open(link, "_self");
         }
     </script>
-    <script>
-        var linksDict = {
-            "homepage": "https://d7m.tg/",
-            "portfoliohello": "https://d7m.tg/portfolio/",
-            "contactpage": "https://d7m.tg/contact",
-            "whatasapp": "https://d7m.tg/whatsapp",
-            "WhatsApp": "https://d7m.tg/whatsapp"
-            
-        };
-        var url = window.location.href;
-        //get only the last part of the url
-        url = url.replace("https://d7m.tg/", "");
-        //lower case
-        url = url.toLowerCase();
-        for (var key in linksDict) {
-            if (url.includes(key)) {
-                window.open(linksDict[key], "_self");
-            }
-        }
-        
-    </script>
+   
 </BODY>
 
 </HTML>
