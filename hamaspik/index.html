@@ -55,14 +55,19 @@
                 background-position: 0% 50%;
             }
         }
+        h1{
+            max-width: 300px;
+            margin: 0 auto;
+        }
        
         h2{
             font-weight: 400;
+            font-size: 1em;
         }
         p{
-            font-size: 1.2em;
+            font-size: .9em;
             font-weight: 300;
-            max-width: 500px;
+            max-width: 300px;
             margin: 0 auto;
             color: #f3e3cf77;
         }
@@ -98,11 +103,11 @@
     
 </head>
 <body>
-    <a href="https://www.hamaspikkings.org">
+    <a href="https://www.hamaspikkings.org/?refererid=d7mtg">
     <img id="hamaspiklogo" src="logo2.png" alt="Hamaspik event logo 2022, The One">
 </a>
-    <h1>Downloading calendar file...</h1>
-    <h2>If download doesn't start automatically, click <a href="icalendar.ics">here</a></h2>
+    <h1>Downloading your invitation in <span>3</span>...</h1>
+    <h2>If download didn't start automatically, click <a href="icalendar.ics">here</a></h2>
     <p>When download is complete, click on the calendar file to open it in your calendar application.</p>
     <footer>CREATED BY <a href="../">
        D7MTG
@@ -112,7 +117,15 @@
 <script>
 
     window.onload = function() {
-        
+        var count = 3;
+        var countdown = setInterval(function() {
+            count--;
+            if (count < 0) {
+                clearInterval(countdown);
+                return;
+            }
+            document.querySelector("span").textContent = count;
+        }, 1000);
     setTimeout(function(){
         //redirect to icalendar.ics
         var link = document.createElement('a');
