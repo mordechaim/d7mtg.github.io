@@ -40,7 +40,7 @@
             /* dark background */
             background-color: #292929;
 
-            color: white;
+            color: #F0D3AB;
             margin: 0;
             padding: 0;
             animation: movebackground 1000s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
@@ -155,7 +155,7 @@
     </a>
     <h1>Downloading your invitation in <span>3</span>...</h1>
     <h2>If download didn't start automatically, click <a href="icalendar.ics">here</a></h2>
-    <p>When download is complete, click on the .ics file to add it to your calendar application.</p>
+    <p>When complete, please click on the downloaded .ics file to add it to your calendar.</p>
 
 
     <!-- BEGIN:VCALENDAR
@@ -175,7 +175,7 @@
            
             Date: March 30, 2022
             <br>
-            Time: 7:30pm - 9:30pm
+            Time: 7:30pm
             <br>
             Location: <a href="https://goo.gl/maps/MANh3pxDYv2ZAvEW6">75 Ross St, Brooklyn, NY 11249</a>
            
@@ -215,7 +215,6 @@
                 document.querySelector("span").textContent = count;
             }, 1000);
             setTimeout(function () {
-                //redirect to icalendar.ics
                 var link = document.createElement('a');
                 link.href = "icalendar.ics";
                 link.download = "hamaspik.ics";
