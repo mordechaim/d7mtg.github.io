@@ -7,7 +7,7 @@ html,
 body {
   background: #f4cd2a;
   color: #2A2929;
-  font-family: "SF Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 400;
   transition: .25s;
   margin: 0%;
@@ -98,7 +98,6 @@ a,
 
 h1 {
   margin-block-start: 0px;
-  font-family: "SF Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: white;
   padding-top: 0px;
   font-size: 25em;
@@ -107,7 +106,7 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  letter-spacing: -.04em;
+  letter-spacing: -.07em;
   margin-bottom: 0px;
 }
 
@@ -234,7 +233,6 @@ p:not(.tag):not(.tag2) {
 
 #subheader {
   margin-top: 100px;
-  letter-spacing: 3px;
   color: #ccc;
   margin-bottom: 0px;
   cursor: url(../photos/link-light-mode.png), auto;
@@ -291,7 +289,7 @@ p:not(.tag):not(.tag2) {
   font-weight: 300;
   font-size: .7em;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
 }
 
 .label_container {
@@ -383,7 +381,6 @@ p:not(.tag):not(.tag2) {
 .project_description {
   width: 400px;
   max-width: 90%;
-  letter-spacing: .03em;
   line-height: 1.5em;
 }
 
