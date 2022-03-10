@@ -108,8 +108,22 @@ h1 {
   text-align: center;
   letter-spacing: -.07em;
   margin-bottom: 0px;
-}
+  /* fadein */
+  animation: moveup 1s ease-in-out;
 
+
+}
+@keyframes moveup {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  
+}
 h2 {
   margin-top: 35px;
   max-width: 85%;

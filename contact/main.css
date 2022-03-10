@@ -28,7 +28,9 @@ h1 {
     text-align: center;
     font-weight: 500;
     width: auto;
+    /* fade in */
 }
+
 
 /*center container to page*/
 .container {

@@ -88,6 +88,17 @@
             margin-left: auto;
             margin-right: auto;
             top: 15vh;
+            opacity: 0;
+           animation: fadein 1s ease .5s forwards;
+        }
+        @keyframes fadein {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         h2 {
@@ -139,7 +150,7 @@
 
 <BODY>
     <H1>Four, oh four.</H1>
-    <h2>404</h2>
+    <h2></h2>
     <h2 class="verticalthinline">&nbsp;</h2>
     <ADDRESS>
         What are you looking for?
@@ -149,8 +160,26 @@
         A way to contact us? <a href="/contact?ref=fourohfour">Look no further.</a><br>
     </ADDRESS>
     <script>
-        // get a random number between 0 and 499
-        //
+        //onload type 404 in the h2 in a typewriter effect
+        var h2 = document.getElementsByTagName("h2")[0];
+        var h2text = "404";
+        h2.innerHTML = "";
+        var i = 0;
+        setInterval (function() {
+            var timer = setInterval(function () {
+            if (i < h2text.length) {
+                h2.innerHTML += h2text.charAt(i);
+                i++;
+            } else {
+                clearInterval(timer);
+            }
+        }, 200);
+        }, 1000);
+      
+
+
+      
+
         function randomurl() {
             var links = [
                 "https://d7m.tg/portfolio/projects/water/",
