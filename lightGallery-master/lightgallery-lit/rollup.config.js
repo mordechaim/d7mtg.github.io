@@ -5,12 +5,13 @@
  */
 
 import summary from 'rollup-plugin-summary';
-import { terser } from 'rollup-plugin-terser';
+import {
+    terser
+} from 'rollup-plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 
-export default [
-    {
+export default [{
         input: 'lib/lightgallery.js',
         output: {
             file: 'dist/lightgallery.esm.js',
@@ -22,7 +23,9 @@ export default [
             }
         },
         plugins: [
-            replace({ 'Reflect.decorate': 'undefined' }),
+            replace({
+                'Reflect.decorate': 'undefined'
+            }),
             resolve(),
             terser({
                 ecma: 2017,
@@ -51,7 +54,9 @@ export default [
         },
         external: ['lit'],
         plugins: [
-            replace({ 'Reflect.decorate': 'undefined' }),
+            replace({
+                'Reflect.decorate': 'undefined'
+            }),
             resolve(),
             terser({
                 ecma: 2017,

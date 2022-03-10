@@ -1,8 +1,10 @@
 {
-  "extends": [
-    "tslint-config-standard",
-    "tslint-config-prettier"
-  ],
-  "rules": { "no-empty-interface": false }
+    "extends": [
+        "tslint-config-standard",
+        "tslint-config-prettier"
+    ],
+    "rules": {
+        "no-empty-interface": false
+    }
 
 }

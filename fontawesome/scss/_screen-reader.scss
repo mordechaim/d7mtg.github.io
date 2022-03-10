@@ -5,6 +5,7 @@
 .fa-sr-only {
   @include fa-sr-only;
 }
+
 // use in conjunction with .sr-only to only display content when it's focused
 .sr-only-focusable,
 .fa-sr-only-focusable {

@@ -35,10 +35,10 @@ describe('ClipboardAction', () => {
             // Set document direction
             document.documentElement.setAttribute('dir', 'rtl');
             let clip = new ClipboardAction({
-                    emitter: new Emitter(),
-                    container: document.body,
-                    text: 'foo'
-                });
+                emitter: new Emitter(),
+                container: document.body,
+                text: 'foo'
+            });
             assert.equal(clip.fakeElem.style.right, '-9999px');
             done();
         });
@@ -50,8 +50,7 @@ describe('ClipboardAction', () => {
                     text: 'foo',
                     action: 'paste'
                 });
-            }
-            catch(e) {
+            } catch (e) {
                 assert.equal(e.message, 'Invalid "action" value, use either "copy" or "cut"');
                 done();
             }
@@ -63,8 +62,7 @@ describe('ClipboardAction', () => {
                 new ClipboardAction({
                     target: document.querySelector('#foo')
                 });
-            }
-            catch(e) {
+            } catch (e) {
                 assert.equal(e.message, 'Invalid "target" value, use a valid Element');
                 done();
             }

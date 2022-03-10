@@ -25,11 +25,13 @@ html {
 	padding-bottom: 50px;
 
 }
+
 h1 {
 	margin-top: 50px;
 	text-align: center;
 	font-weight: 300;
 }
+
 #copied {
 	text-align: center;
 	font-size: .7em;
@@ -41,28 +43,31 @@ h1 {
 	display: block;
 	cursor: pointer, auto;
 	text-align: center;
-padding: 10px 20px;
+	padding: 10px 20px;
 	font-size: 20px;
 
 }
 
 #dice {
-display: inline-block;
+	display: inline-block;
 }
-.activeGo #dice{
-animation: diceAnimation cubic-bezier(0.36, 0.71, 0.6, 0.61) 1s infinite;
+
+.activeGo #dice {
+	animation: diceAnimation cubic-bezier(0.36, 0.71, 0.6, 0.61) 1s infinite;
 }
 
 .activeGo {
-animation: activeGoAnimation cubic-bezier(0.36, 0.71, 0.6, 0.61) 1s infinite;
+	animation: activeGoAnimation cubic-bezier(0.36, 0.71, 0.6, 0.61) 1s infinite;
 }
+
 @keyframes diceAnimation {
-	 from {
-        transform:rotate(0deg);
-    }
-    to {
-        transform:rotate(360deg);
-    }
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 #nameresult {
@@ -74,8 +79,8 @@ animation: activeGoAnimation cubic-bezier(0.36, 0.71, 0.6, 0.61) 1s infinite;
 	max-width: 90%;
 	line-height: .9em;
 	padding: 20px;
-display: block;
-outline: none;
+	display: block;
+	outline: none;
 
 }
 
@@ -133,13 +138,13 @@ label {
 
 #splitdiv {
 	margin-bottom: 15px;
-padding-bottom: 20px;
+	padding-bottom: 20px;
 }
 
 #outercustomization,
 #outerconsole {
 
-		touch-action: none;
+	touch-action: none;
 	-webkit-touch-callout: none;
 	width: fit-content;
 	position: absolute;
@@ -172,7 +177,7 @@ padding-bottom: 20px;
 #outercustomization:active,
 #outerconsole:active {
 
-cursor: grabbing;
+	cursor: grabbing;
 }
 
 #customization {
@@ -191,7 +196,7 @@ cursor: grabbing;
 
 #settingsheader,
 #consoleheader {
-		font-size: .8em;
+	font-size: .8em;
 	padding-left: 10px;
 	top: 0px;
 	margin-top: auto;
@@ -267,7 +272,7 @@ cursor: grabbing;
 }
 
 .iconbutton {
-		padding: 0px 0px;
+	padding: 0px 0px;
 	height: 30px;
 	width: 30px;
 	line-height: 30px;
@@ -317,50 +322,51 @@ cursor: grabbing;
 
 @media only screen and (max-width: 800px) {
 
-#coderight {
-bottom: 80px;
-margin-right: 25px;
-height: 180px;
-}
+	#coderight {
+		bottom: 80px;
+		margin-right: 25px;
+		height: 180px;
+	}
 
-.iconbutton {
-height: 50px;
-width: 50px;
-line-height: 50px;
+	.iconbutton {
+		height: 50px;
+		width: 50px;
+		line-height: 50px;
 
-display: block;
-margin-top: 25px;
-}
+		display: block;
+		margin-top: 25px;
+	}
 
-.activebutton {
+	.activebutton {
 
-	height: 50px;
-	width: 50px;
-	line-height: 50px;
-	display: block;
-margin-top: 25px;
-}
+		height: 50px;
+		width: 50px;
+		line-height: 50px;
+		display: block;
+		margin-top: 25px;
+	}
 
-.icon {
+	.icon {
 
-display: none;
-}
+		display: none;
+	}
 
-.code {
+	.code {
 
-	height: 120px;
-	font-size: .7em;
+		height: 120px;
+		font-size: .7em;
 
-}
+	}
 
-#go, h3 {
-	margin: auto;
-	display: block;
-	cursor: pointer, auto;
-	text-align: center;
-padding: 10px 20px;
-	font-size: 30px;
+	#go,
+	h3 {
+		margin: auto;
+		display: block;
+		cursor: pointer, auto;
+		text-align: center;
+		padding: 10px 20px;
+		font-size: 30px;
 
-}
+	}
 
 }

@@ -20,16 +20,16 @@ type LightGalleryCoreMobileSettings = Exclude<
 // @todo use separate mobile settings for plugins
 export interface MobileSettings
     extends LightGalleryCoreMobileSettings,
-        Partial<ZoomSettings>,
-        Partial<ThumbnailsSettings>,
-        Partial<VideoSettings>,
-        Partial<AutoplaySettings>,
-        Partial<CommentSettings>,
-        Partial<FullscreenSettings>,
-        Partial<HashSettings>,
-        Partial<PagerSettings>,
-        Partial<RotateSettings>,
-        Partial<ShareSettings> {}
+    Partial<ZoomSettings>,
+    Partial<ThumbnailsSettings>,
+    Partial<VideoSettings>,
+    Partial<AutoplaySettings>,
+    Partial<CommentSettings>,
+    Partial<FullscreenSettings>,
+    Partial<HashSettings>,
+    Partial<PagerSettings>,
+    Partial<RotateSettings>,
+    Partial<ShareSettings> { }
 
 export type LightGalleryAllSettings = LightGalleryCoreSettings &
     ZoomSettings &
@@ -50,37 +50,37 @@ export interface LightGalleryCoreSettings {
      * Type of transition between images.
      */
     mode:
-        | 'lg-slide'
-        | 'lg-fade'
-        | 'lg-zoom-in'
-        | 'lg-zoom-in-big'
-        | 'lg-zoom-out'
-        | 'lg-zoom-out-big'
-        | 'lg-zoom-out-in'
-        | 'lg-zoom-in-out'
-        | 'lg-soft-zoom'
-        | 'lg-scale-up'
-        | 'lg-slide-circular'
-        | 'lg-slide-circular-vertical'
-        | 'lg-slide-vertical'
-        | 'lg-slide-vertical-growth'
-        | 'lg-slide-skew-only'
-        | 'lg-slide-skew-only-rev'
-        | 'lg-slide-skew-only-y'
-        | 'lg-slide-skew-only-y-rev'
-        | 'lg-slide-skew'
-        | 'lg-slide-skew-rev'
-        | 'lg-slide-skew-cross'
-        | 'lg-slide-skew-cross-rev'
-        | 'lg-slide-skew-ver'
-        | 'lg-slide-skew-ver-rev'
-        | 'lg-slide-skew-ver-cross'
-        | 'lg-slide-skew-ver-cross-rev'
-        | 'lg-lollipop'
-        | 'lg-lollipop-rev'
-        | 'lg-rotate'
-        | 'lg-rotate-rev'
-        | 'lg-tube';
+    | 'lg-slide'
+    | 'lg-fade'
+    | 'lg-zoom-in'
+    | 'lg-zoom-in-big'
+    | 'lg-zoom-out'
+    | 'lg-zoom-out-big'
+    | 'lg-zoom-out-in'
+    | 'lg-zoom-in-out'
+    | 'lg-soft-zoom'
+    | 'lg-scale-up'
+    | 'lg-slide-circular'
+    | 'lg-slide-circular-vertical'
+    | 'lg-slide-vertical'
+    | 'lg-slide-vertical-growth'
+    | 'lg-slide-skew-only'
+    | 'lg-slide-skew-only-rev'
+    | 'lg-slide-skew-only-y'
+    | 'lg-slide-skew-only-y-rev'
+    | 'lg-slide-skew'
+    | 'lg-slide-skew-rev'
+    | 'lg-slide-skew-cross'
+    | 'lg-slide-skew-cross-rev'
+    | 'lg-slide-skew-ver'
+    | 'lg-slide-skew-ver-rev'
+    | 'lg-slide-skew-ver-cross'
+    | 'lg-slide-skew-ver-cross-rev'
+    | 'lg-lollipop'
+    | 'lg-lollipop-rev'
+    | 'lg-rotate'
+    | 'lg-rotate-rev'
+    | 'lg-tube';
 
     /**
      * Slide animation CSS easing property

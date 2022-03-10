@@ -1,49 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body,
 html {
 	background: rgb(240, 240, 240);
 	color: black;
 	font-family: 'Rubik', sans-serif;
 }
+
 #logo {
 	width: 100%;
 	background: rgba(0, 0, 0, 0.02);
 }
+
 #logosvg {
 	fill: black;
 }
+
 #splitdiv p {
 	font-size: 0.7em;
 }
+
 #blink {
 	animation: blink 1s infinite;
 }
+
 @keyframes blink {
 	50% {
 		opacity: 0.0;
 	}
 }
+
 #blinkconsole {
 	animation: blinkconsole 2s infinite;
 }
+
 #go {
-border-radius: 3px;
-padding: 5px;
-padding-left: 10px;
-padding-right: 10px;
-padding-top: 5px;
-color: black;
-background: #EFEFEF;
-color: white;
-background: linear-gradient(98deg, rgba(182, 182, 182, 1) 36.13%, rgba(55, 55, 55, 0.45) 99.58%);
-background-size: 400% 400%;
-border: none;
-margin-top: 50px;
-font-size: 1.4em;
+	border-radius: 3px;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	color: black;
+	background: #EFEFEF;
+	color: white;
+	background: linear-gradient(98deg, rgba(182, 182, 182, 1) 36.13%, rgba(55, 55, 55, 0.45) 99.58%);
+	background-size: 400% 400%;
+	border: none;
+	margin-top: 50px;
+	font-size: 1.4em;
 }
+
 .activeGo {
 	animation: activeGoAnimation 1s ease infinite;
 }
+
 #nameresult {
 	line-height: .9em;
 	background: linear-gradient(333deg, rgba(229, 8, 237, 0.1), rgba(255, 0, 65, 0.1));
@@ -51,52 +61,64 @@ font-size: 1.4em;
 	padding: 20px;
 	border-radius: 25px;
 }
+
 #nameresult:hover {
 	animation: activeGoAnimation 5s ease infinite;
 }
+
 #nameresult:focus {
 	color: white;
 	background: linear-gradient(333deg, rgba(229, 8, 237, 1), rgba(255, 0, 65, 1));
 	background-size: 400% 400%;
 	animation: activeGoAnimation 5s ease infinite;
 }
+
 h3::selection {
 	background: rgba(16, 211, 255, 1);
 	background: rgba(16, 211, 255, 0);
 }
+
 .category {
 	color: rgba(16, 211, 255, 0.6);
 	font-family: 'JetBrains Mono', monospace;
 	letter-spacing: 2px;
 }
+
 input {
 	color: black;
 	transition: .2s linear;
 }
+
 label {
 	border-radius: 5px;
 	color: black;
 	transition: .2s linear;
 }
+
 input:checked+label {
 	background: linear-gradient(90deg, rgba(229, 8, 237, 1) 0%, rgba(255, 0, 65, 1) 100%);
 	color: white;
 	transition: .2s linear;
-box-shadow: 1px 4px 17px rgba(229, 8, 237, 0.39);
+	box-shadow: 1px 4px 17px rgba(229, 8, 237, 0.39);
 }
+
 input:not(:checked)+label {
 	background-color: rgba(0, 0, 0, 0.1);
 }
+
 input:not(:checked):not(:disabled):hover+label {
 	background-color: rgba(0, 0, 0, 0.2);
 }
+
 input:disabled+label {
 	background-color: rgba(16, 211, 255, 0.2);
 	outline: 1px solid rgba(16, 211, 255, 1);
 }
+
 #splitdiv {
-border-bottom: 1px solid rgba(0,0,0,0.3);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
+
 #outercustomization,
 #outerconsole {
 	background: white;
@@ -104,20 +126,24 @@ border-bottom: 1px solid rgba(0,0,0,0.3);
 	box-shadow: 0 1.8px 3.2px rgba(0, 0, 0, 0.015), 0 5.1px 7.4px rgba(0, 0, 0, 0.024), 0 11px 13.3px rgba(0, 0, 0, 0.03), 0 21.4px 22.5px rgba(0, 0, 0, 0.035), 0 42px 38.4px rgba(0, 0, 0, 0.041), 0 100px 80px rgba(0, 0, 0, 0.05);
 	border-radius: 10px;
 }
+
 #outercustomization:active,
 #outerconsole:active {
 	box-shadow: 0 3px 23.9px rgba(0, 0, 0, 0.002), 0 6.9px 43.2px rgba(0, 0, 0, 0.007), 0 12.2px 57.9px rgba(0, 0, 0, 0.017), 0 20.9px 67.8px rgba(0, 0, 0, 0.033), 0 37.8px 74.2px rgba(0, 0, 0, 0.055), 0 90px 80px rgba(0, 0, 0, 0.08);
 }
+
 #settingsheader,
 #consoleheader {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 	line-height: 3em;
 	border-radius: 10px 10px 0px 0px;
 }
+
 .fa-bars {
 	/*inline-block*/
 	display: none;
 }
+
 #x,
 #xa {
 	margin-top: auto;
@@ -136,9 +162,12 @@ border-bottom: 1px solid rgba(0,0,0,0.3);
 	border-radius: 100px;
 	text-align: center;
 }
-#x:hover, #xa:hover{
+
+#x:hover,
+#xa:hover {
 	color: white;
 }
+
 #console {
 	width: 400px;
 	min-height: 250px;
@@ -146,130 +175,169 @@ border-bottom: 1px solid rgba(0,0,0,0.3);
 	overflow: auto;
 	font-family: 'JetBrains Mono', monospace;
 }
+
 #editableconsole {
 	outline: none;
 }
+
 #possibleInBox {
-	border-top: 1px solid rgba(0,0,0,0.3);
+	border-top: 1px solid rgba(0, 0, 0, 0.3);
 }
+
 @keyframes online {
 	50% {
 		background: green;
 		color: white;
 	}
 }
+
 @keyframes offline {
 	0% {
 		background: none;
 		color: black;
 	}
+
 	20% {
 		background: red;
 		color: white;
 	}
+
 	40% {
 		background: none;
 		color: black;
 	}
+
 	60% {
 		background: red;
 		color: white;
 	}
+
 	80% {
 		background: none;
 		color: black;
 	}
 }
+
 .iconbutton {
 	background: #FEFEFE;
 	border-radius: 5px;
 }
+
 .icon {
 	color: black;
-margin-left: 5px;
+	margin-left: 5px;
 }
+
 .iconbutton:hover {
-box-shadow: 0 1.8px 22px rgba(0, 0, 0, 0.015), 0 5.1px 5px rgba(0, 0, 0, 0.024), 0 11px 3px rgba(0, 0, 0, 0.03), -1px 10px 8px rgba(0, 0, 0, 0.035), 0 8px 6px rgba(0, 0, 0, 0.041), 0 7px 4px rgba(0, 0, 0, 0.05);
-cursor: pointer;
+	box-shadow: 0 1.8px 22px rgba(0, 0, 0, 0.015), 0 5.1px 5px rgba(0, 0, 0, 0.024), 0 11px 3px rgba(0, 0, 0, 0.03), -1px 10px 8px rgba(0, 0, 0, 0.035), 0 8px 6px rgba(0, 0, 0, 0.041), 0 7px 4px rgba(0, 0, 0, 0.05);
+	cursor: pointer;
 }
+
 .activebutton {
 	border-radius: 5px;
 	background: linear-gradient(90deg, rgba(229, 8, 237, 1) 0%, rgba(255, 0, 65, 1) 100%);
-box-shadow: 1px 4px 17px rgba(229, 8, 237, 0.39);
+	box-shadow: 1px 4px 17px rgba(229, 8, 237, 0.39);
 	color: white;
 }
+
 .icon:hover {
 	color: #FDC20C;
 }
+
 #editableconsole {
 	color: rgba(0, 0, 0, 0.8);
 }
+
 #consolereturn,
 #oldconsolereturn {
 	color: rgba(0, 0, 0, 0.6);
 }
+
 @media (prefers-color-scheme: dark) {
-body, html {
-color: white;
-background: rgb(38, 38, 38);
+
+	body,
+	html {
+		color: white;
+		background: rgb(38, 38, 38);
+	}
+
+	#go {
+		background: linear-gradient(98deg, rgba(85, 83, 83, 1) 36.13%, rgba(55, 55, 55, 0.45) 99.58%);
+		background-size: 400% 400%;
+	}
+
+	#logosvg {
+		fill: white;
+	}
+
+	#logo {
+		background: rgba(255, 255, 255, 0.04);
+	}
+
+	#outercustomization,
+	#outerconsole {
+		box-shadow: rgba(0, 0, 0, 0.4) 0px 15px 40px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+		touch-action: none;
+		background: rgb(43, 43, 43);
+	}
+
+	#outercustomization:active,
+	#outerconsole:active {
+		box-shadow: 0 15px 40px 22px rgba(0, 0, 0, 0.29), rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+	}
+
+	#consolereturn,
+	#oldconsolereturn {
+		color: rgba(255, 255, 255, 0.6);
+	}
+
+	#editableconsole {
+		color: rgba(255, 255, 255, 0.8);
+	}
+
+	#settingsheader,
+	#consoleheader {
+		border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+	}
+
+	label {
+		color: rgb(189, 188, 188);
+	}
+
+	input:not(:checked)+label {
+		background-color: rgba(255, 255, 255, 0.1);
+	}
+
+	input:not(:checked):not(:disabled):hover+label {
+		background-color: rgba(255, 255, 255, 0.2);
+	}
+
+	#possibleInBox {
+		border-top: 1px solid rgb(66, 66, 66);
+	}
+
+	#splitdiv {
+		border-bottom: 1px solid rgb(66, 66, 66);
+	}
+
+	.iconbutton {
+		background: #363636;
+	}
+
+	.icon {
+		color: white;
+	}
 }
-#go {
-background: linear-gradient(98deg, rgba(85, 83, 83, 1) 36.13%, rgba(55, 55, 55, 0.45) 99.58%);
-background-size: 400% 400%;
-}
-#logosvg {
-fill: white;
-}
-#logo {
-background: rgba(255, 255, 255, 0.04);
-}
-#outercustomization, #outerconsole {
-box-shadow: rgba(0, 0, 0, 0.4) 0px 15px 40px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-touch-action: none;
-background: rgb(43, 43, 43);
-}
-#outercustomization:active,
-#outerconsole:active {
-box-shadow: 0 15px 40px 22px rgba(0, 0, 0, 0.29), rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-}
-#consolereturn, #oldconsolereturn {
-color: rgba(255, 255, 255, 0.6);
-}
-#editableconsole {
-color: rgba(255, 255, 255, 0.8);
-}
-#settingsheader, #consoleheader {
-border-bottom: 1px solid rgba(255, 255, 255, 0.11);
-}
-label {
-color: rgb(189, 188, 188);
-}
-input:not(:checked)+label {
-background-color: rgba(255, 255, 255, 0.1);
-}
-input:not(:checked):not(:disabled):hover+label {
-	background-color: rgba(255, 255, 255, 0.2);
-}
-#possibleInBox {
-border-top: 1px solid rgb(66, 66, 66);
-}
-#splitdiv {
-border-bottom: 1px solid rgb(66, 66, 66);
-}
-.iconbutton {
-background: #363636;
-}
-.icon {
-color: white;
-}
-}
+
 @keyframes activeGoAnimation {
 	0% {
 		background-position: 94% 0%
 	}
+
 	50% {
 		background-position: 7% 100%
 	}
+
 	100% {
 		background-position: 94% 0%
 	}

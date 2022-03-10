@@ -1,5 +1,3 @@
-
-
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     color: #2A2929;
@@ -465,6 +463,7 @@ br {
         font-size: 1em;
         top: 15px;
     }
+
     footer {
         /* keep to bottom even if content is smaller */
         position: absolute;

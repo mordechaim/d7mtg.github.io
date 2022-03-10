@@ -5,6 +5,6 @@ Package.describe({
   version: "2.0.6",
   git: "https://github.com/zenorocha/clipboard.js"
 });
-Package.onUse(function(api) {
+Package.onUse(function (api) {
   api.addFiles("dist/clipboard.js", "client");
 });

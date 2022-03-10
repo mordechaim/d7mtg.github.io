@@ -3,12 +3,10 @@
   "description": "Modern copy to clipboard. No Flash. Just 3kb gzipped https://clipboardjs.com",
   "type": "component",
   "homepage": "https://clipboardjs.com/",
-  "authors": [
-    {
-      "name": "Zeno Rocha",
-      "homepage": "http://zenorocha.com/"
-    }
-  ],
+  "authors": [{
+    "name": "Zeno Rocha",
+    "homepage": "http://zenorocha.com/"
+  }],
   "require": {
     "oomphinc/composer-installers-extender": "*"
   },

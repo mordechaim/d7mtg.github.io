@@ -2,7 +2,7 @@
 @font-face {
     font-family: 'hamburg_handbold';
     src: url('hamburghand-bold-webfont.woff2') format('woff2'),
-         url('hamburghand-bold-webfont.woff') format('woff');
+        url('hamburghand-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }

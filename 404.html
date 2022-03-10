@@ -9,7 +9,7 @@
             "contactpage": "https://d7m.tg/contact",
             "whatasapp": "https://d7m.tg/whatsapp",
             "WhatsApp": "https://d7m.tg/whatsapp"
-            
+
         };
         var url = window.location.href;
         //get only the last part of the url
@@ -89,13 +89,15 @@
             margin-right: auto;
             top: 15vh;
             opacity: 0;
-           animation: fadein 1s ease .5s forwards;
+            animation: fadein 1s ease .5s forwards;
         }
+
         @keyframes fadein {
             from {
                 opacity: 0;
                 transform: translateY(10px);
             }
+
             to {
                 opacity: 1;
             }
@@ -165,20 +167,20 @@
         var h2text = "404";
         h2.innerHTML = "";
         var i = 0;
-        setInterval (function() {
+        setInterval(function () {
             var timer = setInterval(function () {
-            if (i < h2text.length) {
-                h2.innerHTML += h2text.charAt(i);
-                i++;
-            } else {
-                clearInterval(timer);
-            }
-        }, 200);
+                if (i < h2text.length) {
+                    h2.innerHTML += h2text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(timer);
+                }
+            }, 200);
         }, 1000);
-      
 
 
-      
+
+
 
         function randomurl() {
             var links = [
@@ -211,7 +213,7 @@
             window.open(link, "_self");
         }
     </script>
-   
+
 </BODY>
 
 </HTML>

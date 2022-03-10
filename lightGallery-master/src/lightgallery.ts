@@ -132,7 +132,7 @@ export class LightGallery {
         } as LightGalleryAllSettings;
         if (
             this.settings.isMobile &&
-            typeof this.settings.isMobile === 'function'
+                typeof this.settings.isMobile === 'function'
                 ? this.settings.isMobile()
                 : utils.isMobile()
         ) {
@@ -276,14 +276,12 @@ export class LightGallery {
         if (this.settings.controls) {
             controls = `<button type="button" id="${this.getIdName(
                 'lg-prev',
-            )}" aria-label="${
-                this.settings.strings['previousSlide']
-            }" class="lg-prev lg-icon"> ${this.settings.prevHtml} </button>
+            )}" aria-label="${this.settings.strings['previousSlide']
+                }" class="lg-prev lg-icon"> ${this.settings.prevHtml} </button>
                 <button type="button" id="${this.getIdName(
                     'lg-next',
-                )}" aria-label="${
-                this.settings.strings['nextSlide']
-            }" class="lg-next lg-icon"> ${this.settings.nextHtml} </button>`;
+                )}" aria-label="${this.settings.strings['nextSlide']
+                }" class="lg-next lg-icon"> ${this.settings.nextHtml} </button>`;
         }
 
         if (this.settings.appendSubHtmlTo !== '.lg-item') {
@@ -305,23 +303,20 @@ export class LightGallery {
             ? 'aria-describedby="' + this.settings.ariaDescribedby + '"'
             : '';
 
-        const containerClassName = `lg-container ${this.settings.addClass} ${
-            document.body !== this.settings.container ? 'lg-inline' : ''
-        }`;
+        const containerClassName = `lg-container ${this.settings.addClass} ${document.body !== this.settings.container ? 'lg-inline' : ''
+            }`;
         const closeIcon =
             this.settings.closable && this.settings.showCloseIcon
-                ? `<button type="button" aria-label="${
-                      this.settings.strings['closeGallery']
-                  }" id="${this.getIdName(
-                      'lg-close',
-                  )}" class="lg-close lg-icon"></button>`
+                ? `<button type="button" aria-label="${this.settings.strings['closeGallery']
+                }" id="${this.getIdName(
+                    'lg-close',
+                )}" class="lg-close lg-icon"></button>`
                 : '';
         const maximizeIcon = this.settings.showMaximizeIcon
-            ? `<button type="button" aria-label="${
-                  this.settings.strings['toggleMaximize']
-              }" id="${this.getIdName(
-                  'lg-maximize',
-              )}" class="lg-maximize lg-icon"></button>`
+            ? `<button type="button" aria-label="${this.settings.strings['toggleMaximize']
+            }" id="${this.getIdName(
+                'lg-maximize',
+            )}" class="lg-maximize lg-icon"></button>`
             : '';
         const template = `
         <div class="${containerClassName}" id="${this.getIdName(
@@ -329,12 +324,12 @@ export class LightGallery {
         )}" tabindex="-1" aria-modal="true" ${ariaLabelledby} ${ariaDescribedby} role="dialog"
         >
             <div id="${this.getIdName(
-                'lg-backdrop',
-            )}" class="lg-backdrop"></div>
+            'lg-backdrop',
+        )}" class="lg-backdrop"></div>
 
             <div id="${this.getIdName(
-                'lg-outer',
-            )}" class="lg-outer lg-use-css3 lg-css3 lg-hide-items ${addClasses} ">
+            'lg-outer',
+        )}" class="lg-outer lg-use-css3 lg-css3 lg-hide-items ${addClasses} ">
 
               <div id="${this.getIdName('lg-content')}" class="lg-content">
                 <div id="${this.getIdName('lg-inner')}" class="lg-inner">
@@ -342,24 +337,22 @@ export class LightGallery {
                 ${controls}
               </div>
                 <div id="${this.getIdName(
-                    'lg-toolbar',
-                )}" class="lg-toolbar lg-group">
+            'lg-toolbar',
+        )}" class="lg-toolbar lg-group">
                     ${maximizeIcon}
                     ${closeIcon}
                     </div>
-                    ${
-                        this.settings.appendSubHtmlTo === '.lg-outer'
-                            ? subHtmlCont
-                            : ''
-                    }
+                    ${this.settings.appendSubHtmlTo === '.lg-outer'
+                ? subHtmlCont
+                : ''
+            }
                 <div id="${this.getIdName(
-                    'lg-components',
-                )}" class="lg-components">
-                    ${
-                        this.settings.appendSubHtmlTo === '.lg-sub-html'
-                            ? subHtmlCont
-                            : ''
-                    }
+                'lg-components',
+            )}" class="lg-components">
+                    ${this.settings.appendSubHtmlTo === '.lg-sub-html'
+                ? subHtmlCont
+                : ''
+            }
                 </div>
             </div>
         </div>
@@ -401,8 +394,7 @@ export class LightGallery {
             this.$toolbar.append(
                 `<a id="${this.getIdName(
                     'lg-download',
-                )}" target="_blank" rel="noopener" aria-label="${
-                    this.settings.strings['download']
+                )}" target="_blank" rel="noopener" aria-label="${this.settings.strings['download']
                 }" download class="lg-download lg-icon"></a>`,
             );
         }
@@ -782,13 +774,12 @@ export class LightGallery {
         if (this.settings.counter) {
             const counterHtml = `<div class="lg-counter" role="status" aria-live="polite">
                 <span id="${this.getIdName(
-                    'lg-counter-current',
-                )}" class="lg-counter-current">${this.index + 1} </span> /
+                'lg-counter-current',
+            )}" class="lg-counter-current">${this.index + 1} </span> /
                 <span id="${this.getIdName(
-                    'lg-counter-all',
-                )}" class="lg-counter-all">${
-                this.galleryItems.length
-            } </span></div>`;
+                'lg-counter-all',
+            )}" class="lg-counter-all">${this.galleryItems.length
+                } </span></div>`;
             this.outer.find(this.settings.appendCounterTo).append(counterHtml);
         }
     }
@@ -1033,8 +1024,8 @@ export class LightGallery {
         // Videos should start playing once once the gallery is completely loaded
         const _speed =
             isFirstSlide &&
-            this.getSlideType(currentGalleryItem) === 'video' &&
-            !currentGalleryItem.poster
+                this.getSlideType(currentGalleryItem) === 'video' &&
+                !currentGalleryItem.poster
                 ? speed
                 : 0;
         setTimeout(() => {
@@ -1456,7 +1447,7 @@ export class LightGallery {
                 $download.attr(
                     'href',
                     currentGalleryItem.downloadUrl ||
-                        (currentGalleryItem.src as string),
+                    (currentGalleryItem.src as string),
                 );
                 if (currentGalleryItem.download) {
                     $download.attr('download', currentGalleryItem.download);
@@ -2128,14 +2119,14 @@ export class LightGallery {
         $el.css(
             'transform',
             'translate3d(' +
-                xValue +
-                'px, ' +
-                yValue +
-                'px, 0px) scale3d(' +
-                scaleX +
-                ', ' +
-                scaleY +
-                ', 1)',
+            xValue +
+            'px, ' +
+            yValue +
+            'px, 0px) scale3d(' +
+            scaleX +
+            ', ' +
+            scaleY +
+            ', 1)',
         );
     }
 
@@ -2306,9 +2297,9 @@ export class LightGallery {
         const removeTimeout =
             this.zoomFromOrigin && transform
                 ? Math.max(
-                      this.settings.startAnimationDuration,
-                      this.settings.backdropDuration,
-                  )
+                    this.settings.startAnimationDuration,
+                    this.settings.backdropDuration,
+                )
                 : this.settings.backdropDuration;
         this.$container.removeClass('lg-show-in');
 

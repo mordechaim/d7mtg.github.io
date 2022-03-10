@@ -20,12 +20,10 @@
         "allowSyntheticDefaultImports": true,
         "experimentalDecorators": true,
         "forceConsistentCasingInFileNames": true,
-        "plugins": [
-            {
-                "name": "ts-lit-plugin",
-                "strict": true
-            }
-        ]
+        "plugins": [{
+            "name": "ts-lit-plugin",
+            "strict": true
+        }]
     },
     "include": ["src/**/*.ts"],
     "exclude": []

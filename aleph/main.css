@@ -1,14 +1,15 @@
-body{
+body {
      font-family: 'Miriam Libre', sans-serif;
-	color: #2A2929;
-      background: #FCFCFC;
-}
-i{
-padding-right: 5px;
+     color: #2A2929;
+     background: #FCFCFC;
 }
 
-#modal{
-        width: 400px;
+i {
+     padding-right: 5px;
+}
+
+#modal {
+     width: 400px;
      height: fit-content;
      background: #fff;
      position: fixed;
@@ -19,7 +20,7 @@ padding-right: 5px;
      margin: auto;
      padding-right: 15px;
      padding-left: 15px;
-     
+
      border-radius: 15px;
      box-shadow: 0 0 200px rgba(0, 0, 0, 0.502);
      display: none;
@@ -27,28 +28,30 @@ padding-right: 5px;
      text-align: center;
 }
 
-#modal h1{
+#modal h1 {
      font-size: 30px;
      font-weight: 600;
      margin-bottom: 15px;
-     padding-bottom:  15px;
+     padding-bottom: 15px;
      border-bottom: 1px solid #E5E5E5;
 }
-#modal p{
+
+#modal p {
      width: 70%;
      margin: 0 auto;
-     padding-bottom:  15px;
+     padding-bottom: 15px;
      font-size: .8em;
 }
+
 /* checkbox label */
-#modal label{  
+#modal label {
      font-size: 14px;
      font-weight: 900;
      color: #262626;
      margin-bottom: 10px;
 }
 
-#modal a{
+#modal a {
      display: block;
      width: 100%;
      padding-top: 10px;
@@ -66,50 +69,62 @@ padding-right: 5px;
      cursor: pointer;
      transition: all .25s ease;
 }
+
 #modal #v2buttoncancel {
      background: #8c8c8c;
      color: #ffffff;
 }
-#modal a:hover, #modal #v2buttoncancel:hover{
-    transform: scale(1.05);
+
+#modal a:hover,
+#modal #v2buttoncancel:hover {
+     transform: scale(1.05);
 }
 
-.fa-plus{
-	color:#3F6BE8;
+.fa-plus {
+     color: #3F6BE8;
 }
-.fa-star{
-color: #EFD726;
+
+.fa-star {
+     color: #EFD726;
 }
-.fa-magic{
-	color: #B423D8;
+
+.fa-magic {
+     color: #B423D8;
 }
-.fa-wrench{
- color:  #93B069;
+
+.fa-wrench {
+     color: #93B069;
 }
-.fa-exclamation-triangle{
-color: #DD4551;
+
+.fa-exclamation-triangle {
+     color: #DD4551;
 }
-.fa-code{
-	color: #E09B2B;
+
+.fa-code {
+     color: #E09B2B;
 }
-h3{
+
+h3 {
      padding-top: 50px;
      padding-bottom: 25px;
      margin-left: 12.5%;
      margin-right: 12.5%;
      outline: none;
 }
-h5{
-	font-size: 2em;
+
+h5 {
+     font-size: 2em;
      padding-top: 50px;
      margin-right: 12.5%;
      outline: none;
 }
-#hOne{
- padding-top: 100px;
+
+#hOne {
+     padding-top: 100px;
 }
- .input {
- color: black;
+
+.input {
+     color: black;
      text-align: justify;
      font-size: 1em;
      font-weight: normal;
@@ -122,13 +137,15 @@ h5{
      margin-right: auto;
      outline: none;
      border: 2px solid #ccc;
-border-radius: 5px;
-transition: all .25s ease;
+     border-radius: 5px;
+     transition: all .25s ease;
 }
- .input:focus {
+
+.input:focus {
      border: 2px solid black;
 }
- .output {
+
+.output {
      text-align: justify;
      font-size: 1em;
      font-weight: normal;
@@ -140,7 +157,7 @@ transition: all .25s ease;
      margin-left: auto;
      margin-right: auto;
      margin-bottom: 75px;
-     cursor:pointer;
+     cursor: pointer;
      outline: none;
      transition: all .25s ease;
      word-wrap: break-word;
@@ -148,16 +165,19 @@ transition: all .25s ease;
      border: 2px solid #eee;
      border-radius: 5px;
 }
- .output:active{
+
+.output:active {
      background: #f5f9ef;
      border: 2px solid #8bb260;
-     color:#8bb260;
+     color: #8bb260;
 }
-.output::selection{
+
+.output::selection {
      background: #f5f9ef;
-     color:#8bb260;
+     color: #8bb260;
 }
- #button {
+
+#button {
      border-radius: 10px;
      border: 1px solid black;
      outline: none;
@@ -167,27 +187,32 @@ transition: all .25s ease;
      cursor: pointer;
      transition: all .25s ease;
 }
- #button:hover {
+
+#button:hover {
      background-color: #ddd;
 }
- #button:active {
+
+#button:active {
      background-color: black;
      color: white;
 }
- #logo {
+
+#logo {
      position: absolute;
      display: block;
      width: 50px;
      right: 25px;
 }
- #credits {
+
+#credits {
      display: block;
      font-size: .8em;
      margin-left: 25px;
      margin-right: auto;
      bottom: 25px;
 }
- .menuItem{
+
+.menuItem {
      margin-top: 25px;
      margin-left: 25px;
      text-align: center;
@@ -201,11 +226,12 @@ transition: all .25s ease;
      font-size: 1em;
      cursor: pointer;
 }
- .menuItem:hover {
-}
- .menuItem:focus {
-}
- .footer {
+
+.menuItem:hover {}
+
+.menuItem:focus {}
+
+.footer {
      position: fixed;
      left: 0;
      bottom: 0;
@@ -214,51 +240,63 @@ transition: all .25s ease;
      color: white;
      text-align: center;
 }
- .header {
+
+.header {
      position: fixed;
      left: 0;
      top: 0;
      width: 100%;
      background-color: #8bb260;
 }
- #link{
+
+#link {
      color: white;
 }
- #copyText{
+
+#copyText {
      opacity: 0;
 }
- #logtext{
+
+#logtext {
      margin-top: 75px;
      width: 80%;
      margin-left: auto;
      margin-right: auto;
 }
-a{
+
+a {
      color: #8bb260;
-} code{
-  background: #f5f9ef;
+}
+
+code {
+     background: #f5f9ef;
      padding: 2px;
      color: #8bb260;
-font-family: 'Oxygen Mono', monospace;
+     font-family: 'Oxygen Mono', monospace;
 }
-code::selection{
-background: #8bb260;
+
+code::selection {
+     background: #8bb260;
      color: #f5f9ef;
 }
- .bold{
+
+.bold {
      font-weight: 900;
 }
-::selection{
-background: black;
-color: white;
+
+::selection {
+     background: black;
+     color: white;
 }
-.thinline{
-	border-top: 1px solid #ccc;
-	margin-right: 12.5%;
-	margin-left: 12.5%;
-	padding-top: 0px;
-	margin-top: 75px;
+
+.thinline {
+     border-top: 1px solid #ccc;
+     margin-right: 12.5%;
+     margin-left: 12.5%;
+     padding-top: 0px;
+     margin-top: 75px;
 }
-p{
-line-height: 2em;
+
+p {
+     line-height: 2em;
 }

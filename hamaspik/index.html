@@ -111,7 +111,8 @@
             text-decoration: underline;
 
         }
-        .detailsdiv{
+
+        .detailsdiv {
             border: 1px dotted #f3e3cf77;
             width: 300px;
             margin: 0 auto;
@@ -120,7 +121,8 @@
             border-radius: 10px;
 
         }
-        .label{
+
+        .label {
             text-transform: uppercase;
             font-size: .6em;
             letter-spacing: 5px;
@@ -128,19 +130,23 @@
             border-top: 1px dotted #f3e3cf77;
             margin-top: 20px;
         }
-        .timetillevent{
+
+        .timetillevent {
             font-size: 1.2em;
             font-weight: 500;
             margin-top: 10px;
         }
-        .eventdetails a{
+
+        .eventdetails a {
             color: #ffefdb9c;
         }
-        ::selection{
+
+        ::selection {
             background-color: #D89B52;
             color: white;
         }
-        .theone{
+
+        .theone {
             font-weight: 800;
             letter-spacing: 2px;
             font-size: 1.2em;
@@ -172,24 +178,24 @@
 
     <div class="detailsdiv">
         <p class="eventdetails">
-           
+
             Date: March 30, 2022
             <br>
             Time: 7:30pm
             <br>
             Location: <a href="https://goo.gl/maps/MANh3pxDYv2ZAvEW6">75 Ross St, Brooklyn, NY 11249</a>
-           
+
             <br>
 
         </p>
         <p class="label">
             <br>
-            Time until <span class="theone">The One</span>  event:
+            Time until <span class="theone">The One</span> event:
         </p>
         <p class="timetillevent">
-            
-            <span id="days">364</span> days, 
-            <span id="hours">23</span> hours, 
+
+            <span id="days">364</span> days,
+            <span id="hours">23</span> hours,
             <br>
             <span id="minutes">59</span> minutes,
             <span id="seconds">59</span> seconds.
@@ -218,7 +224,7 @@
                 var link = document.createElement('a');
                 link.href = "icalendar.ics";
                 link.download = "hamaspik.ics";
-                 link.click();
+                link.click();
             }, 2000);
         }
 
@@ -236,7 +242,7 @@
             document.getElementById("minutes").innerHTML = minutes;
             document.getElementById("seconds").innerHTML = seconds;
         }
-        
+
         setInterval(timetillevent, 1000);
     </script>
 </body>

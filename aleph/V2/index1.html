@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +11,11 @@
     <meta name="msapplication-TileColor" content="#2d2d2e">
     <!--favicon-->
     <link rel="apple-touch-icon" sizes="180x180" href="apple.png">
-    <link rel="icon" type="image/png"  href="favicon.png">
+    <link rel="icon" type="image/png" href="favicon.png">
     <!--og:-->
     <meta property="og:title" content="Aleph Tools | D7mtg">
-    <meta property="og:description" content="Aleph Tools is a collection of tools for designers, typographers, and developers, created by D7mtg.">
+    <meta property="og:description"
+        content="Aleph Tools is a collection of tools for designers, typographers, and developers, created by D7mtg.">
     <meta property="og:image" content="og.png">
     <meta property="og:url" content="https://d7m.tg/aleph/v2">
     <meta property="og:type" content="website">
@@ -25,13 +27,16 @@
     <meta name="description" content="Aleph Tools is a collection of tools for the Aleph system.">
     <script src="https://kit.fontawesome.com/7b42fedff3.js" crossorigin="anonymous"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2D8Q5R25WZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-2D8Q5R25WZ');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2D8Q5R25WZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-2D8Q5R25WZ');
+    </script>
     <style>
         body {
             /*background soft white and light blue gradient, silky animation*/
@@ -41,18 +46,21 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             animation: gradientBG 5s ease infinite;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            ;
             margin: 0;
             padding: 0;
             /*disallow side scroll*/
             overflow-x: hidden;
-			/*snap*/
-			overflow-y: scroll;
-			scroll-snap-type: y mandatory;
+            /*snap*/
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
         }
-        i{
+
+        i {
             margin-right: 5px;
         }
+
         .header {
             margin-top: 0;
             background: linear-gradient(to bottom, #F4CD2A, #ffbf0f);
@@ -64,6 +72,7 @@
             width: 100%;
             z-index: 1;
         }
+
         h1 {
             font-size: 2em;
             margin-left: 20px;
@@ -71,7 +80,8 @@
             height: 50px;
             width: min-content;
         }
-        .header p{
+
+        .header p {
             margin-left: 20px;
             display: inline;
             height: 70px;
@@ -79,18 +89,22 @@
             font-size: 1em;
             margin-top: 20px;
         }
-        .header svg{
+
+        .header svg {
             margin-right: 10px;
             /*change viewbox to make the icon smaller*/
             width: 50px;
         }
+
         /*remove link styling from svg*/
-        .header a{
+        .header a {
             text-decoration: none;
         }
-        h2{
+
+        h2 {
             font-size: 3em;
         }
+
         /*make the menu look nice*/
         .menu {
             margin-top: 0;
@@ -100,14 +114,17 @@
             text-align: right;
             display: inline;
         }
+
         .menu a {
             color: rgb(0, 0, 0);
             text-decoration: none;
         }
+
         .menu a:hover {
             color: rgb(0, 0, 0);
             text-decoration: underline;
         }
+
         .menu ul {
             list-style: none;
             margin: 0;
@@ -115,11 +132,13 @@
             display: inline;
             float: right;
         }
+
         .menu li {
             display: inline-block;
             /* add some nice space between the links */
             margin: 0 1em;
         }
+
         .container {
             display: flex;
             flex-direction: column;
@@ -132,14 +151,16 @@
             border-radius: 5px;
             margin-bottom: 30px;
             background: rgba(255, 255, 255, 0.5);
-			scroll-snap-align: start;
-			scroll-margin-top: 120px;
+            scroll-snap-align: start;
+            scroll-margin-top: 120px;
         }
+
         /*select first container and move it down a bit, because the sticky menu overlays it*/
         #sumHebrewDiv {
             margin-top: 120px;
         }
-        .container button{
+
+        .container button {
             width: auto;
             /*make it look nice*/
             border-radius: 5px;
@@ -157,13 +178,16 @@
             margin-top: 40px;
             transition: all .25s ease;
         }
+
         /*hover effect, transition and darker*/
         .container button:hover {
             background: #f4cd2a;
         }
+
         .container button:active {
             background: #eeb109;
         }
+
         .container input {
             height: 30px;
             /*make it look nice*/
@@ -183,14 +207,17 @@
             /*center the text*/
             text-align: center;
         }
+
         .container input:focus {
             border: 1px solid rgb(168, 168, 168);
             outline: none;
         }
-        .container label{
-           display: none;
+
+        .container label {
+            display: none;
         }
-        .container .output{
+
+        .container .output {
             font-family: 'Miriam Libre', sans-serif;
             /*make it look nice*/
             border-radius: 5px;
@@ -209,108 +236,134 @@
             margin-top: 20px;
             cursor: pointer;
         }
-        .container .error{
+
+        .container .error {
             color: red;
             background: rgb(255, 0, 0, 0.1);
         }
-        .container .output:active{
+
+        .container .output:active {
             border: 1px solid rgb(168, 168, 168);
             outline: none;
         }
-       #clearAllDiv{
-        height: 100px;
-       }
-       #clearAllDiv button{
-        margin-top: 0px;
-       }
-       /* smooth scroll on all links, compatible with all browsers */
-       a {
-           scroll-behavior: smooth;
-           /*safari doesn't support this property, so let's polyfill it*/
-                           -webkit-scroll-behavior: smooth;
-       }
-       /*dark mode*/
-       @media (prefers-color-scheme: dark) {
+
+        #clearAllDiv {
+            height: 100px;
+        }
+
+        #clearAllDiv button {
+            margin-top: 0px;
+        }
+
+        /* smooth scroll on all links, compatible with all browsers */
+        a {
+            scroll-behavior: smooth;
+            /*safari doesn't support this property, so let's polyfill it*/
+            -webkit-scroll-behavior: smooth;
+        }
+
+        /*dark mode*/
+        @media (prefers-color-scheme: dark) {
             body {
                 background: #000000;
             }
+
             .container {
                 background: #2d2d2e;
                 box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
             }
+
             .header {
                 color: white;
                 -webkit-backdrop-filter: blur(2em);
                 backdrop-filter: blur(2em);
                 background: #444446ad;
             }
-            .header svg{
+
+            .header svg {
                 fill: white;
             }
-            .header a{
+
+            .header a {
                 color: white;
             }
-            .header a:hover{
+
+            .header a:hover {
                 color: white;
             }
+
             .container button {
-                background:  transparent;
-                color:  #F4CD2A;
+                background: transparent;
+                color: #F4CD2A;
             }
+
             .container button:hover {
                 background: #F4CD2A;
-                color:  #2d2d2e;
+                color: #2d2d2e;
             }
+
             .container button:active {
                 background: #f4b42a;
-                color:  #2d2d2e;
+                color: #2d2d2e;
             }
-            h2{
+
+            h2 {
                 color: #c9c9c9;
             }
+
             .container input {
                 background-color: #cfcfcf;
                 color: #000000;
             }
+
             .container input:focus {
                 background-color: #ffffff;
                 border: 1px solid #adadad;
                 outline: none;
             }
+
             /*placeholder text*/
             .container input::-webkit-input-placeholder {
                 color: #00000077;
             }
+
             .container input::-moz-placeholder {
                 color: #00000077;
             }
+
             .container input:-ms-input-placeholder {
                 color: #00000077;
             }
+
             /*output text*/
             .container .output {
-                color:  #ffffff;
+                color: #ffffff;
             }
-            .container .error{
+
+            .container .error {
                 color: rgb(250, 116, 116);
                 background: rgba(247, 182, 182, 0.192);
             }
         }
-       /*mobile menu*/
-       @media screen and (max-width: 1200px) {
+
+        /*mobile menu*/
+        @media screen and (max-width: 1200px) {
             .menu {
                 width: 100%;
                 text-align: center;
                 margin-bottom: 0;
             }
+
             .menu ul {
                 display: none;
             }
+
             .menu li {
                 display: inline;
                 margin: 0;
             }
-            h1{
+
+            h1 {
                 text-align: center;
                 margin-left: 0;
                 margin-right: 0;
@@ -320,6 +373,7 @@
                 margin-top: 10;
                 margin-bottom: 0;
             }
+
             .header {
                 display: block;
                 margin-left: 0;
@@ -328,6 +382,7 @@
                 width: 100%;
                 margin-bottom: 0;
             }
+
             .header p {
                 /*center the p and the svg*/
                 display: block;
@@ -338,32 +393,48 @@
                 text-align: center;
                 height: 50px;
             }
-            #sumHebrewDiv{
+
+            #sumHebrewDiv {
                 margin-top: 135px;
             }
+
             .container input {
-               /*make it fit for mobile*/
-               max-width: 300px;
-               /*center it*/
+                /*make it fit for mobile*/
+                max-width: 300px;
+                /*center it*/
                 margin: auto;
             }
-            h2{
+
+            h2 {
                 text-align: center;
                 margin-left: 0;
             }
-            .container  {
+
+            .container {
                 /*make it fit for mobile*/
                 max-width: 85%;
+            }
         }
-    }
     </style>
 </head>
+
 <body>
     <div class="header">
         <h1>Aleph Tools</h1>
         <p class="subtitle">A toolset by
             <a href="https://d7m.tg/?utm_source=aleph&utm_medium=tools&utm_campaign=aleph-tools">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165.24 38.43"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M0,1.11V5.6A1.11,1.11,0,0,0,1.11,6.71H13.48a12.1,12.1,0,0,1,6.06,1.42,9.08,9.08,0,0,1,3.73,4.14,16.27,16.27,0,0,1,1.3,6.88,16.62,16.62,0,0,1-1.29,7,9.11,9.11,0,0,1-3.71,4.17,11.88,11.88,0,0,1-6.09,1.44H8.07A1.11,1.11,0,0,1,7,30.43l1.8-11.49a1.12,1.12,0,0,0-1.1-1.28H1.11A1.11,1.11,0,0,0,0,18.77V37.32a1.11,1.11,0,0,0,1.11,1.11H14.18A19.93,19.93,0,0,0,24,36.13a15.37,15.37,0,0,0,6.3-6.66,23,23,0,0,0,2.17-10.4A22.43,22.43,0,0,0,30.29,8.78L30,8.18a1.11,1.11,0,0,1,1-1.62H47.25a1.11,1.11,0,0,1,1,1.5L37.41,36.92a1.11,1.11,0,0,0,1,1.51h6.86a1.12,1.12,0,0,0,1.06-.77L58.15,1.45A1.11,1.11,0,0,0,57.1,0h-56A1.11,1.11,0,0,0,0,1.11Z"/><path d="M88.77.7,81.39,19.11a1.12,1.12,0,0,1-2.07,0L72,.7a1.12,1.12,0,0,0-1-.7H65.13a1.12,1.12,0,0,0-1.06.77L52.29,37a1.11,1.11,0,0,0,1.05,1.46h7.54A1.13,1.13,0,0,0,62,37.55l5.46-25.14a1.11,1.11,0,0,1,2.12-.17l9.77,24.53a1.11,1.11,0,0,0,2.07,0l9.77-24.53a1.11,1.11,0,0,1,2.12.17l5.47,25.14a1.11,1.11,0,0,0,1.08.88h7.54A1.12,1.12,0,0,0,108.43,37L96.64.77A1.11,1.11,0,0,0,95.58,0H89.8A1.11,1.11,0,0,0,88.77.7Z"/><path d="M145.71,8.13a12,12,0,0,1,6-1.42h12.37a1.11,1.11,0,0,0,1.11-1.11V1.11A1.11,1.11,0,0,0,164.13,0H102a1.12,1.12,0,0,0-1.06,1.47L102.45,6a.82.82,0,0,0,.78.55h10.45a1.11,1.11,0,0,1,1.11,1.11l0,29.65a1.11,1.11,0,0,0,1.11,1.11h7.43a1.11,1.11,0,0,0,1.11-1.19L122.29,7.75a1.12,1.12,0,0,1,1.11-1.19h10.87a1.11,1.11,0,0,1,1,1.62l-.31.6a22.51,22.51,0,0,0-2.18,10.34,23,23,0,0,0,2.16,10.35,15.37,15.37,0,0,0,6.3,6.66,20,20,0,0,0,9.83,2.3h13.07a1.11,1.11,0,0,0,1.11-1.11V18.77a1.11,1.11,0,0,0-1.11-1.11h-6.56a1.1,1.1,0,0,0-1.09,1.28l1.79,11.49a1.1,1.1,0,0,1-1.09,1.28h-5.42a11.88,11.88,0,0,1-6.09-1.44A9.22,9.22,0,0,1,142,26.1a16.7,16.7,0,0,1-1.29-7,16.19,16.19,0,0,1,1.3-6.83A9.1,9.1,0,0,1,145.71,8.13Z" /></g></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165.24 38.43">
+                    <g id="Layer_2" data-name="Layer 2">
+                        <g id="Layer_1-2" data-name="Layer 1">
+                            <path
+                                d="M0,1.11V5.6A1.11,1.11,0,0,0,1.11,6.71H13.48a12.1,12.1,0,0,1,6.06,1.42,9.08,9.08,0,0,1,3.73,4.14,16.27,16.27,0,0,1,1.3,6.88,16.62,16.62,0,0,1-1.29,7,9.11,9.11,0,0,1-3.71,4.17,11.88,11.88,0,0,1-6.09,1.44H8.07A1.11,1.11,0,0,1,7,30.43l1.8-11.49a1.12,1.12,0,0,0-1.1-1.28H1.11A1.11,1.11,0,0,0,0,18.77V37.32a1.11,1.11,0,0,0,1.11,1.11H14.18A19.93,19.93,0,0,0,24,36.13a15.37,15.37,0,0,0,6.3-6.66,23,23,0,0,0,2.17-10.4A22.43,22.43,0,0,0,30.29,8.78L30,8.18a1.11,1.11,0,0,1,1-1.62H47.25a1.11,1.11,0,0,1,1,1.5L37.41,36.92a1.11,1.11,0,0,0,1,1.51h6.86a1.12,1.12,0,0,0,1.06-.77L58.15,1.45A1.11,1.11,0,0,0,57.1,0h-56A1.11,1.11,0,0,0,0,1.11Z" />
+                            <path
+                                d="M88.77.7,81.39,19.11a1.12,1.12,0,0,1-2.07,0L72,.7a1.12,1.12,0,0,0-1-.7H65.13a1.12,1.12,0,0,0-1.06.77L52.29,37a1.11,1.11,0,0,0,1.05,1.46h7.54A1.13,1.13,0,0,0,62,37.55l5.46-25.14a1.11,1.11,0,0,1,2.12-.17l9.77,24.53a1.11,1.11,0,0,0,2.07,0l9.77-24.53a1.11,1.11,0,0,1,2.12.17l5.47,25.14a1.11,1.11,0,0,0,1.08.88h7.54A1.12,1.12,0,0,0,108.43,37L96.64.77A1.11,1.11,0,0,0,95.58,0H89.8A1.11,1.11,0,0,0,88.77.7Z" />
+                            <path
+                                d="M145.71,8.13a12,12,0,0,1,6-1.42h12.37a1.11,1.11,0,0,0,1.11-1.11V1.11A1.11,1.11,0,0,0,164.13,0H102a1.12,1.12,0,0,0-1.06,1.47L102.45,6a.82.82,0,0,0,.78.55h10.45a1.11,1.11,0,0,1,1.11,1.11l0,29.65a1.11,1.11,0,0,0,1.11,1.11h7.43a1.11,1.11,0,0,0,1.11-1.19L122.29,7.75a1.12,1.12,0,0,1,1.11-1.19h10.87a1.11,1.11,0,0,1,1,1.62l-.31.6a22.51,22.51,0,0,0-2.18,10.34,23,23,0,0,0,2.16,10.35,15.37,15.37,0,0,0,6.3,6.66,20,20,0,0,0,9.83,2.3h13.07a1.11,1.11,0,0,0,1.11-1.11V18.77a1.11,1.11,0,0,0-1.11-1.11h-6.56a1.1,1.1,0,0,0-1.09,1.28l1.79,11.49a1.1,1.1,0,0,1-1.09,1.28h-5.42a11.88,11.88,0,0,1-6.09-1.44A9.22,9.22,0,0,1,142,26.1a16.7,16.7,0,0,1-1.29-7,16.19,16.19,0,0,1,1.3-6.83A9.1,9.1,0,0,1,145.71,8.13Z" />
+                        </g>
+                    </g>
+                </svg>
             </a>
         </p>
         <!--menu that scrolls to all sections-->
@@ -383,7 +454,8 @@
         <div class="form">
             <label for="sumHebrew">Add hebrew words:</label>
             <input type="text" id="sumHebrew" name="sumHebrew" placeholder="Add hebrew words">
-            <button type="button" id="sumHebrewBtn" onclick="sumHebrew()"><i class="fa-light fa-calculator-simple"></i>Get Sum</button>
+            <button type="button" id="sumHebrewBtn" onclick="sumHebrew()"><i
+                    class="fa-light fa-calculator-simple"></i>Get Sum</button>
             <p class="output" id="sumHebrewOutput">&nbsp;</p>
         </div>
     </div>
@@ -392,7 +464,8 @@
         <div class="form">
             <label for="hebrewToLatin">Add hebrew words:</label>
             <input type="text" id="hebrewToLatin" name="hebrewToLatin" placeholder="Add hebrew words">
-            <button type="button" id="hebrewToLatinBtn" onclick="hebrewToLatin()"><i class="fa-light fa-book-font"></i>Get Latin</button>
+            <button type="button" id="hebrewToLatinBtn" onclick="hebrewToLatin()"><i
+                    class="fa-light fa-book-font"></i>Get Latin</button>
             <p class="output" id="hebrewToLatinOutput">&nbsp;</p>
         </div>
     </div>
@@ -401,7 +474,8 @@
         <div class="form">
             <label for="latinToHebrew">Add latin words:</label>
             <input type="text" id="latinToHebrew" name="latinToHebrew" placeholder="Add latin words">
-            <button type="button" id="latinToHebrewBtn" onclick="latinToHebrew()"><i class="fa-light fa-book-tanakh"></i>Get Hebrew</button>
+            <button type="button" id="latinToHebrewBtn" onclick="latinToHebrew()"><i
+                    class="fa-light fa-book-tanakh"></i>Get Hebrew</button>
             <p class="output" id="latinToHebrewOutput">&nbsp;</p>
         </div>
     </div>
@@ -410,7 +484,8 @@
         <div class="form">
             <label for="removeNiqqud">Add hebrew words:</label>
             <input type="text" id="removeNiqqud" name="removeNiqqud" placeholder="Add hebrew words">
-            <button type="button" id="removeNiqqudBtn" onclick="removeNiqqud()"><i class="fa-light fa-text-slash"></i>Remove Niqqud</button>
+            <button type="button" id="removeNiqqudBtn" onclick="removeNiqqud()"><i
+                    class="fa-light fa-text-slash"></i>Remove Niqqud</button>
             <p class="output" id="removeNiqqudOutput">&nbsp;</p>
         </div>
     </div>
@@ -419,43 +494,73 @@
         <div class="form">
             <label for="reverseText">Add text:</label>
             <input type="text" id="reverseText" name="reverseText" placeholder="Add text">
-            <button type="button" id="reverseTextBtn" onclick="reverseText()"><i class="fa-light fa-paragraph-left"></i>Reverse Text</button>
+            <button type="button" id="reverseTextBtn" onclick="reverseText()"><i
+                    class="fa-light fa-paragraph-left"></i>Reverse Text</button>
             <p class="output" id="reverseTextOutput">&nbsp;</p>
         </div>
     </div>
     <!-- clear all-->
     <div class="container" id="clearAllDiv">
         <div class="form">
-            <button type="button" id="clearAllBtn" onclick="clearAll()"><i class="fa-light fa-arrow-rotate-left"></i>Clear All</button>
+            <button type="button" id="clearAllBtn" onclick="clearAll()"><i
+                    class="fa-light fa-arrow-rotate-left"></i>Clear All</button>
         </div>
     </div>
     <script>
         //this software takes a hebrew string and returns a numerical value
-        function sumHebrew(){
+        function sumHebrew() {
             //create all variables for user input etc
             var userInput, userInputArray, hebrewDict;
             var equation = [];
             //create a dictionary for the hebrew charachters and their numerical values
-            hebrewDict = {'א': 1, 'ב': 2, 'ג': 3, 'ד': 4, 'ה': 5, 'ו': 6, 'ז': 7, 'ח': 8, 'ט': 9, 'י': 10, 'כ': 20, 'ל': 30, 'מ': 40, 'נ': 50, 'ס': 60, 'ע': 70, 'פ': 80, 'צ': 90, 'ק': 100, 'ר': 200, 'ש': 300, 'ת': 400, 'ך': 20, 'ם': 40, 'ן': 50, 'ף': 80, 'ץ': 90};
+            hebrewDict = {
+                'א': 1,
+                'ב': 2,
+                'ג': 3,
+                'ד': 4,
+                'ה': 5,
+                'ו': 6,
+                'ז': 7,
+                'ח': 8,
+                'ט': 9,
+                'י': 10,
+                'כ': 20,
+                'ל': 30,
+                'מ': 40,
+                'נ': 50,
+                'ס': 60,
+                'ע': 70,
+                'פ': 80,
+                'צ': 90,
+                'ק': 100,
+                'ר': 200,
+                'ש': 300,
+                'ת': 400,
+                'ך': 20,
+                'ם': 40,
+                'ן': 50,
+                'ף': 80,
+                'ץ': 90
+            };
             //get the user input
             userInput = document.getElementById('sumHebrew').value;
             //we need to split the string into an array of charachters
             userInputArray = userInput.split('');
             //account for spaces, basically don't count them
-            userInputArray = userInputArray.filter(function(item){
+            userInputArray = userInputArray.filter(function (item) {
                 return item !== ' ';
             });
             //if there's nothing to convert, return error
-            if(userInputArray.length === 0){
+            if (userInputArray.length === 0) {
                 document.getElementById('sumHebrewOutput').innerHTML = 'Please enter a string of hebrew characters';
                 //add error class
                 document.getElementById('sumHebrewOutput').classList.add('error');
                 return;
             }
             //return error if there are any non-hebrew characters
-            if(userInputArray.some(function(item){
-                return hebrewDict[item] === undefined;
-            })){
+            if (userInputArray.some(function (item) {
+                    return hebrewDict[item] === undefined;
+                })) {
                 document.getElementById('sumHebrewOutput').innerHTML = 'Error: Please only use Hebrew charachters';
                 //add error class
                 document.getElementById('sumHebrewOutput').classList.add('error');
@@ -473,31 +578,64 @@
             }
             //add a plus symbol between each number
             equation = equation.join(' + ');
-           //return the equation AND  the sum like this
-           document.getElementById('sumHebrewOutput').innerHTML = equation + ' = ' + sum;
+            //return the equation AND  the sum like this
+            document.getElementById('sumHebrewOutput').innerHTML = equation + ' = ' + sum;
         }
         //this software takes a hebrew string and returns a latin string from that key on a qwerty keyboard
-        function hebrewToLatin(){
+        function hebrewToLatin() {
             //create all variables for user input etc
             var userInput, userInputArray, hebrewToLatinDict;
             //create a dictionary for the hebrew charachters and their Latin values, "/׳קראטוןםפ][ֿשדגכעיחלךף,זסבהנמצתץ." will become "qwertyuiop[]asdfghjkl;zxcvbnm,./"
-            hebrewToLatinDict = {'/': 'q', '׳': 'w', 'ק': 'e', 'ר': 'r', 'א': 't', 'ט': 'y', 'ו': 'u', 'ן': 'i', 'ם': 'o', 'פ': 'p', 'ש': 'a', 'ד': 's', 'ג': 'd', 'כ': 'f', 'ע': 'g', 'י': 'h', 'ח': 'j', 'ל': 'k', 'ך': 'l', 'ף': ';', 'ז': 'z', 'ס': 'x', 'ב': 'c', 'ה': 'v', 'נ': 'b', 'מ': 'n', 'צ': 'm', 'ת': ',', ' ': ' ', '.': '.', ',': '<', 'ץ': '>'};
+            hebrewToLatinDict = {
+                '/': 'q',
+                '׳': 'w',
+                'ק': 'e',
+                'ר': 'r',
+                'א': 't',
+                'ט': 'y',
+                'ו': 'u',
+                'ן': 'i',
+                'ם': 'o',
+                'פ': 'p',
+                'ש': 'a',
+                'ד': 's',
+                'ג': 'd',
+                'כ': 'f',
+                'ע': 'g',
+                'י': 'h',
+                'ח': 'j',
+                'ל': 'k',
+                'ך': 'l',
+                'ף': ';',
+                'ז': 'z',
+                'ס': 'x',
+                'ב': 'c',
+                'ה': 'v',
+                'נ': 'b',
+                'מ': 'n',
+                'צ': 'm',
+                'ת': ',',
+                ' ': ' ',
+                '.': '.',
+                ',': '<',
+                'ץ': '>'
+            };
             //get user input
             userInput = document.getElementById('hebrewToLatin').value;
             //split the string into an array of characters
             userInputArray = userInput.split('');
             //we're including spaces, so we don't need to filter them out
             //if there's nothing to convert, return error
-            if(userInputArray.length === 0){
+            if (userInputArray.length === 0) {
                 document.getElementById('hebrewToLatinOutput').innerHTML = 'Error: Please enter a string';
                 //add error class
                 document.getElementById('hebrewToLatinOutput').classList.add('error');
                 return;
             }
             //if there's a non-hebrew character, return error
-            if(userInputArray.some(function(item){
-                return hebrewToLatinDict[item] === undefined;
-            })){
+            if (userInputArray.some(function (item) {
+                    return hebrewToLatinDict[item] === undefined;
+                })) {
                 document.getElementById('hebrewToLatinOutput').innerHTML = 'Error: Please only use Hebrew characters';
                 //add error class
                 document.getElementById('hebrewToLatinOutput').classList.add('error');
@@ -509,39 +647,74 @@
             for (var i = 0; i < userInputArray.length; i++) {
                 userInputArray[i] = hebrewToLatinDict[userInputArray[i]];
             }
-           //return the latin string using a live typing effect, add one letter at a time
+            //return the latin string using a live typing effect, add one letter at a time
             var output = '';
-            var interval = setInterval(function(){
+            var interval = setInterval(function () {
                 output += userInputArray[0];
                 userInputArray.shift();
                 document.getElementById('hebrewToLatinOutput').innerHTML = output;
-                if(userInputArray.length === 0){
+                if (userInputArray.length === 0) {
                     clearInterval(interval);
                 }
             }, 40);
         }
         //this software takes a latin string and returns a hebrew string from that key on a qwerty keyboard
-        function latinToHebrew(){
+        function latinToHebrew() {
             //create all variables for user input etc
             var userInput, userInputArray, latinToHebrewDict;
             //create a dictionary for the latin charachters and their Hebrew values, "qwertyuiop[]asdfghjkl;zxcvbnm,./" will become "/׳קראטוןםפ][ֿשדגכעיחלךף,זסבהנמצתץ."
-            latinToHebrewDict = {'q': '/', 'w': '׳', 'e': 'ק', 'r': 'ר', 't': 'א', 'y': 'ט', 'u': 'ו', 'i': 'ן', 'o': 'ם', 'p': 'פ', 'a': 'ש', 's': 'ד', 'd': 'ג', 'f': 'כ', 'g': 'ע', 'h': 'י', 'j': 'ח', 'k': 'ל', 'l': 'ך', ';': 'ף', 'z': 'ז', 'x': 'ס', 'c': 'ב', 'v': 'ה', 'b': 'נ', 'n': 'מ', 'm': 'צ', ',': 'ת', '.': ' ', '<': ',', ' ': ' ', '>': '.', ',': '<', '.': '>'};
+            latinToHebrewDict = {
+                'q': '/',
+                'w': '׳',
+                'e': 'ק',
+                'r': 'ר',
+                't': 'א',
+                'y': 'ט',
+                'u': 'ו',
+                'i': 'ן',
+                'o': 'ם',
+                'p': 'פ',
+                'a': 'ש',
+                's': 'ד',
+                'd': 'ג',
+                'f': 'כ',
+                'g': 'ע',
+                'h': 'י',
+                'j': 'ח',
+                'k': 'ל',
+                'l': 'ך',
+                ';': 'ף',
+                'z': 'ז',
+                'x': 'ס',
+                'c': 'ב',
+                'v': 'ה',
+                'b': 'נ',
+                'n': 'מ',
+                'm': 'צ',
+                ',': 'ת',
+                '.': ' ',
+                '<': ',',
+                ' ': ' ',
+                '>': '.',
+                ',': '<',
+                '.': '>'
+            };
             //get user input
             userInput = document.getElementById('latinToHebrew').value;
             //split the string into an array of characters
             userInputArray = userInput.split('');
             //we're including spaces, so we don't need to filter them out
             //if there's nothing to convert, return error
-            if(userInputArray.length === 0){
+            if (userInputArray.length === 0) {
                 document.getElementById('latinToHebrewOutput').innerHTML = 'Error: Please enter a string';
                 //add error class
                 document.getElementById('latinToHebrewOutput').classList.add('error');
                 return;
             }
             //if there's a non-latin character, return error
-            if(userInputArray.some(function(item){
-                return latinToHebrewDict[item] === undefined;
-            })){
+            if (userInputArray.some(function (item) {
+                    return latinToHebrewDict[item] === undefined;
+                })) {
                 document.getElementById('latinToHebrewOutput').innerHTML = 'Error: Please only use Latin characters';
                 //add error class
                 document.getElementById('latinToHebrewOutput').classList.add('error');
@@ -555,30 +728,30 @@
             }
             //return the hebrew string using a live typing effect, add one letter at a time
             var output = '';
-            var interval = setInterval(function(){
+            var interval = setInterval(function () {
                 output += userInputArray[0];
                 userInputArray.shift();
                 document.getElementById('latinToHebrewOutput').innerHTML = output;
-                if(userInputArray.length === 0){
+                if (userInputArray.length === 0) {
                     clearInterval(interval);
                 }
             }, 40);
         }
-         //this software takes a hebrew string and removes all punctuation (niqqud). it does this by running a regex replace
-         function removeNiqqud(){
+        //this software takes a hebrew string and removes all punctuation (niqqud). it does this by running a regex replace
+        function removeNiqqud() {
             //create all variables for user input etc
             var userInput, userInputArray, removeNiqqudDict;
             //get user input
             userInput = document.getElementById('removeNiqqud').value;
             //if there's nothing to convert, return error
-            if(userInput === ''){
+            if (userInput === '') {
                 document.getElementById('removeNiqqudOutput').innerHTML = 'Error: Please enter a string';
                 //add error class
                 document.getElementById('removeNiqqudOutput').classList.add('error');
                 return;
             }
             //if the are absolutely no hebrew characters, return error
-            if(userInput.match(/[\u0590-\u05FF]/g) === null){
+            if (userInput.match(/[\u0590-\u05FF]/g) === null) {
                 document.getElementById('removeNiqqudOutput').innerHTML = 'Error: Please only use Hebrew characters';
                 //add error class
                 document.getElementById('removeNiqqudOutput').classList.add('error');
@@ -590,29 +763,29 @@
             userInputArray = userInput.split('');
             //replace all chachters in the ranges of U+059x through U+05Cx, 0 through F hex
             for (var i = 0; i < userInputArray.length; i++) {
-                if(userInputArray[i].match(/[\u0590-\u05C0]/g)){
+                if (userInputArray[i].match(/[\u0590-\u05C0]/g)) {
                     userInputArray[i] = userInputArray[i].replace(/[\u0591-\u05C7]/g, '');
                 }
             }
-                //return the hebrew string using a live typing effect, add one letter at a time
+            //return the hebrew string using a live typing effect, add one letter at a time
             var output = '';
-            var interval = setInterval(function(){
+            var interval = setInterval(function () {
                 output += userInputArray[0];
                 userInputArray.shift();
                 document.getElementById('removeNiqqudOutput').innerHTML = output;
-                if(userInputArray.length === 0){
+                if (userInputArray.length === 0) {
                     clearInterval(interval);
                 }
             }, 40);
         }
         //this software takes any string and reverses it
-        function reverseText(){
+        function reverseText() {
             //create all variables for user input etc
             var userInput, userInputArray, reverseTextDict;
             //get user input
             userInput = document.getElementById('reverseText').value;
             //if there's nothing to convert, return error
-            if(userInput === ''){
+            if (userInput === '') {
                 document.getElementById('reverseTextOutput').innerHTML = 'Error: Please enter a string';
                 //add error class
                 document.getElementById('reverseTextOutput').classList.add('error');
@@ -626,48 +799,48 @@
             userInputArray.reverse();
             //return the reversed string using a live typing effect, start with the last letter
             var output = '';
-            var interval = setInterval(function(){
+            var interval = setInterval(function () {
                 output += userInputArray[0];
                 userInputArray.shift();
                 document.getElementById('reverseTextOutput').innerHTML = output;
-                if(userInputArray.length === 0){
+                if (userInputArray.length === 0) {
                     clearInterval(interval);
                 }
             }, 40);
         }
         // add a single event listener that works across all input fields, if user presses enter, run the function. we can do this because we know that the input fields have the same names as the functions
-        document.getElementById('sumHebrew').addEventListener('keyup', function(event) {
+        document.getElementById('sumHebrew').addEventListener('keyup', function (event) {
             event.preventDefault();
             if (event.keyCode === 13) {
                 sumHebrew();
             }
         });
-        document.getElementById('hebrewToLatin').addEventListener('keyup', function(event) {
+        document.getElementById('hebrewToLatin').addEventListener('keyup', function (event) {
             event.preventDefault();
             if (event.keyCode === 13) {
                 hebrewToLatin();
             }
         });
-        document.getElementById('latinToHebrew').addEventListener('keyup', function(event) {
+        document.getElementById('latinToHebrew').addEventListener('keyup', function (event) {
             event.preventDefault();
             if (event.keyCode === 13) {
                 latinToHebrew();
             }
         });
-        document.getElementById('removeNiqqud').addEventListener('keyup', function(event) {
+        document.getElementById('removeNiqqud').addEventListener('keyup', function (event) {
             event.preventDefault();
             if (event.keyCode === 13) {
                 removeNiqqud();
             }
         });
-        document.getElementById('reverseText').addEventListener('keyup', function(event) {
+        document.getElementById('reverseText').addEventListener('keyup', function (event) {
             event.preventDefault();
             if (event.keyCode === 13) {
                 reverseText();
             }
         });
         //clear all input, replace output with non-breaking space
-        function clearAll(){
+        function clearAll() {
             document.getElementById('sumHebrew').value = '';
             document.getElementById('sumHebrewOutput').innerHTML = '&nbsp;';
             document.getElementById('hebrewToLatin').value = '';
@@ -687,4 +860,5 @@
         }
     </script>
 </body>
+
 </html>

@@ -79,14 +79,14 @@ export interface AfterAppendSlideEventDetail {
  * @name lgBeforeOpen
  * @method onBeforeOpen
  */
-export interface BeforeOpenDetail {}
+export interface BeforeOpenDetail { }
 
 /**
  * Fired immediately after opening the gallery
  * @name lgAfterOpen
  * @method onAfterOpen
  */
-export interface AfterOpenDetail {}
+export interface AfterOpenDetail { }
 
 /**
  * Fired once the media inside the slide has been completely loaded .
@@ -170,35 +170,35 @@ export interface AfterSlideDetail {
  * @name lgPosterClick
  * @method onPosterClick
  */
-export interface PosterClickDetail {}
+export interface PosterClickDetail { }
 
 /**
  * Fired when the drag event to move to different slide starts.
  * @name lgDragStart
  * @method onDragStart
  */
-export interface DragStartDetail {}
+export interface DragStartDetail { }
 
 /**
  * Fired periodically during the drag operation.
  * @name lgDragMove
  * @method onDragMove
  */
-export interface DragMoveDetail {}
+export interface DragMoveDetail { }
 
 /**
  * Fired when the user has finished the drag operation
  * @name lgDragEnd
  * @method onDragEnd
  */
-export interface DragEndDetail {}
+export interface DragEndDetail { }
 
 /**
  * Fired immediately before the start of the close process.
  * @name lgBeforeClose
  * @method onBeforeClose
  */
-export interface BeforeCloseDetail {}
+export interface BeforeCloseDetail { }
 
 /**
  * Fired immediately once lightGallery is closed.

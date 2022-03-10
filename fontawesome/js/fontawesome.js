@@ -4,6 +4,7 @@
  */
 (function () {
   'use strict';
+
   function _typeof(obj) {
     "@babel/helpers - typeof";
     if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
@@ -17,11 +18,13 @@
     }
     return _typeof(obj);
   }
+
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
       throw new TypeError("Cannot call a class as a function");
     }
   }
+
   function _defineProperties(target, props) {
     for (var i = 0; i < props.length; i++) {
       var descriptor = props[i];
@@ -31,11 +34,13 @@
       Object.defineProperty(target, descriptor.key, descriptor);
     }
   }
+
   function _createClass(Constructor, protoProps, staticProps) {
     if (protoProps) _defineProperties(Constructor.prototype, protoProps);
     if (staticProps) _defineProperties(Constructor, staticProps);
     return Constructor;
   }
+
   function _defineProperty(obj, key, value) {
     if (key in obj) {
       Object.defineProperty(obj, key, {
@@ -49,6 +54,7 @@
     }
     return obj;
   }
+
   function _objectSpread(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i] != null ? Object(arguments[i]) : {};
@@ -64,21 +70,27 @@
     }
     return target;
   }
+
   function _slicedToArray(arr, i) {
     return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
   }
+
   function _toConsumableArray(arr) {
     return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
   }
+
   function _arrayWithoutHoles(arr) {
     if (Array.isArray(arr)) return _arrayLikeToArray(arr);
   }
+
   function _arrayWithHoles(arr) {
     if (Array.isArray(arr)) return arr;
   }
+
   function _iterableToArray(iter) {
     if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
   }
+
   function _iterableToArrayLimit(arr, i) {
     if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
     var _arr = [];
@@ -102,6 +114,7 @@
     }
     return _arr;
   }
+
   function _unsupportedIterableToArray(o, minLen) {
     if (!o) return;
     if (typeof o === "string") return _arrayLikeToArray(o, minLen);
@@ -110,14 +123,17 @@
     if (n === "Map" || n === "Set") return Array.from(o);
     if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
   }
+
   function _arrayLikeToArray(arr, len) {
     if (len == null || len > arr.length) len = arr.length;
     for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
     return arr2;
   }
+
   function _nonIterableSpread() {
     throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }
+
   function _nonIterableRest() {
     throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }
@@ -142,8 +158,8 @@
     if (typeof performance !== 'undefined') _PERFORMANCE = performance;
   } catch (e) {}
   var _ref = _WINDOW.navigator || {},
-      _ref$userAgent = _ref.userAgent,
-      userAgent = _ref$userAgent === void 0 ? '' : _ref$userAgent;
+    _ref$userAgent = _ref.userAgent,
+    userAgent = _ref$userAgent === void 0 ? '' : _ref$userAgent;
   var GLOBAL = _GLOBAL;
   var SET_TIMEOUT = _SET_TIMEOUT;
   var SET_IMMEDIATE = _SET_IMMEDIATE;
@@ -163,6 +179,7 @@
   var asyncSetTimer = typeof SET_IMMEDIATE !== 'undefined' ? SET_IMMEDIATE : SET_TIMEOUT;
   var asyncQueue = [];
   var asyncTimer;
+
   function asyncFlush() {
     // run promise callbacks
     for (var i = 0; i < asyncQueue.length; i++) {
@@ -171,6 +188,7 @@
     asyncQueue = [];
     asyncTimer = false;
   }
+
   function asyncCall(callback, arg) {
     asyncQueue.push([callback, arg]);
     if (!asyncTimer) {
@@ -178,10 +196,12 @@
       asyncSetTimer(asyncFlush, 0);
     }
   }
+
   function invokeResolver(resolver, promise) {
     function resolvePromise(value) {
       resolve(promise, value);
     }
+
     function rejectPromise(reason) {
       reject(promise, reason);
     }
@@ -191,6 +211,7 @@
       rejectPromise(e);
     }
   }
+
   function invokeCallback(subscriber) {
     var owner = subscriber.owner;
     var settled = owner._state;
@@ -214,6 +235,7 @@
       }
     }
   }
+
   function handleThenable(promise, value) {
     var resolved;
     try {
@@ -250,11 +272,13 @@
     }
     return false;
   }
+
   function resolve(promise, value) {
     if (promise === value || !handleThenable(promise, value)) {
       fulfill(promise, value);
     }
   }
+
   function fulfill(promise, value) {
     if (promise._state === PENDING) {
       promise._state = SETTLED;
@@ -262,6 +286,7 @@
       asyncCall(publishFulfillment, promise);
     }
   }
+
   function reject(promise, reason) {
     if (promise._state === PENDING) {
       promise._state = SETTLED;
@@ -269,13 +294,16 @@
       asyncCall(publishRejection, promise);
     }
   }
+
   function publish(promise) {
     promise._then = promise._then.forEach(invokeCallback);
   }
+
   function publishFulfillment(promise) {
     promise._state = FULFILLED;
     publish(promise);
   }
+
   function publishRejection(promise) {
     promise._state = REJECTED;
     publish(promise);
@@ -283,107 +311,109 @@
       GLOBAL.process.emit('unhandledRejection', promise._data, promise);
     }
   }
+
   function notifyRejectionHandled(promise) {
     GLOBAL.process.emit('rejectionHandled', promise);
   }
   var P =
-  /*#__PURE__*/
-  function () {
-    function P(resolver) {
-      _classCallCheck(this, P);
-      if (typeof resolver !== 'function') {
-        throw new TypeError('Promise resolver ' + resolver + ' is not a function');
-      }
-      if (this instanceof P === false) {
-        throw new TypeError('Failed to construct \'Promise\': Please use the \'new\' operator, this object constructor cannot be called as a function.');
-      }
-      this._then = [];
-      this._state = PENDING;
-      this._then = null;
-      this._data = undefined;
-      this._handled = false;
-      invokeResolver(resolver, this);
-    }
-    _createClass(P, [{
-      key: "then",
-      value: function then(onFulfillment, onRejection) {
-        var subscriber = {
-          owner: this,
-          then: new this.constructor(NOOP),
-          fulfilled: onFulfillment,
-          rejected: onRejection
-        };
-        if ((onRejection || onFulfillment) && !this._handled) {
-          this._handled = true;
-          if (this._state === REJECTED && isNode) {
-            asyncCall(notifyRejectionHandled, this);
-          }
+    /*#__PURE__*/
+    function () {
+      function P(resolver) {
+        _classCallCheck(this, P);
+        if (typeof resolver !== 'function') {
+          throw new TypeError('Promise resolver ' + resolver + ' is not a function');
         }
-        if (this._state === FULFILLED || this._state === REJECTED) {
-          // already resolved, call callback async
-          asyncCall(invokeCallback, subscriber);
-        } else {
-          // subscribe
-          this._then.push(subscriber);
+        if (this instanceof P === false) {
+          throw new TypeError('Failed to construct \'Promise\': Please use the \'new\' operator, this object constructor cannot be called as a function.');
         }
-        return subscriber.then;
+        this._then = [];
+        this._state = PENDING;
+        this._then = null;
+        this._data = undefined;
+        this._handled = false;
+        invokeResolver(resolver, this);
       }
-    }, {
-      key: "catch",
-      value: function _catch(onRejection) {
-        return this.then(null, onRejection);
-      }
-    }], [{
-      key: "all",
-      value: function all(promises) {
-        if (!Array.isArray(promises)) {
-          throw new TypeError('You must pass an array to Promise.all().');
-        }
-        return new P(function (resolve, reject) {
-          var results = [];
-          var remaining = 0;
-          function resolver(index) {
-            remaining++;
-            return function (value) {
-              results[index] = value;
-              if (! --remaining) {
-                resolve(results);
-              }
-            };
-          }
-          for (var i = 0, promise; i < promises.length; i++) {
-            promise = promises[i];
-            if (promise && typeof promise.then === 'function') {
-              promise.then(resolver(i), reject);
-            } else {
-              results[i] = promise;
+      _createClass(P, [{
+        key: "then",
+        value: function then(onFulfillment, onRejection) {
+          var subscriber = {
+            owner: this,
+            then: new this.constructor(NOOP),
+            fulfilled: onFulfillment,
+            rejected: onRejection
+          };
+          if ((onRejection || onFulfillment) && !this._handled) {
+            this._handled = true;
+            if (this._state === REJECTED && isNode) {
+              asyncCall(notifyRejectionHandled, this);
             }
           }
-          if (!remaining) {
-            resolve(results);
+          if (this._state === FULFILLED || this._state === REJECTED) {
+            // already resolved, call callback async
+            asyncCall(invokeCallback, subscriber);
+          } else {
+            // subscribe
+            this._then.push(subscriber);
           }
-        });
-      }
-    }, {
-      key: "resolve",
-      value: function resolve(value) {
-        if (value && _typeof(value) === 'object' && value.constructor === P) {
-          return value;
+          return subscriber.then;
         }
-        return new P(function (resolve) {
-          resolve(value);
-        });
-      }
-    }, {
-      key: "reject",
-      value: function reject(reason) {
-        return new P(function (resolve, reject) {
-          reject(reason);
-        });
-      }
-    }]);
-    return P;
-  }();
+      }, {
+        key: "catch",
+        value: function _catch(onRejection) {
+          return this.then(null, onRejection);
+        }
+      }], [{
+        key: "all",
+        value: function all(promises) {
+          if (!Array.isArray(promises)) {
+            throw new TypeError('You must pass an array to Promise.all().');
+          }
+          return new P(function (resolve, reject) {
+            var results = [];
+            var remaining = 0;
+
+            function resolver(index) {
+              remaining++;
+              return function (value) {
+                results[index] = value;
+                if (!--remaining) {
+                  resolve(results);
+                }
+              };
+            }
+            for (var i = 0, promise; i < promises.length; i++) {
+              promise = promises[i];
+              if (promise && typeof promise.then === 'function') {
+                promise.then(resolver(i), reject);
+              } else {
+                results[i] = promise;
+              }
+            }
+            if (!remaining) {
+              resolve(results);
+            }
+          });
+        }
+      }, {
+        key: "resolve",
+        value: function resolve(value) {
+          if (value && _typeof(value) === 'object' && value.constructor === P) {
+            return value;
+          }
+          return new P(function (resolve) {
+            resolve(value);
+          });
+        }
+      }, {
+        key: "reject",
+        value: function reject(reason) {
+          return new P(function (resolve, reject) {
+            reject(reason);
+          });
+        }
+      }]);
+      return P;
+    }();
   var PromisePonyfill = {
     provides: function provides(providers) {
       if (typeof providers.Promise === 'undefined') {
@@ -461,12 +491,14 @@
     return "w-".concat(n);
   }));
   var initial = WINDOW.FontAwesomeConfig || {};
+
   function getAttrConfig(attr) {
     var element = DOCUMENT.querySelector('script[' + attr + ']');
     if (element) {
       return element.getAttribute(attr);
     }
   }
+
   function coerce(val) {
     // Getting an empty string will occur if the attribute is set on the HTML tag but without a value
     // We'll assume that this is an indication that it should be toggled to true
@@ -477,11 +509,24 @@
     return val;
   }
   if (DOCUMENT && typeof DOCUMENT.querySelector === 'function') {
-    var attrs = [['data-family-prefix', 'familyPrefix'], ['data-style-default', 'styleDefault'], ['data-replacement-class', 'replacementClass'], ['data-auto-replace-svg', 'autoReplaceSvg'], ['data-auto-add-css', 'autoAddCss'], ['data-auto-a11y', 'autoA11y'], ['data-search-pseudo-elements', 'searchPseudoElements'], ['data-observe-mutations', 'observeMutations'], ['data-mutate-approach', 'mutateApproach'], ['data-keep-original-source', 'keepOriginalSource'], ['data-measure-performance', 'measurePerformance'], ['data-show-missing-icons', 'showMissingIcons']];
+    var attrs = [
+      ['data-family-prefix', 'familyPrefix'],
+      ['data-style-default', 'styleDefault'],
+      ['data-replacement-class', 'replacementClass'],
+      ['data-auto-replace-svg', 'autoReplaceSvg'],
+      ['data-auto-add-css', 'autoAddCss'],
+      ['data-auto-a11y', 'autoA11y'],
+      ['data-search-pseudo-elements', 'searchPseudoElements'],
+      ['data-observe-mutations', 'observeMutations'],
+      ['data-mutate-approach', 'mutateApproach'],
+      ['data-keep-original-source', 'keepOriginalSource'],
+      ['data-measure-performance', 'measurePerformance'],
+      ['data-show-missing-icons', 'showMissingIcons']
+    ];
     attrs.forEach(function (_ref) {
       var _ref2 = _slicedToArray(_ref, 2),
-          attr = _ref2[0],
-          key = _ref2[1];
+        attr = _ref2[0],
+        key = _ref2[1];
       var val = coerce(getAttrConfig(attr));
       if (val !== undefined && val !== null) {
         initial[key] = val;
@@ -515,9 +560,11 @@
     flipX: false,
     flipY: false
   };
+
   function isReserved(name) {
     return ~RESERVED_CLASSES.indexOf(name);
   }
+
   function bunker(fn) {
     try {
       for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -530,6 +577,7 @@
       }
     }
   }
+
   function insertCss(css) {
     if (!css || !IS_DOM) {
       return;
@@ -550,6 +598,7 @@
     return css;
   }
   var idPool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
   function nextUniqueId() {
     var size = 12;
     var id = '';
@@ -558,6 +607,7 @@
     }
     return id;
   }
+
   function toArray(obj) {
     var array = [];
     for (var i = (obj || []).length >>> 0; i--;) {
@@ -565,6 +615,7 @@
     }
     return array;
   }
+
   function classArray(node) {
     if (node.classList) {
       return toArray(node.classList);
@@ -574,6 +625,7 @@
       });
     }
   }
+
   function getIconName(familyPrefix, cls) {
     var parts = cls.split('-');
     var prefix = parts[0];
@@ -584,26 +636,31 @@
       return null;
     }
   }
+
   function htmlEscape(str) {
     return "".concat(str).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
+
   function joinAttributes(attributes) {
     return Object.keys(attributes || {}).reduce(function (acc, attributeName) {
       return acc + "".concat(attributeName, "=\"").concat(htmlEscape(attributes[attributeName]), "\" ");
     }, '').trim();
   }
+
   function joinStyles(styles) {
     return Object.keys(styles || {}).reduce(function (acc, styleName) {
       return acc + "".concat(styleName, ": ").concat(styles[styleName].trim(), ";");
     }, '');
   }
+
   function transformIsMeaningful(transform) {
     return transform.size !== meaninglessTransform.size || transform.x !== meaninglessTransform.x || transform.y !== meaninglessTransform.y || transform.rotate !== meaninglessTransform.rotate || transform.flipX || transform.flipY;
   }
+
   function transformForSvg(_ref) {
     var transform = _ref.transform,
-        containerWidth = _ref.containerWidth,
-        iconWidth = _ref.iconWidth;
+      containerWidth = _ref.containerWidth,
+      iconWidth = _ref.iconWidth;
     var outer = {
       transform: "translate(".concat(containerWidth / 2, " 256)")
     };
@@ -622,14 +679,15 @@
       path: path
     };
   }
+
   function transformForCss(_ref2) {
     var transform = _ref2.transform,
-        _ref2$width = _ref2.width,
-        width = _ref2$width === void 0 ? UNITS_IN_GRID : _ref2$width,
-        _ref2$height = _ref2.height,
-        height = _ref2$height === void 0 ? UNITS_IN_GRID : _ref2$height,
-        _ref2$startCentered = _ref2.startCentered,
-        startCentered = _ref2$startCentered === void 0 ? false : _ref2$startCentered;
+      _ref2$width = _ref2.width,
+      width = _ref2$width === void 0 ? UNITS_IN_GRID : _ref2$width,
+      _ref2$height = _ref2.height,
+      height = _ref2$height === void 0 ? UNITS_IN_GRID : _ref2$height,
+      _ref2$startCentered = _ref2.startCentered,
+      startCentered = _ref2$startCentered === void 0 ? false : _ref2$startCentered;
     var val = '';
     if (startCentered && IS_IE) {
       val += "translate(".concat(transform.x / d - width / 2, "em, ").concat(transform.y / d - height / 2, "em) ");
@@ -643,6 +701,7 @@
     return val;
   }
   var baseStyles = "svg:not(:root).svg-inline--fa{overflow:visible;-webkit-box-sizing:content-box;box-sizing:content-box}.svg-inline--fa{display:inline-block;display:var(--fa-display,inline-block);height:1em;overflow:visible;vertical-align:-.125em;color:inherit;color:var(--fa-color,inherit)}.svg-inline--fa.fa-2xs{vertical-align:.1em}.svg-inline--fa.fa-xs{vertical-align:0}.svg-inline--fa.fa-sm{vertical-align:-.0714285714em}.svg-inline--fa.fa-lg{vertical-align:-.2em}.svg-inline--fa.fa-xl{vertical-align:-.25em}.svg-inline--fa.fa-2xl{vertical-align:-.3125em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;margin-right:var(--fa-pull-margin,.3em);width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;margin-left:var(--fa-pull-margin,.3em);width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em;width:var(--fa-li-width,2em);top:.25em}.svg-inline--fa.fa-fw{width:1.25em;width:var(--fa-fw-width,1.25em)}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;background-color:var(--fa-counter-background-color,#ff253a);border-radius:1em;border-radius:var(--fa-counter-border-radius,1em);-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;color:var(--fa-inverse,#fff);line-height:1;line-height:var(--fa-counter-line-height,1);max-width:5em;max-width:var(--fa-counter-max-width,5em);min-width:1.5em;min-width:var(--fa-counter-min-width,1.5em);overflow:hidden;padding:.25em .5em;padding:var(--fa-counter-padding,.25em .5em);right:0;right:var(--fa-right,0);text-overflow:ellipsis;top:0;top:var(--fa-top,0);-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform:scale(var(--fa-counter-scale,.25));transform:scale(var(--fa-counter-scale,.25));-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;bottom:var(--fa-bottom,0);right:0;right:var(--fa-right,0);top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform:scale(var(--fa-layers-scale,.25));transform:scale(var(--fa-layers-scale,.25));-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;bottom:var(--fa-bottom,0);left:0;left:var(--fa-left,0);right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform:scale(var(--fa-layers-scale,.25));transform:scale(var(--fa-layers-scale,.25));-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{top:0;top:var(--fa-top,0);right:0;right:var(--fa-right,0);-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform:scale(var(--fa-layers-scale,.25));transform:scale(var(--fa-layers-scale,.25));-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;left:var(--fa-left,0);right:auto;top:0;top:var(--fa-top,0);-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform:scale(var(--fa-layers-scale,.25));transform:scale(var(--fa-layers-scale,.25));-webkit-transform-origin:top left;transform-origin:top left}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-2xs{font-size:.625em;line-height:.1em;vertical-align:.225em}.fa-xs{font-size:.75em;line-height:.0833333333em;vertical-align:.125em}.fa-sm{font-size:.875em;line-height:.0714285714em;vertical-align:.0535714286em}.fa-lg{font-size:1.25em;line-height:.05em;vertical-align:-.075em}.fa-xl{font-size:1.5em;line-height:.0416666667em;vertical-align:-.125em}.fa-2xl{font-size:2em;line-height:.03125em;vertical-align:-.1875em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;margin-left:var(--fa-li-margin,2.5em);padding-left:0}.fa-ul>li{position:relative}.fa-li{left:calc(2em * -1);left:calc(var(--fa-li-width,2em) * -1);position:absolute;text-align:center;width:2em;width:var(--fa-li-width,2em);line-height:inherit}.fa-border{border-color:#eee;border-color:var(--fa-border-color,#eee);border-radius:.1em;border-radius:var(--fa-border-radius,.1em);border-style:solid;border-style:var(--fa-border-style,solid);border-width:.08em;border-width:var(--fa-border-width,.08em);padding:.2em .25em .15em;padding:var(--fa-border-padding,.2em .25em .15em)}.fa-pull-left{float:left;margin-right:.3em;margin-right:var(--fa-pull-margin,.3em)}.fa-pull-right{float:right;margin-left:.3em;margin-left:var(--fa-pull-margin,.3em)}.fa-spin{-webkit-animation-name:fa-spin;animation-name:fa-spin;-webkit-animation-direction:normal;animation-direction:normal;-webkit-animation-direction:var(--fa-spin-direction,normal);animation-direction:var(--fa-spin-direction,normal);-webkit-animation-duration:2s;animation-duration:2s;-webkit-animation-duration:var(--fa-spin-duration,2s);animation-duration:var(--fa-spin-duration,2s);-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-iteration-count:var(--fa-spin-iteration-count,infinite);animation-iteration-count:var(--fa-spin-iteration-count,infinite);-webkit-animation-timing-function:linear;animation-timing-function:linear;-webkit-animation-timing-function:var(--fa-spin-timing,linear);animation-timing-function:var(--fa-spin-timing,linear)}.fa-spin-reverse{--fa-spin-direction:reverse}.fa-pulse,.fa-spin-pulse{-webkit-animation-name:fa-spin;animation-name:fa-spin;-webkit-animation-direction:normal;animation-direction:normal;-webkit-animation-direction:var(--fa-spin-direction,normal);animation-direction:var(--fa-spin-direction,normal);-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-duration:var(--fa-spin-duration,1s);animation-duration:var(--fa-spin-duration,1s);-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-iteration-count:var(--fa-spin-iteration-count,infinite);animation-iteration-count:var(--fa-spin-iteration-count,infinite);-webkit-animation-timing-function:steps(8);animation-timing-function:steps(8);-webkit-animation-timing-function:var(--fa-spin-timing,steps(8));animation-timing-function:var(--fa-spin-timing,steps(8))}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-both,.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}.fa-rotate-by{-webkit-transform:rotate(none);transform:rotate(none);-webkit-transform:rotate(var(--fa-rotate-angle,none));transform:rotate(var(--fa-rotate-angle,none))}.fa-stack{display:inline-block;vertical-align:middle;height:2em;position:relative;width:2.5em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0;z-index:auto;z-index:var(--fa-stack-z-index,auto)}.svg-inline--fa.fa-stack-1x{height:1em;width:1.25em}.svg-inline--fa.fa-stack-2x{height:2em;width:2.5em}.fa-inverse{color:#fff;color:var(--fa-inverse,#fff)}.fa-sr-only,.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}.fa-sr-only-focusable:not(:focus),.sr-only-focusable:not(:focus){position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}.svg-inline--fa .fa-primary{fill:currentColor;fill:var(--fa-primary-color,currentColor);opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa .fa-secondary{fill:currentColor;fill:var(--fa-secondary-color,currentColor);opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-primary{opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-secondary{opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa mask .fa-primary,.svg-inline--fa mask .fa-secondary{fill:#000}.fa-duotone.fa-inverse,.fad.fa-inverse{color:#fff;color:var(--fa-inverse,#fff)}";
+
   function css() {
     var dfp = DEFAULT_FAMILY_PREFIX;
     var drc = DEFAULT_REPLACEMENT_CLASS;
@@ -658,6 +717,7 @@
     return s;
   }
   var _cssInserted = false;
+
   function ensureCss() {
     if (config.autoAddCss && !_cssInserted) {
       insertCss(css());
@@ -703,16 +763,18 @@
     loaded = (DOCUMENT.documentElement.doScroll ? /^loaded|^c/ : /^loaded|^i|^c/).test(DOCUMENT.readyState);
     if (!loaded) DOCUMENT.addEventListener('DOMContentLoaded', listener);
   }
-  function domready (fn) {
+
+  function domready(fn) {
     if (!IS_DOM) return;
     loaded ? setTimeout(fn, 0) : functions.push(fn);
   }
+
   function toHtml(abstractNodes) {
     var tag = abstractNodes.tag,
-        _abstractNodes$attrib = abstractNodes.attributes,
-        attributes = _abstractNodes$attrib === void 0 ? {} : _abstractNodes$attrib,
-        _abstractNodes$childr = abstractNodes.children,
-        children = _abstractNodes$childr === void 0 ? [] : _abstractNodes$childr;
+      _abstractNodes$attrib = abstractNodes.attributes,
+      attributes = _abstractNodes$attrib === void 0 ? {} : _abstractNodes$attrib,
+      _abstractNodes$childr = abstractNodes.children,
+      children = _abstractNodes$childr === void 0 ? [] : _abstractNodes$childr;
     if (typeof abstractNodes === 'string') {
       return htmlEscape(abstractNodes);
     } else {
@@ -741,11 +803,11 @@
    */
   var reduce = function fastReduceObject(subject, fn, initialValue, thisContext) {
     var keys = Object.keys(subject),
-        length = keys.length,
-        iterator = thisContext !== undefined ? bindInternal4(fn, thisContext) : fn,
-        i,
-        key,
-        result;
+      length = keys.length,
+      iterator = thisContext !== undefined ? bindInternal4(fn, thisContext) : fn,
+      i,
+      key,
+      result;
     if (initialValue === undefined) {
       i = 1;
       result = subject[keys[0]];
@@ -759,6 +821,7 @@
     }
     return result;
   };
+
   function toHex(unicode) {
     var result = '';
     for (var i = 0; i < unicode.length; i++) {
@@ -767,6 +830,7 @@
     }
     return result;
   }
+
   function codePointAt(string, index) {
     /*! https://mths.be/codepointat v0.2.0 by @mathias */
     var size = string.length;
@@ -792,6 +856,7 @@
       return cp >= 57344 && cp <= 63743;
     }
   }
+
   function normalizeIcons(icons) {
     return Object.keys(icons).reduce(function (acc, iconName) {
       var icon = icons[iconName];
@@ -804,10 +869,11 @@
       return acc;
     }, {});
   }
+
   function defineIcons(prefix, icons) {
     var params = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
     var _params$skipHooks = params.skipHooks,
-        skipHooks = _params$skipHooks === void 0 ? false : _params$skipHooks;
+      skipHooks = _params$skipHooks === void 0 ? false : _params$skipHooks;
     var normalized = normalizeIcons(icons);
     if (typeof namespace.hooks.addPack === 'function' && !skipHooks) {
       namespace.hooks.addPack(prefix, normalizeIcons(icons));
@@ -830,6 +896,7 @@
     Promise: Promise
   };
   var defaultProviderKeys = Object.keys(providers);
+
   function registerPlugins(nextPlugins, _ref) {
     var obj = _ref.mixoutsTo;
     _plugins = nextPlugins;
@@ -869,6 +936,7 @@
     });
     return obj;
   }
+
   function chainHooks(hook, accumulator) {
     for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
       args[_key - 2] = arguments[_key];
@@ -879,6 +947,7 @@
     });
     return accumulator;
   }
+
   function callHooks(hook) {
     var hookFns = _hooks[hook] || [];
     for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
@@ -908,13 +977,14 @@
     }
     return undefined;
   }
+
   function callProvided() {
     var hook = arguments[0];
     var args = Array.prototype.slice.call(arguments, 1);
     return providers[hook] ? providers[hook].apply(null, args) : undefined;
   }
   var styles = namespace.styles,
-      shims = namespace.shims;
+    shims = namespace.shims;
   var _byUnicode = {};
   var _byLigature = {};
   var _byOldName = {};
@@ -976,15 +1046,19 @@
     }, {});
   };
   build();
+
   function byUnicode(prefix, unicode) {
     return (_byUnicode[prefix] || {})[unicode];
   }
+
   function byLigature(prefix, ligature) {
     return (_byLigature[prefix] || {})[ligature];
   }
+
   function byAlias(prefix, alias) {
     return (_byAlias[prefix] || {})[alias];
   }
+
   function byOldName(name) {
     return _byOldName[name] || {
       prefix: null,
@@ -999,10 +1073,11 @@
       rest: []
     };
   };
+
   function getCanonicalIcon(values) {
     var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     var _params$skipLookups = params.skipLookups,
-        skipLookups = _params$skipLookups === void 0 ? false : _params$skipLookups;
+      skipLookups = _params$skipLookups === void 0 ? false : _params$skipLookups;
     return values.reduce(function (acc, cls) {
       var iconName = getIconName(config.familyPrefix, cls);
       if (styles$1[cls]) {
@@ -1023,6 +1098,7 @@
       return acc;
     }, emptyCanonicalIcon());
   }
+
   function iconFromMapping(mapping, prefix, iconName) {
     if (mapping && mapping[prefix] && mapping[prefix][iconName]) {
       return {
@@ -1033,69 +1109,72 @@
     }
   }
   var Library =
-  /*#__PURE__*/
-  function () {
-    function Library() {
-      _classCallCheck(this, Library);
-      this.definitions = {};
-    }
-    _createClass(Library, [{
-      key: "add",
-      value: function add() {
-        var _this = this;
-        for (var _len = arguments.length, definitions = new Array(_len), _key = 0; _key < _len; _key++) {
-          definitions[_key] = arguments[_key];
-        }
-        var additions = definitions.reduce(this._pullDefinitions, {});
-        Object.keys(additions).forEach(function (key) {
-          _this.definitions[key] = _objectSpread({}, _this.definitions[key] || {}, additions[key]);
-          defineIcons(key, additions[key]);
-          build();
-        });
-      }
-    }, {
-      key: "reset",
-      value: function reset() {
+    /*#__PURE__*/
+    function () {
+      function Library() {
+        _classCallCheck(this, Library);
         this.definitions = {};
       }
-    }, {
-      key: "_pullDefinitions",
-      value: function _pullDefinitions(additions, definition) {
-        var normalized = definition.prefix && definition.iconName && definition.icon ? {
-          0: definition
-        } : definition;
-        Object.keys(normalized).map(function (key) {
-          var _normalized$key = normalized[key],
+      _createClass(Library, [{
+        key: "add",
+        value: function add() {
+          var _this = this;
+          for (var _len = arguments.length, definitions = new Array(_len), _key = 0; _key < _len; _key++) {
+            definitions[_key] = arguments[_key];
+          }
+          var additions = definitions.reduce(this._pullDefinitions, {});
+          Object.keys(additions).forEach(function (key) {
+            _this.definitions[key] = _objectSpread({}, _this.definitions[key] || {}, additions[key]);
+            defineIcons(key, additions[key]);
+            build();
+          });
+        }
+      }, {
+        key: "reset",
+        value: function reset() {
+          this.definitions = {};
+        }
+      }, {
+        key: "_pullDefinitions",
+        value: function _pullDefinitions(additions, definition) {
+          var normalized = definition.prefix && definition.iconName && definition.icon ? {
+            0: definition
+          } : definition;
+          Object.keys(normalized).map(function (key) {
+            var _normalized$key = normalized[key],
               prefix = _normalized$key.prefix,
               iconName = _normalized$key.iconName,
               icon = _normalized$key.icon;
-          var aliases = icon[2];
-          if (!additions[prefix]) additions[prefix] = {};
-          if (aliases.length > 0) {
-            aliases.forEach(function (alias) {
-              if (typeof alias === 'string') {
-                additions[prefix][alias] = icon;
-              }
-            });
-          }
-          additions[prefix][iconName] = icon;
-        });
-        return additions;
-      }
-    }]);
-    return Library;
-  }();
+            var aliases = icon[2];
+            if (!additions[prefix]) additions[prefix] = {};
+            if (aliases.length > 0) {
+              aliases.forEach(function (alias) {
+                if (typeof alias === 'string') {
+                  additions[prefix][alias] = icon;
+                }
+              });
+            }
+            additions[prefix][iconName] = icon;
+          });
+          return additions;
+        }
+      }]);
+      return Library;
+    }();
+
   function getStyle(defaultStyle) {
     return defaultStyle in STYLE_TO_PREFIX ? defaultStyle : PREFIX_TO_STYLE[defaultStyle] || 'solid';
   }
+
   function getPrefix(defaultStyle) {
     return STYLE_TO_PREFIX[getStyle(defaultStyle)];
   }
+
   function findIconDefinition(iconLookup) {
     iconLookup.prefix === 'fa' ? iconLookup.prefix = 'fas' : iconLookup.prefix;
     var _iconLookup$prefix = iconLookup.prefix,
-        prefix = _iconLookup$prefix === void 0 ? getPrefix(config.styleDefault) : _iconLookup$prefix,
-        iconName = iconLookup.iconName;
+      prefix = _iconLookup$prefix === void 0 ? getPrefix(config.styleDefault) : _iconLookup$prefix,
+      iconName = iconLookup.iconName;
     if (!iconName) return;
     return iconFromMapping(library.definitions, prefix, iconName) || iconFromMapping(namespace.styles, prefix, iconName);
   }
@@ -1174,11 +1253,12 @@
   var autoReplace = function autoReplace() {
     var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     var _params$autoReplaceSv = params.autoReplaceSvgRoot,
-        autoReplaceSvgRoot = _params$autoReplaceSv === void 0 ? DOCUMENT : _params$autoReplaceSv;
+      autoReplaceSvgRoot = _params$autoReplaceSv === void 0 ? DOCUMENT : _params$autoReplaceSv;
     if ((Object.keys(namespace.styles).length > 0 || config.autoFetchSvg) && IS_DOM && config.autoReplaceSvg) api.dom.i2svg({
       node: autoReplaceSvgRoot
     });
   };
+
   function bootstrap(plugins) {
     if (IS_BROWSER) {
       if (!WINDOW.FontAwesome) {
@@ -1198,8 +1278,8 @@
       addPacks: function addPacks(packs) {
         packs.forEach(function (_ref) {
           var _ref2 = _slicedToArray(_ref, 2),
-              prefix = _ref2[0],
-              icons = _ref2[1];
+            prefix = _ref2[0],
+            icons = _ref2[1];
           namespace.styles[prefix] = _objectSpread({}, namespace.styles[prefix] || {}, icons);
         });
         build();
@@ -1213,6 +1293,7 @@
       }
     });
   }
+
   function domVariants(val, abstractCreator) {
     Object.defineProperty(val, 'abstract', {
       get: abstractCreator
@@ -1234,16 +1315,17 @@
     });
     return val;
   }
-  function asIcon (_ref) {
+
+  function asIcon(_ref) {
     var children = _ref.children,
-        main = _ref.main,
-        mask = _ref.mask,
-        attributes = _ref.attributes,
-        styles = _ref.styles,
-        transform = _ref.transform;
+      main = _ref.main,
+      mask = _ref.mask,
+      attributes = _ref.attributes,
+      styles = _ref.styles,
+      transform = _ref.transform;
     if (transformIsMeaningful(transform) && main.found && !mask.found) {
       var width = main.width,
-          height = main.height;
+        height = main.height;
       var offset = {
         x: width / height / 2,
         y: 0.5
@@ -1258,12 +1340,13 @@
       children: children
     }];
   }
-  function asSymbol (_ref) {
+
+  function asSymbol(_ref) {
     var prefix = _ref.prefix,
-        iconName = _ref.iconName,
-        children = _ref.children,
-        attributes = _ref.attributes,
-        symbol = _ref.symbol;
+      iconName = _ref.iconName,
+      children = _ref.children,
+      attributes = _ref.attributes,
+      symbol = _ref.symbol;
     var id = symbol === true ? "".concat(prefix, "-").concat(config.familyPrefix, "-").concat(iconName) : symbol;
     return [{
       tag: 'svg',
@@ -1279,23 +1362,24 @@
       }]
     }];
   }
+
   function makeInlineSvgAbstract(params) {
     var _params$icons = params.icons,
-        main = _params$icons.main,
-        mask = _params$icons.mask,
-        prefix = params.prefix,
-        iconName = params.iconName,
-        transform = params.transform,
-        symbol = params.symbol,
-        title = params.title,
-        maskId = params.maskId,
-        titleId = params.titleId,
-        extra = params.extra,
-        _params$watchable = params.watchable,
-        watchable = _params$watchable === void 0 ? false : _params$watchable;
+      main = _params$icons.main,
+      mask = _params$icons.mask,
+      prefix = params.prefix,
+      iconName = params.iconName,
+      transform = params.transform,
+      symbol = params.symbol,
+      title = params.title,
+      maskId = params.maskId,
+      titleId = params.titleId,
+      extra = params.extra,
+      _params$watchable = params.watchable,
+      watchable = _params$watchable === void 0 ? false : _params$watchable;
     var _ref = mask.found ? mask : main,
-        width = _ref.width,
-        height = _ref.height;
+      width = _ref.width,
+      height = _ref.height;
     var isUploadedIcon = prefix === 'fak';
     var widthClass = isUploadedIcon ? '' : "fa-w-".concat(Math.ceil(width / height * 16));
     var attrClass = [config.replacementClass, iconName ? "".concat(config.familyPrefix, "-").concat(iconName) : '', widthClass].filter(function (c) {
@@ -1338,14 +1422,14 @@
       styles: _objectSpread({}, uploadedIconWidthStyle, extra.styles)
     });
     var _ref2 = mask.found && main.found ? callProvided('generateAbstractMask', args) || {
-      children: [],
-      attributes: {}
-    } : callProvided('generateAbstractIcon', args) || {
-      children: [],
-      attributes: {}
-    },
-        children = _ref2.children,
-        attributes = _ref2.attributes;
+        children: [],
+        attributes: {}
+      } : callProvided('generateAbstractIcon', args) || {
+        children: [],
+        attributes: {}
+      },
+      children = _ref2.children,
+      attributes = _ref2.attributes;
     args.children = children;
     args.attributes = attributes;
     if (symbol) {
@@ -1354,15 +1438,16 @@
       return asIcon(args);
     }
   }
+
   function makeLayersTextAbstract(params) {
     var content = params.content,
-        width = params.width,
-        height = params.height,
-        transform = params.transform,
-        title = params.title,
-        extra = params.extra,
-        _params$watchable2 = params.watchable,
-        watchable = _params$watchable2 === void 0 ? false : _params$watchable2;
+      width = params.width,
+      height = params.height,
+      transform = params.transform,
+      title = params.title,
+      extra = params.extra,
+      _params$watchable2 = params.watchable,
+      watchable = _params$watchable2 === void 0 ? false : _params$watchable2;
     var attributes = _objectSpread({}, extra.attributes, title ? {
       'title': title
     } : {}, {
@@ -1402,10 +1487,11 @@
     }
     return val;
   }
+
   function makeLayersCounterAbstract(params) {
     var content = params.content,
-        title = params.title,
-        extra = params.extra;
+      title = params.title,
+      extra = params.extra;
     var attributes = _objectSpread({}, extra.attributes, title ? {
       'title': title
     } : {}, {
@@ -1432,6 +1518,7 @@
     }
     return val;
   }
+
   function MissingIcon(error) {
     this.name = 'MissingIcon';
     this.message = error || 'Icon unavailable';
@@ -1440,6 +1527,7 @@
   MissingIcon.prototype = Object.create(Error.prototype);
   MissingIcon.prototype.constructor = MissingIcon;
   var styles$2 = namespace.styles;
+
   function resolveCustomIconVersion() {
     var kitConfig = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     var iconName = arguments.length > 1 ? arguments[1] : undefined;
@@ -1459,12 +1547,13 @@
       }
     }
   }
+
   function asFoundIcon(icon) {
     var width = icon[0];
     var height = icon[1];
     var _icon$slice = icon.slice(4),
-        _icon$slice2 = _slicedToArray(_icon$slice, 1),
-        vectorData = _icon$slice2[0];
+      _icon$slice2 = _slicedToArray(_icon$slice, 1),
+      vectorData = _icon$slice2[0];
     var element = null;
     if (Array.isArray(vectorData)) {
       element = {
@@ -1504,6 +1593,7 @@
       icon: element
     };
   }
+
   function findIcon(iconName, prefix) {
     if (prefix === 'fa' && config.styleDefault !== null) {
       prefix = config.styleDefault;
@@ -1552,10 +1642,12 @@
     end: end
   };
   var noop$2 = function noop() {};
+
   function isWatched(node) {
     var i2svg = node.getAttribute ? node.getAttribute(DATA_FA_I2SVG) : null;
     return typeof i2svg === 'string';
   }
+
   function getMutator() {
     if (config.autoReplaceSvg === true) {
       return mutators.replace;
@@ -1563,6 +1655,7 @@
     var mutator = mutators[config.autoReplaceSvg];
     return mutator || mutators.replace;
   }
+
   function convertSVG(abstractObj) {
     if (typeof abstractObj === 'string') {
       return DOCUMENT.createTextNode(abstractObj);
@@ -1577,6 +1670,7 @@
     });
     return tag;
   }
+
   function nodeAsComment(node) {
     return " ".concat(node.outerHTML, " Font Awesome fontawesome.com ");
   }
@@ -1622,9 +1716,11 @@
       node.innerHTML = newInnerHTML;
     }
   };
+
   function performOperationSync(op) {
     op();
   }
+
   function perform(mutations, callback) {
     var callbackFunction = typeof callback === 'function' ? callback : noop$2;
     if (mutations.length === 0) {
@@ -1644,13 +1740,16 @@
     }
   }
   var disabled = false;
+
   function disableObservation() {
     disabled = true;
   }
+
   function enableObservation() {
     disabled = false;
   }
   var mo = null;
+
   function observe(options) {
     if (!MUTATION_OBSERVER) {
       return;
@@ -1659,13 +1758,13 @@
       return;
     }
     var _options$treeCallback = options.treeCallback,
-        treeCallback = _options$treeCallback === void 0 ? noop$2 : _options$treeCallback,
-        _options$nodeCallback = options.nodeCallback,
-        nodeCallback = _options$nodeCallback === void 0 ? noop$2 : _options$nodeCallback,
-        _options$pseudoElemen = options.pseudoElementsCallback,
-        pseudoElementsCallback = _options$pseudoElemen === void 0 ? noop$2 : _options$pseudoElemen,
-        _options$observeMutat = options.observeMutationsRoot,
-        observeMutationsRoot = _options$observeMutat === void 0 ? DOCUMENT : _options$observeMutat;
+      treeCallback = _options$treeCallback === void 0 ? noop$2 : _options$treeCallback,
+      _options$nodeCallback = options.nodeCallback,
+      nodeCallback = _options$nodeCallback === void 0 ? noop$2 : _options$nodeCallback,
+      _options$pseudoElemen = options.pseudoElementsCallback,
+      pseudoElementsCallback = _options$pseudoElemen === void 0 ? noop$2 : _options$pseudoElemen,
+      _options$observeMutat = options.observeMutationsRoot,
+      observeMutationsRoot = _options$observeMutat === void 0 ? DOCUMENT : _options$observeMutat;
     mo = new MUTATION_OBSERVER(function (objects) {
       if (disabled) return;
       toArray(objects).forEach(function (mutationRecord) {
@@ -1681,8 +1780,8 @@
         if (mutationRecord.type === 'attributes' && isWatched(mutationRecord.target) && ~ATTRIBUTES_WATCHED_FOR_MUTATION.indexOf(mutationRecord.attributeName)) {
           if (mutationRecord.attributeName === 'class') {
             var _getCanonicalIcon = getCanonicalIcon(classArray(mutationRecord.target)),
-                prefix = _getCanonicalIcon.prefix,
-                iconName = _getCanonicalIcon.iconName;
+              prefix = _getCanonicalIcon.prefix,
+              iconName = _getCanonicalIcon.iconName;
             if (prefix) mutationRecord.target.setAttribute('data-prefix', prefix);
             if (iconName) mutationRecord.target.setAttribute('data-icon', iconName);
           } else {
@@ -1699,11 +1798,13 @@
       subtree: true
     });
   }
+
   function disconnect() {
     if (!mo) return;
     mo.disconnect();
   }
-  function styleParser (node) {
+
+  function styleParser(node) {
     var style = node.getAttribute('style');
     var val = [];
     if (style) {
@@ -1719,7 +1820,8 @@
     }
     return val;
   }
-  function classParser (node) {
+
+  function classParser(node) {
     var existingPrefix = node.getAttribute('data-prefix');
     var existingIconName = node.getAttribute('data-icon');
     var innerText = node.innerText !== undefined ? node.innerText.trim() : '';
@@ -1735,7 +1837,8 @@
     }
     return val;
   }
-  function attributesParser (node) {
+
+  function attributesParser(node) {
     var extraAttributes = toArray(node.attributes).reduce(function (acc, attr) {
       if (acc.name !== 'class' && acc.name !== 'style') {
         acc[attr.name] = attr.value;
@@ -1754,6 +1857,7 @@
     }
     return extraAttributes;
   }
+
   function blankMeta() {
     return {
       iconName: null,
@@ -1775,11 +1879,12 @@
       }
     };
   }
+
   function parseMeta(node) {
     var _classParser = classParser(node),
-        iconName = _classParser.iconName,
-        prefix = _classParser.prefix,
-        extraClasses = _classParser.rest;
+      iconName = _classParser.iconName,
+      prefix = _classParser.prefix,
+      extraClasses = _classParser.rest;
     var extraStyles = styleParser(node);
     var extraAttributes = attributesParser(node);
     var pluginMeta = chainHooks('parseNodeAttributes', {}, node);
@@ -1804,6 +1909,7 @@
     }, pluginMeta);
   }
   var styles$3 = namespace.styles;
+
   function generateMutation(node) {
     var nodeMeta = parseMeta(node);
     if (~nodeMeta.extra.classes.indexOf(LAYERS_TEXT_CLASSNAME)) {
@@ -1812,6 +1918,7 @@
       return callProvided('generateSvgReplacementMutation', node, nodeMeta);
     }
   }
+
   function onTree(root) {
     var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
     if (!IS_DOM) return;
@@ -1832,7 +1939,7 @@
     var candidates = [];
     try {
       candidates = toArray(root.querySelectorAll(prefixesDomQuery));
-    } catch (e) {// noop
+    } catch (e) { // noop
     }
     if (candidates.length > 0) {
       hclAdd('pending');
@@ -1872,6 +1979,7 @@
       });
     });
   }
+
   function onNode(node) {
     var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
     generateMutation(node).then(function (mutation) {
@@ -1880,6 +1988,7 @@
       }
     });
   }
+
   function resolveIcons(next) {
     return function (maybeIconDefinition) {
       var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
@@ -1896,27 +2005,27 @@
   var render = function render(iconDefinition) {
     var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     var _params$transform = params.transform,
-        transform = _params$transform === void 0 ? meaninglessTransform : _params$transform,
-        _params$symbol = params.symbol,
-        symbol = _params$symbol === void 0 ? false : _params$symbol,
-        _params$mask = params.mask,
-        mask = _params$mask === void 0 ? null : _params$mask,
-        _params$maskId = params.maskId,
-        maskId = _params$maskId === void 0 ? null : _params$maskId,
-        _params$title = params.title,
-        title = _params$title === void 0 ? null : _params$title,
-        _params$titleId = params.titleId,
-        titleId = _params$titleId === void 0 ? null : _params$titleId,
-        _params$classes = params.classes,
-        classes = _params$classes === void 0 ? [] : _params$classes,
-        _params$attributes = params.attributes,
-        attributes = _params$attributes === void 0 ? {} : _params$attributes,
-        _params$styles = params.styles,
-        styles = _params$styles === void 0 ? {} : _params$styles;
+      transform = _params$transform === void 0 ? meaninglessTransform : _params$transform,
+      _params$symbol = params.symbol,
+      symbol = _params$symbol === void 0 ? false : _params$symbol,
+      _params$mask = params.mask,
+      mask = _params$mask === void 0 ? null : _params$mask,
+      _params$maskId = params.maskId,
+      maskId = _params$maskId === void 0 ? null : _params$maskId,
+      _params$title = params.title,
+      title = _params$title === void 0 ? null : _params$title,
+      _params$titleId = params.titleId,
+      titleId = _params$titleId === void 0 ? null : _params$titleId,
+      _params$classes = params.classes,
+      classes = _params$classes === void 0 ? [] : _params$classes,
+      _params$attributes = params.attributes,
+      attributes = _params$attributes === void 0 ? {} : _params$attributes,
+      _params$styles = params.styles,
+      styles = _params$styles === void 0 ? {} : _params$styles;
     if (!iconDefinition) return;
     var prefix = iconDefinition.prefix,
-        iconName = iconDefinition.iconName,
-        icon = iconDefinition.icon;
+      iconName = iconDefinition.iconName,
+      icon = iconDefinition.icon;
     return domVariants(_objectSpread({
       type: 'icon'
     }, iconDefinition), function () {
@@ -1975,26 +2084,26 @@
     provides: function provides(providers$$1) {
       providers$$1.i2svg = function (params) {
         var _params$node = params.node,
-            node = _params$node === void 0 ? DOCUMENT : _params$node,
-            _params$callback = params.callback,
-            callback = _params$callback === void 0 ? function () {} : _params$callback;
+          node = _params$node === void 0 ? DOCUMENT : _params$node,
+          _params$callback = params.callback,
+          callback = _params$callback === void 0 ? function () {} : _params$callback;
         return onTree(node, callback);
       };
       providers$$1.generateSvgReplacementMutation = function (node, nodeMeta) {
         var iconName = nodeMeta.iconName,
-            title = nodeMeta.title,
-            titleId = nodeMeta.titleId,
-            prefix = nodeMeta.prefix,
-            transform = nodeMeta.transform,
-            symbol = nodeMeta.symbol,
-            mask = nodeMeta.mask,
-            maskId = nodeMeta.maskId,
-            extra = nodeMeta.extra;
+          title = nodeMeta.title,
+          titleId = nodeMeta.titleId,
+          prefix = nodeMeta.prefix,
+          transform = nodeMeta.transform,
+          symbol = nodeMeta.symbol,
+          mask = nodeMeta.mask,
+          maskId = nodeMeta.maskId,
+          extra = nodeMeta.extra;
         return new providers$$1.Promise(function (resolve, reject) {
           providers$$1.Promise.all([findIcon(iconName, prefix), findIcon(mask.iconName, mask.prefix)]).then(function (_ref) {
             var _ref2 = _slicedToArray(_ref, 2),
-                main = _ref2[0],
-                mask = _ref2[1];
+              main = _ref2[0],
+              mask = _ref2[1];
             resolve([node, makeInlineSvgAbstract({
               icons: {
                 main: main,
@@ -2016,10 +2125,10 @@
       };
       providers$$1.generateAbstractIcon = function (_ref3) {
         var children = _ref3.children,
-            attributes = _ref3.attributes,
-            main = _ref3.main,
-            transform = _ref3.transform,
-            styles = _ref3.styles;
+          attributes = _ref3.attributes,
+          main = _ref3.main,
+          transform = _ref3.transform,
+          styles = _ref3.styles;
         var styleString = joinStyles(styles);
         if (styleString.length > 0) {
           attributes['style'] = styleString;
@@ -2047,7 +2156,7 @@
         layer: function layer(assembler) {
           var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
           var _params$classes = params.classes,
-              classes = _params$classes === void 0 ? [] : _params$classes;
+            classes = _params$classes === void 0 ? [] : _params$classes;
           return domVariants({
             type: 'layer'
           }, function () {
@@ -2079,13 +2188,13 @@
         counter: function counter(content) {
           var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
           var _params$title = params.title,
-              title = _params$title === void 0 ? null : _params$title,
-              _params$classes = params.classes,
-              classes = _params$classes === void 0 ? [] : _params$classes,
-              _params$attributes = params.attributes,
-              attributes = _params$attributes === void 0 ? {} : _params$attributes,
-              _params$styles = params.styles,
-              styles = _params$styles === void 0 ? {} : _params$styles;
+            title = _params$title === void 0 ? null : _params$title,
+            _params$classes = params.classes,
+            classes = _params$classes === void 0 ? [] : _params$classes,
+            _params$attributes = params.attributes,
+            attributes = _params$attributes === void 0 ? {} : _params$attributes,
+            _params$styles = params.styles,
+            styles = _params$styles === void 0 ? {} : _params$styles;
           return domVariants({
             type: 'counter',
             content: content
@@ -2114,15 +2223,15 @@
         text: function text(content) {
           var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
           var _params$transform = params.transform,
-              transform = _params$transform === void 0 ? meaninglessTransform : _params$transform,
-              _params$title = params.title,
-              title = _params$title === void 0 ? null : _params$title,
-              _params$classes = params.classes,
-              classes = _params$classes === void 0 ? [] : _params$classes,
-              _params$attributes = params.attributes,
-              attributes = _params$attributes === void 0 ? {} : _params$attributes,
-              _params$styles = params.styles,
-              styles = _params$styles === void 0 ? {} : _params$styles;
+            transform = _params$transform === void 0 ? meaninglessTransform : _params$transform,
+            _params$title = params.title,
+            title = _params$title === void 0 ? null : _params$title,
+            _params$classes = params.classes,
+            classes = _params$classes === void 0 ? [] : _params$classes,
+            _params$attributes = params.attributes,
+            attributes = _params$attributes === void 0 ? {} : _params$attributes,
+            _params$styles = params.styles,
+            styles = _params$styles === void 0 ? {} : _params$styles;
           return domVariants({
             type: 'text',
             content: content
@@ -2148,8 +2257,8 @@
     provides: function provides(providers$$1) {
       providers$$1.generateLayersText = function (node, nodeMeta) {
         var title = nodeMeta.title,
-            transform = nodeMeta.transform,
-            extra = nodeMeta.extra;
+          transform = nodeMeta.transform,
+          extra = nodeMeta.extra;
         var width = null;
         var height = null;
         if (IS_IE) {
@@ -2173,6 +2282,7 @@
       };
     }
   };
+
   function replaceForPosition(node, position) {
     var pendingAttribute = "".concat(DATA_FA_PSEUDO_ELEMENT_PENDING).concat(position.replace(':', '-'));
     return new providers.Promise(function (resolve, reject) {
@@ -2241,12 +2351,15 @@
       }
     });
   }
+
   function replace(node) {
     return providers.Promise.all([replaceForPosition(node, '::before'), replaceForPosition(node, '::after')]);
   }
+
   function processable(node) {
     return node.parentNode !== document.head && !~TAGNAMES_TO_SKIP_FOR_PSEUDOELEMENTS.indexOf(node.tagName.toUpperCase()) && !node.getAttribute(DATA_FA_PSEUDO_ELEMENT) && (!node.parentNode || node.parentNode.tagName !== 'svg');
   }
+
   function searchPseudoElements(root) {
     if (!IS_DOM) return;
     return new providers.Promise(function (resolve, reject) {
@@ -2276,7 +2389,7 @@
     provides: function provides(providers$$1) {
       providers$$1.pseudoElements2svg = function (params) {
         var _params$node = params.node,
-            node = _params$node === void 0 ? DOCUMENT : _params$node;
+          node = _params$node === void 0 ? DOCUMENT : _params$node;
         if (config.searchPseudoElements) {
           searchPseudoElements(node);
         }
@@ -2391,9 +2504,9 @@
     provides: function provides(providers) {
       providers.generateAbstractTransformGrouping = function (_ref) {
         var main = _ref.main,
-            transform = _ref.transform,
-            containerWidth = _ref.containerWidth,
-            iconWidth = _ref.iconWidth;
+          transform = _ref.transform,
+          containerWidth = _ref.containerWidth,
+          iconWidth = _ref.iconWidth;
         var outer = {
           transform: "translate(".concat(containerWidth / 2, " 256)")
         };
@@ -2433,6 +2546,7 @@
     width: '100%',
     height: '100%'
   };
+
   function fillBlack(abstract) {
     var force = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
     if (abstract.attributes && (abstract.attributes.fill || force)) {
@@ -2440,6 +2554,7 @@
     }
     return abstract;
   }
+
   function deGroup(abstract) {
     if (abstract.tag === 'g') {
       return abstract.children;
@@ -2464,15 +2579,15 @@
     provides: function provides(providers) {
       providers.generateAbstractMask = function (_ref) {
         var children = _ref.children,
-            attributes = _ref.attributes,
-            main = _ref.main,
-            mask = _ref.mask,
-            explicitMaskId = _ref.maskId,
-            transform = _ref.transform;
+          attributes = _ref.attributes,
+          main = _ref.main,
+          mask = _ref.mask,
+          explicitMaskId = _ref.maskId,
+          transform = _ref.transform;
         var mainWidth = main.width,
-            mainPath = main.icon;
+          mainPath = main.icon;
         var maskWidth = mask.width,
-            maskPath = mask.icon;
+          maskPath = mask.icon;
         var trans = transformForSvg({
           transform: transform,
           containerWidth: maskWidth,

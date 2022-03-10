@@ -1,7 +1,8 @@
-body{
+body {
      font-family: 'Miriam Libre', sans-serif;
 }
- #input {
+
+#input {
      text-align: justify;
      font-size: 1em;
      font-weight: normal;
@@ -16,10 +17,12 @@ body{
      border-bottom: 2px solid #ccc;
      transition: all .25s ease;
 }
- #input:focus {
+
+#input:focus {
      border-bottom: 2px solid black;
 }
- #output {
+
+#output {
      text-align: justify;
      font-size: 1em;
      font-weight: normal;
@@ -31,7 +34,7 @@ body{
      margin-left: auto;
      margin-right: auto;
      margin-bottom: 25px;
-     cursor:pointer;
+     cursor: pointer;
      outline: none;
      transition: all .25s ease;
      word-wrap: break-word;
@@ -39,12 +42,14 @@ body{
      border: 1px solid #eee;
 
 }
- #output:active{
+
+#output:active {
      background: #f5f9ef;
      border: 1px solid #8bb260;
-     color:#8bb260;
+     color: #8bb260;
 }
- #button {
+
+#button {
      border-radius: 10px;
      border: 1px solid black;
      outline: none;
@@ -54,27 +59,32 @@ body{
      cursor: pointer;
      transition: all .25s ease;
 }
- #button:hover {
+
+#button:hover {
      background-color: #ddd;
 }
- #button:active {
+
+#button:active {
      background-color: black;
      color: white;
 }
- #logo {
+
+#logo {
      position: absolute;
      display: block;
      width: 50px;
      right: 25px;
 }
- #credits {
+
+#credits {
      display: block;
      font-size: .8em;
      margin-left: 25px;
      margin-right: auto;
      bottom: 25px;
 }
- .menuItem{
+
+.menuItem {
      margin-top: 25px;
      margin-left: 25px;
      text-align: center;
@@ -88,11 +98,12 @@ body{
      font-size: 1em;
      cursor: pointer;
 }
- .menuItem:hover {
-}
- .menuItem:focus {
-}
- .footer {
+
+.menuItem:hover {}
+
+.menuItem:focus {}
+
+.footer {
      position: fixed;
      left: 0;
      bottom: 0;
@@ -101,57 +112,82 @@ body{
      color: white;
      text-align: center;
 }
- .header {
+
+.header {
      position: fixed;
      left: 0;
      top: 0;
      width: 100%;
      background-color: #8bb260;
 }
- #link{
+
+#link {
      color: white;
 }
- #copyText{
+
+#copyText {
      opacity: 0;
 }
- #logtext{
+
+#logtext {
      margin-top: 75px;
      width: 80%;
      margin-left: auto;
      margin-right: auto;
 }
- code{
 
-  background: #f5f9ef;
+code {
+
+     background: #f5f9ef;
      padding: 2px;
      color: #8bb260;
-font-family: 'Oxygen Mono', monospace;
+     font-family: 'Oxygen Mono', monospace;
 }
-code::selection{
-background: #8bb260;
+
+code::selection {
+     background: #8bb260;
      color: #f5f9ef;
 }
- .bold{
+
+.bold {
      font-weight: 900;
 }
-::selection{
-background: black;
-color: white;
+
+::selection {
+     background: black;
+     color: white;
 }
-#compass{
-z-index: -1;
- position: absolute;
-    top: 40%;
-    left: 50%;
-    width: 300x;
-    height: 300px;
-    margin:-150px 0 0 -150px;
-    -webkit-animation:spin 3s linear infinite;
-    -moz-animation:spin 3s linear infinite;
-    animation:spin 3s linear infinite;
+
+#compass {
+     z-index: -1;
+     position: absolute;
+     top: 40%;
+     left: 50%;
+     width: 300x;
+     height: 300px;
+     margin: -150px 0 0 -150px;
+     -webkit-animation: spin 3s linear infinite;
+     -moz-animation: spin 3s linear infinite;
+     animation: spin 3s linear infinite;
 
 
 }
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@-moz-keyframes spin {
+     100% {
+          -moz-transform: rotate(360deg);
+     }
+}
+
+@-webkit-keyframes spin {
+     100% {
+          -webkit-transform: rotate(360deg);
+     }
+}
+
+@keyframes spin {
+     100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+     }
+}

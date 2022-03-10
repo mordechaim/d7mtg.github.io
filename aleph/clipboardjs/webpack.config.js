@@ -18,9 +18,11 @@ module.exports = {
         libraryTarget: 'umd'
     },
     module: {
-        rules: [
-            {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}
-        ]
+        rules: [{
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader'
+        }]
     },
     optimization: {
         minimize: production,
@@ -32,11 +34,16 @@ module.exports = {
                     keep_fnames: false,
                     output: {
                         beautify: false,
-                        comments: (node, {value, type}) => type == 'comment2' && value.startsWith('!')
+                        comments: (node, {
+                            value,
+                            type
+                        }) => type == 'comment2' && value.startsWith('!')
                     }
                 }
             })
         ]
     },
-    plugins: [new webpack.BannerPlugin({ banner })]
+    plugins: [new webpack.BannerPlugin({
+        banner
+    })]
 };

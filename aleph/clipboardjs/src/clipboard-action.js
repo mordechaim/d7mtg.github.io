@@ -16,12 +16,12 @@ class ClipboardAction {
      * @param {Object} options
      */
     resolveOptions(options = {}) {
-        this.action    = options.action;
+        this.action = options.action;
         this.container = options.container;
-        this.emitter   = options.emitter;
-        this.target    = options.target;
-        this.text      = options.text;
-        this.trigger   = options.trigger;
+        this.emitter = options.emitter;
+        this.target = options.target;
+        this.text = options.text;
+        this.trigger = options.trigger;
         this.selectedText = '';
     }
     /**
@@ -31,8 +31,7 @@ class ClipboardAction {
     initSelection() {
         if (this.text) {
             this.selectFake();
-        }
-        else if (this.target) {
+        } else if (this.target) {
             this.selectTarget();
         }
     }
@@ -54,7 +53,7 @@ class ClipboardAction {
         this.fakeElem.style.margin = '0';
         // Move element out of screen horizontally
         this.fakeElem.style.position = 'absolute';
-        this.fakeElem.style[ isRTL ? 'right' : 'left' ] = '-9999px';
+        this.fakeElem.style[isRTL ? 'right' : 'left'] = '-9999px';
         // Move element to the same position vertically
         let yPosition = window.pageYOffset || document.documentElement.scrollTop;
         this.fakeElem.style.top = `${yPosition}px`;
@@ -93,8 +92,7 @@ class ClipboardAction {
         let succeeded;
         try {
             succeeded = document.execCommand(this.action);
-        }
-        catch (err) {
+        } catch (err) {
             succeeded = false;
         }
         this.handleResult(succeeded);
@@ -153,8 +151,7 @@ class ClipboardAction {
                     throw new Error('Invalid "target" attribute. You can\'t cut text from elements with "readonly" or "disabled" attributes');
                 }
                 this._target = target;
-            }
-            else {
+            } else {
                 throw new Error('Invalid "target" value, use a valid Element');
             }
         }

@@ -4,6 +4,7 @@
   font-family: var(--#{$fa-css-prefix}-style-family, '#{$fa-style-family}');
   font-weight: var(--#{$fa-css-prefix}-style, #{$fa-style});
 }
+
 .#{$fa-css-prefix},
 .fas,
 .fa-solid,
@@ -25,6 +26,7 @@
   text-rendering: auto;
   color: var(--#{$fa-css-prefix}-color, inherit);
 }
+
 %fa-icon {
   @include fa-icon;
 }

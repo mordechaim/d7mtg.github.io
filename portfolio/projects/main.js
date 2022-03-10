@@ -3,5 +3,5 @@ lightGallery(document.getElementById('lightgallery'), {
     speed: 200,
     download: false,
     getCaptionFromTitleOrAlt: false,
-    mousewheel  : true,
+    mousewheel: true,
 });

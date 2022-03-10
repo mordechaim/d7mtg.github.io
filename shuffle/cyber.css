@@ -6,8 +6,8 @@ html {
 	color: rgba(16, 211, 255, 1);
 	font-family: 'JetBrains Mono', monospace;
 
-background-image: radial-gradient(rgba(16, 211, 255, 0.6) 1%, transparent 40%);
-background-size: 3px 3px;
+	background-image: radial-gradient(rgba(16, 211, 255, 0.6) 1%, transparent 40%);
+	background-size: 3px 3px;
 }
 
 #logo {
@@ -17,7 +17,7 @@ background-size: 3px 3px;
 }
 
 #logosvg {
-  	fill: rgba(16, 211, 255, 1);
+	fill: rgba(16, 211, 255, 1);
 }
 
 #blink {
@@ -49,21 +49,21 @@ background-size: 3px 3px;
 
 }
 
-.activeGo{
+.activeGo {
 	animation: .6s flicker linear infinite;
 }
 
 #nameresult {
 
-font-family: 'Miriam Libre', sans-serif;
+	font-family: 'Miriam Libre', sans-serif;
 
 }
 
 #nameresult:focus {
-background: rgba(16, 211, 255, 0.3);
-border: 2px dotted rgba(16, 211, 255, 0.3);
-color: white;
-padding: 18px;
+	background: rgba(16, 211, 255, 0.3);
+	border: 2px dotted rgba(16, 211, 255, 0.3);
+	color: white;
+	padding: 18px;
 }
 
 h3::selection {
@@ -82,6 +82,7 @@ h3::selection {
 	text-transform: uppercase;
 
 }
+
 input {
 	border-radius: 5px;
 }
@@ -104,7 +105,8 @@ input:checked+label {
 input:not(:checked)+label {
 	background-color: rgba(16, 211, 255, 0.2);
 	outline: 1px solid rgba(16, 211, 255, 1);
-	animation: flickerOut .1s linear;}
+	animation: flickerOut .1s linear;
+}
 
 input:not(:checked):not(:disabled):hover+label {
 	background-color: rgba(16, 211, 255, 0.3);
@@ -117,6 +119,7 @@ input:disabled+label {
 	opacity: 0.5;
 	cursor: not-allowed;
 }
+
 #splitdiv p {
 	font-size: 0.7em;
 	color: #10DDFF;
@@ -138,17 +141,20 @@ input:disabled+label {
 .consolehidden {
 	animation: flickerOutBig .2s linear;
 }
+
 #outercustomization:active,
 #outerconsole:active {
 
-box-shadow: 0 0 40px 24px rgba(16, 211, 255, 0.12);
+	box-shadow: 0 0 40px 24px rgba(16, 211, 255, 0.12);
 }
+
 #settingsheader,
 #consoleheader {
 	color: #0B072B;
 	background: rgba(16, 211, 255, 1);
 	text-transform: uppercase;
 }
+
 .fa-bars {
 	display: inline-block;
 }
@@ -166,6 +172,7 @@ box-shadow: 0 0 40px 24px rgba(16, 211, 255, 0.12);
 	font-size: .8em;
 	cursor: pointer;
 }
+
 #possibleInBox {
 	border-top: 1px solid rgba(16, 211, 255, 1);
 }
@@ -202,28 +209,36 @@ box-shadow: 0 0 40px 24px rgba(16, 211, 255, 0.12);
 #oldconsolereturn {
 	color: rgba(16, 211, 255, 0.7);
 }
+
 @keyframes flicker {
 	0% {
 		background-color: rgba(16, 211, 255, 0);
 	}
+
 	10% {
 		background-color: rgba(16, 211, 255, 0.7);
 	}
+
 	20% {
 		background-color: rgba(16, 211, 255, 0.4);
 	}
+
 	50% {
 		background-color: rgba(16, 211, 255, 0.6);
 	}
+
 	60% {
 		background-color: rgba(16, 211, 255, 0.4);
 	}
+
 	75% {
 		background-color: rgba(16, 211, 255, 0.8);
 	}
+
 	90% {
 		background-color: rgba(16, 211, 255, 0.65);
 	}
+
 	100% {
 		background-color: rgba(16, 211, 255, 1);
 	}
@@ -233,24 +248,31 @@ box-shadow: 0 0 40px 24px rgba(16, 211, 255, 0.12);
 	0% {
 		background-color: rgba(16, 211, 255, 1);
 	}
+
 	10% {
 		background-color: rgba(16, 211, 255, 0.7);
 	}
+
 	20% {
 		background-color: rgba(16, 211, 255, 0.9);
 	}
+
 	50% {
 		background-color: rgba(16, 211, 255, 0.1);
 	}
+
 	60% {
 		background-color: rgba(16, 211, 255, 0.5);
 	}
+
 	75% {
 		background-color: rgba(16, 211, 255, 0.3);
 	}
+
 	90% {
 		background-color: rgba(16, 211, 255, 0.6);
 	}
+
 	100% {
 		background-color: rgba(16, 211, 255, 0.2);
 	}
@@ -260,52 +282,66 @@ box-shadow: 0 0 40px 24px rgba(16, 211, 255, 0.12);
 	0% {
 		opacity: 1;
 	}
+
 	10% {
 		opacity: 0.7;
 	}
+
 	20% {
 		opacity: 0.9;
 	}
+
 	50% {
 		opacity: 0.1;
 	}
+
 	60% {
 		opacity: 0.5;
 	}
+
 	75% {
 		opacity: 0.3;
 	}
+
 	90% {
 		opacity: 0.6;
 	}
+
 	100% {
 		opacity: 0;
 	}
 }
+
 @keyframes flickerbig {
 	0% {
 		opacity: 0;
 	}
+
 	10% {
 		opacity: 0.7;
 	}
+
 	20% {
 		opacity: 0.2;
 	}
+
 	50% {
 		opacity: 0.6;
 	}
+
 	60% {
 		opacity: 0.3;
 	}
+
 	75% {
 		opacity: 0.8;
 	}
+
 	90% {
 		opacity: 0.6;
 	}
+
 	100% {
 		opacity: 1;
 	}
 }
-

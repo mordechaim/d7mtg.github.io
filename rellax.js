@@ -21,7 +21,7 @@
     root.Rellax = factory();
   }
 }(typeof window !== "undefined" ? window : global, function () {
-  var Rellax = function(el, options){
+  var Rellax = function (el, options) {
     "use strict";
     var self = Object.create(Rellax.prototype);
     var posY = 0;
@@ -37,14 +37,16 @@
       window.mozRequestAnimationFrame ||
       window.msRequestAnimationFrame ||
       window.oRequestAnimationFrame ||
-      function(callback){ return setTimeout(callback, 1000 / 60); };
+      function (callback) {
+        return setTimeout(callback, 1000 / 60);
+      };
     // store the id for later use
     var loopId = null;
     // Test via a getter in the options object to see if the passive property is accessed
     var supportsPassive = false;
     try {
       var opts = Object.defineProperty({}, 'passive', {
-        get: function() {
+        get: function () {
           supportsPassive = true;
         }
       });
@@ -54,23 +56,23 @@
     // check what cancelAnimation method to use
     var clearLoop = window.cancelAnimationFrame || window.mozCancelAnimationFrame || clearTimeout;
     // check which transform property to use
-    var transformProp = window.transformProp || (function(){
-        var testEl = document.createElement('div');
-        if (testEl.style.transform === null) {
-          var vendors = ['Webkit', 'Moz', 'ms'];
-          for (var vendor in vendors) {
-            if (testEl.style[ vendors[vendor] + 'Transform' ] !== undefined) {
-              return vendors[vendor] + 'Transform';
-            }
+    var transformProp = window.transformProp || (function () {
+      var testEl = document.createElement('div');
+      if (testEl.style.transform === null) {
+        var vendors = ['Webkit', 'Moz', 'ms'];
+        for (var vendor in vendors) {
+          if (testEl.style[vendors[vendor] + 'Transform'] !== undefined) {
+            return vendors[vendor] + 'Transform';
           }
         }
-        return 'transform';
-      })();
+      }
+      return 'transform';
+    })();
     // Default Settings
     self.options = {
       speed: -2,
-	    verticalSpeed: null,
-	    horizontalSpeed: null,
+      verticalSpeed: null,
+      horizontalSpeed: null,
       breakpoints: [576, 768, 1201],
       center: false,
       wrapper: null,
@@ -80,15 +82,16 @@
       horizontal: false,
       verticalScrollAxis: "y",
       horizontalScrollAxis: "x",
-      callback: function() {},
+      callback: function () {},
     };
     // User defined options (might have more in the future)
-    if (options){
-      Object.keys(options).forEach(function(key){
+    if (options) {
+      Object.keys(options).forEach(function (key) {
         self.options[key] = options[key];
       });
     }
-    function validateCustomBreakpoints () {
+
+    function validateCustomBreakpoints() {
       if (self.options.breakpoints.length === 3 && Array.isArray(self.options.breakpoints)) {
         var isAscending = true;
         var isNumerical = true;
@@ -147,16 +150,16 @@
       return 'lg';
     };
     // Get and cache initial position of all elements
-    var cacheBlocks = function() {
-      for (var i = 0; i < self.elems.length; i++){
+    var cacheBlocks = function () {
+      for (var i = 0; i < self.elems.length; i++) {
         var block = createBlock(self.elems[i]);
         blocks.push(block);
       }
     };
     // Let's kick this script off
     // Build array for cached element values
-    var init = function() {
-      for (var i = 0; i < blocks.length; i++){
+    var init = function () {
+      for (var i = 0; i < blocks.length; i++) {
         self.elems[i].style.cssText = blocks[i].style;
       }
       blocks = [];
@@ -177,20 +180,20 @@
     // We want to cache the parallax blocks'
     // values: base, top, height, speed
     // el: is dom object, return: el cache values
-    var createBlock = function(el) {
-      var dataPercentage = el.getAttribute( 'data-rellax-percentage' );
-      var dataSpeed = el.getAttribute( 'data-rellax-speed' );
-      var dataXsSpeed = el.getAttribute( 'data-rellax-xs-speed' );
-      var dataMobileSpeed = el.getAttribute( 'data-rellax-mobile-speed' );
-      var dataTabletSpeed = el.getAttribute( 'data-rellax-tablet-speed' );
-      var dataDesktopSpeed = el.getAttribute( 'data-rellax-desktop-speed' );
+    var createBlock = function (el) {
+      var dataPercentage = el.getAttribute('data-rellax-percentage');
+      var dataSpeed = el.getAttribute('data-rellax-speed');
+      var dataXsSpeed = el.getAttribute('data-rellax-xs-speed');
+      var dataMobileSpeed = el.getAttribute('data-rellax-mobile-speed');
+      var dataTabletSpeed = el.getAttribute('data-rellax-tablet-speed');
+      var dataDesktopSpeed = el.getAttribute('data-rellax-desktop-speed');
       var dataVerticalSpeed = el.getAttribute('data-rellax-vertical-speed');
       var dataHorizontalSpeed = el.getAttribute('data-rellax-horizontal-speed');
       var dataVericalScrollAxis = el.getAttribute('data-rellax-vertical-scroll-axis');
       var dataHorizontalScrollAxis = el.getAttribute('data-rellax-horizontal-scroll-axis');
-      var dataZindex = el.getAttribute( 'data-rellax-zindex' ) || 0;
-      var dataMin = el.getAttribute( 'data-rellax-min' );
-      var dataMax = el.getAttribute( 'data-rellax-max' );
+      var dataZindex = el.getAttribute('data-rellax-zindex') || 0;
+      var dataMin = el.getAttribute('data-rellax-min');
+      var dataMax = el.getAttribute('data-rellax-max');
       var dataMinX = el.getAttribute('data-rellax-min-x');
       var dataMaxX = el.getAttribute('data-rellax-max-x');
       var dataMinY = el.getAttribute('data-rellax-min-y');
@@ -218,8 +221,8 @@
         var scrollPosY = (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop);
         wrapperPosY = scrollPosY - self.options.wrapper.offsetTop;
       }
-      var posY = self.options.vertical ? ( dataPercentage || self.options.center ? wrapperPosY : 0 ) : 0;
-      var posX = self.options.horizontal ? ( dataPercentage || self.options.center ? self.options.wrapper ? self.options.wrapper.scrollLeft : (window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft) : 0 ) : 0;
+      var posY = self.options.vertical ? (dataPercentage || self.options.center ? wrapperPosY : 0) : 0;
+      var posX = self.options.horizontal ? (dataPercentage || self.options.center ? self.options.wrapper ? self.options.wrapper.scrollLeft : (window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft) : 0) : 0;
       var blockTop = posY + el.getBoundingClientRect().top;
       var blockHeight = el.clientHeight || el.offsetHeight || el.scrollHeight;
       var blockLeft = posX + el.getBoundingClientRect().left;
@@ -227,7 +230,10 @@
       // apparently parallax equation everyone uses
       var percentageY = dataPercentage ? dataPercentage : (posY - blockTop + screenY) / (blockHeight + screenY);
       var percentageX = dataPercentage ? dataPercentage : (posX - blockLeft + screenX) / (blockWidth + screenX);
-      if(self.options.center){ percentageX = 0.5; percentageY = 0.5; }
+      if (self.options.center) {
+        percentageX = 0.5;
+        percentageY = 0.5;
+      }
       // Optional individual block speed as data attr, otherwise global speed
       var speed = (breakpoints && mapBreakpoints[currentBreakpoint] !== null) ? Number(mapBreakpoints[currentBreakpoint]) : (dataSpeed ? dataSpeed : self.options.speed);
       var verticalSpeed = dataVerticalSpeed ? dataVerticalSpeed : self.options.verticalSpeed;
@@ -250,9 +256,9 @@
         var delimiter = trimmedStyle.indexOf(';');
         // Remove "transform" string and save the attribute
         if (delimiter) {
-          transform = " " + trimmedStyle.slice(11, delimiter).replace(/\s/g,'');
+          transform = " " + trimmedStyle.slice(11, delimiter).replace(/\s/g, '');
         } else {
-          transform = " " + trimmedStyle.slice(11).replace(/\s/g,'');
+          transform = " " + trimmedStyle.slice(11).replace(/\s/g, '');
         }
       }
       return {
@@ -281,7 +287,7 @@
     // set scroll position (posY, posX)
     // side effect method is not ideal, but okay for now
     // returns true if the scroll changed, false if nothing happened
-    var setPosition = function() {
+    var setPosition = function () {
       var oldY = posY;
       var oldX = posX;
       posY = self.options.wrapper ? self.options.wrapper.scrollTop : (document.documentElement || document.body.parentNode || document.body).scrollTop || window.pageYOffset;
@@ -305,7 +311,7 @@
     // Ahh a pure function, gets new transform value
     // based on scrollPosition and speed
     // Allow for decimal pixel values
-    var updatePosition = function(percentageX, percentageY, speed, verticalSpeed, horizontalSpeed) {
+    var updatePosition = function (percentageX, percentageY, speed, verticalSpeed, horizontalSpeed) {
       var result = {};
       var valueX = ((horizontalSpeed ? horizontalSpeed : speed) * (100 * (1 - percentageX)));
       var valueY = ((verticalSpeed ? verticalSpeed : speed) * (100 * (1 - percentageY)));
@@ -314,7 +320,7 @@
       return result;
     };
     // Remove event listeners and loop again
-    var deferredUpdate = function() {
+    var deferredUpdate = function () {
       window.removeEventListener('resize', deferredUpdate);
       window.removeEventListener('orientationchange', deferredUpdate);
       (self.options.wrapper ? self.options.wrapper : window).removeEventListener('scroll', deferredUpdate);
@@ -323,7 +329,7 @@
       loopId = loop(update);
     };
     // Loop
-    var update = function() {
+    var update = function () {
       if (setPosition() && pause === false) {
         animate();
         // loop again
@@ -333,14 +339,18 @@
         // Don't animate until we get a position updating event
         window.addEventListener('resize', deferredUpdate);
         window.addEventListener('orientationchange', deferredUpdate);
-        (self.options.wrapper ? self.options.wrapper : window).addEventListener('scroll', deferredUpdate, supportsPassive ? { passive: true } : false);
-        (self.options.wrapper ? self.options.wrapper : document).addEventListener('touchmove', deferredUpdate, supportsPassive ? { passive: true } : false);
+        (self.options.wrapper ? self.options.wrapper : window).addEventListener('scroll', deferredUpdate, supportsPassive ? {
+          passive: true
+        } : false);
+        (self.options.wrapper ? self.options.wrapper : document).addEventListener('touchmove', deferredUpdate, supportsPassive ? {
+          passive: true
+        } : false);
       }
     };
     // Transform3d on parallax element
-    var animate = function() {
+    var animate = function () {
       var positions;
-      for (var i = 0; i < self.elems.length; i++){
+      for (var i = 0; i < self.elems.length; i++) {
         // Determine relevant movement directions
         var verticalScrollAxis = blocks[i].verticalScrollAxis.toLowerCase();
         var horizontalScrollAxis = blocks[i].horizontalScrollAxis.toLowerCase();
@@ -371,10 +381,10 @@
         }
         // Check if directional min limits are defined
         if (blocks[i].minY != null) {
-            positionY = positionY <= blocks[i].minY ? blocks[i].minY : positionY;
+          positionY = positionY <= blocks[i].minY ? blocks[i].minY : positionY;
         }
         if (blocks[i].minX != null) {
-            positionX = positionX <= blocks[i].minX ? blocks[i].minX : positionX;
+          positionX = positionX <= blocks[i].minX ? blocks[i].minX : positionX;
         }
         // Check if a max limit is defined
         if (blocks[i].max !== null) {
@@ -387,10 +397,10 @@
         }
         // Check if directional max limits are defined
         if (blocks[i].maxY != null) {
-            positionY = positionY >= blocks[i].maxY ? blocks[i].maxY : positionY;
+          positionY = positionY >= blocks[i].maxY ? blocks[i].maxY : positionY;
         }
         if (blocks[i].maxX != null) {
-            positionX = positionX >= blocks[i].maxX ? blocks[i].maxX : positionX;
+          positionX = positionX >= blocks[i].maxX ? blocks[i].maxX : positionX;
         }
         var zindex = blocks[i].zindex;
         // Move that element
@@ -400,8 +410,8 @@
       }
       self.options.callback(positions);
     };
-    self.destroy = function() {
-      for (var i = 0; i < self.elems.length; i++){
+    self.destroy = function () {
+      for (var i = 0; i < self.elems.length; i++) {
         self.elems[i].style.cssText = blocks[i].style;
       }
       // Remove resize event listener if not pause, and pause

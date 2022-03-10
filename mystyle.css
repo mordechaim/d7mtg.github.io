@@ -42,7 +42,7 @@ body {
   padding-left: 15%;
   padding-bottom: 50px;
   background-color: #f4cd2a;
- 
+
   cursor: url(../photos/pointer-white-mode.png), auto;
 
 }
@@ -113,17 +113,20 @@ h1 {
 
 
 }
+
 @keyframes moveup {
   0% {
     opacity: 0;
     transform: translateY(10px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0px);
   }
-  
+
 }
+
 h2 {
   margin-top: 35px;
   max-width: 85%;
@@ -272,6 +275,7 @@ p:not(.tag):not(.tag2) {
 #home_page_all_projects_container {
   background-color: #fcfcfc;
 }
+
 .home_page_project_container {
   width: 100%;
   min-height: 100vh;
@@ -285,6 +289,7 @@ p:not(.tag):not(.tag2) {
   color: #E2E2E2;
   transition: .25s;
 }
+
 .project_inner_container {
   margin-right: 15%;
   margin-left: 15%;
@@ -324,9 +329,9 @@ p:not(.tag):not(.tag2) {
   margin-right: 5px;
   margin-bottom: 10px;
   display: inline-block;
-  width: fit-content  ;
+  width: fit-content;
   cursor: url(../photos/pointer-light-mode.png), auto;
-   
+
 
 }
 
@@ -350,6 +355,7 @@ p:not(.tag):not(.tag2) {
 #lighter a:hover {
   color: #222222;
 }
+
 #link {
   color: black;
   outline: none;
@@ -361,6 +367,7 @@ p:not(.tag):not(.tag2) {
 #link:visited {
   color: #757474;
 }
+
 .footer_label {
   background-color: rgba(167, 167, 167, 0.3);
 

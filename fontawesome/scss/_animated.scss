@@ -7,9 +7,11 @@
   animation-iteration-count: var(--#{$fa-css-prefix}-spin-iteration-count, infinite);
   animation-timing-function: var(--#{$fa-css-prefix}-spin-timing, linear);
 }
+
 .#{$fa-css-prefix}-spin-reverse {
   --#{$fa-css-prefix}-spin-direction: reverse;
 }
+
 .#{$fa-css-prefix}-pulse,
 .#{$fa-css-prefix}-spin-pulse {
   animation-name: fa-spin;
@@ -18,7 +20,13 @@
   animation-iteration-count: var(--#{$fa-css-prefix}-spin-iteration-count, infinite);
   animation-timing-function: var(--#{$fa-css-prefix}-spin-timing, steps(8));
 }
+
 @keyframes fa-spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

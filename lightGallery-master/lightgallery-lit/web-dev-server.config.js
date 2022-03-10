@@ -4,7 +4,9 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-import { legacyPlugin } from '@web/dev-server-legacy';
+import {
+    legacyPlugin
+} from '@web/dev-server-legacy';
 
 export default {
     nodeResolve: true,

@@ -1,14 +1,16 @@
 rollDice();
 
-document.addEventListener('DOMContentLoaded', function() {
-  setTimeout(function(){ getresult();}, 1000);//runs main function onload
+document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(function () {
+        getresult();
+    }, 1000); //runs main function onload
 
 }, false);
 
 document.getElementById('outercustomization').style.zIndex = 5; //set default z-index for settings modal
 document.getElementById('outerconsole').style.zIndex = 5; //set default z-index for console modal
 let serverurl = "https://shuffle-names.herokuapp.com/"
-var nameresult = document.getElementById("nameresult");//gets the element to place the resulting name
+var nameresult = document.getElementById("nameresult"); //gets the element to place the resulting name
 var objectsshuffled = 0; //variable to count amount of total results in this session
 var returnedFullName, normalcyvalue, gendervalue, returnedFullName, lastName, possibleCombinations, firstName; //if you dont understand the variable names, shut up! seriously, if you're looking through this code and you don't know what these are, you probably put pineapple on your pizza.
 //sets the default settings
@@ -22,24 +24,26 @@ let settings = {
 //triggered on click of go
 function getresult() {
     document.getElementById("go").className = "activeGo"; //sets go animation
-setTimeout(function(){ rollDice(); }, 100);
-    document.getElementById("copied").style.display = "none";//set "copied" pop-up display invisible, since it is visible from previous session
+    setTimeout(function () {
+        rollDice();
+    }, 100);
+    document.getElementById("copied").style.display = "none"; //set "copied" pop-up display invisible, since it is visible from previous session
 
     //fetches the name with the applied settings
     fetch(serverurl, {
-        method: "POST",
-        body: JSON.stringify(settings),
-        headers: {
-            "Content-type": "application/json; charset=UTF-8"
-        }
-    })
+            method: "POST",
+            body: JSON.stringify(settings),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        })
         .then(response => response.json())
         .then(json => main(json))
         .catch(error => {
             setTimeout(function () {
                 document.getElementById("go").className = "inactiveGo"; //stops go animation
                 document.getElementById("isonline").innerHTML = "<span class='labelbold'>SYSTEM STATUS</span><span><span id='noblink'> • </span>OFFLINE</span>"; //shows offline status
-                document.getElementById("isonline").className = "offline";//sets offline status animation
+                document.getElementById("isonline").className = "offline"; //sets offline status animation
             }, Math.floor(Math.random() * 600) + 300);
         });
     const main = (obj) => {
@@ -48,33 +52,31 @@ setTimeout(function(){ rollDice(); }, 100);
         returnedFullName = firstName.name + " " + lastName.name; //gets string of full name
 
         setTimeout(() => {
-            nameresult.innerHTML = returnedFullName; //momemt of truth - places name into html
-			//history.pushState({
-   			//	 id: 'shuffle'
-			//}, 'Shuffle', 'https://d7m.tg/shuffle/?name=' + firstName.name + '%20' + lastName.name);
+                nameresult.innerHTML = returnedFullName; //momemt of truth - places name into html
+                //history.pushState({
+                //	 id: 'shuffle'
+                //}, 'Shuffle', 'https://d7m.tg/shuffle/?name=' + firstName.name + '%20' + lastName.name);
 
-			console.log(returnedFullName);
+                console.log(returnedFullName);
 
-            objectsshuffled++; //increases total results for this session by one
-            //bottomtext();
-            //function bottomtext() {
-            document.getElementById('splitbottom').innerHTML = settings.split.toString();
-            //how many clicks
-            var sezoedobjectsshuffled = "0".repeat(5 - String(objectsshuffled).length) + objectsshuffled
-            //return clicks
-            document.getElementById('objectsshuffled').innerHTML = sezoedobjectsshuffled;
-            document.getElementById('currentsettings').innerHTML =
-                !settings.split
-                    ? `NORMALCY: ${settings.normalcy} // GENDER: ${settings.gender}`
-                    : `NORMALCY FIRST: ${settings.normalcyFirst} // NORMALCY LAST: ${settings.normalcyLast} // GENDER: ${settings.gender}`
-            document.getElementById('currentresults').innerHTML =
-                !settings.split
-                    ? `NORMALCY: ${firstName.weird == "weird" || lastName.weird == "weird" ? "weird" : "normal"} // GENDER: ${firstName.gender}`
-                    : `NORMALCY FIRST: ${firstName.weird} // NORMALCY LAST: ${lastName.weird} // GENDER: ${firstName.gender}`
-            document.getElementById("isonline").innerHTML = "<span class='labelbold'>SYSTEM STATUS</span><span><span id='blink'> • </span>ONLINE </span>";//shows online status
-            document.getElementById("isonline").className = "online";//sets online status animation
-            document.getElementById("go").className = "inactiveGo";//stops go animation
-        },
+                objectsshuffled++; //increases total results for this session by one
+                //bottomtext();
+                //function bottomtext() {
+                document.getElementById('splitbottom').innerHTML = settings.split.toString();
+                //how many clicks
+                var sezoedobjectsshuffled = "0".repeat(5 - String(objectsshuffled).length) + objectsshuffled
+                //return clicks
+                document.getElementById('objectsshuffled').innerHTML = sezoedobjectsshuffled;
+                document.getElementById('currentsettings').innerHTML = !settings.split ?
+                    `NORMALCY: ${settings.normalcy} // GENDER: ${settings.gender}` :
+                    `NORMALCY FIRST: ${settings.normalcyFirst} // NORMALCY LAST: ${settings.normalcyLast} // GENDER: ${settings.gender}`
+                document.getElementById('currentresults').innerHTML = !settings.split ?
+                    `NORMALCY: ${firstName.weird == "weird" || lastName.weird == "weird" ? "weird" : "normal"} // GENDER: ${firstName.gender}` :
+                    `NORMALCY FIRST: ${firstName.weird} // NORMALCY LAST: ${lastName.weird} // GENDER: ${firstName.gender}`
+                document.getElementById("isonline").innerHTML = "<span class='labelbold'>SYSTEM STATUS</span><span><span id='blink'> • </span>ONLINE </span>"; //shows online status
+                document.getElementById("isonline").className = "online"; //sets online status animation
+                document.getElementById("go").className = "inactiveGo"; //stops go animation
+            },
             Math.floor(Math.random() * 800) + 500 //gets random number 500ms to 1200ms, when the result function should run. I know, just making it longer.
         );
     }
@@ -87,21 +89,21 @@ function newpossible() {
     settings.gender = document.querySelector('input[name="gender"]:checked').value;
     settings.split = document.querySelector('input[name="split"]').checked;
 
-if (settings.split) {
-		console.log("first name normalcy: " + settings.normalcyFirst + "\n last name normalcy: " + settings.normalcyLast +"\n gender: " + settings.gender);
+    if (settings.split) {
+        console.log("first name normalcy: " + settings.normalcyFirst + "\n last name normalcy: " + settings.normalcyLast + "\n gender: " + settings.gender);
 
-} else {
-		console.log("normalcy: " + settings.normalcy + "\n gender: " + settings.gender);
+    } else {
+        console.log("normalcy: " + settings.normalcy + "\n gender: " + settings.gender);
 
-}
+    }
 
-    fetch(serverurl+"poss", {
-        method: "POST",
-        body: JSON.stringify(settings),
-        headers: {
-            "Content-type": "application/json; charset=UTF-8"
-        }
-    })
+    fetch(serverurl + "poss", {
+            method: "POST",
+            body: JSON.stringify(settings),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        })
         .then(response => response.json())
         .then(json => main(json));
     const main = (obj) => {
@@ -172,23 +174,24 @@ function closeconsole() {
     document.getElementById("outerconsole").className = "consolehidden";
     document.getElementById("showconsole").className = "iconbutton";
 }
+
 function changetheme() {
 
 
-document.getElementById("changetheme").className = "activebutton";
-setTimeout(function(){
+    document.getElementById("changetheme").className = "activebutton";
+    setTimeout(function () {
 
-var stylesheet = document.getElementById('stylesheet').href;
-	if (stylesheet.includes("modern")){
-   		 document.getElementById('stylesheet').href='cyber.css';
-		console.log("theme set: cyber.css");
-	} else if (stylesheet.includes("cyber")){
-   		 document.getElementById('stylesheet').href='modern.css';
-		console.log("theme set: modern.css");
+        var stylesheet = document.getElementById('stylesheet').href;
+        if (stylesheet.includes("modern")) {
+            document.getElementById('stylesheet').href = 'cyber.css';
+            console.log("theme set: cyber.css");
+        } else if (stylesheet.includes("cyber")) {
+            document.getElementById('stylesheet').href = 'modern.css';
+            console.log("theme set: modern.css");
 
-			}
-    document.getElementById("changetheme").className = "iconbutton";
-}, 100);
+        }
+        document.getElementById("changetheme").className = "iconbutton";
+    }, 100);
 
 
 }
@@ -246,10 +249,10 @@ function touchHandler(event) {
     var touch = event.changedTouches[0];
     var simulatedEvent = document.createEvent("MouseEvent");
     simulatedEvent.initMouseEvent({
-        touchstart: "mousedown",
-        touchmove: "mousemove",
-        touchend: "mouseup"
-    }[event.type], true, true, window, 1,
+            touchstart: "mousedown",
+            touchmove: "mousemove",
+            touchend: "mouseup"
+        } [event.type], true, true, window, 1,
         touch.screenX, touch.screenY,
         touch.clientX, touch.clientY, false,
         false, false, false, 0, null);
@@ -334,18 +337,18 @@ function getnext() {
     }
 }
 
-function rollDice(){
+function rollDice() {
 
-let diceObj = {
-    "0": "one",
-    "1": "two",
-    "2": "three",
-    "3": "four",
-    "4": "five",
-    "5": "six"
-}
-var dice = diceObj[Math.floor(Math.random() * 6)]
+    let diceObj = {
+        "0": "one",
+        "1": "two",
+        "2": "three",
+        "3": "four",
+        "4": "five",
+        "5": "six"
+    }
+    var dice = diceObj[Math.floor(Math.random() * 6)]
 
-document.getElementById("dice").innerHTML = '<i class="fas fa-dice-' + dice + '" aria-hidden="true"></i>'
+    document.getElementById("dice").innerHTML = '<i class="fas fa-dice-' + dice + '" aria-hidden="true"></i>'
 
 }

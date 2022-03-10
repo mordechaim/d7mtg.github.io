@@ -1,5 +1,4 @@
-[
-    {
+[{
         "name": "thumbnail",
         "folder": "plugins/thumbnail/",
         "fileName": "lg-thumbnail"

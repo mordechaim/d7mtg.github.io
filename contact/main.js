@@ -192,4 +192,3 @@ settingswrapper.onclick = function (e) {
         closesettings();
     }
 };
-

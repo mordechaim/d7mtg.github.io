@@ -65,7 +65,10 @@ describe('Clipboard', () => {
         });
         it('should use an event\'s currentTarget when not equal to target', () => {
             let clipboard = new Clipboard('.btn');
-            let bubbledEvent = { target: global.span, currentTarget: global.button };
+            let bubbledEvent = {
+                target: global.span,
+                currentTarget: global.button
+            };
             clipboard.onClick(bubbledEvent);
             assert.instanceOf(clipboard.clipboardAction, ClipboardAction);
         });
@@ -77,8 +80,7 @@ describe('Clipboard', () => {
                     }
                 });
                 clipboard.onClick(global.event);
-            }
-            catch(e) {
+            } catch (e) {
                 assert.equal(e.message, 'Invalid "target" value, use a valid Element');
                 done();
             }
