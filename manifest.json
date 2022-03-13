@@ -1,7 +1,7 @@
 {
     "name": "D7mtg",
     "short_name": "D7mtg",
-    "start_url": "index.html?utm_source=homescreen",
+    "start_url": "index.html",
     "scope": "./",
     "icons": [{
         "src": "photos/appleicon.png",
