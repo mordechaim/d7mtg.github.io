@@ -43,27 +43,19 @@
             color: #F0D3AB;
             margin: 0;
             padding: 0;
-            animation: movebackground 1000s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
+            background-size: cover;
 
         }
 
-        @keyframes movebackground {
-            0% {
-                background-position: 0% 50%;
-            }
+       
 
-            50% {
-                background-position: 100% 50%;
-            }
 
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
+        
         h1 {
             max-width: 300px;
             margin: 0 auto;
+            
+                        
         }
 
         h2 {
@@ -113,7 +105,7 @@
         }
 
         .detailsdiv {
-            border: 1px dotted #f3e3cf77;
+            border: 1px dotted #f3e3cf55;
             width: 300px;
             margin: 0 auto;
             padding: 20px;
@@ -127,7 +119,7 @@
             font-size: .6em;
             letter-spacing: 5px;
             padding-top: 10px;
-            border-top: 1px dotted #f3e3cf77;
+            border-top: 1px dotted #f3e3cf55;
             margin-top: 20px;
         }
 
@@ -150,6 +142,14 @@
             font-weight: 800;
             letter-spacing: 2px;
             font-size: 1.2em;
+        }
+
+        h1, h2, p, a, footer,  .eventdetails a  {
+            background: url(gold.png) no-repeat;
+            background-size: cover;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: rgba(0,0,0,.2);
         }
     </style>
 
@@ -194,7 +194,6 @@
         </p>
         <p class="timetillevent">
 
-            <span id="days">364</span> days,
             <span id="hours">23</span> hours,
             <br>
             <span id="minutes">59</span> minutes,
@@ -223,8 +222,8 @@
             setTimeout(function () {
                 var link = document.createElement('a');
                 link.href = "icalendar.ics";
-                link.download = "hamaspik.ics";
-                link.click();
+               link.download = "hamaspik.ics";
+               link.click();
             }, 2000);
         }
 
@@ -233,14 +232,15 @@
             var currentdate = new Date();
             var eventdate = new Date(2022, 2, 30, 19, 30, 0);
             var diff = eventdate.getTime() - currentdate.getTime();
-            days = Math.floor(diff / (1000 * 60 * 60 * 24));
             hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            document.getElementById("days").innerHTML = days;
-            document.getElementById("hours").innerHTML = hours;
-            document.getElementById("minutes").innerHTML = minutes;
-            document.getElementById("seconds").innerHTML = seconds;
+           
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
+            
+          
         }
 
         setInterval(timetillevent, 1000);
