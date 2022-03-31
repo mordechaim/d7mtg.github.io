@@ -37,34 +37,21 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
             text-align: center;
-            /* background image background1.jpg */
             background-image: url("background1.jpg");
-            /* dark background */
             background-color: #292929;
-
             color: #F0D3AB;
             margin: 0;
             padding: 0;
             background-size: cover;
-
         }
-
-       
-
-
-        
         h1 {
             max-width: 300px;
             margin: 0 auto;
-            
-                        
         }
-
         h2 {
             font-weight: 400;
             font-size: 1em;
         }
-
         p {
             font-size: .9em;
             font-weight: 300;
@@ -72,18 +59,14 @@
             margin: 0 auto;
             color: #f3e3cf77;
         }
-
         a {
             color: #D89B52;
-
         }
-
         #hamaspiklogo {
             width: 200px;
             padding-top: 50px;
             margin: 0 auto;
         }
-
         footer {
             position: absolute;
             bottom: 0;
@@ -95,17 +78,14 @@
             background-color: #292929;
             padding-top: 20px;
         }
-
         footer a {
             text-decoration: none;
             transition: 0.3s;
         }
-
         footer a:hover {
             text-decoration: underline;
 
         }
-
         .detailsdiv {
             border: 1px dotted #f3e3cf55;
             width: 300px;
@@ -113,9 +93,7 @@
             padding: 20px;
             margin-top: 50px;
             border-radius: 10px;
-
         }
-
         .label {
             text-transform: uppercase;
             font-size: .6em;
@@ -124,39 +102,37 @@
             border-top: 1px dotted #f3e3cf55;
             margin-top: 20px;
         }
-
         .timetillevent {
             font-size: 1.2em;
             font-weight: 500;
             margin-top: 10px;
         }
-
         .eventdetails a {
             color: #ffefdb9c;
         }
-
         ::selection {
             background-color: #D89B52;
             color: white;
         }
-
         .theone {
             font-weight: 800;
             letter-spacing: 2px;
             font-size: 1.2em;
         }
-
-        h1, h2, p, a, footer,  .eventdetails a  {
+        h1,
+        h2,
+        p,
+        a,
+        footer,
+        .eventdetails a {
             background: url(gold.png) no-repeat;
             background-size: cover;
             background-clip: text;
             -webkit-background-clip: text;
-            color: rgba(0,0,0,.2);
+            color: rgba(0, 0, 0, .2);
         }
     </style>
-
 </head>
-
 <body>
     <a href="https://www.hamaspikkings.org/?refererid=d7mtg">
         <img id="hamaspiklogo" src="logo2.png" alt="Hamaspik event logo 2022, The One">
@@ -164,8 +140,6 @@
     <h1>Downloading your invitation in <span>3</span>...</h1>
     <h2>If download didn't start automatically, click <a href="icalendar.ics">here</a></h2>
     <p>When complete, please click on the downloaded .ics file to add it to your calendar.</p>
-
-
     <!-- BEGIN:VCALENDAR
     VERSION:2.0
     PRODID:-//ICalendarCreator//NONSGML//EN
@@ -177,7 +151,6 @@
     DESCRIPTION:An exclusive evening of appreciation and inspiration celebrating our one and only team.\n
     END:VEVENT
     END:VCALENDAR -->
-
     <div class="detailsdiv">
         <p class="eventdetails">
 
@@ -186,9 +159,7 @@
             Time: 7:30pm
             <br>
             Location: <a href="https://goo.gl/maps/MANh3pxDYv2ZAvEW6">75 Ross St, Brooklyn, NY 11249</a>
-
             <br>
-
         </p>
         <p class="label">
             <br>
@@ -200,15 +171,10 @@
             <br>
             <span id="minutes">00</span> minutes,
             <span id="seconds">00</span> seconds.
-
-
         </p>
     </div>
-    <div id="popup" 
-    style="
+    <div id="popup" style="
     position: fixed;
-    
-    
     width: 400px;
     height: 100px;
     background-color: rgb(55, 55, 55);
@@ -219,11 +185,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
-    "
-    >
-        <div class="popup_header"
-        style="
+    ">
+        <div class="popup_header" style="
         background-color: rgb(71, 71, 71);
         position: relative;
         width: 100%;
@@ -234,40 +197,33 @@
         
         
         ">
-            <h3
-            style="
+            <h3 style="
             
             text-align: center;
             padding-top: 15px;
             font-size: 1.2em;
-
-            "
-            >
+            ">
                 The One Event has ended.
             </h3>
-           
+
         </div>
-        <div class="popup_content"
-        style="
+        <div class="popup_content" style="
         padding: 20px;
         padding-top: 10px;
         font-size: 1.2em;
         ">
-            <p
-            style="
+            <p style="
             margin-top: 10px;
-            "
-            >
-               We had a great time celebrating our one and only team.
+            ">
+                We had a great time celebrating our one and only team.
             </p>
-          
-        </div>
         
+        </div>
+
 
     </div>
 
-    <div id="dark-page-overlay"
-    style="
+    <div id="dark-page-overlay" style="
     position: fixed;
     top: 0;
     left: 0;
@@ -275,8 +231,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 99998;
-    "
-    >
+    ">
 
     </div>
     <footer>CREATED BY <a
@@ -286,12 +241,15 @@
 
 
     <script>
-confetti({
-    particleCount: 600,
-    colors: ["#D89B52", "#ffb533", "#e8d2ac", "#a07220", "#a39276", "#f4b73d"]  ,
-    spread: 1060,
-  
-});
+    //    wait
+    setTimeout(function() {
+        confetti({
+            particleCount: 600,
+            colors: ["#D89B52", "#ffb533", "#e8d2ac", "#a07220", "#a39276", "#f4b73d"],
+            spread: 1060,
+
+        });
+    }, 600);
 
 
 
@@ -315,12 +273,12 @@ confetti({
             setTimeout(function () {
                 var link = document.createElement('a');
                 link.href = "icalendar.ics";
-               link.download = "hamaspik.ics";
-            //    link.click();
+                link.download = "hamaspik.ics";
+                //    link.click();
             }, 2000);
         }
 
-     
+
 
         setInterval(timetillevent, 1000);
     </script>
