@@ -26,6 +26,8 @@
         gtag('js', new Date());
         gtag('config', 'G-2D8Q5R25WZ');
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
     <meta content="../../logoimessage.jpg" property="og:image">
 
     <title>Hamaspik</title>
@@ -194,13 +196,88 @@
         </p>
         <p class="timetillevent">
 
-            <span id="hours">23</span> hours,
+            <span id="hours">00</span> hours,
             <br>
-            <span id="minutes">59</span> minutes,
-            <span id="seconds">59</span> seconds.
+            <span id="minutes">00</span> minutes,
+            <span id="seconds">00</span> seconds.
 
 
         </p>
+    </div>
+    <div id="popup" 
+    style="
+    position: fixed;
+    
+    
+    width: 400px;
+    height: 100px;
+    background-color: rgb(55, 55, 55);
+    color: white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    z-index: 99999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    "
+    >
+        <div class="popup_header"
+        style="
+        background-color: rgb(71, 71, 71);
+        position: relative;
+        width: 100%;
+        height: 50px;
+        margin-top: -50px;
+        border-radius: 10px 10px 0px 0px;
+        border-bottom: 1px solid #f3e3cf21;
+        
+        
+        ">
+            <h3
+            style="
+            
+            text-align: center;
+            padding-top: 15px;
+            font-size: 1.2em;
+
+            "
+            >
+                The One Event has ended.
+            </h3>
+           
+        </div>
+        <div class="popup_content"
+        style="
+        padding: 20px;
+        padding-top: 10px;
+        font-size: 1.2em;
+        ">
+            <p
+            style="
+            margin-top: 10px;
+            "
+            >
+               We had a great time celebrating our one and only team.
+            </p>
+          
+        </div>
+        
+
+    </div>
+
+    <div id="dark-page-overlay"
+    style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99998;
+    "
+    >
+
     </div>
     <footer>CREATED BY <a
             href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiA3sv876z2AhXTmXIEHeYCA8UQFnoECAYQAQ&url=https%3A%2F%2Fd7m.tg%2F&usg=AOvVaw3MeHkt9XmuUxoFb4DrXCHT">
@@ -209,6 +286,22 @@
 
 
     <script>
+confetti({
+    particleCount: 600,
+    colors: ["#D89B52", "#ffb533", "#e8d2ac", "#a07220", "#a39276", "#f4b73d"]  ,
+    spread: 1060,
+  
+});
+
+
+
+        // when clicking on the overlay, close the popup
+        document.getElementById("dark-page-overlay").addEventListener("click", function () {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("dark-page-overlay").style.display = "none";
+        });
+
+
         window.onload = function () {
             var count = 3;
             var countdown = setInterval(function () {
@@ -223,25 +316,11 @@
                 var link = document.createElement('a');
                 link.href = "icalendar.ics";
                link.download = "hamaspik.ics";
-               link.click();
+            //    link.click();
             }, 2000);
         }
 
-        function timetillevent() {
-            var days, hours, minutes;
-            var currentdate = new Date();
-            var eventdate = new Date(2022, 2, 30, 19, 30, 0);
-            var diff = eventdate.getTime() - currentdate.getTime();
-            hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            seconds = Math.floor((diff % (1000 * 60)) / 1000);
-           
-                document.getElementById("hours").innerHTML = hours;
-                document.getElementById("minutes").innerHTML = minutes;
-                document.getElementById("seconds").innerHTML = seconds;
-            
-          
-        }
+     
 
         setInterval(timetillevent, 1000);
     </script>
