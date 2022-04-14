@@ -197,7 +197,17 @@ p:not(.tag):not(.tag2) {
 
 .button,
 .project_link {
-  margin-top: 15px !important;
+  cursor: url(../photos/link-light-mode.png), auto;
+  margin-bottom: 10px;
+  font-size: 1em;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  padding: 1rem 1rem;
+  border-radius: 5px;
+  margin-right: 5px;
+  transition: .25s;
 }
 .project_link {
   cursor: url(../photos/link-light-mode.png), auto;
@@ -440,32 +450,35 @@ p:not(.tag):not(.tag2) {
 
 #hamaspik_container {
   background-image: linear-gradient(161deg, #7a3a0d, #26252500), url(photos/project-covers/hamaspik.jpg);
-
+  background-color: #7a3a0d;
 
 
 }
 
 #paragraph_container {
   background-image: linear-gradient(161deg, #262525, #26252500), url(photos/project-covers/paragraph.png);
+  background-color: #262526;
 
 }
 
 #paskes_container {
   background-image: linear-gradient(161deg, #000000, #00000000), url(photos/project-covers/paskes.png);
-
+  background-color: #000000;
 }
 
 #yaayin_container {
   background-image: linear-gradient(161deg, #00000000, #00000000), url(photos/project-covers/yaayin.png);
-
+  background-color: #d4292900;
 }
 
 #vendors_container {
   background-image: linear-gradient(161deg, #e43237, #e4323800), url(photos/project-covers/vendors.png);
+  background-color: #e43237;
 }
 
 #curesse_container {
   background-image: linear-gradient(161deg, #58573d, #58573d00), url(photos/project-covers/curesse.png);
+  background-color: #58573d;
 }
 
 .more_projects {
