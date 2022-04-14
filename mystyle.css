@@ -15,6 +15,7 @@ body {
   margin: 0px;
   padding: 0px;
   -webkit-tap-highlight-color: transparent;
+  cursor: url(../photos/pointer-light-mode.png), auto;
 
 
 }
@@ -42,8 +43,7 @@ body {
   padding-bottom: 50px;
   background-color: #f4cd2a;
 
-  cursor: default;
-
+  cursor: url(../photos/pointer-white-mode.png), auto;
 }
 
 ::-webkit-scrollbar {
@@ -197,7 +197,7 @@ p:not(.tag):not(.tag2) {
 
 .button,
 .project_link {
-  cursor: pointer;
+  cursor: url(../photos/link-light-mode.png), auto;
   margin-bottom: 10px;
   font-size: 1em;
   font-weight: 500;
@@ -282,7 +282,6 @@ p:not(.tag):not(.tag2) {
   background-size: cover;
   background-position: center;
   /* parralex */
-  background-attachment: fixed;
 
   color: #E2E2E2;
   transition: .25s;
@@ -328,7 +327,8 @@ p:not(.tag):not(.tag2) {
   margin-bottom: 10px;
   display: inline-block;
   width: fit-content;
-  cursor: default;
+  cursor: url(../photos/pointer-light-mode.png), auto;
+
 
 
 }
@@ -346,7 +346,7 @@ p:not(.tag):not(.tag2) {
 #lighter a:not(.footer_label) {
 
   color: #ccc;
-  cursor: auto;
+  cursor: url(../photos/pointer-light-mode.png), auto;
 
 }
 
@@ -359,7 +359,8 @@ p:not(.tag):not(.tag2) {
   outline: none;
   padding: none;
   border: none;
-  cursor: auto;
+  cursor: url(../photos/link-light-mode.png), auto;
+
 }
 
 #link:visited {
@@ -382,7 +383,7 @@ p:not(.tag):not(.tag2) {
   text-decoration: none;
   color: rgb(138, 138, 138);
   transition: .25s;
-  cursor: auto;
+  cursor: url(../photos/pointer-light-mode.png), auto;
 
 }
 
