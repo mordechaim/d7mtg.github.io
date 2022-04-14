@@ -315,7 +315,7 @@ const handleScroll = throttle(() => {
     document.querySelector('meta[name="theme-color"]')?.setAttribute('content', ogColor);
   }
   // run every 100ms
-}, 20)
+}, 5)
 
 document.addEventListener('scroll', handleScroll, { passive: true })
         </script>
