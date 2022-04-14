@@ -15,7 +15,6 @@ body {
   margin: 0px;
   padding: 0px;
   -webkit-tap-highlight-color: transparent;
-  cursor: auto;
 
 
 }
@@ -43,7 +42,7 @@ body {
   padding-bottom: 50px;
   background-color: #f4cd2a;
 
-  cursor: auto;
+  cursor: default;
 
 }
 
@@ -198,7 +197,7 @@ p:not(.tag):not(.tag2) {
 
 .button,
 .project_link {
-  cursor: auto;
+  cursor: pointer;
   margin-bottom: 10px;
   font-size: 1em;
   font-weight: 500;
@@ -252,7 +251,6 @@ p:not(.tag):not(.tag2) {
   margin-top: 100px;
   color: #ccc;
   margin-bottom: 0px;
-  cursor: auto;
   margin-left: 15%;
 }
 
@@ -319,8 +317,8 @@ p:not(.tag):not(.tag2) {
 .project_inner_container label {
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   padding-right: 10px;
   padding-left: 10px;
   padding-top: 5px;
@@ -330,7 +328,7 @@ p:not(.tag):not(.tag2) {
   margin-bottom: 10px;
   display: inline-block;
   width: fit-content;
-  cursor: auto;
+  cursor: default;
 
 
 }
@@ -434,6 +432,13 @@ p:not(.tag):not(.tag2) {
 }
 
 /* remeber to add the mobile links */
+
+#hamaspik_container {
+  background-image: linear-gradient(161deg, #7a3a0d, #26252500), url(photos/project-covers/hamaspik.jpg);
+
+}
+
+
 #paragraph_container {
   background-image: linear-gradient(161deg, #262525, #26252500), url(photos/project-covers/paragraph.png);
 
