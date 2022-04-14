@@ -82,7 +82,11 @@
 </head>
 
 <body ontouchstart="">
+    <!-- <p id="bsd">
+        בס״ד
+</p> -->
     <div id='banner'>
+       
         <div id="gradient"></div>
         <lottie-player id="logo" src="D7MTG2.json" background="transparent" speed="2" autoplay aria-label="D7MTG Logo">
         </lottie-player>
@@ -318,6 +322,31 @@ const handleScroll = throttle(() => {
 }, 5)
 
 document.addEventListener('scroll', handleScroll, { passive: true })
+        </script>
+         <script>
+            //     let links = document.querySelectorAll('a');
+            // if (links) {
+            //     links.forEach((link) => {
+            //         link.onclick = (e) => {
+            //             let body = document.querySelector('body');
+            //             e.preventDefault();
+            //             setTimeout(function () {
+            //                 if (body.classList.contains('fade-out')) {
+
+            //                     console.log('navigating...');
+            //                     if (!e.srcElement.parentElement.href) {
+            //                         window.location = e.srcElement.href;
+            //                     } else {
+            //                         window.location = e.srcElement.parentElement.href;
+            //                     }
+            //                 } else {
+            //                     console.log('whoops', e.srcElement.parentElement.href);
+            //                 }
+            //             }, 5000);
+            //             body.classList.add('fade-out');
+            //         }
+            //     });
+            // }
         </script>
 </body>
 
