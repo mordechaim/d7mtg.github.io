@@ -197,6 +197,9 @@ p:not(.tag):not(.tag2) {
 
 .button,
 .project_link {
+  margin-top: 15px !important;
+}
+.project_link {
   cursor: url(../photos/link-light-mode.png), auto;
   margin-bottom: 10px;
   font-size: 1em;
@@ -282,9 +285,9 @@ p:not(.tag):not(.tag2) {
   background-size: cover;
   background-position: center;
   /* parralex */
-
-  color: #E2E2E2;
+    color: #E2E2E2;
   transition: .25s;
+
 }
 
 .project_inner_container {
@@ -434,11 +437,13 @@ p:not(.tag):not(.tag2) {
 
 /* remeber to add the mobile links */
 
+
 #hamaspik_container {
   background-image: linear-gradient(161deg, #7a3a0d, #26252500), url(photos/project-covers/hamaspik.jpg);
 
-}
 
+
+}
 
 #paragraph_container {
   background-image: linear-gradient(161deg, #262525, #26252500), url(photos/project-covers/paragraph.png);
@@ -559,8 +564,11 @@ p:not(.tag):not(.tag2) {
 
   .project_inner_container h3 {
     margin-top: 75px;
+    font-size: 2.2em;
+
   }
 
+  button,
   .project_link {
     margin-bottom: 50px;
   }
@@ -578,6 +586,10 @@ p:not(.tag):not(.tag2) {
     width: 250px;
     margin-bottom: 35px;
   }
+  .project_description{
+    font-size: .9em !important;
+  }
+  
 }
 
 /* Overrides for Dark Mode. */
