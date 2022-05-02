@@ -161,7 +161,7 @@ h2 {
     margin: 10px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-    border: 2px solid white ;
+    border: 1px solid white ;
 }
 
 .each_choice_div:hover {
@@ -187,14 +187,14 @@ h2 {
 .clicked.correct{
     background-color: #e1f9ee;
     color: #51cc95;
-    border: 2px solid #51cc95 ;
+    border: 1px solid #51cc95 ;
    
 }
 
 .clicked {
     background-color: #ffe2e2;
     color: #ff5252;
-    border: 2px solid #ff5252 ;
+    border: 1px solid #ff5252 ;
    
 }
 
