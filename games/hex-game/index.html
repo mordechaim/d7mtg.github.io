@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hex Game | A game by D7mtg</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/7b42fedff3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div id="header">
+        <div id="header_inner">
+            <div id="header_logo">
+                <h1>Hex Game</h1>
+                <h2>By D7.games</h2>
+            </div>
+
+            <div id="header_score">
+                <p id="header_score_label">Score</p>
+                <p id="header_score_value">00%</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="page">
+        <div id="page_inner">
+
+
+            <div id="challange_div">
+                <p id="challange_label">Your hex color</p>
+                <p id="challange_value">#000000</p>
+
+            </div>
+
+            <div id="choices_div">
+                <div class="each_choice_div" id="choice_A">
+                    <div class="fill_color" id="choice_A_fill"> </div>
+                    <!-- <i class="fa-light fa-circle"></i> -->
+                    <p class="choice_label" id="choice_A_label">Option A</p>
+
+                </div>
+                <div class="each_choice_div" id="choice_B">
+                    <div class="fill_color" id="choice_B_fill"> </div>
+                    <!-- <i class="fa-light fa-circle "></i> -->
+                    <p class="choice_label" id="choice_B_label">Option B</p>
+                </div>
+                <div class="each_choice_div" id="choice_C">
+                    <div class="fill_color" id="choice_C_fill"> </div>
+                    <!-- <i class="fa-light fa-circle"></i> -->
+                    <p class="choice_label" id="choice_C_label">Option C</p>
+                </div>
+
+            </div>
+
+            <div id="footer">
+
+                <?xml id="d7mtgLogo" version="1.0" encoding="UTF-8"?><svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165.25 38.46"><defs><style>.d{}</style></defs><g id="b"><g id="c"><path class="d" d="M0,1.11V5.6C0,6.21,.5,6.71,1.11,6.71H13.48c2.11-.06,4.2,.43,6.06,1.42,1.65,.95,2.95,2.4,3.73,4.14,.93,2.17,1.37,4.52,1.3,6.88,.08,2.4-.36,4.79-1.29,7-.77,1.74-2.07,3.2-3.71,4.17-1.86,1.02-3.97,1.51-6.09,1.44h-5.41c-.61,0-1.1-.51-1.09-1.13,0-.07,0-.14,.02-.2l1.8-11.49c.09-.61-.34-1.18-.95-1.27-.05,0-.1-.01-.15-.01H1.11c-.61,0-1.11,.5-1.11,1.11H0v18.55c0,.61,.5,1.11,1.11,1.11H14.18c3.42,.09,6.8-.7,9.82-2.3,2.73-1.53,4.93-3.85,6.3-6.66,1.53-3.25,2.27-6.81,2.17-10.4,.1-3.55-.65-7.08-2.18-10.29l-.29-.6c-.28-.54-.07-1.21,.48-1.5,.16-.08,.34-.13,.52-.12h16.25c.61,.02,1.09,.54,1.07,1.15,0,.12-.03,.24-.07,.35l-10.84,28.86c-.22,.57,.06,1.21,.63,1.44,.12,.05,.24,.07,.37,.07h6.86c.48,0,.91-.31,1.06-.77L58.15,1.45c.19-.58-.13-1.21-.72-1.4-.11-.03-.22-.05-.33-.05H1.1C.49,0,0,.5,0,1.11Z"/><path class="d" d="M88.77,.7l-7.38,18.41c-.24,.57-.89,.84-1.46,.61-.27-.11-.49-.33-.61-.61L72,.7C71.83,.29,71.44,.02,71,0h-5.87c-.48,0-.91,.31-1.06,.77l-11.78,36.23c-.19,.58,.12,1.21,.7,1.4,.11,.04,.23,.06,.35,.06h7.54c.54,0,1.01-.38,1.12-.91l5.46-25.14c.13-.6,.72-.98,1.32-.85,.37,.08,.67,.33,.8,.68l9.77,24.53c.22,.57,.86,.86,1.44,.63,.29-.11,.52-.34,.63-.63l9.77-24.53c.22-.57,.87-.85,1.44-.63,.35,.14,.61,.44,.68,.8l5.47,25.14c.11,.51,.56,.88,1.08,.88h7.54c.62-.03,1.1-.55,1.07-1.17,0-.09-.02-.18-.04-.26L96.64,.77C96.49,.31,96.06,0,95.58,0h-5.78c-.45,0-.86,.28-1.03,.7Z"/><path class="d" d="M145.71,8.13c1.84-.99,3.91-1.48,6-1.42h12.37c.61,0,1.11-.5,1.11-1.11h0V1.11c0-.59-.47-1.08-1.06-1.11h-62.13c-.62,0-1.12,.51-1.12,1.12,0,.12,.02,.23,.06,.35l1.51,4.53c.12,.33,.43,.55,.78,.55h10.45c.61,0,1.11,.5,1.11,1.11h0v29.65c0,.61,.5,1.11,1.11,1.11h7.43c.61,0,1.11-.49,1.11-1.11,0-.03,0-.06,0-.08l-2.15-29.48c-.04-.62,.43-1.15,1.05-1.19,.02,0,.04,0,.06,0h10.87c.61,0,1.12,.48,1.12,1.1,0,.18-.04,.36-.12,.52l-.31,.6c-1.54,3.22-2.28,6.77-2.18,10.34-.09,3.57,.65,7.11,2.16,10.35,1.37,2.81,3.57,5.13,6.3,6.66,3.03,1.59,6.41,2.39,9.83,2.3h13.07c.61,0,1.11-.5,1.11-1.11h0V18.77c0-.61-.5-1.11-1.11-1.11h-6.56c-.61,0-1.1,.49-1.1,1.1,0,.06,0,.12,.01,.18l1.79,11.49c.1,.6-.31,1.17-.91,1.27-.06,.01-.12,.02-.18,.01h-5.42c-2.12,.07-4.23-.42-6.09-1.44-1.63-.98-2.91-2.43-3.68-4.17-.93-2.21-1.37-4.6-1.29-7-.07-2.34,.38-4.67,1.3-6.83,.77-1.73,2.07-3.18,3.7-4.14Z"/></g></g></svg>
+                <p>Made in New York City</p>
+            </div>
+
+           
+        </div>
+    </div>
+
+
+</body>
+<script>
+    var hex_color = "#000000";
+    var rightColor, wrongColorA, wrongColorB;
+    var wrongCount = 0;
+    var rightCount = 0;
+    var percentageRight = 0;
+    var A, B, C;
+    var wrong, right;
+    var allChoices = document.getElementsByClassName("each_choice_div");
+    runGame();
+
+    function runGame() {
+        //generate 3 hex colors, one right
+
+        rightColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+        wrongColorA = "#" + Math.floor(Math.random() * 16777215).toString(16);
+        wrongColorB = "#" + Math.floor(Math.random() * 16777215).toString(16);
+
+        //add the right hex color to challange_value
+        document.getElementById("challange_value").innerHTML = rightColor;
+
+        //add class "correct" to one random choice and remove class "correct" from the other two
+        allChoices[Math.floor(Math.random() * 3)].classList.add("correct");
+        right = document.getElementsByClassName("correct")[0];
+        wrong = document.querySelectorAll(".each_choice_div:not(.correct)");
+
+        //add the right hex color to the right choice
+        right.getElementsByClassName("fill_color")[0].style.backgroundColor = rightColor;
+        wrong[0].getElementsByClassName("fill_color")[0].style.backgroundColor = wrongColorA;
+        wrong[1].getElementsByClassName("fill_color")[0].style.backgroundColor = wrongColorB;
+
+    }
+    //add event listeners to each_choice_div
+    var choices = document.getElementsByClassName("each_choice_div");
+    for (var i = 0; i < choices.length; i++) {
+        choices[i].addEventListener("click", function () {
+
+
+            //add class clicked to clicked
+            this.classList.add("clicked");
+
+            if (this.classList.contains("correct")) {
+                rightCount++;
+                percentageRight = Math.floor((rightCount / (rightCount + wrongCount)) * 100);
+
+                document.getElementById("header_score_value").innerHTML = percentageRight + "%";
+                setTimeout(function () {
+                    //remove class clicked from clicked
+                    document.querySelector(".clicked").classList.remove("clicked");
+                    document.querySelector(".correct").classList.remove("correct");
+
+                    runGame();
+                }, 500);
+
+
+            } else {
+                wrongCount++;
+                percentageRight = Math.floor((rightCount / (rightCount + wrongCount)) * 100);
+                document.getElementById("header_score_value").innerHTML = percentageRight + "%";
+
+                setTimeout(function () {
+                    //remove class clicked from clicked
+                    document.querySelector(".clicked").classList.remove("clicked");
+                    document.querySelector(".correct").classList.remove("correct");
+
+                    runGame();
+                }, 500);
+
+            }
+
+
+        });
+    }
+
+
+
+    //add event listener to challange_value when user right clicks
+    document.getElementById("challange_value").addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+        dont();
+
+    });
+    //add event listener to challange_value when user  clicks
+    document.getElementById("challange_value").addEventListener("click", function (e) {
+        e.preventDefault();
+        dont();
+
+    });
+    var listOfChoiceWords = ["No cheating!",
+        "I see what you're doing...",
+        "You can't do that!",
+        "Right clicking doesn't work here.",
+        "Maybe you should try using the keyboard?",
+        "Alright, this is starting to annoy me.",
+        "I made this game. Stop clicking here.",
+        "I'm not sure what you're trying to do here.",
+        "Anyway, are you proud of your score?",
+        "I'm not impressed. You shouldn't be either.",
+        "Don't you have anything better to do with your time?",
+
+
+    ];
+    var j = 0;
+
+    function dont() {
+        if (j < listOfChoiceWords.length) {
+            alert(listOfChoiceWords[j]);
+            j++;
+        } else {
+            j = 0;
+            alert(listOfChoiceWords[j]);
+        }
+
+
+    }
+</script>
+
+</html>
