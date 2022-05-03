@@ -8,7 +8,7 @@
     <title>Hex Game | A game by D7mtg</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/7b42fedff3.js" crossorigin="anonymous"></script>
-   
+
 
     <link href="../../favicon.png" rel="shortcut icon" type="image/png">
     <meta content="width=device-width,initial-scale=1,user-scalable=yes" name="viewport">
@@ -17,10 +17,8 @@
     <meta name="revisit-after" content="1 days">
     <meta name="title" content="Hex Game | A game by D7mtg">
     <meta property="og:title" content="Hex Game | A game by D7mtg" />
-    <meta name="description"
-        content="A little game to help you memorize hex color codes" />
-    <meta property="og:description"
-        content="A little game to help you memorize hex color codes." />
+    <meta name="description" content="A little game to help you memorize hex color codes" />
+    <meta property="og:description" content="A little game to help you memorize hex color codes." />
     <meta name="author" content="D7mtg">
     <meta name="copyright" content="D7mtg">
     <meta name="msapplication-TileColor" content="#f4cd2a">
@@ -28,13 +26,12 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@d7mtg">
     <meta name="twitter:title" content="Hex Game | A game by D7mtg">
-    <meta name="twitter:description"
-        content="A little game to help you memorize hex color codes">
+    <meta name="twitter:description" content="A little game to help you memorize hex color codes">
     <meta name="twitter:image" content="https://d7m.tg/photos/twittercard.png">
     <meta name="yandex-verification" content="6377e7342037f015" />
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-   
+
 
     <link href="../../InterWeb/inter.css" rel="stylesheet">
     <script type="text/javascript">
@@ -68,8 +65,8 @@
 
     <div id="header">
         <div id="header_inner">
-            <div id="header_logo" >
-                
+            <div id="header_logo">
+
                 <h1>Hex Game</h1>
                 <h2>Guess the hex code!</h2>
             </div>
@@ -85,7 +82,7 @@
 
     </div>
     <div id="tooltip" role="tooltip">
-        
+
         <p id=""><span id="rightCountTooltip">0</span> right</p>
         <p id=""><span id="wrongCountTooltip">0</span> wrong</p>
         <div id="arrow" data-popper-arrow></div>
@@ -102,8 +99,8 @@
 
             </div>
             <div id="challange_tooltip" role="tooltip">
-        
-        
+
+
             </div>
 
             <div id="choices_div">
@@ -128,12 +125,29 @@
 
             <div id="footer">
                 <a href="../../">
-                <?xml id="d7mtgLogo" version="1.0" encoding="UTF-8"?><svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165.25 38.46"><defs><style>.d{}</style></defs><g id="b"><g id="c"><path class="d" d="M0,1.11V5.6C0,6.21,.5,6.71,1.11,6.71H13.48c2.11-.06,4.2,.43,6.06,1.42,1.65,.95,2.95,2.4,3.73,4.14,.93,2.17,1.37,4.52,1.3,6.88,.08,2.4-.36,4.79-1.29,7-.77,1.74-2.07,3.2-3.71,4.17-1.86,1.02-3.97,1.51-6.09,1.44h-5.41c-.61,0-1.1-.51-1.09-1.13,0-.07,0-.14,.02-.2l1.8-11.49c.09-.61-.34-1.18-.95-1.27-.05,0-.1-.01-.15-.01H1.11c-.61,0-1.11,.5-1.11,1.11H0v18.55c0,.61,.5,1.11,1.11,1.11H14.18c3.42,.09,6.8-.7,9.82-2.3,2.73-1.53,4.93-3.85,6.3-6.66,1.53-3.25,2.27-6.81,2.17-10.4,.1-3.55-.65-7.08-2.18-10.29l-.29-.6c-.28-.54-.07-1.21,.48-1.5,.16-.08,.34-.13,.52-.12h16.25c.61,.02,1.09,.54,1.07,1.15,0,.12-.03,.24-.07,.35l-10.84,28.86c-.22,.57,.06,1.21,.63,1.44,.12,.05,.24,.07,.37,.07h6.86c.48,0,.91-.31,1.06-.77L58.15,1.45c.19-.58-.13-1.21-.72-1.4-.11-.03-.22-.05-.33-.05H1.1C.49,0,0,.5,0,1.11Z"/><path class="d" d="M88.77,.7l-7.38,18.41c-.24,.57-.89,.84-1.46,.61-.27-.11-.49-.33-.61-.61L72,.7C71.83,.29,71.44,.02,71,0h-5.87c-.48,0-.91,.31-1.06,.77l-11.78,36.23c-.19,.58,.12,1.21,.7,1.4,.11,.04,.23,.06,.35,.06h7.54c.54,0,1.01-.38,1.12-.91l5.46-25.14c.13-.6,.72-.98,1.32-.85,.37,.08,.67,.33,.8,.68l9.77,24.53c.22,.57,.86,.86,1.44,.63,.29-.11,.52-.34,.63-.63l9.77-24.53c.22-.57,.87-.85,1.44-.63,.35,.14,.61,.44,.68,.8l5.47,25.14c.11,.51,.56,.88,1.08,.88h7.54c.62-.03,1.1-.55,1.07-1.17,0-.09-.02-.18-.04-.26L96.64,.77C96.49,.31,96.06,0,95.58,0h-5.78c-.45,0-.86,.28-1.03,.7Z"/><path class="d" d="M145.71,8.13c1.84-.99,3.91-1.48,6-1.42h12.37c.61,0,1.11-.5,1.11-1.11h0V1.11c0-.59-.47-1.08-1.06-1.11h-62.13c-.62,0-1.12,.51-1.12,1.12,0,.12,.02,.23,.06,.35l1.51,4.53c.12,.33,.43,.55,.78,.55h10.45c.61,0,1.11,.5,1.11,1.11h0v29.65c0,.61,.5,1.11,1.11,1.11h7.43c.61,0,1.11-.49,1.11-1.11,0-.03,0-.06,0-.08l-2.15-29.48c-.04-.62,.43-1.15,1.05-1.19,.02,0,.04,0,.06,0h10.87c.61,0,1.12,.48,1.12,1.1,0,.18-.04,.36-.12,.52l-.31,.6c-1.54,3.22-2.28,6.77-2.18,10.34-.09,3.57,.65,7.11,2.16,10.35,1.37,2.81,3.57,5.13,6.3,6.66,3.03,1.59,6.41,2.39,9.83,2.3h13.07c.61,0,1.11-.5,1.11-1.11h0V18.77c0-.61-.5-1.11-1.11-1.11h-6.56c-.61,0-1.1,.49-1.1,1.1,0,.06,0,.12,.01,.18l1.79,11.49c.1,.6-.31,1.17-.91,1.27-.06,.01-.12,.02-.18,.01h-5.42c-2.12,.07-4.23-.42-6.09-1.44-1.63-.98-2.91-2.43-3.68-4.17-.93-2.21-1.37-4.6-1.29-7-.07-2.34,.38-4.67,1.3-6.83,.77-1.73,2.07-3.18,3.7-4.14Z"/></g></g></svg>
-            </a>
+                    <?xml id="d7mtgLogo" version="1.0" encoding="UTF-8"?><svg id="a" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 165.25 38.46">
+                        <defs>
+                            <style>
+                                .d {}
+                            </style>
+                        </defs>
+                        <g id="b">
+                            <g id="c">
+                                <path class="d"
+                                    d="M0,1.11V5.6C0,6.21,.5,6.71,1.11,6.71H13.48c2.11-.06,4.2,.43,6.06,1.42,1.65,.95,2.95,2.4,3.73,4.14,.93,2.17,1.37,4.52,1.3,6.88,.08,2.4-.36,4.79-1.29,7-.77,1.74-2.07,3.2-3.71,4.17-1.86,1.02-3.97,1.51-6.09,1.44h-5.41c-.61,0-1.1-.51-1.09-1.13,0-.07,0-.14,.02-.2l1.8-11.49c.09-.61-.34-1.18-.95-1.27-.05,0-.1-.01-.15-.01H1.11c-.61,0-1.11,.5-1.11,1.11H0v18.55c0,.61,.5,1.11,1.11,1.11H14.18c3.42,.09,6.8-.7,9.82-2.3,2.73-1.53,4.93-3.85,6.3-6.66,1.53-3.25,2.27-6.81,2.17-10.4,.1-3.55-.65-7.08-2.18-10.29l-.29-.6c-.28-.54-.07-1.21,.48-1.5,.16-.08,.34-.13,.52-.12h16.25c.61,.02,1.09,.54,1.07,1.15,0,.12-.03,.24-.07,.35l-10.84,28.86c-.22,.57,.06,1.21,.63,1.44,.12,.05,.24,.07,.37,.07h6.86c.48,0,.91-.31,1.06-.77L58.15,1.45c.19-.58-.13-1.21-.72-1.4-.11-.03-.22-.05-.33-.05H1.1C.49,0,0,.5,0,1.11Z" />
+                                <path class="d"
+                                    d="M88.77,.7l-7.38,18.41c-.24,.57-.89,.84-1.46,.61-.27-.11-.49-.33-.61-.61L72,.7C71.83,.29,71.44,.02,71,0h-5.87c-.48,0-.91,.31-1.06,.77l-11.78,36.23c-.19,.58,.12,1.21,.7,1.4,.11,.04,.23,.06,.35,.06h7.54c.54,0,1.01-.38,1.12-.91l5.46-25.14c.13-.6,.72-.98,1.32-.85,.37,.08,.67,.33,.8,.68l9.77,24.53c.22,.57,.86,.86,1.44,.63,.29-.11,.52-.34,.63-.63l9.77-24.53c.22-.57,.87-.85,1.44-.63,.35,.14,.61,.44,.68,.8l5.47,25.14c.11,.51,.56,.88,1.08,.88h7.54c.62-.03,1.1-.55,1.07-1.17,0-.09-.02-.18-.04-.26L96.64,.77C96.49,.31,96.06,0,95.58,0h-5.78c-.45,0-.86,.28-1.03,.7Z" />
+                                <path class="d"
+                                    d="M145.71,8.13c1.84-.99,3.91-1.48,6-1.42h12.37c.61,0,1.11-.5,1.11-1.11h0V1.11c0-.59-.47-1.08-1.06-1.11h-62.13c-.62,0-1.12,.51-1.12,1.12,0,.12,.02,.23,.06,.35l1.51,4.53c.12,.33,.43,.55,.78,.55h10.45c.61,0,1.11,.5,1.11,1.11h0v29.65c0,.61,.5,1.11,1.11,1.11h7.43c.61,0,1.11-.49,1.11-1.11,0-.03,0-.06,0-.08l-2.15-29.48c-.04-.62,.43-1.15,1.05-1.19,.02,0,.04,0,.06,0h10.87c.61,0,1.12,.48,1.12,1.1,0,.18-.04,.36-.12,.52l-.31,.6c-1.54,3.22-2.28,6.77-2.18,10.34-.09,3.57,.65,7.11,2.16,10.35,1.37,2.81,3.57,5.13,6.3,6.66,3.03,1.59,6.41,2.39,9.83,2.3h13.07c.61,0,1.11-.5,1.11-1.11h0V18.77c0-.61-.5-1.11-1.11-1.11h-6.56c-.61,0-1.1,.49-1.1,1.1,0,.06,0,.12,.01,.18l1.79,11.49c.1,.6-.31,1.17-.91,1.27-.06,.01-.12,.02-.18,.01h-5.42c-2.12,.07-4.23-.42-6.09-1.44-1.63-.98-2.91-2.43-3.68-4.17-.93-2.21-1.37-4.6-1.29-7-.07-2.34,.38-4.67,1.3-6.83,.77-1.73,2.07-3.18,3.7-4.14Z" />
+                            </g>
+                        </g>
+                    </svg>
+                </a>
                 <p>Made in New York City</p>
             </div>
 
-           
+
         </div>
     </div>
 
@@ -155,9 +169,9 @@
     function runGame() {
         //generate 3 hex colors, one right
 
-        rightColor = "#"+(Math.random()*0xFFFFFF<<0).toString(16);
-        wrongColorA = "#"+(Math.random()*0xFFFFFF<<0).toString(16);
-        wrongColorB = "#"+(Math.random()*0xFFFFFF<<0).toString(16);
+        rightColor = "#" + (Math.random() * 0xFFFFFF << 0).toString(16);
+        wrongColorA = "#" + (Math.random() * 0xFFFFFF << 0).toString(16);
+        wrongColorB = "#" + (Math.random() * 0xFFFFFF << 0).toString(16);
 
         //add the right hex color to challange_value
         document.getElementById("challange_value").innerHTML = rightColor;
@@ -171,6 +185,7 @@
         right.getElementsByClassName("fill_color")[0].style.backgroundColor = rightColor;
         wrong[0].getElementsByClassName("fill_color")[0].style.backgroundColor = wrongColorA;
         wrong[1].getElementsByClassName("fill_color")[0].style.backgroundColor = wrongColorB;
+
 
     }
     //add event listeners to each_choice_div
@@ -188,11 +203,12 @@
                 rightCountTooltip.innerHTML = rightCount;
                 document.getElementById("header_score_value").innerHTML = percentageRight + "%";
                 setTimeout(function () {
-                    //remove class clicked from clicked
                     document.querySelector(".clicked").classList.remove("clicked");
                     document.querySelector(".correct").classList.remove("correct");
-                    showHintOff()
+                    document.activeElement.blur();
+                    showHintOff();
                     runGame();
+
                 }, 500);
 
 
@@ -203,11 +219,12 @@
                 document.getElementById("header_score_value").innerHTML = percentageRight + "%";
 
                 setTimeout(function () {
-                    //remove class clicked from clicked
                     document.querySelector(".clicked").classList.remove("clicked");
                     document.querySelector(".correct").classList.remove("correct");
-                    showHintOff()
+                    document.activeElement.blur();
+                    showHintOff();
                     runGame();
+
                 }, 500);
 
             }
@@ -268,71 +285,67 @@
     }
 
 
-    function showHint(){
-            document.getElementById("hint_icon").classList.remove("fa-eye-slash");
-            document.getElementById("hint_icon").classList.add("fa-eye");
+    function showHint() {
+        document.getElementById("hint_icon").classList.remove("fa-eye-slash");
+        document.getElementById("hint_icon").classList.add("fa-eye");
 
-            //get the challange hex
-            var challange_hex = document.getElementById("challange_value").innerHTML;
-            //made the text color the same as the challange hex
-            document.getElementById("challange_value").style.color = challange_hex;
-
-
+        //get the challange hex
+        var challange_hex = document.getElementById("challange_value").innerHTML;
+        //made the text color the same as the challange hex
+        document.getElementById("challange_value").style.color = challange_hex;
 
 
 
-        } 
-        
-        function showHintOff(){
-            document.getElementById("hint_icon").classList.remove("fa-eye");
-            document.getElementById("hint_icon").classList.add("fa-eye-slash");
-            document.getElementById("challange_value").style.color = "#788FA6"  ;
-        }
-    
 
+
+    }
+
+    function showHintOff() {
+        document.getElementById("hint_icon").classList.remove("fa-eye");
+        document.getElementById("hint_icon").classList.add("fa-eye-slash");
+        document.getElementById("challange_value").style.color = "#788FA6";
+    }
 </script>
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script>
-  const button = document.querySelector('#header_score');
-  const tooltip = document.querySelector('#tooltip');
+    const button = document.querySelector('#header_score');
+    const tooltip = document.querySelector('#tooltip');
 
-  const popperInstance = Popper.createPopper(button, tooltip, {
-  modifiers: [
-    {
-      name: 'offset',
-      options: {
-        offset: [0, 8],
-      },
-    },
-  ],
-});
+    const popperInstance = Popper.createPopper(button, tooltip, {
+        modifiers: [{
+            name: 'offset',
+            options: {
+                offset: [0, 8],
+            },
+        }, ],
+    });
 
 
-function show() {
-  tooltip.setAttribute('data-show', '');
+    function show() {
+        tooltip.setAttribute('data-show', '');
 
-  // We need to tell Popper to update the tooltip position
-  // after we show the tooltip, otherwise it will be incorrect
-  popperInstance.update();
-}
+        // We need to tell Popper to update the tooltip position
+        // after we show the tooltip, otherwise it will be incorrect
+        popperInstance.update();
+    }
 
-function hide() {
-  tooltip.removeAttribute('data-show');
-}
+    function hide() {
+        tooltip.removeAttribute('data-show');
+    }
 
-const showEvents = ['mouseenter', 'focus'];
-const hideEvents = ['mouseleave', 'blur'];
+    const showEvents = ['mouseenter', 'focus'];
+    const hideEvents = ['mouseleave', 'blur'];
 
-showEvents.forEach((event) => {
-  button.addEventListener(event, show);
-});
+    showEvents.forEach((event) => {
+        button.addEventListener(event, show);
+    });
 
-hideEvents.forEach((event) => {
-  button.addEventListener(event, hide);
-});
+    hideEvents.forEach((event) => {
+        button.addEventListener(event, hide);
+    });
 </script>
 
-  
+
 
 
 </html>
