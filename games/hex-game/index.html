@@ -235,7 +235,7 @@
 
 
     //add event listener to challange_value when user right clicks
-    document.getElementById("challange_value").addEventListener("contextmenu", function (e) {
+    window.addEventListener("contextmenu", function (e) {
         e.preventDefault();
         dont();
 
@@ -246,26 +246,31 @@
         dont();
 
     });
+
+
     var listOfChoiceWords = [
         "No cheating!",
         "I see what you're doing...",
-        "Right clicking doesn't work here.",
-        "Maybe you should try using the keyboard?",
-        "Just guess your color and play the game.",
-        "No need to cheat. It's a simple game.",
+        "Selecting stuff doesn't work here.",
+        "It's not a mistake. Just guess your color and play the game.",
+        "Again. No need to cheat. It's a simple game.",
         "Why are you still clicking?",
         "You think it's funny. Hahaha.",
         "Well I'm not laughing.",
-        "This is starting to annoy me.",
-        "I'm not sure what you're trying to do here.",
+        "...and this is starting to annoy me.",
         "Don't you have anything better to do with your time?",
-        "Look. Anyone can open developer tools. It's just a click away.",
-        "But I don't want you to do that. I want you to play the game.",
         "Seriously. Stop.",
+        "Yet you're still tapping and clicking.",
+        "I'm almost flattered.",
+        "But not really.",
         "At one point I'm just gonna close the game for you.",
-        "That's it. Three more clicks and you're out.",
+        "You're going to lose all your points.",
+        "Alright, alright. I have one choice left.",
+        "Thais is it. Listen carefully.",
+        "Because I'm only gonna say this once:",
+        "Three more clicks and you're out.",
         "I'm not joking.",
-        "One. More. Click. ",
+        "One. More. Click. This is your final warning.",
 
 
     ];
@@ -276,7 +281,7 @@
             alert(listOfChoiceWords[j]);
             j++;
         } else {
-            alert("Poof. Good riddance.");
+            alert("Good riddance. Don't say I didn't warn you.");
             window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
         }
 
