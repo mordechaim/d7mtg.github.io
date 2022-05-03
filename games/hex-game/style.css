@@ -405,4 +405,12 @@ svg {
     #footer p{
         display: none;
     }
+    .each_choice_div:hover{
+        transform: none;
+        box-shadow: none;
+    }
+    .each_choice_div:active{
+        transform: none;
+        box-shadow: none;
+    }
 }
