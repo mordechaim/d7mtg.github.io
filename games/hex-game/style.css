@@ -166,7 +166,12 @@ h2 {
     -ms-user-select: none;
     user-select: none;
     cursor: not-allowed;
+    transition: color 1s ease;
 
+}
+
+.noColor {
+    color: #bac9d8 !important;
 }
 
 

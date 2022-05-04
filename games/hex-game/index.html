@@ -238,6 +238,7 @@
             window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
         }
     }
+    var hintCount = 0;
     function showHint() {
         document.getElementById("hint_icon").classList.remove("fa-eye-slash");
         document.getElementById("hint_icon").classList.add("fa-eye");
@@ -251,12 +252,18 @@
         document.querySelector(".rr").style.color = "#" + red;
         document.querySelector(".gg").style.color = "#" + green;
         document.querySelector(".bb").style.color = "#" + blue;
-    }
+        hintCount++;
+        if (hintCount > 5) {
+       alert("You've used 5 hints! Maybe try guessing the color instead?");
+        }
+   }
+    
     function showHintOff() {
         document.getElementById("hint_icon").classList.remove("fa-eye");
         document.getElementById("hint_icon").classList.add("fa-eye-slash");
         document.getElementById("challange_value").style.color = "#788FA6";
     }
+   
 </script>
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script>
