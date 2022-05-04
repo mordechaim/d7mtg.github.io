@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +7,6 @@
     <title>Hex Game | A game by D7mtg</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/7b42fedff3.js" crossorigin="anonymous"></script>
-
     <link href="../../favicon.png" rel="shortcut icon" type="image/png">
     <meta content="width=device-width,initial-scale=1,user-scalable=yes" name="viewport">
     <meta name="language" content="English">
@@ -29,9 +27,6 @@
     <meta name="twitter:image" content="https://d7m.tg/photos/twittercard.png">
     <meta name="yandex-verification" content="6377e7342037f015" />
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
-
-
     <link href="../../InterWeb/inter.css" rel="stylesheet">
     <script type="text/javascript">
         (function (c, l, a, r, i, t, y) {
@@ -49,65 +44,46 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2D8Q5R25WZ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-
         function gtag() {
             dataLayer.push(arguments);
         }
         gtag('js', new Date());
         gtag('config', 'G-2D8Q5R25WZ');
     </script>
-
-
 </head>
-
 <body>
-
     <div id="header">
         <div id="header_inner">
             <div id="header_logo">
-
                 <h1>Hex Game</h1>
                 <h2>Guess the hex code!</h2>
             </div>
-
             <div id="header_score">
                 <p id="header_score_label">Score</p>
                 <p id="header_score_value">00%</p>
             </div>
             <i class="fa-solid fa-eye-slash header_icon" id="hint_icon" onclick="showHint()"></i>
             <!-- <i class="fa-solid fa-droplet-slash header_icon" id="color_icon" onclick="colorMode()"></i> -->
-
         </div>
-
     </div>
     <div id="tooltip" role="tooltip">
-
         <p id=""><span id="rightCountTooltip">0</span> right</p>
         <p id=""><span id="wrongCountTooltip">0</span> wrong</p>
         <div id="arrow" data-popper-arrow></div>
-
     </div>
-
     <div id="page">
         <div id="page_inner">
-
-
             <div id="challange_div">
                 <p id="challange_label">Your hex color</p>
                 <p id="challange_value">#000000</p>
-
             </div>
             <div id="challange_tooltip" role="tooltip">
-
-
             </div>
-
             <div id="choices_div">
                 <div class="each_choice_div" id="choice_A">
                     <div class="fill_color" id="choice_A_fill"> </div>
                     <!-- <i class="fa-light fa-circle"></i> -->
                     <p class="choice_label" id="choice_A_label">Option A</p>
-
                 </div>
                 <div class="each_choice_div" id="choice_B">
                     <div class="fill_color" id="choice_B_fill"> </div>
@@ -119,9 +95,7 @@
                     <!-- <i class="fa-light fa-circle"></i> -->
                     <p class="choice_label" id="choice_C_label">Option C</p>
                 </div>
-
             </div>
-
             <div id="footer">
                 <a href="../../">
                     <?xml id="d7mtgLogo" version="1.0" encoding="UTF-8"?><svg id="a" xmlns="http://www.w3.org/2000/svg"
@@ -145,12 +119,8 @@
                 </a>
                 <p>Made in New York City</p>
             </div>
-
-
         </div>
     </div>
-
-
 </body>
 <script>
     var hex_color = "#000000";
@@ -163,39 +133,34 @@
     var allChoices = document.getElementsByClassName("each_choice_div");
     var rightCountTooltip = document.getElementById("rightCountTooltip");
     var wrongCountTooltip = document.getElementById("wrongCountTooltip");
+    var splitColor;
     runGame();
-
     function runGame() {
         //generate 3 hex colors, one right
-
-        rightColor = "#" + (Math.random() * 0xFFFFFF << 0).toString(16);
-        wrongColorA = "#" + (Math.random() * 0xFFFFFF << 0).toString(16);
-        wrongColorB = "#" + (Math.random() * 0xFFFFFF << 0).toString(16);
-
+        rightColor = "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, "0")
+        wrongColorA = "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, "0")
+        wrongColorB = "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, "0")
+        var [red, green, blue] = rightColor.match(/[0-9a-f]{2}/g).map((code, i) => code.padStart(i * 2 + 2, '0').padEnd(6, '0'))
+        // console.log(rightColor);
+        // console.log(red, green, blue);
+        
         //add the right hex color to challange_value
-        document.getElementById("challange_value").innerHTML = rightColor;
-
+        document.getElementById("challange_value").innerHTML = "<span class='rr'>#" + red.slice(0, 2) + "</span><span class='gg'>" + green.slice(2, 4) + "</span><span class='bb'>" + blue.slice(4, 6) + "</span>";
         //add class "correct" to one random choice and remove class "correct" from the other two
         allChoices[Math.floor(Math.random() * 3)].classList.add("correct");
         right = document.getElementsByClassName("correct")[0];
         wrong = document.querySelectorAll(".each_choice_div:not(.correct)");
-
         //add the right hex color to the right choice
         right.getElementsByClassName("fill_color")[0].style.backgroundColor = rightColor;
         wrong[0].getElementsByClassName("fill_color")[0].style.backgroundColor = wrongColorA;
         wrong[1].getElementsByClassName("fill_color")[0].style.backgroundColor = wrongColorB;
-
-
     }
     //add event listeners to each_choice_div
     var choices = document.getElementsByClassName("each_choice_div");
     for (var i = 0; i < choices.length; i++) {
         choices[i].addEventListener("click", function () {
-
-
             //add class clicked to clicked
             this.classList.add("clicked");
-
             if (this.classList.contains("correct")) {
                 rightCount++;
                 percentageRight = Math.floor((rightCount / (rightCount + wrongCount)) * 100);
@@ -207,47 +172,32 @@
                     document.activeElement.blur();
                     showHintOff();
                     runGame();
-
                 }, 500);
-
-
             } else {
                 wrongCount++;
                 percentageRight = Math.floor((rightCount / (rightCount + wrongCount)) * 100);
                 wrongCountTooltip.innerHTML = wrongCount;
                 document.getElementById("header_score_value").innerHTML = percentageRight + "%";
-
                 setTimeout(function () {
                     document.querySelector(".clicked").classList.remove("clicked");
                     document.querySelector(".correct").classList.remove("correct");
                     document.activeElement.blur();
                     showHintOff();
                     runGame();
-
                 }, 500);
-
             }
-
-
         });
     }
-
-
-
     //add event listener to challange_value when user right clicks
     window.addEventListener("contextmenu", function (e) {
         e.preventDefault();
         dont();
-
     });
     //add event listener to challange_value when user  clicks
     document.getElementById("challange_value").addEventListener("click", function (e) {
         e.preventDefault();
         dont();
-
     });
-
-
     var listOfChoiceWords = [
         "No cheating!",
         "I see what you're doing...",
@@ -277,11 +227,8 @@
         "You hear me? Three more clicks and you're done.",
         "I'm not joking.",
         "One. More. Click. This is your final warning.",
-
-
     ];
     var j = 0;
-
     function dont() {
         if (j < listOfChoiceWords.length) {
             alert(listOfChoiceWords[j]);
@@ -290,26 +237,21 @@
             alert("Good riddance. Don't say I didn't warn you.");
             window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
         }
-
-
     }
-
-
     function showHint() {
         document.getElementById("hint_icon").classList.remove("fa-eye-slash");
         document.getElementById("hint_icon").classList.add("fa-eye");
-
         //get the challange hex
-        var challange_hex = document.getElementById("challange_value").innerHTML;
-        //made the text color the same as the challange hex
-        document.getElementById("challange_value").style.color = challange_hex;
-
-
-
-
-
+        // var challange_hex = document.getElementById("challange_value").innerHTML;
+        // //made the text color the same as the challange hex
+        // document.getElementById("challange_value").style.color = challange_hex;
+        var [red, green, blue] = rightColor.match(/[0-9a-f]{2}/g).map((code, i) => code.padStart(i * 2 + 2, '0').padEnd(6, '0'))
+        
+        //add the right hex color to challange_value
+        document.querySelector(".rr").style.color = "#" + red;
+        document.querySelector(".gg").style.color = "#" + green;
+        document.querySelector(".bb").style.color = "#" + blue;
     }
-
     function showHintOff() {
         document.getElementById("hint_icon").classList.remove("fa-eye");
         document.getElementById("hint_icon").classList.add("fa-eye-slash");
@@ -320,7 +262,6 @@
 <script>
     const button = document.querySelector('#header_score');
     const tooltip = document.querySelector('#tooltip');
-
     const popperInstance = Popper.createPopper(button, tooltip, {
         modifiers: [{
             name: 'offset',
@@ -329,33 +270,22 @@
             },
         }, ],
     });
-
-
     function show() {
         tooltip.setAttribute('data-show', '');
-
         // We need to tell Popper to update the tooltip position
         // after we show the tooltip, otherwise it will be incorrect
         popperInstance.update();
     }
-
     function hide() {
         tooltip.removeAttribute('data-show');
     }
-
     const showEvents = ['mouseenter', 'focus'];
     const hideEvents = ['mouseleave', 'blur'];
-
     showEvents.forEach((event) => {
         button.addEventListener(event, show);
     });
-
     hideEvents.forEach((event) => {
         button.addEventListener(event, hide);
     });
 </script>
-
-
-
-
 </html>
