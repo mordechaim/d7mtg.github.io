@@ -155,9 +155,8 @@
         showHintOff();
 
         //check if there are cookies for rightCound, wrongCount, and percentageRight
-        if (document.cookie.indexOf("rightCount") == -1) {
+        if (document.cookie.indexOf("rightCount") != -1) {
             
-        } else {
             rightCount = parseInt(document.cookie.split("rightCount=")[1].split(";")[0]);
             wrongCount = parseInt(document.cookie.split("wrongCount=")[1].split(";")[0]);
             percentageRight = parseInt(document.cookie.split("percentageRight=")[1].split(";")[0]);
@@ -396,6 +395,7 @@
             runGame();
         }
     }
+    
 </script>
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script>
