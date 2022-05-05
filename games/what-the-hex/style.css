@@ -348,6 +348,11 @@ svg {
   overflow: hidden;
 
 }
+.swal-modal {
+    padding: 50px;
+    border-radius: 15px;
+}
+
 
 /*  select all .clicked.right that have a sibling .wrong */
 

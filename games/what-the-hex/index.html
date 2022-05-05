@@ -385,7 +385,7 @@
         swal({
             title: "Are you sure you want to clear your score? ",
             icon: "info",
-            buttons: true,
+            buttons: ["No, cancel", "Yes, clear my score"],
             dangerMode: true,
             })
             .then((willDelete) => {
@@ -429,7 +429,7 @@
             title: "Are you sure you want to go back to the tutorial? ",
             text: "Doing so will clear your score.",
             icon: "info",
-            buttons: true,
+            buttons: ["Cancel", "Yes, show me the tutorial"],
             dangerMode: true,
             })
             .then((willDelete) => {
