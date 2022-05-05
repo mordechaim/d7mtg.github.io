@@ -67,7 +67,9 @@
                 <p id="header_score_value">00%</p>
             </div>
             <i class="fa-solid fa-eye-slash header_icon" id="hint_icon" onclick="showHint()"></i>
-            <i class="fa-solid fa-redo-alt header_icon" id="reset_icon" onclick="resetGame()"></i>
+            
+            <i class="fa-solid fa-eraser header_icon" id="clear_icon" onclick="clearGame()"></i>
+            <i class="fa-solid fa-redo header_icon" id="restart_icon" onclick="restartGame()"></i>
 
             <!-- <i class="fa-solid fa-droplet-slash header_icon" id="color_icon" onclick="colorMode()"></i> -->
         </div>
@@ -140,16 +142,21 @@
     var rightCountTooltip = document.getElementById("rightCountTooltip");
     var wrongCountTooltip = document.getElementById("wrongCountTooltip");
     var splitColor;
+    var level;
+    if (document.cookie.indexOf("rightCount") == -1) {
+        rightCount = 0;
+        wrongCount = 0;
+        percentageRight = 0;
+       level = 1;
+    }
     runGame();
-
+    
     function runGame() {
         showHintOff();
 
         //check if there are cookies for rightCound, wrongCount, and percentageRight
         if (document.cookie.indexOf("rightCount") == -1) {
-            rightCount = 0;
-            wrongCount = 0;
-            percentageRight = 0;
+            
         } else {
             rightCount = parseInt(document.cookie.split("rightCount=")[1].split(";")[0]);
             wrongCount = parseInt(document.cookie.split("wrongCount=")[1].split(";")[0]);
@@ -159,12 +166,76 @@
             document.getElementById("header_score_value").innerHTML = percentageRight + "%";
 
         }
+        if (level == 1){
+            //red
+            rightColor = "#ff0000";
+            wrongColorA = "#00ff00";
+            wrongColorB = "#0000ff";
+            level++;
+        } else if (level == 2){
+            //green
+            rightColor = "#00ff00";
+            wrongColorA = "#ff0000";
+            wrongColorB = "#0000ff";
+            level++;
+        } else if (level == 3){
+            //blue
+            rightColor = "#0000ff";
+            wrongColorA = "#ff0000";
+            wrongColorB = "#00ff00";
+            level++;
+        } else if (level == 4) {
+            //yellow
+            rightColor = "#ffff00";
+            wrongColorA = "#ff00ff";
+            wrongColorB = "#00ffff";
+            level++;
 
-        //generate 3 hex colors, one right
+        }  else if (level == 5) {
+            //magenta
+            rightColor = "#ff00ff";
+            wrongColorA = "#ffff00";
+            wrongColorB = "#00ffff";
+            level++;
+
+        }  else if (level == 6) {
+            //cyan
+            rightColor = "#00ffff";
+            wrongColorA = "#ff00ff";
+            wrongColorB = "#ffff00";
+            level++;
+
+
+        } else if (level == 7) {
+            //black
+            rightColor = "#000000";
+            wrongColorA = "#ffffff";
+            wrongColorB = "#808080";
+            level++;
+
+        } else if (level == 8) {
+            //white
+            rightColor = "#ffffff";
+            wrongColorA = "#000000";
+            wrongColorB = "#808080";
+            level++;
+
+        } else if (level == 9) {
+            //gray
+            rightColor = "#808080";
+            wrongColorA = "#000000";
+            wrongColorB = "#ffffff";
+            level++;
+
+        } else {
+
         rightColor = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0")
         wrongColorA = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0")
         wrongColorB = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0")
-        var [red, green, blue] = rightColor.match(/[0-9a-f]{2}/g).map((code, i) => code.padStart(i * 2 + 2, '0').padEnd(
+
+        }
+        
+            var [red, green, blue] = rightColor.match(/[0-9a-f]{2}/g).map((code, i) => code.padStart(i * 2 + 2, '0').padEnd(
             6, '0'))
 
 
@@ -273,7 +344,6 @@
             window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
         }
     }
-    var hintCount = 0;
 
     function showHint() {
         document.getElementById("hint_icon").classList.remove("fa-eye-slash");
@@ -284,10 +354,7 @@
         document.querySelector(".rr").style.color = "#" + red;
         document.querySelector(".gg").style.color = "#" + green;
         document.querySelector(".bb").style.color = "#" + blue;
-        hintCount++;
-        if (hintCount > 5) {
-            alert("You've used 5 hints! Maybe try guessing the color instead?");
-        }
+       
     }
 
     function showHintOff() {
@@ -296,8 +363,8 @@
         document.getElementById("challange_value").style.color = "#788FA6";
     }
 
-    function resetGame() {
-       if (window.confirm("Are you sure you want to reset the game?")) {
+    function clearGame() {
+       if (window.confirm("Are you sure you want to clear your score?")) {
        
             rightCount = 0;
             wrongCount = 0;
@@ -312,6 +379,22 @@
         }
     
               
+    }
+
+    function restartGame() {
+        if (window.confirm("Are you sure you want to go back to the tutorial? Doing so will clear your score.")) {
+            rightCount = 0;
+            wrongCount = 0;
+            percentageRight = 0;
+            rightCountTooltip.innerHTML = rightCount;
+            wrongCountTooltip.innerHTML = wrongCount;
+            document.getElementById("header_score_value").innerHTML = percentageRight + "%";
+            document.cookie = "rightCount=" + rightCount;
+            document.cookie = "wrongCount=" + wrongCount;
+            document.cookie = "percentageRight=" + percentageRight;
+            level = 1;
+            runGame();
+        }
     }
 </script>
 <script src="https://unpkg.com/@popperjs/core@2"></script>

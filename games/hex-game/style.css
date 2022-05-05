@@ -379,10 +379,15 @@ svg {
         right: 25px;
     }
 
-    #reset_icon{
+    #clear_icon{
         position: fixed;
         bottom: 65px;
-        right: 95px;
+        right: 75px;
+    }
+    #restart_icon{
+        position: fixed;
+        bottom: 65px;
+        right: 125px;
     }
     #challange_div{
         margin-top: 50px;
