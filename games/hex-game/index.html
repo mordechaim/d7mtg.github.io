@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +18,7 @@
     <meta name="description" content="A little game to help you memorize hex color codes" />
     <meta property="og:description" content="A little game to help you memorize hex color codes." />
     <meta name="author" content="D7mtg">
+    <meta name="theme-color" content="#fff">
     <meta name="copyright" content="D7mtg">
     <meta name="msapplication-TileColor" content="#f4cd2a">
     <meta property="og:image" content="../../ogpreview.png" />
@@ -44,6 +46,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2D8Q5R25WZ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
@@ -51,6 +54,7 @@
         gtag('config', 'G-2D8Q5R25WZ');
     </script>
 </head>
+
 <body>
     <div id="header">
         <div id="header_inner">
@@ -63,6 +67,8 @@
                 <p id="header_score_value">00%</p>
             </div>
             <i class="fa-solid fa-eye-slash header_icon" id="hint_icon" onclick="showHint()"></i>
+            <i class="fa-solid fa-redo-alt header_icon" id="reset_icon" onclick="resetGame()"></i>
+
             <!-- <i class="fa-solid fa-droplet-slash header_icon" id="color_icon" onclick="colorMode()"></i> -->
         </div>
     </div>
@@ -125,9 +131,9 @@
 <script>
     var hex_color = "#000000";
     var rightColor, wrongColorA, wrongColorB;
-    var wrongCount = 0;
-    var rightCount = 0;
-    var percentageRight = 0;
+    var wrongCount;
+    var rightCount;
+    var percentageRight;
     var A, B, C;
     var wrong, right;
     var allChoices = document.getElementsByClassName("each_choice_div");
@@ -135,21 +141,42 @@
     var wrongCountTooltip = document.getElementById("wrongCountTooltip");
     var splitColor;
     runGame();
+
     function runGame() {
+        showHintOff();
+
+        //check if there are cookies for rightCound, wrongCount, and percentageRight
+        if (document.cookie.indexOf("rightCount") == -1) {
+            rightCount = 0;
+            wrongCount = 0;
+            percentageRight = 0;
+        } else {
+            rightCount = parseInt(document.cookie.split("rightCount=")[1].split(";")[0]);
+            wrongCount = parseInt(document.cookie.split("wrongCount=")[1].split(";")[0]);
+            percentageRight = parseInt(document.cookie.split("percentageRight=")[1].split(";")[0]);
+            wrongCountTooltip.innerHTML = wrongCount;
+            rightCountTooltip.innerHTML = rightCount;
+            document.getElementById("header_score_value").innerHTML = percentageRight + "%";
+
+        }
+
         //generate 3 hex colors, one right
-        rightColor = "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, "0")
-        wrongColorA = "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, "0")
-        wrongColorB = "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, "0")
-        var [red, green, blue] = rightColor.match(/[0-9a-f]{2}/g).map((code, i) => code.padStart(i * 2 + 2, '0').padEnd(6, '0'))
-        // console.log(rightColor);
-        // console.log(red, green, blue);
-        
+        rightColor = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0")
+        wrongColorA = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0")
+        wrongColorB = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0")
+        var [red, green, blue] = rightColor.match(/[0-9a-f]{2}/g).map((code, i) => code.padStart(i * 2 + 2, '0').padEnd(
+            6, '0'))
+
+
         //add the right hex color to challange_value
-        document.getElementById("challange_value").innerHTML = "<span class='rr'>#" + red.slice(0, 2) + "</span><span class='gg'>" + green.slice(2, 4) + "</span><span class='bb'>" + blue.slice(4, 6) + "</span>";
+        document.getElementById("challange_value").innerHTML = "<span class='rr'>#" + red.slice(0, 2) +
+            "</span><span class='gg'>" + green.slice(2, 4) + "</span><span class='bb'>" + blue.slice(4, 6) + "</span>";
+
         //add class "correct" to one random choice and remove class "correct" from the other two
         allChoices[Math.floor(Math.random() * 3)].classList.add("correct");
         right = document.getElementsByClassName("correct")[0];
         wrong = document.querySelectorAll(".each_choice_div:not(.correct)");
+
         //add the right hex color to the right choice
         right.getElementsByClassName("fill_color")[0].style.backgroundColor = rightColor;
         wrong[0].getElementsByClassName("fill_color")[0].style.backgroundColor = wrongColorA;
@@ -166,23 +193,30 @@
                 percentageRight = Math.floor((rightCount / (rightCount + wrongCount)) * 100);
                 rightCountTooltip.innerHTML = rightCount;
                 document.getElementById("header_score_value").innerHTML = percentageRight + "%";
+                document.cookie = "rightCount=" + rightCount;
+                document.cookie = "wrongCount=" + wrongCount;
+                document.cookie = "percentageRight=" + percentageRight;
                 setTimeout(function () {
                     document.querySelector(".clicked").classList.remove("clicked");
                     document.querySelector(".correct").classList.remove("correct");
                     document.activeElement.blur();
-                    showHintOff();
                     runGame();
                 }, 500);
             } else {
                 wrongCount++;
                 percentageRight = Math.floor((rightCount / (rightCount + wrongCount)) * 100);
+
                 wrongCountTooltip.innerHTML = wrongCount;
+
                 document.getElementById("header_score_value").innerHTML = percentageRight + "%";
+                // set cookie for rightCount, wrongCount, and percentageRight
+                document.cookie = "wrongCount=" + wrongCount;
+                document.cookie = "rightCount=" + rightCount;
+                document.cookie = "percentageRight=" + percentageRight;
                 setTimeout(function () {
                     document.querySelector(".clicked").classList.remove("clicked");
                     document.querySelector(".correct").classList.remove("correct");
                     document.activeElement.blur();
-                    showHintOff();
                     runGame();
                 }, 500);
             }
@@ -229,6 +263,7 @@
         "One. More. Click. This is your final warning.",
     ];
     var j = 0;
+
     function dont() {
         if (j < listOfChoiceWords.length) {
             alert(listOfChoiceWords[j]);
@@ -239,31 +274,45 @@
         }
     }
     var hintCount = 0;
+
     function showHint() {
         document.getElementById("hint_icon").classList.remove("fa-eye-slash");
         document.getElementById("hint_icon").classList.add("fa-eye");
-        //get the challange hex
-        // var challange_hex = document.getElementById("challange_value").innerHTML;
-        // //made the text color the same as the challange hex
-        // document.getElementById("challange_value").style.color = challange_hex;
-        var [red, green, blue] = rightColor.match(/[0-9a-f]{2}/g).map((code, i) => code.padStart(i * 2 + 2, '0').padEnd(6, '0'))
-        
-        //add the right hex color to challange_value
+        var [red, green, blue] = rightColor.match(/[0-9a-f]{2}/g).map((code, i) => code.padStart(i * 2 + 2, '0').padEnd(
+            6, '0'))
+
         document.querySelector(".rr").style.color = "#" + red;
         document.querySelector(".gg").style.color = "#" + green;
         document.querySelector(".bb").style.color = "#" + blue;
         hintCount++;
         if (hintCount > 5) {
-       alert("You've used 5 hints! Maybe try guessing the color instead?");
+            alert("You've used 5 hints! Maybe try guessing the color instead?");
         }
-   }
-    
+    }
+
     function showHintOff() {
         document.getElementById("hint_icon").classList.remove("fa-eye");
         document.getElementById("hint_icon").classList.add("fa-eye-slash");
         document.getElementById("challange_value").style.color = "#788FA6";
     }
-   
+
+    function resetGame() {
+       if (window.confirm("Are you sure you want to reset the game?")) {
+       
+            rightCount = 0;
+            wrongCount = 0;
+            percentageRight = 0;
+            rightCountTooltip.innerHTML = rightCount;
+            wrongCountTooltip.innerHTML = wrongCount;
+            document.getElementById("header_score_value").innerHTML = percentageRight + "%";
+            document.cookie = "rightCount=" + rightCount;
+            document.cookie = "wrongCount=" + wrongCount;
+            document.cookie = "percentageRight=" + percentageRight;
+            runGame();
+        }
+    
+              
+    }
 </script>
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script>
@@ -277,12 +326,14 @@
             },
         }, ],
     });
+
     function show() {
         tooltip.setAttribute('data-show', '');
         // We need to tell Popper to update the tooltip position
         // after we show the tooltip, otherwise it will be incorrect
         popperInstance.update();
     }
+
     function hide() {
         tooltip.removeAttribute('data-show');
     }
@@ -295,4 +346,5 @@
         button.addEventListener(event, hide);
     });
 </script>
+
 </html>

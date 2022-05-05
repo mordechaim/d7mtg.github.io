@@ -88,9 +88,14 @@ h2 {
     font-size: 20px;
     padding-top: 60px;
     padding-right: 0px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 
 
+}
 
+.header_icon:hover {
+    opacity: 0.5;
 }
 
 #header_score {
@@ -273,14 +278,9 @@ svg {
     margin-top: 20px;
 }
 
-.fa-eye {
-    color: #788FA6;
-    cursor: pointer;
 
-}
 
 .fa-eye-slash {
-    cursor: pointer;
     color: #bac9d8;
 
 }
@@ -380,6 +380,12 @@ svg {
         position: fixed;
         bottom: 65px;
         right: 25px;
+    }
+
+    #reset_icon{
+        position: fixed;
+        bottom: 65px;
+        right: 95px;
     }
     #challange_div{
         margin-top: 50px;
