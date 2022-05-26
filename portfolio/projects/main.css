@@ -301,7 +301,6 @@ p {
   position: absolute;
   top: 200px;
   right: 5%;
-  z-index: -1;
   display: -webkit-flex;
   max-width: 200px;
   max-height: 100px;
@@ -309,10 +308,17 @@ p {
   width: auto;
   transition: 0.3s;
   position: absolute;
+  filter: saturate(0) brightness(0);
+  opacity: 0.4;
 
 
 }
+.allphotos:first-of-type:hover{
+  opacity: 1;
 
+  filter: none;
+
+}
 /* if screen is smaller than 750px, display non for allphotos first of type */
 @media only screen and (max-width: 750px) {
   .allphotos:first-of-type {
@@ -414,4 +420,12 @@ p {
 
 
   }
+
+  .allphotos:first-of-type:hover{
+/* reduce contrast */
+filter: saturate(0) brightness(100);
+opacity: 0.4;
+  
+  }
+  
 }
