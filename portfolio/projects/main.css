@@ -5,23 +5,28 @@ html {
   transition: all .2s ease-in-out;
 }
 
-::-webkit-scrollbar {
-  width: 2px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: rgba(127, 127, 127, 0.1);
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #F9D006;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #F9D006;
+:root {
+  --shadow-color: 0deg 0% 79%;
+  --shadow-elevation-low:
+    0px 1px 1.5px hsl(var(--shadow-color) / 0),
+    0px 1.6px 2.4px hsl(var(--shadow-color) / 0.12),
+    0.1px 3px 4.5px hsl(var(--shadow-color) / 0.24);
+  --shadow-elevation-medium:
+    0px 1px 1.5px hsl(var(--shadow-color) / 0),
+    0.1px 3.2px 4.8px hsl(var(--shadow-color) / 0.06),
+    0.1px 5.4px 8.1px hsl(var(--shadow-color) / 0.12),
+    0.2px 8.9px 13.4px hsl(var(--shadow-color) / 0.18),
+    0.4px 15px 22.5px hsl(var(--shadow-color) / 0.24);
+  --shadow-elevation-high:
+    0px 1px 1.5px hsl(var(--shadow-color) / 0),
+    0.1px 5.3px 8px hsl(var(--shadow-color) / 0.03),
+    0.2px 9px 13.5px hsl(var(--shadow-color) / 0.07),
+    0.3px 12.8px 19.2px hsl(var(--shadow-color) / 0.1),
+    0.4px 17.1px 25.7px hsl(var(--shadow-color) / 0.14),
+    0.6px 22.6px 33.9px hsl(var(--shadow-color) / 0.17),
+    0.8px 30px 45px hsl(var(--shadow-color) / 0.21),
+    1px 39.7px 59.6px hsl(var(--shadow-color) / 0.24),
+    1.4px 52.5px 78.8px hsl(var(--shadow-color) / 0.28);
 }
 
 #back {
@@ -65,7 +70,7 @@ button,
 
 body {
   color: #2A2929;
-  background: white;
+  background: rgb(248, 248, 248);
   font-family: 'Inter', sans-serif;
 }
 
@@ -95,22 +100,11 @@ p {
   background: #f4cd2a;
 }
 
-.allphotos {
-  display: block;
-  width: 100%;
-  max-width: 600px;
-  float: right;
-  clear: right;
-  margin-bottom: 50px;
-  transition: all .2s ease;
-  border-radius: 5px;
-
-}
 
 .allphotos:hover {
   cursor: url(../../../photos/link-yellow-mode.png), pointer;
   /* darker */
-  filter: brightness(0.9);
+  /* filter: brightness(0.9); */
 
 
 }
@@ -124,7 +118,7 @@ p {
 }
 
 .link {
-  color: black;
+  color: #333333;
   outline: none;
   padding: none;
   border: none;
@@ -134,28 +128,9 @@ p {
   color: #757474;
 }
 
-#logo {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  margin-top: 0px;
-  display: block;
-  
-  height: 100px;
-  width: 100%;
-  cursor: url(../../../photos/pointer-light-mode.png), auto;
-  position: fixed;
-  background: rgb(252, 252, 252);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-  padding-right: 100px;
-  padding-left: 15%;
-  z-index: 500;
-}
 
-#lottie{
-  width: 250px;
- 
-  
-}
+
+
 
 .downloadbutton {
   font-size: 1em;
@@ -167,40 +142,26 @@ p {
   transition: 0.2s;
   border-radius: 5px;
   margin-right: 5px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  color: #2a2a2a;
+  box-shadow: var(--shadow-elevation-low);
+
 }
 
-.graybutton {
-  margin-bottom: 5px;
-  border: 2px solid #ccc;
-  background-color: white;
-  color: #2A2929;
+/* yellow #F4CD2A */
+
+
+.downloadbutton:hover {
+  box-shadow: var(--shadow-elevation-medium);
+
 }
 
-.graybutton:hover {
-  background-color: #E2E2E2;
-}
-
-.graybutton:active {
-  border: 2px solid #ccc;
+.downloadbutton:active {
   background-color: #ccc;
 }
 
-.yellowbutton {
-  margin-bottom: 5px;
-  border: 2px solid #F4CD2A;
-  background-color: white;
-  color: #2A2929;
-}
 
-.yellowbutton:hover {
-  background-color: #FFF6D2;
-  color: #2A2929;
-}
-
-.yellowbutton:active {
-  background-color: #F4CD2A;
-  color: #2A2929;
-}
 
 .portfoliosource {
   width: 100%;
@@ -209,34 +170,9 @@ p {
   filter: saturate(0);
 }
 
-.portfolioDIV {
-  width: 400px;
-  max-width: 100%;
-  padding: 25px;
-  background-color: rgba(127, 127, 127, 0.05);
-  border-radius: 15px;
-  margin-bottom: 30px;
-  transition: 0.2s;
-  margin-right: 25px;
-  display: inline-block;
-  position: fixed;
-}
 
-.allportfolio {
-  max-width: 70%;
-  margin-right: 15%;
-  margin-left: 15%;
-  margin-bottom: 35px;
-  margin-top: 125px;
-}
 
-.line {
-  margin-left: 15%;
-  margin-right: 15%;
-  padding-top: 35px;
-  margin-bottom: 35px;
-  width: 70%;
-}
+
 
 .numbers {
   color: #F4CD2A;
@@ -259,25 +195,28 @@ p {
 }
 
 .category {
-  background-color: rgba(127, 127, 127, 0.2);
+  background-color: rgba(167, 167, 167, 0.3);
+  border: 1px solid rgba(167, 167, 167, 0.4);
   border-radius: 5px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   padding-right: 10px;
   padding-left: 10px;
   padding-top: 7px;
   padding-bottom: 7px;
   font-weight: 500;
   font-size: .6em;
+  margin-right: 5px;
+  color: rgb(138, 138, 138);
   display: inline-block;
   width: fit-content;
 }
+
 
 .category>a {
   color: inherit;
 }
 
 .location {
-  background-color: rgba(127, 127, 127, 0.1);
   cursor: url(../../../photos/link-yellow-mode.png), auto;
   transition: 0.2s;
 }
@@ -286,136 +225,101 @@ p {
   background-color: rgba(127, 127, 127, 0.2);
 }
 
-@media only screen and (max-width: 1700px) {
-  .allphotos {
-    max-width: 500px;
-    width: 100%;
-  }
+#lottie {
+  margin: 0 auto;
+  width: 250px;
+
 }
 
-@media only screen and (max-width: 1400px) {
-  .allportfolio {
-    margin-left: 5%;
-    max-width: 95%;
-  }
-
-  #logo {
-    padding-left: 5%;
-  }
-
-  .allphotos {
-    max-width: 400px;
-    width: 100%;
-
-  }
+#logo {
+  position: inherit;
+  padding-right: 0%;
+  padding-left: 0%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+  padding-bottom: 50px;
+  padding-top: 50px;
 }
 
-@media only screen and (max-width: 1100px) {
-  #logo {
-    position: inherit;
-    /* padding-right: 0%; */
-    /* padding-left: 10%; */
-    width: auto;
-    }
 
-  .portfolioDIV {
-    width: calc(100% - 20px);
-    position: relative;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 25px;
-    box-sizing: border-box;
-  }
 
-  .allportfolio {
-    max-width: 90%;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 35px;
-    margin-top: 0px;
-  }
 
-  .allphotos {
-    width: calc(50% - 10px);
-    margin: 0rem;
-    margin-left: 5px;
-    margin-right: 5px;
-    clear: none;
-    float: left;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    max-width: 1000px;
-  }
+.allportfolio {
+  max-width: 100%;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 35px;
+  margin-top: 0px;
 
-  .line {
+
+}
+
+.allphotos {
+  width: 100%;
+  clear: inherit;
+
+  float: none;
+  margin: 0rem;
+  margin-bottom: 5px;
+  margin-right: 0px;
+  border-radius: 0px;
+
+
+  display: block;
+
+  margin-bottom: 0px;
+  transition: all .2s ease;
+}
+
+.line {
+  border-bottom: 1px solid #ccc;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 0px;
+  margin-bottom: 35px;
+  width: 90%;
+}
+
+.portfolioDIV {
+  background-color: default;
+  border: none;
+  border-radius: 0px;
+  width: calc(90%);
+  margin-left: 5%;
+  margin-right: 5%;
+  max-width: 400px;
+  position: relative;
+  display: block;
+  margin-bottom: 55px;
+
+
+}
+
+.allphotos:first-of-type {
+  position: absolute;
+  top: 200px;
+  right: 5%;
+  z-index: -1;
+  display: -webkit-flex;
+  max-width: 200px;
+  max-height: 100px;
+  height: auto;
+  width: auto;
+  transition: 0.3s;
+  position: absolute;
+
+
+}
+
+/* if screen is smaller than 750px, display non for allphotos first of type */
+@media only screen and (max-width: 750px) {
+  .allphotos:first-of-type {
     display: none;
   }
 }
 
-@media only screen and (max-width: 600px) {
-  #lottie {
-    margin: 0 auto;
-    }
-    #logo {
-    position: inherit;
-    padding-right: 0%;
-    padding-left: 0%;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    height: auto;
-    padding-bottom: 50px;
-    padding-top: 50px;
-    }
-    
-
-  .portfolioDIV {
-    width: calc(100% - 50px);
-    position: relative;
-    display: block;
-    margin-right: 0%;
-    margin-left: 0%;
-    max-width: calc(100% - 50px);
-    box-sizing: content-box;
-    margin-bottom: 0px;
-  }
-
-  .allportfolio {
-    max-width: 100%;
-    margin-right: 0px;
-    margin-left: 0px;
-    margin-bottom: 35px;
-    margin-top: 0px;
-  }
-
-  .allphotos {
-    width: 100%;
-    max-width: 1000px;
-    clear: inherit;
-    float: none;
-    margin: 0rem;
-    margin-bottom: 5px;
-    margin-right: 0px;
-    border-radius: 0px;
-
-  }
-
-  .line {
-    border-bottom: 1px solid #ccc;
-    margin-left: 5%;
-    margin-right: 5%;
-    padding-top: 0px;
-    margin-bottom: 35px;
-    width: 90%;
-  }
-
-  .portfolioDIV {
-    background-color: default;
-    border: none;
-    border-radius: 0px;
-  }
-}
 
 /* Overrides for Dark Mode. */
 @media (prefers-color-scheme: dark) {
@@ -424,8 +328,32 @@ p {
     background: linear-gradient(180deg, rgba(51, 51, 51, 1) 0%, rgba(51, 51, 51, 0) 100%);
   }
 
+  :root {
+    --shadow-color: 0deg 0% 7%;
+    --shadow-elevation-low:
+      0px 1px 1.5px hsl(var(--shadow-color) / 0),
+      0px 1.6px 2.4px hsl(var(--shadow-color) / 0.12),
+      0.1px 3px 4.5px hsl(var(--shadow-color) / 0.24);
+    --shadow-elevation-medium:
+      0px 1px 1.5px hsl(var(--shadow-color) / 0),
+      0.1px 3.2px 4.8px hsl(var(--shadow-color) / 0.06),
+      0.1px 5.4px 8.1px hsl(var(--shadow-color) / 0.12),
+      0.2px 8.9px 13.4px hsl(var(--shadow-color) / 0.18),
+      0.4px 15px 22.5px hsl(var(--shadow-color) / 0.24);
+    --shadow-elevation-high:
+      0px 1px 1.5px hsl(var(--shadow-color) / 0),
+      0.1px 5.3px 8px hsl(var(--shadow-color) / 0.03),
+      0.2px 9px 13.5px hsl(var(--shadow-color) / 0.07),
+      0.3px 12.8px 19.2px hsl(var(--shadow-color) / 0.1),
+      0.4px 17.1px 25.7px hsl(var(--shadow-color) / 0.14),
+      0.6px 22.6px 33.9px hsl(var(--shadow-color) / 0.17),
+      0.8px 30px 45px hsl(var(--shadow-color) / 0.21),
+      1px 39.7px 59.6px hsl(var(--shadow-color) / 0.24),
+      1.4px 52.5px 78.8px hsl(var(--shadow-color) / 0.28);
+  }
+
   body {
-    color: white;
+    color: rgb(232, 231, 231);
     background: #333333;
   }
 
@@ -434,7 +362,7 @@ p {
   }
 
   .link {
-    color: white;
+    color: #ccc;
   }
 
   .link:visited {
@@ -449,38 +377,23 @@ p {
     color: #555555;
   }
 
-  .graybutton {
+  .downloadbutton {
     color: #ccc;
     background-color: #333333;
-    border: 2px solid #555555;
+    border: 1px solid #555555;
   }
 
-  .graybutton:hover {
-    color: #ccc;
-    background-color: #424242;
-    border: 2px solid #555555;
+  .line {
+    border-bottom: 1px solid rgb(93, 93, 93);
+
   }
 
-  .graybutton:active {
-    color: #ccc;
-    background-color: #555555;
-    border: 2px solid #555555;
+  .category {
+    background-color: rgba(96, 96, 96, 0.3);
+    border: 1px solid rgba(167, 167, 167, 0.4);
+
   }
 
-  .yellowbutton {
-    color: #ccc;
-    background-color: #333333;
-  }
-
-  .yellowbutton:hover {
-    color: #ccc;
-    background-color: #544817;
-  }
-
-  .yellowbutton:active {
-    background-color: #F4CD2A;
-    color: #2A2929;
-  }
 
   .button,
   a,
@@ -493,6 +406,12 @@ p {
   .yellowbutton {
     cursor: url(../../../photos/link-yellow-mode.png), auto;
   }
-}
 
-/*ends dark mode*/
+  .allphotos:first-of-type {
+    /* reduce contrast */
+    filter: saturate(0) brightness(100);
+    opacity: 0.4;
+
+
+  }
+}
