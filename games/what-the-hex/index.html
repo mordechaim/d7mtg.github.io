@@ -230,15 +230,15 @@
             level++;
 
         } else if (level == 10) {
-            swal({
-  title: "Training wheels are off.",
-  text: "You are now in the actual game. Good luck!",
-  icon: "success",
-  button: "I can do this",
-});
-            rightColor = "#808080";
-            wrongColorA = "#000000";
-            wrongColorB = "#ffffff";
+             swal({
+            title: "Training wheels are off.",
+            text: "You are now in the actual game. Good luck!",
+            icon: "success",
+            button: "I can do this",
+            });
+            rightColor = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0")
+            wrongColorA = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0")
+            wrongColorB = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0")
             level++;
 
         } else  {
