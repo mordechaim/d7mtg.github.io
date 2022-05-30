@@ -308,7 +308,7 @@ p {
   width: auto;
   transition: 0.3s;
   position: absolute;
-  filter: saturate(0) brightness(0);
+  filter: brightness(0);
   opacity: 0.4;
 
 
@@ -415,7 +415,7 @@ p {
 
   .allphotos:first-of-type {
     /* reduce contrast */
-    filter: saturate(0) brightness(100);
+    filter:  brightness(100);
     opacity: 0.4;
 
 
@@ -423,7 +423,7 @@ p {
 
   .allphotos:first-of-type:hover{
 /* reduce contrast */
-filter: saturate(0) brightness(100);
+filter: brightness(100);
 opacity: 0.4;
   
   }

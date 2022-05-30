@@ -55,24 +55,7 @@ body {
   cursor: url(../photos/pointer-white-mode.png), auto;
 }
 
-::-webkit-scrollbar {
-  width: 2px;
-}
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: rgba(127, 127, 127, 0.1);
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #ffffff;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #f4cd2a;
-}
 
 .progress-container {
   width: 100%;
@@ -556,30 +539,32 @@ svg{
 
   .project_inner_container h3 {
 
-    margin-top: 75px;
+    margin-top: 50px;
 
   }
 
   .project_link {
 
-    margin-bottom: 75px;
+    margin-bottom: 50px;
   }
 
   .home_page_project_container {
     min-height: auto;
     overflow: hidden;
     background-repeat: no-repeat;
-    /* parralex */
     background-attachment: scroll;
-    width: calc(100vw - 30px);
-    margin-left: 15px;
-    margin-top: 15px;
+    /* width: calc(100vw - 30px); */
+    /* margin-left: 15px; */
+    /* margin-top: 15px; */
     height: fit-content;
-    border-radius: 7.5px;
+    /* border-radius: 7.5px; */
     color: #E2E2E2;
     transition: .25s;
-  }
-
+    }
+    .project_inner_container {
+      margin-right: 25px;
+      margin-left: 25px;
+      }
   #paragraph_container {
     background-image: linear-gradient(90deg, #262525, #26252500), url(photos/project-covers/mobile/paragraph.png);
 
@@ -604,7 +589,7 @@ svg{
   }
 
   .project_inner_container h3 {
-    margin-top: 75px;
+    margin-top: 50px;
     font-size: 2.2em;
 
   }
