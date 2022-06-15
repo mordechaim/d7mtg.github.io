@@ -531,10 +531,7 @@ svg{
 }
 
 @media only screen and (max-width: 900px) {
-  #home_page_all_projects_container {
-    padding-top: 1px;
-    padding-bottom: 15px;
-  }
+ 
 
   .project_inner_container h3 {
 
