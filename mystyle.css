@@ -465,6 +465,11 @@ svg{
 
 }
 
+#automate_container {
+  background-image: linear-gradient(161deg, #4058ff, #4058ff00), url(photos/project-covers/automate.png);
+  background-color: #4058ff;
+
+}
 #paragraph_container {
   background-image: linear-gradient(161deg, #262525, #26252500), url(photos/project-covers/paragraph.png);
   background-color: #262526;
