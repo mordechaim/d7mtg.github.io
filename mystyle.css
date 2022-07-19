@@ -1,11 +1,11 @@
 /* some variables for color */
 :root {
-  --yellow: #f4cd2a;
+  --yellow: #ffd708;
 }
 
 html,
 body {
-  background: #f4cd2a;
+  background: #ffd708;
   color: #2A2929;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 400;
@@ -49,7 +49,7 @@ body {
   min-height: 100vh;
  
   padding-bottom: 50px;
-  background-color: #f4cd2a;
+  background-color: #ffd708;
 
   cursor: url(../photos/pointer-white-mode.png), auto;
 }
@@ -160,7 +160,7 @@ p:not(.tag):not(.tag2) {
 
 *::selection {
   color: #2A2929;
-  background: #f4cd2a;
+  background: #ffd708;
 }
 
 .button::selection {
@@ -230,7 +230,7 @@ p:not(.tag):not(.tag2) {
 
 
 .yellowbutton {
-  border: 2px solid #f4cd2a;
+  border: 2px solid #ffd708;
   background-color: white;
   color: #2A2929;
 }
@@ -247,7 +247,7 @@ p:not(.tag):not(.tag2) {
 }
 
 .yellowbutton:active {
-  background-color: #f4cd2a;
+  background-color: #ffd708;
   color: #2A2929;
 }
 
@@ -639,7 +639,7 @@ svg{
 
   body {
     color: white;
-    background: #f4cd2a;
+    background: #ffd708;
     background-repeat: no-repeat;
     background-position: right;
     background-size: auto 100%;
@@ -685,7 +685,7 @@ svg{
   }
 
   .yellowbutton:active {
-    background-color: #f4cd2a;
+    background-color: #ffd708;
     color: #2A2929;
   }
 
@@ -705,9 +705,9 @@ svg{
   }
 
   .tag2 {
-    color: #f4cd2a;
+    color: #ffd708;
     background-color: #333333;
-    border: 1px solid #f4cd2a;
+    border: 1px solid #ffd708;
   }
 
   #subheader {
