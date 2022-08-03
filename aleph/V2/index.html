@@ -1119,83 +1119,7 @@
             //return the equation AND  the sum like this
             document.getElementById('sumHebrewOutput').innerHTML = equation + ' = ' + sum;
         }
-        //this software takes a hebrew string and returns a english string from that key on a qwerty keyboard
-        function hebrewToEnglish() {
-            //create all variables for user input etc
-            var userInput, userInputArray, hebrewToEnglishDict;
-            //create a dictionary for the hebrew characters and their English values, "/׳קראטוןםפ][ֿשדגכעיחלךף,זסבהנמצתץ." will become "qwertyuiop[]asdfghjkl;zxcvbnm,./"
-            hebrewToEnglishDict = {
-                '/': 'q',
-                '׳': 'w',
-                'ק': 'e',
-                'ר': 'r',
-                'א': 't',
-                'ט': 'y',
-                'ו': 'u',
-                'ן': 'i',
-                'ם': 'o',
-                'פ': 'p',
-                'ש': 'a',
-                'ד': 's',
-                'ג': 'd',
-                'כ': 'f',
-                'ע': 'g',
-                'י': 'h',
-                'ח': 'j',
-                'ל': 'k',
-                'ך': 'l',
-                'ף': ';',
-                'ז': 'z',
-                'ס': 'x',
-                'ב': 'c',
-                'ה': 'v',
-                'נ': 'b',
-                'מ': 'n',
-                'צ': 'm',
-                'ת': ',',
-                ' ': ' ',
-                '.': '.',
-                ',': '<',
-                'ץ': '>'
-            };
-            //get user input
-            userInput = document.getElementById('hebrewToEnglish').value;
-            //split the string into an array of characters
-            userInputArray = userInput.split('');
-            //we're including spaces, so we don't need to filter them out
-            //if there's nothing to convert, return error
-            if (userInputArray.length === 0) {
-                document.getElementById('hebrewToEnglishOutput').innerHTML = 'Error: Please enter a string';
-                //add error class
-                document.getElementById('hebrewToEnglishOutput').classList.add('error');
-                return;
-            }
-            //if there's a non-hebrew character, return error
-            if (userInputArray.some(function (item) {
-                    return hebrewToEnglishDict[item] === undefined;
-                })) {
-                document.getElementById('hebrewToEnglishOutput').innerHTML = 'Error: Please only use Hebrew characters';
-                //add error class
-                document.getElementById('hebrewToEnglishOutput').classList.add('error');
-                return;
-            }
-            //remove error class
-            document.getElementById('hebrewToEnglishOutput').classList.remove('error');
-            //now for the fun part, we need to loop through the array and replace the hebrew characters with their english values
-            for (var i = 0; i < userInputArray.length; i++) {
-                userInputArray[i] = hebrewToEnglishDict[userInputArray[i]];
-            }
-            //return the english string using a live typing effect, add one letter at a time
-            var output = '';
-            var interval = setInterval(function () {
-                output += userInputArray[0];
-                userInputArray.shift();
-                document.getElementById('hebrewToEnglishOutput').innerHTML = output;
-                if (userInputArray.length === 0) {
-                    clearInterval(interval);
-                }
-            }, 4);
-        }
+
         //this software takes a english string and returns a hebrew string from that key on a qwerty keyboard
         function englishToHebrew() {
             //create all variables for user input etc
@@ -1275,6 +1199,85 @@
                 }
             }, 4);
         }
+
+        //this software takes a hebrew string and returns a english string from that key on a qwerty keyboard
+        function hebrewToEnglish() {
+            //create all variables for user input etc
+            var userInput, userInputArray, hebrewToEnglishDict;
+            //create a dictionary for the hebrew characters and their English values, "/׳קראטוןםפ][ֿשדגכעיחלךף,זסבהנמצתץ." will become "qwertyuiop[]asdfghjkl;zxcvbnm,./"
+            hebrewToEnglishDict = {
+                '/': 'q',
+                '׳': 'w',
+                'ק': 'e',
+                'ר': 'r',
+                'א': 't',
+                'ט': 'y',
+                'ו': 'u',
+                'ן': 'i',
+                'ם': 'o',
+                'פ': 'p',
+                'ש': 'a',
+                'ד': 's',
+                'ג': 'd',
+                'כ': 'f',
+                'ע': 'g',
+                'י': 'h',
+                'ח': 'j',
+                'ל': 'k',
+                'ך': 'l',
+                'ף': ';',
+                'ז': 'z',
+                'ס': 'x',
+                'ב': 'c',
+                'ה': 'v',
+                'נ': 'b',
+                'מ': 'n',
+                'צ': 'm',
+                'ת': ',',
+                ' ': '.',
+                ',': '<',
+                '.': '>',
+                '\'': '"',
+                '\n': '\n',
+                '"': '\'',
+                '/': '/',
+                '(': ')',
+                ')': '('
+                
+            };
+            //get user input
+            userInput = document.getElementById('hebrewToEnglish').value;
+            //split the string into an array of characters
+            userInputArray = userInput.split('');
+            //we're including spaces, so we don't need to filter them out
+            //if there's nothing to convert, return error
+            if (userInputArray.length === 0) {
+                document.getElementById('hebrewToEnglishOutput').innerHTML = 'Error: Please enter a string';
+                //add error class
+                document.getElementById('hebrewToEnglishOutput').classList.add('error');
+                return;
+            }
+          
+            //remove error class
+            document.getElementById('hebrewToEnglishOutput').classList.remove('error');
+            //now for the fun part, we need to loop through the array and replace the hebrew characters with their english values
+            for (var i = 0; i < userInputArray.length; i++) {
+                userInputArray[i] = hebrewToEnglishDict[userInputArray[i]];
+            }
+            //return the english string using a live typing effect, add one letter at a time
+            var output = '';
+            var interval = setInterval(function () {
+                output += userInputArray[0];
+                userInputArray.shift();
+                document.getElementById('hebrewToEnglishOutput').innerHTML = output;
+                if (userInputArray.length === 0) {
+                    clearInterval(interval);
+                }
+            }, 4);
+        }
+
+
+
         //this software takes a hebrew string and removes all punctuation (niqqud). it does this by running a regex replace
         function removeNiqqud() {
             //create all variables for user input etc
