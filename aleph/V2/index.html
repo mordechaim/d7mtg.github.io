@@ -1016,6 +1016,8 @@
         </p>
     </footer>
     <script>
+
+
         document.getElementById("modal").style.display = "none";
         document.getElementById("modal-bg").style.display = "none";
         //start by chekcing if hide modal button, #modalbutton is clicked
@@ -1159,7 +1161,7 @@
                 ' ': ' ',
                 '>': '.',
                 '.': '>',
-                '"': '\'',
+                '"': '"',
                 //new line
                 '\n': '\n',
                 '\'': ',',
@@ -1181,7 +1183,10 @@
                 document.getElementById('englishToHebrewOutput').classList.add('error');
                 return;
             }
-           
+           //if value is undefined, don't use it
+            userInputArray = userInputArray.filter(function (item) {
+                return englishToHebrewDict[item] !== undefined;
+            });
             //remove error class
             document.getElementById('englishToHebrewOutput').classList.remove('error');
             //now for the fun part, we need to loop through the array and replace the english characters with their hebrew values
@@ -1234,7 +1239,7 @@
                 'מ': 'n',
                 'צ': 'm',
                 'ת': ',',
-                ' ': '.',
+                ' ': ' ',
                 ',': '<',
                 '.': '>',
                 '\'': '"',
@@ -1243,7 +1248,7 @@
                 '/': '/',
                 '(': ')',
                 ')': '('
-                
+
             };
             //get user input
             userInput = document.getElementById('hebrewToEnglish').value;
@@ -1257,7 +1262,11 @@
                 document.getElementById('hebrewToEnglishOutput').classList.add('error');
                 return;
             }
-          
+          //if value is undefined, don't use it
+          userInputArray = userInputArray.filter(function (item) {
+                return hebrewToEnglishDict[item] !== undefined;
+            });
+
             //remove error class
             document.getElementById('hebrewToEnglishOutput').classList.remove('error');
             //now for the fun part, we need to loop through the array and replace the hebrew characters with their english values
@@ -1444,7 +1453,12 @@
             }, 3000);
 
         });
+
+    
+
     </script>
+
+    
 </body>
 
 </html>
