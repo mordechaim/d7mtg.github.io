@@ -1234,8 +1234,14 @@
                 '<': ',',
                 ' ': ' ',
                 '>': '.',
-                ',': '<',
-                '.': '>'
+                '.': '>',
+                '"': '\'',
+                //new line
+                '\n': '\n',
+                '\'': ',',
+                '/': '/',
+                '(': ')',
+                ')': '('
             };
             //get user input
             userInput = document.getElementById('englishToHebrew').value;
@@ -1251,16 +1257,7 @@
                 document.getElementById('englishToHebrewOutput').classList.add('error');
                 return;
             }
-            //if there's a non-english character, return error
-            if (userInputArray.some(function (item) {
-                    return englishToHebrewDict[item] === undefined;
-                })) {
-                document.getElementById('englishToHebrewOutput').innerHTML =
-                    'Error: Please only use English characters';
-                //add error class
-                document.getElementById('englishToHebrewOutput').classList.add('error');
-                return;
-            }
+           
             //remove error class
             document.getElementById('englishToHebrewOutput').classList.remove('error');
             //now for the fun part, we need to loop through the array and replace the english characters with their hebrew values
