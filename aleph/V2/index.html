@@ -75,6 +75,10 @@
                 scroll-snap-type: y mandatory;
             }
 
+            i{
+                color: #ffd708;
+
+            }
             #copied {
                 position: fixed;
                 bottom: 0;
@@ -205,11 +209,12 @@
             }
 
             .header svg {
-                margin-right: 10px;
                 /*change viewbox to make the icon smaller*/
                 width: 50px;
             }
-
+            svg {
+               margin-right: 10px;
+            }
             /*remove link styling from svg*/
             .header a {
                 text-decoration: none;
@@ -349,8 +354,7 @@
                 background: #eeb109;
             }
 
-            .container input {
-                height: 30px;
+            .container textarea {
                 /*make it look nice*/
                 border-radius: 5px;
                 border: none;
@@ -369,9 +373,10 @@
 
                 /*center the text*/
                 text-align: center;
+                resize: both;
             }
 
-            .container input:focus {
+            .container textarea:focus {
                 outline: none;
                 border: 1px solid rgba(0, 0, 0, 0.3);
             }
@@ -659,31 +664,31 @@
                 color: #c9c9c9;
             }
 
-            .darkbody .container input {
+            .darkbody .container textarea {
                 border: 1px solid #c9c9c9;
             }
 
-            .darkbody .container input {
+            .darkbody .container textarea {
                 background-color: #cfcfcf;
                 color: #000000;
             }
 
-            .darkbody .container input:focus {
+            .darkbody .container textarea:focus {
                 background-color: #ffffff;
                 border: 1px solid #adadad;
                 outline: none;
             }
 
             /*placeholder text*/
-            .darkbody .container input::-webkit-input-placeholder {
+            .darkbody .container textarea::-webkit-input-placeholder {
                 color: #00000077;
             }
 
-            .darkbody .container input::-moz-placeholder {
+            .darkbody .container textarea::-moz-placeholder {
                 color: #00000077;
             }
 
-            .darkbody .container input:-ms-input-placeholder {
+            .darkbody .container textarea:-ms-input-placeholder {
                 color: #00000077;
             }
 
@@ -783,9 +788,9 @@
                     margin-top: 135px;
                 }
 
-                .container input {
+                .container textarea {
                     /*make it fit for mobile*/
-                    max-width: 300px;
+                   
                     /*center it*/
                     margin: auto;
                 }
@@ -880,7 +885,7 @@
         </p>
         <div class="form">
             <label for="reverseText">Paste or type</label>
-            <input type="text" id="reverseText" name="reverseText" placeholder="Paste or type">
+            <textarea type="text" id="reverseText" name="reverseText" placeholder="Paste or type"> </textarea>
             <button type="button" id="reverseTextBtn" onclick="reverseText()"><i
                     class="fa-light fa-paragraph-left"></i>Reverse Text</button>
             <p class="output" id="reverseTextOutput" data-clipboard-target="#reverseTextOutput">&nbsp;</p>
@@ -904,7 +909,7 @@
         </p>
         <div class="form">
             <label for="removeNiqqud">Paste or type Hebrew</label>
-            <input type="text" id="removeNiqqud" name="removeNiqqud" placeholder="Paste or type Hebrew">
+            <textarea type="text" id="removeNiqqud" name="removeNiqqud" placeholder="Paste or type Hebrew"> </textarea>
             <button type="button" id="removeNiqqudBtn" onclick="removeNiqqud()"><i
                     class="fa-light fa-text-slash"></i>Remove Niqqud</button>
             <p class="output" id="removeNiqqudOutput" data-clipboard-target="#removeNiqqudOutput">&nbsp;</p>
@@ -923,7 +928,7 @@
         </p>
         <div class="form">
             <label for="hebrewToEnglish">Paste or type Hebrew</label>
-            <input type="text" id="hebrewToEnglish" name="hebrewToEnglish" placeholder="Paste or type Hebrew">
+            <textarea type="text" id="hebrewToEnglish" name="hebrewToEnglish" placeholder="Paste or type Hebrew"> </textarea>
             <button type="button" id="hebrewToEnglishBtn" onclick="hebrewToEnglish()"><i
                     class="fa-light fa-book-font"></i>Get English</button>
             <p class="output" id="hebrewToEnglishOutput" data-clipboard-target="#hebrewToEnglishOutput">&nbsp;</p>
@@ -941,8 +946,8 @@
             </span>
         </p>
         <div class="form">
-            <label for="englishToHebrew">Paste or type English</label>
-            <input type="text" id="englishToHebrew" name="englishToHebrew" placeholder="Paste or type English">
+            <label for="englishToHebrew">Paste or type English</label> 
+            <textarea type="text" id="englishToHebrew" name="englishToHebrew" placeholder="Paste or type English"> </textarea>
             <button type="button" id="englishToHebrewBtn" onclick="englishToHebrew()"><i
                     class="fa-light fa-book-tanakh"></i>Get Hebrew</button>
             <p class="output" id="englishToHebrewOutput" data-clipboard-target="#englishToHebrewOutput">&nbsp;</p>
@@ -966,7 +971,7 @@
         </p>
         <div class="form">
             <label for="sumHebrew">Paste or type Hebrew</label>
-            <input type="text" id="sumHebrew" name="sumHebrew" placeholder="Paste or type Hebrew">
+            <textarea type="text" id="sumHebrew" name="sumHebrew" placeholder="Paste or type Hebrew"> </textarea>
             <button type="button" id="sumHebrewBtn" onclick="sumHebrew()"><i
                     class="fa-light fa-calculator-simple"></i>Get Sum</button>
             <p class="output" id="sumHebrewOutput" data-clipboard-target="#sumHebrewOutput">&nbsp;</p>
@@ -1191,7 +1196,14 @@
             document.getElementById('englishToHebrewOutput').classList.remove('error');
             //now for the fun part, we need to loop through the array and replace the english characters with their hebrew values
             for (var i = 0; i < userInputArray.length; i++) {
-                userInputArray[i] = englishToHebrewDict[userInputArray[i]];
+                // if it's a new line, add a new line to the output
+                if (userInputArray[i] === '\n') {
+                    userInputArray[i] = '<br>';
+                } else {
+                    //replace the english character with the hebrew value
+                    userInputArray[i] = englishToHebrewDict[userInputArray[i]];
+
+                }
             }
             //return the hebrew string using a live typing effect, add one letter at a time
             var output = '';
@@ -1271,7 +1283,14 @@
             document.getElementById('hebrewToEnglishOutput').classList.remove('error');
             //now for the fun part, we need to loop through the array and replace the hebrew characters with their english values
             for (var i = 0; i < userInputArray.length; i++) {
-                userInputArray[i] = hebrewToEnglishDict[userInputArray[i]];
+
+                if (userInputArray[i] === '\n') {
+                    userInputArray[i] = '<br>';
+                } else {
+                    //replace the english character with the hebrew value
+                    userInputArray[i] = hebrewToEnglishDict[userInputArray[i]];
+
+                }
             }
             //return the english string using a live typing effect, add one letter at a time
             var output = '';
