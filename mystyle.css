@@ -15,6 +15,7 @@ body {
   margin: 0px;
   padding: 0px;
   -webkit-tap-highlight-color: transparent;
+  cursor: url(../photos/pointer-light-mode.png), auto;
 
 
 }
@@ -50,6 +51,7 @@ body {
   padding-bottom: 50px;
   background-color: #ffd708;
 
+  cursor: url(../photos/pointer-white-mode.png), auto;
 }
 
 
@@ -186,6 +188,7 @@ p:not(.tag):not(.tag2) {
 
 .button,
 .project_link {
+  cursor: url(../photos/link-light-mode.png), auto;
   margin-bottom: 10px;
   font-size: 1em;
   font-weight: 500;
@@ -198,6 +201,7 @@ p:not(.tag):not(.tag2) {
   transition: .25s;
 }
 .project_link {
+  cursor: url(../photos/link-light-mode.png), auto;
   margin-bottom: 10px;
   font-size: 1em;
   font-weight: 500;
@@ -272,17 +276,11 @@ p:not(.tag):not(.tag2) {
 
 #home_page_all_projects_container {
   background-color: #fcfcfc;
-  padding-top: 50px;
-  padding-bottom: 50px;
 }
 
 .home_page_project_container {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  border-radius: 10px;
+  width: 100%;
+  
   overflow: hidden;
   background-repeat: no-repeat;
   background-size: cover;
@@ -290,22 +288,12 @@ p:not(.tag):not(.tag2) {
   /* parralex */
     color: #E2E2E2;
   transition: .25s;
-  cursor: pointer;
-
-  
 
 }
-.home_page_project_container:hover {
-  transform: scale(.98);
-  /* make lighter */
-  color: #e2e2e2c2;
- 
 
-}
 .project_inner_container {
   margin-right: 15%;
   margin-left: 15%;
-  cursor: pointer;
 }
 
 .project_inner_container h3 {
@@ -344,6 +332,7 @@ p:not(.tag):not(.tag2) {
   margin-bottom: 10px;
   display: inline-block;
   width: fit-content;
+  cursor: url(../photos/pointer-light-mode.png), auto;
 
 
 
@@ -362,6 +351,7 @@ p:not(.tag):not(.tag2) {
 #lighter a:not(.footer_label) {
 
   color: #ccc;
+  cursor: url(../photos/pointer-light-mode.png), auto;
 
 }
 
@@ -374,6 +364,7 @@ p:not(.tag):not(.tag2) {
   outline: none;
   padding: none;
   border: none;
+  cursor: url(../photos/link-light-mode.png), auto;
 
 }
 
@@ -397,6 +388,7 @@ p:not(.tag):not(.tag2) {
   text-decoration: none;
   color: rgb(138, 138, 138);
   transition: .25s;
+  cursor: url(../photos/pointer-light-mode.png), auto;
 
 }
 
@@ -426,15 +418,7 @@ p:not(.tag):not(.tag2) {
   filter: brightness(100);
   opacity: .5;
 }
-.invisibleLink{
-  height: 100%;
-  width: 100%;
-  color: #000000;
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-}
+
 .project_link {
   margin-top: 50px;
   margin-bottom: 150px;
@@ -549,8 +533,6 @@ svg{
   .project_logo {
     display: none;
   }
-
-  
 }
 
 @media only screen and (max-width: 900px) {
@@ -566,18 +548,8 @@ svg{
 
     margin-bottom: 50px;
   }
-  
-
-  #home_page_all_projects_container {
-    background-color: #fcfcfc;
-    padding-top: 0px;
-  }
 
   .home_page_project_container {
-    width: 100%;
-    border-radius: 0px;
-    margin-bottom: 0px;
-    margin-top: 0px;
     min-height: auto;
     overflow: hidden;
     background-repeat: no-repeat;
