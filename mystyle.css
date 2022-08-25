@@ -15,7 +15,7 @@ body {
   margin: 0px;
   padding: 0px;
   -webkit-tap-highlight-color: transparent;
-
+  overflow-x: hidden;
 
 }
 /* #bsd{
