@@ -200,6 +200,17 @@ p:not(.tag):not(.tag2) {
   max-width: 70%;
   filter: brightness(0);
 }
+
+/* #logo::after{
+  content: "";
+  display: block;
+  width: 70vw;
+ 
+  margin-top: 35px;
+  margin-bottom: 0px;
+  border-top: 1px dotted black;
+  opacity: 0.3;
+} */
 #menu{
   
   text-decoration: none;
@@ -565,17 +576,17 @@ svg{
     display: none;
   }
 
-  #banner {
-    min-height: 700px;
-   
-    
-  }
+
   
 }
 
 @media only screen and (max-width: 900px) {
  
-
+  #banner {
+    min-height: 700px;
+   
+    
+  }
   .project_inner_container h3 {
 
     margin-top: 50px;
@@ -650,7 +661,7 @@ svg{
   #centertext {
     margin-right: auto;
     margin-left: auto;
-    margin-top: 50px;
+    margin-top: 120px;
     text-align: center;
     left: 0;
     right: 0;
@@ -661,6 +672,23 @@ svg{
     letter-spacing: -3px;
     overflow-wrap: break-word;
   
+  }
+#logo {
+  margin-right: auto;
+  margin-left: auto;
+}
+  #menu {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    float: none;
+    text-align: center;
+   display: inline-block;
+   width: 100%;
+
+  }
+  .menuItem{
+    margin: 10px;
   }
   
   #smallerCenterText{
