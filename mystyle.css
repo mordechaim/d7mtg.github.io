@@ -76,14 +76,28 @@ a,
 #centertext {
   margin-right: auto;
   margin-left: auto;
+  margin-top: 250px;
   text-align: center;
   left: 0;
   right: 0;
   position: absolute;
-  width: 300px;
-  top: 490px;
-  font-size: 1.5em;
+  font-size: 5em;
+  font-weight: 700;
+  letter-spacing: -3px;
+  line-height: .9em;
+  width: 800px;
+
+}
+
+#smallerCenterText{
+  font-size: .4em;
   font-weight: 500;
+  width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+  letter-spacing: -.05em;
+  line-height: .9em;
+  display: block;
 }
 
 h1 {
@@ -179,13 +193,30 @@ p:not(.tag):not(.tag2) {
 #logo {
   padding-top: 50px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 250px;
+  margin-left: 15%;
+
+  width: 150px;
+
   max-width: 70%;
   filter: brightness(0);
 }
-
+#menu{
+  
+  text-decoration: none;
+  
+  display: inline;
+  float: right;
+  margin-right: 15%;
+  margin-top: -25px;
+}
+.menuItem{
+  text-decoration: none;
+  color: #2A2929;
+  font-size: 1em;
+  font-weight: 500;
+  color: #2A2929;
+  margin-left: 15px;
+}
 .button,
 .project_link {
   cursor: url(../photos/link-light-mode.png), auto;
@@ -514,7 +545,7 @@ svg{
     font-size: 15em;
   }
 
-  #centertext {
+  /* #centertext {
     margin-right: auto;
     margin-left: auto;
     text-align: center;
@@ -524,7 +555,7 @@ svg{
     width: 400px;
     top: initial;
     margin-bottom: 65px;
-  }
+  } */
 
   .verticalthinline {
     display: none;
@@ -533,6 +564,13 @@ svg{
   .project_logo {
     display: none;
   }
+
+  #banner {
+    min-height: 700px;
+   
+    
+  }
+  
 }
 
 @media only screen and (max-width: 900px) {
@@ -610,9 +648,31 @@ svg{
   }
 
   #centertext {
-    width: 250px;
-    margin-bottom: 35px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    position: absolute;
+    font-size: 3em;
+    width: 60%;
+    font-weight: 700;
+    letter-spacing: -3px;
+    overflow-wrap: break-word;
+  
   }
+  
+  #smallerCenterText{
+    font-size: .4em;
+    font-weight: 500;
+    width: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    letter-spacing: -.05em;
+    line-height: -15em;
+  }
+  
   .project_description{
     font-size: .9em !important;
   }
