@@ -74,8 +74,8 @@ a,
 #centertext {
   margin-right: auto;
   margin-left: auto;
-  margin-top: 250px;
-  text-align: center;
+  margin-top: 150px;
+    text-align: center;
   left: 0;
   right: 0;
   font-size: 5em;
@@ -734,7 +734,7 @@ svg{
   #smallerCenterText{
     font-size: .4em;
     font-weight: 500;
-    width: 200px;
+    width: 70%;
     margin-right: auto;
     margin-left: auto;
     letter-spacing: -.05em;
