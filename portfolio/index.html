@@ -169,6 +169,7 @@
 
         div.customer-logos.slider {
             width: 100%;
+            display: none;
         }
 
         .slick-slide {
@@ -245,6 +246,7 @@
 
         a {
             text-decoration: none;
+            display: inherit;
         }
 
         h2 {
@@ -296,65 +298,46 @@
             color: #757474;
         }
 
-        #logo {
-            padding-top: 50px;
-            padding-bottom: 50px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 250px;
-            max-width: 70%;
-            cursor: url(../photos/pointer-light-mode.png), auto;
-        }
+       
 
-        .downloadbutton {
-            font-size: 1em;
-            font-weight: 500;
-            text-decoration: none;
-            display: table;
-            border: none;
-            padding: 1em;
-            transition: 0.3s;
-            border-radius: 5px;
-            margin-right: 5px;
-        }
+        #menu{
+  
+  text-decoration: none;
+  
+  display: inline;
+  right: 15%;
+  margin-top: -25px;
+  position: absolute;
 
-        .graybutton {
-            margin-bottom: 5px;
-            border: 2px solid #ccc;
-            background-color: var(--white);
-            color: var(--black);
-        }
+}
+.menuItem {
+    text-decoration: none;
+    color: #2A2929;
+    font-size: 1em;
+    font-weight: 500;
+    color: #2A2929;
+    margin-left: 15px;
+    display: inline;    
+}
+#logo {
+  padding-top: 50px;
+  display: block;
+  margin-left: 15%;
 
-        .yellowbutton {
-            margin-bottom: 5px;
-            border: 2px solid #ccc;
-            background-color: var(--white);
-            color: var(--black);
-        }
+  width: 150px;
 
-        .graybutton:hover {
-            background-color: #E2E2E2;
-        }
+  max-width: 70%;
+  filter: brightness(0);
+}
 
-        .yellowbutton:hover {
-            background-color: #FFF6D2;
-            color: var(--black);
-        }
-
-        .graybutton:active {
-            border: 2px solid #ccc;
-            background-color: #ccc;
-        }
-
-        .yellowbutton:active {
-            background-color: var(--primary-yellow);
-            color: var(--black);
-        }
+#header{
+   display: block;
+   padding-bottom: 50px;
+}
 
         .imageDIV {
-            width: 300px;
-            height: 300px;
+            width: 500px;
+            height: 500px;
             position: relative;
         }
 
@@ -370,6 +353,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            
         }
 
         /* .portfolioDIV {
@@ -390,21 +374,25 @@
             flex-wrap: wrap;
             max-width: 100%;
             justify-content: center;
+                        margin-block-end: 0;
+
         }
 
         .portfolioDIV {
-            width: 300px;
-            height: 300px;
-            background-color: rgba(127, 127, 127, 0.05);
-            border-radius: 15px;
-            margin-bottom: 25px;
+            width: 500px;
+            height: 500px;
+            background-color: rgba(127, 127, 127, 0);
+            border-radius: 0px;
+            margin-bottom: 0px;
             transition: 0.3s;
-            border: 1px solid rgba(127, 127, 127, 0.1);
-            margin-right: 12.5px;
-            margin-left: 12.5px;
+            border: 1px dotted rgba(138, 138, 138, 0.3);
+
+            margin-right: 0px;
+            margin-left: 0px;
             transition: 0.3s;
-            border: 2px solid transparent;
             display: inline-block;
+                        margin-block-end: 0;
+
         }
 
         .filterdiv {
@@ -461,7 +449,6 @@
             background-color: rgb(255, 255, 255);
             box-shadow: 0 4px 8px rgba(32, 42, 62, .06), 0 20px 40px rgba(32, 42, 62, .06);
             border-color: rgba(127, 127, 127, 0.1);
-            transform: scale(1.05);
         }
 
         .portfolioDIV:focus,
@@ -541,6 +528,7 @@
             background-color: rgba(127, 127, 127, 0.1);
             cursor: url(../photos/link-yellow-mode.png), auto;
             transition: 0.3s;
+
         }
 
         .location:hover {
@@ -573,7 +561,12 @@
                 margin-right: 5vw;
                 margin-left: 5vw;
                 transition: 0.3s;
+                height: auto;
                 display: block;
+            }
+
+            #menu {
+                display: none;
             }
 
             .portfolioDIV:hover,
@@ -763,16 +756,21 @@
 
 <body>
     <!--logo-->
-    <div class="header">
-        <div class="gradient"></div>
-    </div>
-    <a href='../'>
-        <lottie-player id="logo" src="../D7MTG2.json" background="transparent" speed="2" autoplay
-            aria-label="D7MTG Logo"></lottie-player>
-    </a>
+    <div id="header">
+        <a href="../">
+            <lottie-player id="logo" src="../D7MTG2.json" background="transparent" speed="2" autoplay aria-label="D7MTG Logo"> </lottie-player>
+        </a>
+   
 
-    </a>
-    <div class='line'></div>
+        <div id="menu">
+            <a href="#" class="menuItem">Work</a>
+            <a href="../contact" class="menuItem">Contact</a>
+            
+
+
+        </div>
+    </div>
+
     <!-- 
         have to add more projects, otherwise it looks...
         <div id="filterdiv">

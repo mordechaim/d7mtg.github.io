@@ -15,7 +15,6 @@ body {
   margin: 0px;
   padding: 0px;
   -webkit-tap-highlight-color: transparent;
-  cursor: url(../photos/pointer-light-mode.png), auto;
 
 
 }
@@ -51,7 +50,6 @@ body {
   padding-bottom: 50px;
   background-color: #ffd708;
 
-  cursor: url(../photos/pointer-white-mode.png), auto;
 }
 
 
@@ -230,7 +228,6 @@ p:not(.tag):not(.tag2) {
 }
 .button,
 .project_link {
-  cursor: url(../photos/link-light-mode.png), auto;
   margin-bottom: 10px;
   font-size: 1em;
   font-weight: 500;
@@ -243,7 +240,6 @@ p:not(.tag):not(.tag2) {
   transition: .25s;
 }
 .project_link {
-  cursor: url(../photos/link-light-mode.png), auto;
   margin-bottom: 10px;
   font-size: 1em;
   font-weight: 500;
@@ -374,7 +370,6 @@ p:not(.tag):not(.tag2) {
   margin-bottom: 10px;
   display: inline-block;
   width: fit-content;
-  cursor: url(../photos/pointer-light-mode.png), auto;
 
 
 
@@ -393,7 +388,6 @@ p:not(.tag):not(.tag2) {
 #lighter a:not(.footer_label) {
 
   color: #ccc;
-  cursor: url(../photos/pointer-light-mode.png), auto;
 
 }
 
@@ -406,7 +400,6 @@ p:not(.tag):not(.tag2) {
   outline: none;
   padding: none;
   border: none;
-  cursor: url(../photos/link-light-mode.png), auto;
 
 }
 
@@ -430,7 +423,6 @@ p:not(.tag):not(.tag2) {
   text-decoration: none;
   color: rgb(138, 138, 138);
   transition: .25s;
-  cursor: url(../photos/pointer-light-mode.png), auto;
 
 }
 
