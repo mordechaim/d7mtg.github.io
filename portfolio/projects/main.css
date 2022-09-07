@@ -37,7 +37,10 @@ html {
   text-decoration: none;
   color: #777777;
 }
-
+.lg-outer .lg-object {
+ 
+  background: white;
+}
 .description_quote {
   background-color: rgba(165,165,165,0.1);
   
