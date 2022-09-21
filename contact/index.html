@@ -161,14 +161,6 @@
             <p class="popuptext" id="settingsOSText"> We detected you're running <span id="osname">OS</span>.</p>
             <p class="popuptext">If we got it wrong, you can change it below:</p>
             <div class="settingsOSchangeDiv">
-                <div class="OSchange" id="macos" onclick="changeos()">
-                    <img class="OSchangeimg" src="OS/macOS.png" alt="macOS">
-                    <p class="OSchangetext">macOS</p>
-                </div>
-                <div class="OSchange" id="windows" onclick="changeos()">
-                    <img class="OSchangeimg" src="OS/windows.png" alt="windows">
-                    <p class="OSchangetext">Windows</p>
-                </div>
                 <div class="OSchange" id="android" onclick="changeos()">
                     <img class="OSchangeimg" src="OS/android.png" alt="android">
                     <p class="OSchangetext">Android</p>
@@ -177,6 +169,15 @@
                     <img class="OSchangeimg" src="OS/ios.png" alt="ios">
                     <p class="OSchangetext">iOS</p>
                 </div>
+                <div class="OSchange" id="macos" onclick="changeos()">
+                    <img class="OSchangeimg" src="OS/macOS.png" alt="macOS">
+                    <p class="OSchangetext">macOS</p>
+                </div>
+                <div class="OSchange" id="windows" onclick="changeos()">
+                    <img class="OSchangeimg" src="OS/windows.png" alt="windows">
+                    <p class="OSchangetext">Windows</p>
+                </div>
+               
             </div>
             <div class="divider copyrightdivider"></div>
             <!-- <p class="popuptext" id="settingsModeText">Your device is set to <span id="modename">Dark mode</span>.</p>
@@ -192,7 +193,13 @@
                 </div> 
             </div>
                 <div class="divider copyrightdivider"></div> -->
-            <p class="popuptext" class="copyright">Copyright 2021 • D7mtg</p>
+            <p class="popuptext" class="copyright">&copy; Copyright 
+                <!-- add year -->
+                <script>
+                    var d = new Date();
+                    document.write(d.getFullYear());
+                </script>
+                 D7mtg. All rights reserved.
         </div>
     </div>
         <h2 class='thinline'>&nbsp;</h2>

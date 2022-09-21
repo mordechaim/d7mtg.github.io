@@ -91,7 +91,7 @@ function opensettings() {
     if (userAgent.indexOf("Android") != -1) OSName = "Android";
     if (userAgent.indexOf("iPhone" || "iPad" || "iPod") != -1) OSName = "iOS";
     //set the OS name
-    settingsOSText.innerHTML = "It looks like you're running " + OSName + ".";
+    settingsOSText.innerHTML = "It looks like you're running " + OSName + "";
     //show the settings
     settingswrapper.style.display = "block";
 }
