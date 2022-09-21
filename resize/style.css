@@ -139,3 +139,11 @@ h3{
 
     margin-top: 25px;
 }
+
+.title{
+    /* uppercase */
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+}
