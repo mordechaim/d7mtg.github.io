@@ -1,5 +1,7 @@
 import 'styles/globals.css'
-import 'config/firebase.config';
+import { initialize } from 'config/firebase.config';
+
+initialize()
 
 function MyApp({ Component, pageProps }) {
     return <Component {...pageProps} />

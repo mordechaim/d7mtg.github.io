@@ -8,7 +8,10 @@ const config = {
     storageBucket: 'gs://d7mtg-bc78c.appspot.com'
 }
 
-const app = initializeApp(config)
-const auth = initializeAuth(app, {
-    persistence: browserLocalPersistence
-})
+
+export const initialize = () => {
+    const app = initializeApp(config)
+    initializeAuth(app, {
+        persistence: browserLocalPersistence
+    })
+}

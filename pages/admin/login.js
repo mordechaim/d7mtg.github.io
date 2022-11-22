@@ -1,34 +1,27 @@
+import { getAuth } from 'firebase/auth';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { signInWithEmailAndPassword, getAuth } from 'firebase/auth'
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 export default function Login(props) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [error, setError] = useState(false)
 
     const router = useRouter()
     const auth = getAuth()
 
+    const [signIn, user, loading, error] = useSignInWithEmailAndPassword(auth)
+
     useEffect(() => {
-        return auth.onAuthStateChanged(user => {
-            if (user) {
-                const route = router.query.return ?? '/admin'
-                router.push(route)
-            }
-        })
-    }, [router, auth])
+        if (user) {
+            const route = router.query.return ?? '/admin/edit'
+            router.push(route)
+        }
+    }, [router, user])
 
     const handleLogin = async e => {
         e.preventDefault()
-
-        try {
-            const result = await signInWithEmailAndPassword(auth, email, password)
-            if (result.user)
-                setError(false)
-        } catch (e) {
-            setError(true)
-        }
+        signIn(email, password)
     }
 
     return <form onSubmit={handleLogin} className={error ? 'border-solid border-red-500' : undefined}>
