@@ -1,0 +1,11 @@
+{
+    "name": "Shuffle",
+    "short_name": "Shuffle",
+    "start_url": "index.html?utm_source=homescreen",
+    "scope": "./",
+    "icons": [{
+        "src": "images/appleicon.png",
+        "type": "image/png"
+    }],
+    "display": "standalone"
+}

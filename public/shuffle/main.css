@@ -1,0 +1,372 @@
+body,
+html {
+
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	cursor: default;
+
+}
+
+#all {
+	max-width: 100%;
+}
+
+#firstnormalcydiv,
+#lastnormalcydiv {
+	display: none;
+}
+
+#logosvg {
+	margin: auto;
+	display: block;
+	width: 150px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+}
+
+h1 {
+	margin-top: 50px;
+	text-align: center;
+	font-weight: 300;
+}
+
+#copied {
+	text-align: center;
+	font-size: .7em;
+	display: none;
+}
+
+#go {
+	margin: auto;
+	display: block;
+	cursor: pointer, auto;
+	text-align: center;
+	padding: 10px 20px;
+	font-size: 20px;
+
+}
+
+#dice {
+	display: inline-block;
+}
+
+.activeGo #dice {
+	animation: diceAnimation cubic-bezier(0.36, 0.71, 0.6, 0.61) 1s infinite;
+}
+
+.activeGo {
+	animation: activeGoAnimation cubic-bezier(0.36, 0.71, 0.6, 0.61) 1s infinite;
+}
+
+@keyframes diceAnimation {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+#nameresult {
+	width: max-content;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 4em;
+	margin-top: 100px;
+	max-width: 90%;
+	line-height: .9em;
+	padding: 20px;
+	display: block;
+	outline: none;
+
+}
+
+#categorydiv {
+	display: block;
+	width: 200px;
+	margin: auto;
+	font-size: .8em;
+}
+
+.categoryvalue {
+	font-weight: 100;
+}
+
+.customizationobject {
+	display: block;
+	margin-bottom: 40px;
+}
+
+.customizationobject p {
+	margin-bottom: 20px;
+}
+
+input {
+	opacity: 0;
+	position: fixed;
+	width: 120px;
+	height: 30px;
+	margin-right: 25px;
+	cursor: pointer;
+	transition: .2s linear;
+}
+
+label {
+	display: inline;
+	padding: 10px 20px;
+	font-size: 16px;
+
+}
+
+#splitdiv label {
+	padding: 0px 0px;
+
+	height: 20px;
+	width: 20px;
+	line-height: 20px;
+	text-align: center;
+	font-size: 0.7em;
+	display: inline-block;
+}
+
+#splitdiv p {
+	display: inline;
+}
+
+#splitdiv {
+	margin-bottom: 15px;
+	padding-bottom: 20px;
+}
+
+#outercustomization,
+#outerconsole {
+
+	touch-action: none;
+	-webkit-touch-callout: none;
+	width: fit-content;
+	position: absolute;
+	transition: box-shadow .2s ease-in;
+	z-index: 1;
+	left: 50%;
+	transform: translate(-50%, 0);
+	cursor: grab;
+
+}
+
+.settingshown,
+.consoleshown {
+
+	display: block;
+}
+
+.settingshidden,
+.consolehidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.settingshiddeninitial,
+.consolehiddeninitial {
+	opacity: 0;
+	pointer-events: none;
+}
+
+#outercustomization:active,
+#outerconsole:active {
+
+	cursor: grabbing;
+}
+
+#customization {
+	padding-bottom: 30px;
+	padding-top: 10px;
+	padding-right: 50px;
+	padding-left: 50px;
+}
+
+#console {
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+
+#settingsheader,
+#consoleheader {
+	font-size: .8em;
+	padding-left: 10px;
+	top: 0px;
+	margin-top: auto;
+	line-height: 2em;
+
+}
+
+#console {
+	width: 400px;
+	min-height: 250px;
+	max-height: 650px;
+	overflow: auto;
+	font-family: 'JetBrains Mono', monospace;
+}
+
+#editableconsole {
+	outline: none;
+}
+
+.code {
+	position: absolute;
+	bottom: 10px;
+	padding-left: 25px;
+	margin-right: 25px;
+	font-weight: 300;
+	font-size: .8em;
+	height: 150px;
+	text-transform: uppercase;
+}
+
+#coderight {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	padding-left: 25px;
+	margin-right: 25px;
+	font-weight: 300;
+	font-size: .8em;
+	height: 50px;
+}
+
+.labelbold {
+	font-weight: 800;
+}
+
+#possibleInBox {
+	margin-bottom: 0px;
+	font-size: .8em;
+}
+
+.online {
+	width: fit-content;
+	animation: online 1s;
+}
+
+@keyframes online {
+	50% {
+		background: darkgreen;
+		color: green;
+	}
+}
+
+.offline {
+	width: fit-content;
+	animation: offline .7s;
+}
+
+@keyframes offline {
+	50% {
+		background: darkred;
+		color: red;
+	}
+}
+
+.iconbutton {
+	padding: 0px 0px;
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 1em;
+	display: inline-block;
+
+}
+
+.icon {
+	padding: 0px 0px;
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 1em;
+	display: inline-block;
+
+}
+
+.activebutton {
+
+	padding: 0px 0px;
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 1em;
+	display: inline-block;
+}
+
+#editableconsole,
+#oldeditableconsole {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#consolereturn,
+#oldconsolereturn {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.consoleobject {
+	font-size: .9em;
+}
+
+@media only screen and (max-width: 800px) {
+
+	#coderight {
+		bottom: 80px;
+		margin-right: 25px;
+		height: 180px;
+	}
+
+	.iconbutton {
+		height: 50px;
+		width: 50px;
+		line-height: 50px;
+
+		display: block;
+		margin-top: 25px;
+	}
+
+	.activebutton {
+
+		height: 50px;
+		width: 50px;
+		line-height: 50px;
+		display: block;
+		margin-top: 25px;
+	}
+
+	.icon {
+
+		display: none;
+	}
+
+	.code {
+
+		height: 120px;
+		font-size: .7em;
+
+	}
+
+	#go,
+	h3 {
+		margin: auto;
+		display: block;
+		cursor: pointer, auto;
+		text-align: center;
+		padding: 10px 20px;
+		font-size: 30px;
+
+	}
+
+}

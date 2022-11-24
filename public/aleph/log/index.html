@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang='en_US'>
+
+<head>
+  <title>Aleph Log</title>
+  <link href="https://fonts.googleapis.com/css?family=Miriam+Libre:400,700&amp;subset=hebrew" rel="stylesheet">
+  <link rel="shortcut icon" type="image/x-icon" href="fav.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="fav.png" />
+  <script src="https://kit.fontawesome.com/7b42fedff3.js" crossorigin="anonymous"></script>
+  <link href="https://use.typekit.net/czh2ozp.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <!-- Hotjar Tracking Code for d7m.tg -->
+  <script>
+    (function (h, o, t, j, a, r) {
+      h.hj = h.hj || function () {
+        (h.hj.q = h.hj.q || []).push(arguments)
+      };
+      h._hjSettings = {
+        hjid: 1812116,
+        hjsv: 6
+      };
+      a = o.getElementsByTagName('head')[0];
+      r = o.createElement('script');
+      r.async = 1;
+      r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+      a.appendChild(r);
+    })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Miriam+Libre:400,700|Oxygen+Mono&amp;subset=hebrew"
+    rel="stylesheet">
+  <link rel="shortcut icon" type="image/x-icon" href="fav.png">
+  <link rel="stylesheet" type="text/css" href="../main.css">
+  <style>
+    p {
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <!--  <a href=""><img src="logo.png" alt="Logo" id="logo" alt="Logo of this website, logo for D7mtg."></a>-->
+    <a href="http://d7m.tg/aleph/" class="menuItem firstlink">d7m.tg | א </a>
+    <a href="" id="menu" class="menuItem" data-tippy-content="Refresh"> <i class="fas fa-redo-alt"></i></a>
+    <a href="" id="menu" class="menuItem" data-tippy-content="Log"><i class="fas fa-sort-amount-up"></i></a>
+    <a href="../description.htm" id="menu" class="menuItem" data-tippy-content="Info"><i
+        class="fas fa-info-circle"></i></a>
+    <a href="http://d7m.tg" id="menu" class="menuItem" data-tippy-content="d7m.tg">D7</a>
+  </div>
+  <div id="logtext">
+    <h5>ChangeLog</h5><br><br>
+    <h3>June 3, 2020, 11:23 AM</h3>
+    <p><i class="fad fa-plus"></i>&nbsp;Added new Reverse Text program.<br>
+      <i class="fad fa-star"></i>&nbsp;Split the Remove Niqqud and Latin to Hebrew programs.<br>
+      <i class="fad fa-code"></i>&nbsp;Revamped the entire Copy to Clipboard underlying functionality.<br>
+      <i class="fad fa-magic"></i> &nbsp;Added tooltips by utilizing <a
+        href="https://atomiks.github.io/tippyjs/">tippy.js</a>.<br>
+      <i class="fad fa-magic"></i>&nbsp;Major redesign of input and output textboxes and overall feel.</p><br>
+    <h3>May 27, 2020, 11:23 AM</h3>
+    <p><i class="fad fa-star"></i> &nbsp;Uploaded to new domain.<br>
+    </p><br>
+    <h3>May 22, 2018, 1:01 AM</h3>
+    <p><i class="fad fa-magic"></i> &nbsp;Color theme has been changed to Lime.<br>
+      <i class="fad fa-plus"></i> &nbsp;Added a <a href="http://d7m.tg/aleph/404">404 page</a>.<br>
+      <i class="fad fa-star"></i> &nbsp;Got an SSL certificate.<br>
+      <i class="fad fa-plus"></i> &nbsp;Added a description page.</p><br>
+    <h3>May 21, 2018, 11:10 PM</h3>
+    <p><i class="fad fa-magic"></i> &nbsp;Redesigned the header.<br>
+      <i class="fad fa-magic"></i> &nbsp;Removed the logo.<br>
+      <i class="fad fa-code"></i>&nbsp;Changed the Copy to Clipboard functionality, that <code>onlick()</code> of the
+      <code>output</code> it runs the <code>document.execCommand("copy");</code> function.<br>
+      <i class="fad fa-magic"></i> &nbsp;Switched the font to a more uniform "Miriam Libre", from Google Fonts.</p><br>
+    <h3>May 18, 2018, 5:51 PM</h3>
+    <p><i class="fad fa-plus"></i> &nbsp;Added Copy to Clipboard functionality, by adding an <code>input</code> element,
+      that <code>onlick()</code> gets the <code>output</code> data, selects it, and runs a
+      <code>document.execCommand("copy");</code>.
+      <br><i class="fad fa-wrench"></i> &nbsp;Fixed the issue with long blocks of text overflowing out of the page, with
+      <code> word-wrap: break-word;</code>
+      <br><i class="fad fa-exclamation-triangle"></i> &nbsp;The layout on mobile has an issue, that the button laps over
+      the logo. Needs to be fixed, after Yom Tov.</p><br>
+    <h3>May 18, 2018, 2:42 PM</h3>
+    <p><i class="fad fa-magic"></i>&nbsp;Added <code>50px</code> to the <code>padding-top</code> of the
+      <code>input</code>, before that, in some mobile browsers, the logo overlapped the input.</p><br>
+    <h3>May 18, 2018, 2:28 PM</h3>
+    <p><i class="fad fa-star"></i>&nbsp;Log has been made public.</p><br>
+    <h3>May 18, 2018, 1:02 PM</h3>
+    <p><i class="fad fa-code"></i>&nbsp;Added the method <code>toLowerCase()</code>, so now you can paste in lowercase
+      text and it still works.</p><br>
+    <h3>May 17, 2018, 10:02 PM</h3>
+    <p><i class="fad fa-star"></i> &nbsp;Removed the buttons, made both functions to run <code>onkeyup()</code>.</p><br>
+    <h3>May 17, 2018, 9:12 PM</h3>
+    <p><i class="fad fa-code"></i>&nbsp;Added the viewport meta tag, and set it to<code> width=device-width,
+        initial-scale=1></code>, in order to make it more mobile friendly.</p><br>
+    <h3>May 17, 2018, 8:32 PM</h3>
+    <p><i class="fad fa-plus"></i>&nbsp;Added functionality to convert Latin charachters to Hebrew ones, with a seperate
+      button for that.</p><br>
+    <h3>May 12, 2018, 2:41 AM</h3>
+    <p><i class="fad fa-glass-cheers"></i>&nbsp;Site was released, with only Niqqud-removing supported, with a button
+      needed to function.</p><br><br>
+  </div>
+  <div class="footer">
+    <p id="credits">Built with JS by <a href="http://bit.ly/alefd7" id="link">d7mtg</a></p>
+  </div>
+  <!-- Development -->
+  <!-- Production -->
+  <script>
+    tippy('.tooltip', {
+      delay: [100, 200],
+      followCursor: true,
+    });
+  </script>
+  <script>
+    tippy('.menuItem:not(.firstlink)', {
+      delay: [100, 200],
+    });
+  </script>
+</body>
+
+</html>

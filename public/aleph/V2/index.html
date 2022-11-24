@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aleph Tools | D7mtg</title>
+    <meta name="theme-color" content="#2d2d2e" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffd708" media="(prefers-color-scheme: light)">
+    <meta name="msapplication-TileColor" content="#2d2d2e">
+    <!--favicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple.png">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!--og:-->
+    <meta property="og:title" content="Aleph Tools | D7mtg">
+    <meta property="og:description"
+        content="Aleph Tools is a collection of tools to mirror Hebrew text, remove niqqud and more; for designers, typographers, and developers, created by D7mtg.">
+    <meta property="og:image" content="og.png">
+    <meta property="og:url" content="https://d7m.tg/aleph/v2">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Aleph Tools">
+    <meta property="og:locale" content="en_US">
+    <!--twitter:-->
+    <meta name="twitter:card" content="og.png">
+    <meta name="twitter:site" content="@d7mtg">
+    <meta name="twitter:creator" content="@d7mtg">
+    <meta name="twitter:title" content="Aleph Tools | D7mtg">
+    <meta name="twitter:description"
+        content="Aleph Tools is a collection of tools to mirror Hebrew text, remove niqqud and more; for designers, typographers, and developers, created by D7mtg.">
+    <meta name="twitter:image" content="og.png">
+    <meta name="twitter:url" content="https://d7m.tg/aleph/v2">
+    <meta name="twitter:domain" content="d7m.tg">
+    <!-- instagram:-->
+    <meta name="instagram:title" content="Aleph Tools | D7mtg">
+
+
+    <!-- mobile friendly-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--get  monospaced google font-->
+    <link href="https://fonts.googleapis.com/css?family=Miriam+Libre:400,700" rel="stylesheet">
+    <meta name="description" content="Aleph Tools is a collection of tools for the Aleph system.">
+    <script src="https://kit.fontawesome.com/7b42fedff3.js" crossorigin="anonymous"></script>
+    <<script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "9yg6bsle5u");
+        </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2D8Q5R25WZ"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'G-2D8Q5R25WZ');
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
+
+        <style>
+            body {
+                background: rgb(240, 240, 240);
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+                margin: 0;
+                padding: 0;
+                /*disallow side scroll*/
+                overflow-x: hidden;
+                /*snap*/
+                overflow-y: scroll;
+                scroll-snap-type: y mandatory;
+            }
+
+            i{
+                color: #ffd708;
+
+            }
+            #copied {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: -webkit-fit-content;
+                width: -moz-fit-content;
+                z-index: 9999;
+                padding: 10px;
+                border-radius: 5px;
+                text-align: center;
+                /* fade in */
+                /* fade out after a few seconds*/
+
+                /* center horizontally */
+                left: 50%;
+                transform: translate(-50%, 0);
+                background: #00000058;
+                backdrop-filter: blur(25px);
+                color: #fff;
+
+            }
+
+            .copiedactive {
+                animation: slideUpFadeIn 2s ease-in-out forwards;
+
+            }
+
+            @keyframes slideUpFadeIn {
+                0% {
+                    transform: translate(-50%, 50px);
+                    opacity: 0;
+                }
+
+                30% {
+                    transform: translate(-50%, 0);
+                    opacity: 1;
+                }
+
+                85% {
+                    transform: translate(-50%, 0);
+                    opacity: 1;
+                }
+
+                90% {
+                    transform: translate(-50%, 0);
+                    opacity: .8;
+                }
+
+                100% {
+                    transform: translate(-50%, -50px);
+                    opacity: 0;
+                }
+            }
+
+            .inactive {
+                transform: translate(-50%, -50px);
+                opacity: 0;
+
+            }
+
+
+
+            .header {
+                -webkit-touch-callout: none;
+                /* iOS Safari */
+                -webkit-user-select: none;
+                /* Safari */
+                -khtml-user-select: none;
+                /* Konqueror HTML */
+                -moz-user-select: none;
+                /* Old versions of Firefox */
+                -ms-user-select: none;
+                /* Internet Explorer/Edge */
+                user-select: none;
+                /* Non-prefixed version, currently
+                                            supported by Chrome, Edge, Opera and Firefox */
+            }
+
+            footer {
+                font-size: 0.5em;
+                text-align: center;
+                margin-top: 10px;
+                margin-bottom: 20px;
+                margin-right: 10%;
+                margin-left: 10%;
+                color: rgba(0, 0, 0, 0.5);
+            }
+
+            footer a {
+                color: rgba(0, 0, 0, 0.5);
+            }
+
+            footer a:hover {
+                color: rgba(0, 0, 0, 1);
+            }
+
+            i {
+                margin-right: 5px;
+            }
+
+            .header {
+                margin-top: 0;
+                background: linear-gradient(to bottom, #ffd708, #ffbf0f);
+                color: rgb(0, 0, 0);
+                /*freeze the header at the top of the page*/
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1;
+            }
+
+            h1 {
+                font-size: 2em;
+                margin-left: 20px;
+                display: inline;
+                height: 50px;
+                width: min-content;
+            }
+
+            .header p {
+                margin-left: 20px;
+                display: inline;
+                height: 70px;
+                width: min-content;
+                font-size: 1em;
+                margin-top: 20px;
+            }
+
+            .header svg {
+                /*change viewbox to make the icon smaller*/
+                width: 50px;
+            }
+            svg {
+               margin-right: 10px;
+            }
+            /*remove link styling from svg*/
+            .header a {
+                text-decoration: none;
+            }
+
+            h2 {
+                font-size: 2.5em;
+                margin-block-end: 0em;
+            }
+
+            /*make the menu look nice*/
+            .menu {
+                margin-top: 0;
+                margin-bottom: 0.5em;
+                color: rgb(0, 0, 0);
+                line-height: 50px;
+                text-align: right;
+                display: inline;
+            }
+
+            .menu a {
+                color: rgb(0, 0, 0);
+                text-decoration: none;
+            }
+
+            .menu a:hover {
+                color: rgb(0, 0, 0);
+                text-decoration: underline;
+            }
+
+            .menu ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: inline;
+                float: right;
+            }
+
+            .menu li {
+                display: inline-block;
+                /* add some nice space between the links */
+                margin: 0 1em;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 600px;
+                width: 90%;
+                margin: 0px auto;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 30px;
+                background: rgba(255, 255, 255, 0.5);
+                scroll-snap-align: start;
+                scroll-margin-top: 120px;
+            }
+
+            /*select first container and move it down a bit, because the sticky menu overlays it*/
+            #revereseText {
+                margin-top: 120px;
+            }
+
+            .description {
+                font-size: 0.8em;
+                text-align: center;
+                padding-left: 10px;
+                padding-right: 10px;
+                margin-top: 50px;
+                margin-bottom: 50px;
+                width: 500px;
+                max-width: 90%;
+
+            }
+
+            *::selection {
+                background: #ffd708;
+                color: #000;
+            }
+
+            .description .code {
+                font-family: monospace;
+                font-size: 1.2em;
+                color: rgb(0, 0, 0);
+                line-height: 1.5em;
+                display: block;
+                margin-top: 10px;
+            }
+
+            .description a {
+                color: rgb(0, 0, 0);
+                display: inline-block;
+                padding: 10px;
+                background-color: rgb(255, 255, 255);
+                border: 1px solid rgb(164, 164, 164);
+                text-decoration: none;
+                border-radius: 5px;
+                width: max-content;
+                margin-top: 10px;
+                margin-bottom: 0px;
+                transition: all .25s ease;
+
+            }
+
+            .description a:hover {
+                background-color: rgb(237, 237, 237);
+            }
+
+            .container button {
+                width: auto;
+                /*make it look nice*/
+                border-radius: 5px;
+                border: none;
+                background: #feefb3;
+                border: 1px solid #ffd708;
+                color: black;
+                font-size: 14px;
+                cursor: pointer;
+                padding: 10px;
+                /*get it on a new line, center it*/
+                display: block;
+                margin: 0 auto;
+                /*some space on top of it*/
+                margin-top: 40px;
+                transition: all .25s ease;
+
+            }
+
+            /*hover effect, transition and darker*/
+            .container button:hover {
+                background: #ffd708;
+            }
+
+            .container button:active {
+                background: #eeb109;
+            }
+
+            .container textarea {
+                /*make it look nice*/
+                border-radius: 5px;
+                border: none;
+                background-color: #fafafa;
+                color: #333;
+                font-size: 14px;
+                padding: 5px;
+                /*get it on a new line, center it*/
+                display: block;
+                margin: 0;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                transition: all .25s ease;
+                /*width*/
+                width: 80vw;
+                margin: 0 auto;
+
+                /*center the text*/
+                text-align: center;
+                resize: both;
+            }
+
+            .container textarea:focus {
+                outline: none;
+                border: 1px solid rgba(0, 0, 0, 0.3);
+            }
+
+            .container label {
+                display: none;
+            }
+
+            .container .output {
+                font-family: 'Miriam Libre', sans-serif;
+                /*make it look nice*/
+                border-radius: 5px;
+                border: none;
+                color: #333;
+                font-size: 14px;
+                /*get it on a new line, center it*/
+                width: 90%;
+                display: block;
+                margin: 0 auto;
+                border: 1px solid transparent;
+                transition: all .25s ease;
+                padding: 5px;
+                /*center the text*/
+                text-align: center;
+                margin-top: 20px;
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            #removeNiqqudOutput {
+                /* rtl */
+                direction: rtl;
+                text-align: right;
+            }
+
+            .container .error {
+                text-align: center !important;
+                color: red;
+                background: rgb(255, 0, 0, 0.1);
+            }
+
+            #clearAllDiv {
+                height: 100px;
+            }
+
+            #clearAllDiv button {
+                margin-top: 0px;
+            }
+
+            /* smooth scroll on all links, compatible with all browsers */
+            a {
+                scroll-behavior: smooth;
+                -webkit-scroll-behavior: smooth;
+
+
+            }
+
+
+            #modal {
+                position: fixed;
+                z-index: 1;
+                width: 360px;
+                background: rgba(255, 255, 255, .9);
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding: 10px;
+                border-radius: 15px;
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                -webkit-box-shadow: 0px 0px 50px 9px rgba(0, 0, 0, 0.2);
+                box-shadow: 0px 0px 50px 9px rgba(0, 0, 0, 0.2);
+            }
+
+            #modalheader {
+                width: 90%;
+                font-weight: bold;
+                color: rgb(0, 0, 0);
+                margin-bottom: 10px;
+                margin-left: 10px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                line-height: 1em;
+                margin-right: 25px;
+                margin-left: 25px;
+            }
+
+
+
+            #modalheadertitle {
+                font-size: 1.4em;
+
+            }
+
+            /* x button, right */
+
+            #modalheaderclose {
+                cursor: pointer;
+                position: absolute;
+                right: calc(7%);
+                top: 20px;
+                font-size: 1em;
+                opacity: 0.5;
+
+
+            }
+
+            #modalheaderclose:hover {
+                opacity: 1;
+            }
+
+            #modalbody {
+                font-size: 0.9em;
+                color: rgb(0, 0, 0);
+                margin-block-start: 0em;
+                margin-block-end: 0em;
+                margin-top: 40px;
+                margin-bottom: 40px;
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+
+            }
+
+            #modalbutton {
+                padding: 10px;
+                background-color: #ffd708;
+                border: 1px solid #ffd708;
+                border-radius: 5px;
+                margin-top: 30px;
+                font-size: 1.2em;
+                transition: all .25s ease;
+                cursor: pointer;
+                color: black;
+
+
+            }
+
+            #modalbutton:hover {
+                border: 1px solid #745605;
+
+
+            }
+
+            #modalbutton:focus,
+            #modalbutton:active {
+                background-color: #eeb109;
+            }
+
+            #modalfooter {
+                font-size: 0.6em;
+                color: rgb(0, 0, 0);
+                padding-top: 20px;
+                margin-bottom: 10px;
+                margin-right: 25px;
+                margin-left: 25px;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            #modalfooter a {
+                color: rgb(0, 0, 0);
+
+            }
+
+            #modalfooter a:hover {
+                color: #eeb109;
+
+            }
+
+            /* dark page when modal is open */
+            #modal-bg {
+                position: fixed;
+                z-index: 0;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: rgba(0, 0, 0, 0.3);
+            }
+
+            .darkbody {
+                background: #000000;
+            }
+
+            .darkbody .container {
+                background: #2d2d2e;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            .darkbody .header {
+                color: white;
+                -webkit-backdrop-filter: blur(2em);
+                backdrop-filter: blur(2em);
+                background: #444446ad;
+            }
+
+            .darkbody .header svg {
+                fill: white;
+            }
+
+            .darkbody .header a {
+                color: white;
+            }
+
+            .darkbody .header a:hover {
+                color: white;
+            }
+
+            .darkbody .container button {
+                background: #342a04;
+
+                color: #ffd708;
+            }
+
+            .darkbody .container button:hover {
+                background: #ffd708;
+                color: #2d2d2e;
+            }
+
+            .darkbody .container button:active {
+                background: #f4b42a;
+                color: #2d2d2e;
+            }
+
+            .darkbody #modal {
+                background: #2d2d2e;
+
+            }
+
+            .darkbody #modalheader {
+                color: white;
+                border-color: rgba(255, 255, 255, 0.1);
+
+            }
+
+            .darkbody #modalbody {
+                color: rgb(220, 220, 220);
+            }
+
+            .darkbody #modalbutton {
+                background: #342a04;
+                border: 1px solid #ffd708;
+                color: #ffd708;
+            }
+
+            .darkbody #modalbutton:hover {
+                background: #ffd708;
+                color: #2d2d2e;
+            }
+
+            .darkbody #modalbutton:active {
+                background: #f4b42a;
+                color: #2d2d2e;
+            }
+
+            .darkbody #modalfooter {
+                color: white;
+                border-color: rgba(255, 255, 255, 0.1);
+            }
+
+            .darkbody #modalfooter a {
+                color: white;
+            }
+
+            .darkbody #modalfooter a:hover {
+                color: #eeb109;
+            }
+
+            .darkbody h2 {
+                color: #c9c9c9;
+            }
+
+            .darkbody #copied {
+
+                background: #ffd708;
+                color: #2d2d2e;
+
+            }
+
+            .darkbody .description {
+                color: #c9c9c9;
+            }
+
+            .darkbody .description .code {
+                color: #c9c9c9;
+            }
+
+            .darkbody .container textarea {
+                border: 1px solid #c9c9c9;
+            }
+
+            .darkbody .container textarea {
+                background-color: #cfcfcf;
+                color: #000000;
+            }
+
+            .darkbody .container textarea:focus {
+                background-color: #ffffff;
+                border: 1px solid #adadad;
+                outline: none;
+            }
+
+            /*placeholder text*/
+            .darkbody .container textarea::-webkit-input-placeholder {
+                color: #00000077;
+            }
+
+            .darkbody .container textarea::-moz-placeholder {
+                color: #00000077;
+            }
+
+            .darkbody .container textarea:-ms-input-placeholder {
+                color: #00000077;
+            }
+
+            /*output text*/
+            .darkbody .container .output {
+                color: #ffffff;
+            }
+
+            .darkbody .container .error {
+                color: rgb(250, 116, 116);
+                background: rgba(62, 5, 5, 0.192);
+            }
+
+            .darkbody #darkmode {
+                color: #ffd708;
+                cursor: pointer;
+            }
+
+            #darkmode {
+                cursor: pointer;
+            }
+
+            .darkbody footer {
+                font-size: 0.5em;
+                text-align: center;
+                margin-top: 10px;
+                margin-bottom: 20px;
+                margin-right: 10%;
+                margin-left: 10%;
+                color: #c9c9c9;
+            }
+
+            .darkbody footer a {
+                color: #ffd708;
+            }
+
+            .darkbody footer a:hover {
+                color: #eeb109;
+            }
+
+
+            /*mobile menu*/
+            @media screen and (max-width: 1200px) {
+                .menu {
+                    width: 100%;
+                    text-align: center;
+                    margin-bottom: 0;
+                }
+
+                body {
+
+                    scroll-snap-type: none;
+
+                }
+
+                .menu ul {
+                    display: none;
+                }
+
+                .menu li {
+                    display: inline;
+                    margin: 0;
+                }
+
+                h1 {
+                    text-align: center;
+                    margin-left: 0;
+                    margin-right: 0;
+                    display: block;
+                    height: 50px;
+                    width: 100%;
+                    margin-top: 10;
+                    margin-bottom: 0;
+                }
+
+                .header {
+                    display: block;
+                    margin-left: 0;
+                    margin-right: 0;
+                    margin-top: 0;
+                    width: 100%;
+                    margin-bottom: 0;
+                }
+
+                .header p {
+                    /*center the p and the svg*/
+                    display: block;
+                    margin: 0 auto;
+                    margin-top: 5px;
+                    margin-bottom: 0;
+                    width: 100%;
+                    text-align: center;
+                    height: 50px;
+                }
+
+                #revereseText {
+                    margin-top: 135px;
+                }
+
+                .container textarea {
+                    /*make it fit for mobile*/
+                   
+                    /*center it*/
+                    margin: auto;
+                }
+
+                h2 {
+                    text-align: center;
+                    margin-left: 0;
+                }
+
+                .container {
+                    /*make it fit for mobile*/
+                    max-width: 85%;
+                }
+            }
+        </style>
+</head>
+
+<body class="">
+    <div>
+        <p id="copied" class="inactive">Copied to clipboard!</p>
+    </div>
+    <div id="modal-bg">
+    </div>
+    <div id="modal">
+        <div id="modalheader">
+            <p id="modalheadertitle">Welcome to the new Aleph!</p>
+            <p id="modalheaderclose">&times;</p>
+        </div>
+
+        <p id="modalbody">
+            This is a new version of Aleph that is designed to be more user friendly and easy&nbsp;to&nbsp;use.
+            <br><br>
+            We built these tools to help you with basic text tasks, like reversing the order of Hebrew words, removing
+            niqqud,&nbsp;and&nbsp;more.
+            <br>
+            <!-- <button id="modalbutton"><i class="fal fa-thumbs-up"></i>&nbsp;Continue to site</button> -->
+            <!-- <a id="modallink" href=""><i class="fal fa-thumbs-up"></i>&nbsp;Continue to site</a> -->
+        </p>
+        <p id="modalfooter">
+            Aleph V2.1 • D7mtg • <a href="https://github.com/d7mtg/d7mtg.github.io/tree/main/aleph/V2"><i
+                    class="fab fa-github"></i>Open Source</a>
+
+        </p>
+    </div>
+    <div class="header">
+        <h1>Aleph Tools</h1>
+        <p class="subtitle">A toolset by
+            <a href="https://d7m.tg/?utm_source=aleph&utm_medium=tools&utm_campaign=aleph-tools">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165.24 38.43">
+                    <g id="Layer_2" data-name="Layer 2">
+                        <g id="Layer_1-2" data-name="Layer 1">
+                            <path
+                                d="M0,1.11V5.6A1.11,1.11,0,0,0,1.11,6.71H13.48a12.1,12.1,0,0,1,6.06,1.42,9.08,9.08,0,0,1,3.73,4.14,16.27,16.27,0,0,1,1.3,6.88,16.62,16.62,0,0,1-1.29,7,9.11,9.11,0,0,1-3.71,4.17,11.88,11.88,0,0,1-6.09,1.44H8.07A1.11,1.11,0,0,1,7,30.43l1.8-11.49a1.12,1.12,0,0,0-1.1-1.28H1.11A1.11,1.11,0,0,0,0,18.77V37.32a1.11,1.11,0,0,0,1.11,1.11H14.18A19.93,19.93,0,0,0,24,36.13a15.37,15.37,0,0,0,6.3-6.66,23,23,0,0,0,2.17-10.4A22.43,22.43,0,0,0,30.29,8.78L30,8.18a1.11,1.11,0,0,1,1-1.62H47.25a1.11,1.11,0,0,1,1,1.5L37.41,36.92a1.11,1.11,0,0,0,1,1.51h6.86a1.12,1.12,0,0,0,1.06-.77L58.15,1.45A1.11,1.11,0,0,0,57.1,0h-56A1.11,1.11,0,0,0,0,1.11Z" />
+                            <path
+                                d="M88.77.7,81.39,19.11a1.12,1.12,0,0,1-2.07,0L72,.7a1.12,1.12,0,0,0-1-.7H65.13a1.12,1.12,0,0,0-1.06.77L52.29,37a1.11,1.11,0,0,0,1.05,1.46h7.54A1.13,1.13,0,0,0,62,37.55l5.46-25.14a1.11,1.11,0,0,1,2.12-.17l9.77,24.53a1.11,1.11,0,0,0,2.07,0l9.77-24.53a1.11,1.11,0,0,1,2.12.17l5.47,25.14a1.11,1.11,0,0,0,1.08.88h7.54A1.12,1.12,0,0,0,108.43,37L96.64.77A1.11,1.11,0,0,0,95.58,0H89.8A1.11,1.11,0,0,0,88.77.7Z" />
+                            <path
+                                d="M145.71,8.13a12,12,0,0,1,6-1.42h12.37a1.11,1.11,0,0,0,1.11-1.11V1.11A1.11,1.11,0,0,0,164.13,0H102a1.12,1.12,0,0,0-1.06,1.47L102.45,6a.82.82,0,0,0,.78.55h10.45a1.11,1.11,0,0,1,1.11,1.11l0,29.65a1.11,1.11,0,0,0,1.11,1.11h7.43a1.11,1.11,0,0,0,1.11-1.19L122.29,7.75a1.12,1.12,0,0,1,1.11-1.19h10.87a1.11,1.11,0,0,1,1,1.62l-.31.6a22.51,22.51,0,0,0-2.18,10.34,23,23,0,0,0,2.16,10.35,15.37,15.37,0,0,0,6.3,6.66,20,20,0,0,0,9.83,2.3h13.07a1.11,1.11,0,0,0,1.11-1.11V18.77a1.11,1.11,0,0,0-1.11-1.11h-6.56a1.1,1.1,0,0,0-1.09,1.28l1.79,11.49a1.1,1.1,0,0,1-1.09,1.28h-5.42a11.88,11.88,0,0,1-6.09-1.44A9.22,9.22,0,0,1,142,26.1a16.7,16.7,0,0,1-1.29-7,16.19,16.19,0,0,1,1.3-6.83A9.1,9.1,0,0,1,145.71,8.13Z" />
+                        </g>
+                    </g>
+                </svg>
+            </a>
+        </p>
+        <!--menu that scrolls to all sections-->
+        <div class="menu">
+            <ul>
+                <li><a class="scroll" href="#revereseText"><i class="fa-solid fa-paragraph-left"></i>Reverse Text</a>
+                </li>
+                <li><a class="scroll" href="#removeNiqqudDiv"><i class="fa-solid fa-text-slash"></i>Remove Niqqud</a>
+                </li>
+                <li><a class="scroll" href="#hebrewToEnglishDiv"><i class="fa-solid fa-book-font"></i>Hebrew to
+                        English</a></li>
+                <li><a class="scroll" href="#englishToHebrewDiv"><i class="fa-solid fa-book-tanakh"></i>English to
+                        Hebrew</a></li>
+                <li><a class="scroll" href="#sumHebrewDiv"><i class="fa-solid fa-calculator-simple"></i>Hebrew Sum </a>
+                </li>
+
+                <li id="darkmode"><i class="fa-solid fa-moon"></i></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+    <div class="container" id="revereseText">
+        <h2>Reverse Hebrew Text</h2>
+        <p class="description">When working with Hebrew text, a common problem is that a text editor will treat the
+            Hebrew as English text, reversing its direction from right-to-left to left-to-right. <br>This tool can help
+            by mirroring the words, making the first letter the last, and the last the first.<br>
+            <span class="code">
+                Accepts: Hebrew, English <br>
+                Output: Hebrew, English in inverted order
+            </span>
+        </p>
+        <div class="form">
+            <label for="reverseText">Paste or type</label>
+            <textarea type="text" id="reverseText" name="reverseText" placeholder="Paste or type"> </textarea>
+            <button type="button" id="reverseTextBtn" onclick="reverseText()"><i
+                    class="fa-light fa-paragraph-left"></i>Reverse Text</button>
+            <p class="output" id="reverseTextOutput" data-clipboard-target="#reverseTextOutput">&nbsp;</p>
+        </div>
+    </div>
+    <div class="container" id="removeNiqqudDiv">
+        <h2>Remove Niqqud</h2>
+        <p class="description"> This tool removes the niqqud, or vowel markings, from Hebrew text. This can be useful
+            for making text more legible, or for creating text that will be used in a context where the niqqud is not
+            needed.
+            <br>
+            <a href="https://en.wikipedia.org/wiki/Niqqud" target="_blank"><i class="fab fa-wikipedia-w"></i>Niqqud on
+                Wikipedia </a>
+            <a href="https://en.wikipedia.org/wiki/Ktiv_hasar_niqqud" target="_blank"><i
+                    class="fab fa-wikipedia-w"></i>Ktiv hasar Niqqud on Wikipedia</a>
+            <br>
+            <span class="code">
+                Accepts: Hebrew <br>
+                Output: Hebrew without Niqqud
+            </span>
+        </p>
+        <div class="form">
+            <label for="removeNiqqud">Paste or type Hebrew</label>
+            <textarea type="text" id="removeNiqqud" name="removeNiqqud" placeholder="Paste or type Hebrew"> </textarea>
+            <button type="button" id="removeNiqqudBtn" onclick="removeNiqqud()"><i
+                    class="fa-light fa-text-slash"></i>Remove Niqqud</button>
+            <p class="output" id="removeNiqqudOutput" data-clipboard-target="#removeNiqqudOutput">&nbsp;</p>
+        </div>
+    </div>
+    <div class="container" id="hebrewToEnglishDiv">
+        <h2>Hebrew to English</h2>
+        <p class="description">If your keyboard was set to type in Hebrew, but you wanted to type in English, you can
+            find yourself frustrated after typing a document and seeing gibberish on the screen. Just paste the text
+            into this tool, and it will automatically translate the Hebrew keycodes into their English equivalents.<br>
+            <span class="code">
+                Accepts: Hebrew <br>
+                Output: English
+            </span>
+
+        </p>
+        <div class="form">
+            <label for="hebrewToEnglish">Paste or type Hebrew</label>
+            <textarea type="text" id="hebrewToEnglish" name="hebrewToEnglish" placeholder="Paste or type Hebrew"> </textarea>
+            <button type="button" id="hebrewToEnglishBtn" onclick="hebrewToEnglish()"><i
+                    class="fa-light fa-book-font"></i>Get English</button>
+            <p class="output" id="hebrewToEnglishOutput" data-clipboard-target="#hebrewToEnglishOutput">&nbsp;</p>
+        </div>
+    </div>
+    <div class="container" id="englishToHebrewDiv">
+        <h2>English to Hebrew</h2>
+        <p class="description">If you want to type in English, but see the text appear in Hebrew, this tool will
+            translate the text back into Hebrew keycodes. This can be helpful if you want to type a document in Hebrew,
+            but you forgot to change your keyboard settings.
+            <br>
+            <span class="code">
+                Accepts: English <br>
+                Output: Hebrew
+            </span>
+        </p>
+        <div class="form">
+            <label for="englishToHebrew">Paste or type English</label> 
+            <textarea type="text" id="englishToHebrew" name="englishToHebrew" placeholder="Paste or type English"> </textarea>
+            <button type="button" id="englishToHebrewBtn" onclick="englishToHebrew()"><i
+                    class="fa-light fa-book-tanakh"></i>Get Hebrew</button>
+            <p class="output" id="englishToHebrewOutput" data-clipboard-target="#englishToHebrewOutput">&nbsp;</p>
+        </div>
+    </div>
+
+
+    <div class="container" id="sumHebrewDiv">
+        <h2>Get Hebrew Sum</h2>
+        <p class="description">This is a calculator for the numeric value of Hebrew words or phrases, based on the
+            traditional Jewish method of (Numerology), where each letter of the alphabet has a corresponding number
+            value, essentially assigning a numerical value to a name, word or phrase according to an alphanumerical
+            cipher; for example: the letter Aleph is 1, the letter Beth is 2, and so on.
+            <br>
+            <a href="https://en.wikipedia.org/wiki/Gematria" target="_blank"><i class="fab fa-wikipedia-w"></i>Gematria
+                on Wikipedia</a><br>
+            <span class="code">
+                Accepts: Hebrew <br>
+                Output: Integer
+            </span>
+        </p>
+        <div class="form">
+            <label for="sumHebrew">Paste or type Hebrew</label>
+            <textarea type="text" id="sumHebrew" name="sumHebrew" placeholder="Paste or type Hebrew"> </textarea>
+            <button type="button" id="sumHebrewBtn" onclick="sumHebrew()"><i
+                    class="fa-light fa-calculator-simple"></i>Get Sum</button>
+            <p class="output" id="sumHebrewOutput" data-clipboard-target="#sumHebrewOutput">&nbsp;</p>
+        </div>
+    </div>
+    <!-- clear all-->
+    <div class="container" id="clearAllDiv">
+        <div class="form">
+            <button type="button" id="clearAllBtn" onclick="clearAll()"><i
+                    class="fa-light fa-arrow-rotate-left"></i>Clear All</button>
+        </div>
+    </div>
+    <footer>
+        <p>
+            Aleph Tools V2.1 is a set of free tools that can help with basic text tasks, created by <a
+                href="https://d7m.tg">D7mtg</a>. If you've ever tried to type in English but the result was in Hebrew -
+            or vice versa - you know how annoying it can be. Instead of שלום you see "akuo". Instead of Hello you're
+            getting יקךךם. This is because the keyboard layout was in a wrong language, and you didn't use alt-shift on
+            Windows, or caps-lock on macOS. With Aleph Tools V2, you can paste text in and it will automatically change
+            the Latin text to the Hebrew text, or the other way around. Other tools include the Reverse Hebrew Text,
+            which solves the common problem of Hebrew text appearing backwards, with flipped words, on a Latin keyboard,
+            and the Gematria Calculator, which calculates the numerical value of Hebrew letters. Aleph V2 is open
+            source. Please report all bugs by creating an issue on GitHub at <a
+                href="https://github.com/d7mtg/d7mtg.github.io/tree/main/aleph/V2">https://github.com/d7mtg/d7mtg.github.io/tree/main/aleph/V2</a>.
+
+
+            <br>
+            <br>
+            <span dir="rtl">
+                אלף הוא תוכנה חופשית המאפשרת לך לעשות פעולות בסיסיות בכתב, עשוי ע״י ד7מטג. אם אתה מקליד באנגלית אבל
+                התוצאה היא בעברית - או להיפך - אתה יודע כמה זה מעצבן.
+
+                במקום "שלום" אתה רואה "akuo", ובמקום "Hello" אתה רואה "יקךךם". זה מקרה כי המקלדת היא בשפה לא נכונה, ואתה
+                לא השתמש באלף-שיפוט במערכת הWindows, או בקופסה הלטינית במערכת הmacOS.
+
+                עם אלף אתה יכול להדביק את הכתוב והוא יעבור מאותיות בעברית לאנגלית, או מאותיות באנגלית לעברית, והוא גם
+                יכול לעשות גמטריה של אותיות בעברית. אלף הוא פתוח לגישה חופשית. בכל מקרה נא צור ביקורת בדף הביקורות של
+                GitHub בע״נ <a
+                    href="https://github.com/d7mtg/d7mtg.github.io/tree/main/aleph/V2">https://github.com/d7mtg/d7mtg.github.io/tree/main/aleph/V2</a>.
+            </span>
+            <span dir="rtl">
+
+
+            </span>
+
+
+        </p>
+    </footer>
+    <script>
+
+
+        document.getElementById("modal").style.display = "none";
+        document.getElementById("modal-bg").style.display = "none";
+        //start by chekcing if hide modal button, #modalbutton is clicked
+        document.getElementById("modalheaderclose").addEventListener("click", function () {
+            //set cookie to hide modal
+            localStorage.setItem("hideModal", "true");
+            document.getElementById("modal").style.display = "none";
+            document.getElementById("modal-bg").style.display = "none";
+        });
+
+        //check if cookie is set to hide modal
+        if (localStorage.getItem("hideModal") !== "true") {
+            document.getElementById("modal").style.display = "block";
+            document.getElementById("modal-bg").style.display = "block";
+        }
+
+        function showModal() {
+            //show modal
+            document.getElementById("modal").style.display = "block";
+            document.getElementById("modal-bg").style.display = "block";
+        }
+
+        function closeModal() {
+            //close modal
+            document.getElementById("modal").style.display = "none";
+            document.getElementById("modal-bg").style.display = "none";
+        }
+
+
+        //this software takes a hebrew string and returns a numerical value
+        function sumHebrew() {
+            //create all variables for user input etc
+            var userInput, userInputArray, hebrewDict;
+            var equation = [];
+            //create a dictionary for the hebrew characters and their numerical values
+            hebrewDict = {
+                'א': 1,
+                'ב': 2,
+                'ג': 3,
+                'ד': 4,
+                'ה': 5,
+                'ו': 6,
+                'ז': 7,
+                'ח': 8,
+                'ט': 9,
+                'י': 10,
+                'כ': 20,
+                'ל': 30,
+                'מ': 40,
+                'נ': 50,
+                'ס': 60,
+                'ע': 70,
+                'פ': 80,
+                'צ': 90,
+                'ק': 100,
+                'ר': 200,
+                'ש': 300,
+                'ת': 400,
+                'ך': 20,
+                'ם': 40,
+                'ן': 50,
+                'ף': 80,
+                'ץ': 90
+            };
+            //get the user input
+            userInput = document.getElementById('sumHebrew').value;
+            //we need to split the string into an array of characters
+            userInputArray = userInput.split('');
+            //account for spaces, basically don't count them
+            userInputArray = userInputArray.filter(function (item) {
+                return item !== ' ';
+            });
+            //if there's nothing to convert, return error
+            if (userInputArray.length === 0) {
+                document.getElementById('sumHebrewOutput').innerHTML = 'Please enter a string of hebrew characters';
+                //add error class
+                document.getElementById('sumHebrewOutput').classList.add('error');
+                return;
+            }
+            //return error if there are any non-hebrew characters
+            if (userInputArray.some(function (item) {
+                    return hebrewDict[item] === undefined;
+                })) {
+                document.getElementById('sumHebrewOutput').innerHTML = 'Error: Please only use Hebrew characters';
+                //add error class
+                document.getElementById('sumHebrewOutput').classList.add('error');
+                return;
+            }
+            //remove error class
+            document.getElementById('sumHebrewOutput').classList.remove('error');
+            //now for the fun part, we need to loop through the array and add the numerical values together
+            var sum = 0;
+            for (var i = 0; i < userInputArray.length; i++) {
+                //add each charachter's numeric value to the var equation as an array [value, value, value]
+                equation.push(hebrewDict[userInputArray[i]]);
+                //add it all together
+                sum += hebrewDict[userInputArray[i]];
+            }
+            //add a plus symbol between each number
+            equation = equation.join(' + ');
+            //return the equation AND  the sum like this
+            document.getElementById('sumHebrewOutput').innerHTML = equation + ' = ' + sum;
+        }
+
+        //this software takes a english string and returns a hebrew string from that key on a qwerty keyboard
+        function englishToHebrew() {
+            //create all variables for user input etc
+            var userInput, userInputArray, englishToHebrewDict;
+            //create a dictionary for the english characters and their Hebrew values, "qwertyuiop[]asdfghjkl;zxcvbnm,./" will become "/׳קראטוןםפ][ֿשדגכעיחלךף,זסבהנמצתץ."
+            englishToHebrewDict = {
+                'q': '/',
+                'w': '׳',
+                'e': 'ק',
+                'r': 'ר',
+                't': 'א',
+                'y': 'ט',
+                'u': 'ו',
+                'i': 'ן',
+                'o': 'ם',
+                'p': 'פ',
+                'a': 'ש',
+                's': 'ד',
+                'd': 'ג',
+                'f': 'כ',
+                'g': 'ע',
+                'h': 'י',
+                'j': 'ח',
+                'k': 'ל',
+                'l': 'ך',
+                ';': 'ף',
+                'z': 'ז',
+                'x': 'ס',
+                'c': 'ב',
+                'v': 'ה',
+                'b': 'נ',
+                'n': 'מ',
+                'm': 'צ',
+                ',': 'ת',
+                '.': ' ',
+                '<': ',',
+                ' ': ' ',
+                '>': '.',
+                '.': '>',
+                '"': '"',
+                //new line
+                '\n': '\n',
+                '\'': ',',
+                '/': '/',
+                '(': ')',
+                ')': '('
+            };
+            //get user input
+            userInput = document.getElementById('englishToHebrew').value;
+            //convert to lowercase
+            userInput = userInput.toLowerCase();
+            //split the string into an array of characters
+            userInputArray = userInput.split('');
+            //we're including spaces, so we don't need to filter them out
+            //if there's nothing to convert, return error
+            if (userInputArray.length === 0) {
+                document.getElementById('englishToHebrewOutput').innerHTML = 'Error: Please enter a string';
+                //add error class
+                document.getElementById('englishToHebrewOutput').classList.add('error');
+                return;
+            }
+           //if value is undefined, don't use it
+            userInputArray = userInputArray.filter(function (item) {
+                return englishToHebrewDict[item] !== undefined;
+            });
+            //remove error class
+            document.getElementById('englishToHebrewOutput').classList.remove('error');
+            //now for the fun part, we need to loop through the array and replace the english characters with their hebrew values
+            for (var i = 0; i < userInputArray.length; i++) {
+                // if it's a new line, add a new line to the output
+                if (userInputArray[i] === '\n') {
+                    userInputArray[i] = '<br>';
+                } else {
+                    //replace the english character with the hebrew value
+                    userInputArray[i] = englishToHebrewDict[userInputArray[i]];
+
+                }
+            }
+            //return the hebrew string using a live typing effect, add one letter at a time
+            var output = '';
+            var interval = setInterval(function () {
+                output += userInputArray[0];
+                userInputArray.shift();
+                document.getElementById('englishToHebrewOutput').innerHTML = output;
+                if (userInputArray.length === 0) {
+                    clearInterval(interval);
+                }
+            }, 4);
+        }
+
+        //this software takes a hebrew string and returns a english string from that key on a qwerty keyboard
+        function hebrewToEnglish() {
+            //create all variables for user input etc
+            var userInput, userInputArray, hebrewToEnglishDict;
+            //create a dictionary for the hebrew characters and their English values, "/׳קראטוןםפ][ֿשדגכעיחלךף,זסבהנמצתץ." will become "qwertyuiop[]asdfghjkl;zxcvbnm,./"
+            hebrewToEnglishDict = {
+                '/': 'q',
+                '׳': 'w',
+                'ק': 'e',
+                'ר': 'r',
+                'א': 't',
+                'ט': 'y',
+                'ו': 'u',
+                'ן': 'i',
+                'ם': 'o',
+                'פ': 'p',
+                'ש': 'a',
+                'ד': 's',
+                'ג': 'd',
+                'כ': 'f',
+                'ע': 'g',
+                'י': 'h',
+                'ח': 'j',
+                'ל': 'k',
+                'ך': 'l',
+                'ף': ';',
+                'ז': 'z',
+                'ס': 'x',
+                'ב': 'c',
+                'ה': 'v',
+                'נ': 'b',
+                'מ': 'n',
+                'צ': 'm',
+                'ת': ',',
+                ' ': ' ',
+                ',': '<',
+                '.': '>',
+                '\'': '"',
+                '\n': '\n',
+                '"': '\'',
+                '/': '/',
+                '(': ')',
+                ')': '('
+
+            };
+            //get user input
+            userInput = document.getElementById('hebrewToEnglish').value;
+            //split the string into an array of characters
+            userInputArray = userInput.split('');
+            //we're including spaces, so we don't need to filter them out
+            //if there's nothing to convert, return error
+            if (userInputArray.length === 0) {
+                document.getElementById('hebrewToEnglishOutput').innerHTML = 'Error: Please enter a string';
+                //add error class
+                document.getElementById('hebrewToEnglishOutput').classList.add('error');
+                return;
+            }
+          //if value is undefined, don't use it
+          userInputArray = userInputArray.filter(function (item) {
+                return hebrewToEnglishDict[item] !== undefined;
+            });
+
+            //remove error class
+            document.getElementById('hebrewToEnglishOutput').classList.remove('error');
+            //now for the fun part, we need to loop through the array and replace the hebrew characters with their english values
+            for (var i = 0; i < userInputArray.length; i++) {
+
+                if (userInputArray[i] === '\n') {
+                    userInputArray[i] = '<br>';
+                } else {
+                    //replace the english character with the hebrew value
+                    userInputArray[i] = hebrewToEnglishDict[userInputArray[i]];
+
+                }
+            }
+            //return the english string using a live typing effect, add one letter at a time
+            var output = '';
+            var interval = setInterval(function () {
+                output += userInputArray[0];
+                userInputArray.shift();
+                document.getElementById('hebrewToEnglishOutput').innerHTML = output;
+                if (userInputArray.length === 0) {
+                    clearInterval(interval);
+                }
+            }, 4);
+        }
+
+
+
+        //this software takes a hebrew string and removes all punctuation (niqqud). it does this by running a regex replace
+        function removeNiqqud() {
+            //create all variables for user input etc
+            var userInput, userInputArray, removeNiqqudDict;
+            //get user input
+            userInput = document.getElementById('removeNiqqud').value;
+            //if there's nothing to convert, return error
+            if (userInput === '') {
+                document.getElementById('removeNiqqudOutput').innerHTML = 'Error: Please enter a string';
+                //add error class
+                document.getElementById('removeNiqqudOutput').classList.add('error');
+                return;
+            }
+            //if the are absolutely no hebrew characters, return error
+            if (userInput.match(/[\u0590-\u05FF]/g) === null) {
+                document.getElementById('removeNiqqudOutput').innerHTML = 'Error: Please use Hebrew characters';
+                //add error class
+                document.getElementById('removeNiqqudOutput').classList.add('error');
+                return;
+            }
+            //remove error class
+            document.getElementById('removeNiqqudOutput').classList.remove('error');
+            //array the string into an array of characters
+            userInputArray = userInput.split('');
+            //replace all chachters in the ranges of U+059x through U+05Cx, 0 through F hex
+            for (var i = 0; i < userInputArray.length; i++) {
+                if (userInputArray[i].match(/[\u0590-\u05C7]/g)) {
+                    userInputArray[i] = userInputArray[i].replace(/[\u0591-\u05C7]/g, '');
+                }
+            }
+            //return the hebrew string using a live typing effect, add one letter at a time
+            var output = '';
+            var interval = setInterval(function () {
+                output += userInputArray[0];
+                userInputArray.shift();
+                document.getElementById('removeNiqqudOutput').innerHTML = output;
+                if (userInputArray.length === 0) {
+                    clearInterval(interval);
+                }
+            }, 4);
+        }
+        //this software takes any string and reverses it
+        function reverseText() {
+            //create all variables for user input etc
+            var userInput, userInputArray, reverseTextDict;
+            //get user input
+            userInput = document.getElementById('reverseText').value;
+            //if there's nothing to convert, return error
+            if (userInput === '') {
+                document.getElementById('reverseTextOutput').innerHTML = 'Error: Please enter a string';
+                //add error class
+                document.getElementById('reverseTextOutput').classList.add('error');
+                return;
+            }
+            //remove error class
+            document.getElementById('reverseTextOutput').classList.remove('error');
+            //array all the characters in the string
+            userInputArray = userInput.match(/.[\u0590-\u05C7]*/g);
+
+            //reverse the array
+            userInputArray.reverse();
+            //return the reversed string using a live typing effect, start with the last letter
+            var output = '';
+            var interval = setInterval(function () {
+                output += userInputArray[0];
+                userInputArray.shift();
+                document.getElementById('reverseTextOutput').innerHTML = output;
+                if (userInputArray.length === 0) {
+                    clearInterval(interval);
+                }
+            }, 4);
+        }
+        // add a single event listener that works across all input fields, if user presses enter, run the function. we can do this because we know that the input fields have the same names as the functions
+        document.getElementById('sumHebrew').addEventListener('keyup', function (event) {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+                sumHebrew();
+            }
+        });
+        document.getElementById('hebrewToEnglish').addEventListener('keyup', function (event) {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+                hebrewToEnglish();
+            }
+        });
+        document.getElementById('englishToHebrew').addEventListener('keyup', function (event) {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+                englishToHebrew();
+            }
+        });
+        document.getElementById('removeNiqqud').addEventListener('keyup', function (event) {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+                removeNiqqud();
+            }
+        });
+        document.getElementById('reverseText').addEventListener('keyup', function (event) {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+                reverseText();
+            }
+        });
+        //clear all input, replace output with non-breaking space
+        function clearAll() {
+            document.getElementById('sumHebrew').value = '';
+            document.getElementById('sumHebrewOutput').innerHTML = '&nbsp;';
+            document.getElementById('hebrewToEnglish').value = '';
+            document.getElementById('hebrewToEnglishOutput').innerHTML = '&nbsp;';
+            document.getElementById('englishToHebrew').value = '';
+            document.getElementById('englishToHebrewOutput').innerHTML = '&nbsp;';
+            document.getElementById('removeNiqqud').value = '';
+            document.getElementById('removeNiqqudOutput').innerHTML = '&nbsp;';
+            document.getElementById('reverseText').value = '';
+            document.getElementById('reverseTextOutput').innerHTML = '&nbsp;';
+            //remove error class
+            document.getElementById('sumHebrewOutput').classList.remove('error');
+            document.getElementById('hebrewToEnglishOutput').classList.remove('error');
+            document.getElementById('englishToHebrewOutput').classList.remove('error');
+            document.getElementById('removeNiqqudOutput').classList.remove('error');
+            document.getElementById('reverseTextOutput').classList.remove('error');
+        }
+        //window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => { const newColorScheme = e.matches ? "dark" : "light";});
+        //use above syntax to check if the user prefers dark mode, if so, add .darkbody class to body - and right when they change back to light mode, remove the class
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            const newColorScheme = e.matches ? "dark" : "light";
+            if (newColorScheme === 'dark') {
+                document.body.classList.add('darkbody');
+                //change icon to <i class="fa-solid fa-lightbulb-on">
+                document.getElementById('darkmode').innerHTML = '<i class="fa-solid fa-lightbulb-on"></i>';
+            } else {
+                document.body.classList.remove('darkbody');
+                //change icon to <i class="fa-solid fa-moon">
+                document.getElementById('darkmode').innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+        });
+        document.getElementById('darkmode').addEventListener('click', function () {
+            document.body.classList.toggle('darkbody');
+            //change moon and lightbulb-on icon based on whether the class is present or not
+            if (document.body.classList.contains('darkbody')) {
+                document.getElementById('darkmode').innerHTML = '<i class="fa-solid fa-lightbulb-on"></i>';
+            } else {
+                document.getElementById('darkmode').innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+        });
+        //when the page first loads and the user is in dark mode, it's still set to light so we need to check prefers-color-scheme: dark, if it's dark, add the .darkbody class to the body
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('darkbody');
+            //change icon to <i class="fa-solid fa-lightbulb-on">
+            document.getElementById('darkmode').innerHTML = '<i class="fa-solid fa-lightbulb-on"></i>';
+        }
+
+
+        // copy to clipboard using clipboard.js - class name is "output"
+        var clipboard = new ClipboardJS('.output:not(.error)');
+        clipboard.on('success', function (e) {
+            //.copiedactive is added to the #copied element
+            document.getElementById('copied').classList.remove('inactive');
+            document.getElementById('copied').classList.add('copiedactive');
+            //add .inactive class after 3 seconds
+            setTimeout(function () {
+                document.getElementById('copied').classList.remove('copiedactive');
+                document.getElementById('copied').classList.add('inactive');
+            }, 3000);
+
+        });
+
+    
+
+    </script>
+
+    
+</body>
+
+</html>

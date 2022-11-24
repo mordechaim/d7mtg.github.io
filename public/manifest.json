@@ -1,0 +1,13 @@
+{
+    "name": "D7mtg",
+    "short_name": "D7mtg",
+    "start_url": "index.html",
+    "scope": "./",
+    "icons": [{
+        "src": "photos/appleicon.png",
+        "type": "image/png"
+    }],
+    "theme_color": "#f9d006",
+    "background_color": "#f9d006",
+    "display": "standalone"
+}

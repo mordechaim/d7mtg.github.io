@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'SFMono';
+    src: url('SFMono-BoldItalic.woff2') format('woff2'),
+        url('SFMono-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
