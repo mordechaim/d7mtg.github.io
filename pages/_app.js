@@ -2,7 +2,7 @@ import { Inter } from '@next/font/google'
 import { initialize } from 'config/firebase.config'
 import Head from 'next/head'
 import Script from 'next/script'
-import 'styles/globals.css'
+import 'styles/globals.scss'
 import 'styles/mystyle.css'
 
 const inter = Inter({

@@ -104,7 +104,7 @@
     text-decoration: none;
     display: inline-block;
     padding: 1rem;
-    transition: .25s;
+    transition: 0.25s;
 
     margin-top: 50px;
     margin-bottom: 150px;
@@ -116,6 +116,7 @@
     background: rgba(255, 255, 255, 1);
 
     color: black;
+    user-select: none;
 
     &:hover svg {
         transition: 0.5s;

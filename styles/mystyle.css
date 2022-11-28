@@ -1,33 +1,4 @@
-/* some variables for color */
-:root {
-  --yellow: #ffd708;
-}
 
-html,
-body {
-  background: #ffd708;
-  color: #2A2929;
-  font-weight: 400;
-  font-size: 1rem;
-  transition: .25s;
-  margin: 0%;
-  -webkit-font-smoothing: antialiased;
-  margin: 0px;
-  padding: 0px;
-  -webkit-tap-highlight-color: transparent;
-  overflow-x: hidden;
-
-}
-
-/* #bsd{
-  color: #2A2929;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-weight: 900;
-  position: absolute;
-  font-size: .8em;
-  top: 35px;
-  right: 0;
-} */
 .verticalthinline {
   width: 1px;
   height: 120px;
@@ -138,16 +109,6 @@ h2 {
   margin-bottom: 25px
 } */
 
-*::selection {
-  color: #2A2929;
-  background: #ffd708;
-}
-
-.button::selection {
-  background: none;
-  color: default;
-}
-
 
 
 .buttondiv {
@@ -206,10 +167,6 @@ h2 {
 
 #hiddenlogo {
   display: none;
-}
-
-#home_page_all_projects_container {
-  background-color: #fcfcfc;
 }
 
 #link {
