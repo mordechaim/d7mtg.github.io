@@ -1,5 +1,9 @@
 @import '~theme/colors.scss';
 
+.root {
+    background: $primary;
+}
+
 .projectsContainer {
     background: $white;
 }

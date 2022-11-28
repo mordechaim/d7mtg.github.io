@@ -25,7 +25,7 @@ initialize()
 
 
 function MyApp({ Component, pageProps }) {
-    return <main className={inter.className}>
+    return <main className={inter.className} id='root'>
         <Head>
             <link rel="apple-touch-icon" type="image/png" href="/photos/appleicon.ico" />
             <link rel="apple-touch-icon" type="image/png" href="/photos/appleicon.png" />

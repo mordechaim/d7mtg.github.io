@@ -3,19 +3,22 @@ import { get, getDatabase, ref } from 'firebase/database';
 import Head from 'next/head';
 import Footer from '../components/home/Footer';
 import { HomeProject } from '../components/home/HomeProject';
-import s from './Home.module.scss'
+import s from './index.module.scss'
 
 export default function Home({ projects }) {
     return <>
         <Head>
             <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffd708" />
         </Head>
-        
-        <Banner />
-        <div className={s.projectsContainer}>
-            {projects.map(p => <HomeProject key={p.slug} {...p} />)}
+
+        <div className={s.root}>
+            <Banner />
+            <div className={s.projectsContainer}>
+                {projects.map(p => <HomeProject key={p.slug} {...p} />)}
+            </div>
+            <Footer />
         </div>
-        <Footer />
+
     </>
 }
 
