@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Lottie from 'lottie-react'
-import animation from './D7MTG2.json'
+import animation from 'assets/animations/d7mtg.json'
 import s from './Banner.module.scss'
 
 export const Banner = () => {
