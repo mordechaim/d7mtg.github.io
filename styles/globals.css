@@ -6,3 +6,7 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+
+svg.svg-inline--fa {
+    height: 14.4px;
+}

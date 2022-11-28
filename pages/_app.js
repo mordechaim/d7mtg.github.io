@@ -27,11 +27,9 @@ initialize()
 function MyApp({ Component, pageProps }) {
     return <main className={inter.className}>
         <Head>
-            <meta charSet="utf-8" />
             <link rel="apple-touch-icon" type="image/png" href="/photos/appleicon.ico" />
             <link rel="apple-touch-icon" type="image/png" href="/photos/appleicon.png" />
             <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-            <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffd708" />
             <link href="/favicon.png" rel="shortcut icon" type="image/png" />
             <link rel="manifest" href="/manifest.json" />
             <meta content="width=device-width,initial-scale=1,user-scalable=yes" name="viewport" />
