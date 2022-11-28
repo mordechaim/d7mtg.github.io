@@ -8,7 +8,7 @@ export const HomeProject = props => {
         logo,
         background,
         name,
-        shortDescription,
+        subtitle,
         metaDescription,
         labels,
         link
@@ -22,7 +22,7 @@ export const HomeProject = props => {
         <div className={s.innerContainer}>
             <img className={s.logo} src={logo} alt={name + ' logo'} />
             <h3>{name}</h3>
-            <h4>{shortDescription}</h4>
+            <h4>{subtitle}</h4>
             <div className={s.labelContainer}>
                 {labels.map(({ text, icon }) => <label><i className={`fa-light fa-${icon}`} />{text}</label>)}
             </div>
