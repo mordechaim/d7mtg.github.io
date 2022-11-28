@@ -1,0 +1,15 @@
+$primary-light: #fff6d2;
+$primary-shade: #f9ac06;
+$primary: #ffd708;
+$primary-dark: #544817;
+$white: #fcfcfc;
+$black: #2a2929;
+$gray-300: #e2e2e2;
+$gray: #cccccc;
+$gray-900: #828382;
+
+@mixin dark {
+    @media (prefers-color-scheme: dark) {
+        @content;
+    }
+}
