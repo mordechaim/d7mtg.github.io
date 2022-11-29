@@ -1,0 +1,146 @@
+:root {
+  --shadow-color: 0deg 0% 79%;
+  --shadow-elevation-low:
+    0px 1px 1.5px hsl(var(--shadow-color) / 0),
+    0px 1.6px 2.4px hsl(var(--shadow-color) / 0.12),
+    0.1px 3px 4.5px hsl(var(--shadow-color) / 0.24);
+  --shadow-elevation-medium:
+    0px 1px 1.5px hsl(var(--shadow-color) / 0),
+    0.1px 3.2px 4.8px hsl(var(--shadow-color) / 0.06),
+    0.1px 5.4px 8.1px hsl(var(--shadow-color) / 0.12),
+    0.2px 8.9px 13.4px hsl(var(--shadow-color) / 0.18),
+    0.4px 15px 22.5px hsl(var(--shadow-color) / 0.24);
+  --shadow-elevation-high:
+    0px 1px 1.5px hsl(var(--shadow-color) / 0),
+    0.1px 5.3px 8px hsl(var(--shadow-color) / 0.03),
+    0.2px 9px 13.5px hsl(var(--shadow-color) / 0.07),
+    0.3px 12.8px 19.2px hsl(var(--shadow-color) / 0.1),
+    0.4px 17.1px 25.7px hsl(var(--shadow-color) / 0.14),
+    0.6px 22.6px 33.9px hsl(var(--shadow-color) / 0.17),
+    0.8px 30px 45px hsl(var(--shadow-color) / 0.21),
+    1px 39.7px 59.6px hsl(var(--shadow-color) / 0.24),
+    1.4px 52.5px 78.8px hsl(var(--shadow-color) / 0.28);
+}
+
+#back {
+  padding: 2px;
+  line-height: 1em;
+  vertical-align: middle;
+  font-size: .5em;
+  text-decoration: none;
+  color: #777777;
+}
+.lg-outer .lg-object {
+ 
+  background: white;
+}
+.description_quote {
+  background-color: rgba(165,165,165,0.1);
+  
+
+  display: inline-block;
+  padding: 25px;
+  border-radius: 5px;
+  border-left: 5px solid rgba(165,165,165,0.1);
+  font-style: italic;
+}
+
+.italic {
+  font-style: italic;
+}
+
+
+
+
+.lighter {
+  display: none;
+}
+
+.lighter>a {
+  display: none;
+}
+
+.link {
+  color: #333333;
+  outline: none;
+  padding: none;
+  border: none;
+}
+
+.link:visited {
+  color: #757474;
+}
+
+
+
+
+
+.downloadbutton {
+  font-size: 1em;
+  font-weight: 500;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  padding: 1em;
+  transition: 0.2s;
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  color: #2a2a2a;
+  box-shadow: var(--shadow-elevation-low);
+
+}
+
+/* yellow #ffd708 */
+
+
+.downloadbutton:hover {
+  box-shadow: var(--shadow-elevation-medium);
+
+}
+
+.downloadbutton:active {
+  background-color: #ccc;
+}
+
+
+
+.portfoliosource {
+  width: 100%;
+  border-radius: 6px;
+  transition: 0.2s;
+  filter: saturate(0);
+}
+
+
+
+
+
+.numbers {
+  color: #ffd708;
+}
+
+.btn {
+  color: #ccc;
+  display: none;
+  transition: 0.2s;
+  background: none;
+  box-shadow: 0px 0px 0px transparent;
+  line-height: 1em;
+  font-size: .7em;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+}
+
+.btn:active {
+  color: #666;
+}
+
+
+.location:hover {
+  background-color: rgba(127, 127, 127, 0.2);
+}
+
+
+

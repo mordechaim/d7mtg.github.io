@@ -4,21 +4,21 @@
 <head>
   <title>d7mtg | Publications sizes</title>
 
-  <link href="../favicon.png" rel="shortcut icon" type="image/png">
-  <link rel="apple-touch-icon" type="image/png" href="../favicon.png">
+  <link href="/favicon.png" rel="shortcut icon" type="image/png">
+  <link rel="apple-touch-icon" type="image/png" href="/favicon.png">
   <meta content="width=device-width,initial-scale=1,user-scalable=yes" name="viewport">
   <meta content="Publications Sizes by D7mtg" property="og:title">
-  <meta content="../../logoimessage.jpg" property="og:image">
+  <meta content="/logoimessage.jpg" property="og:image">
   <meta charset="UTF-8">
   <meta content="Publications Sizes by D7mtg" property="og:title">
   <meta name="description"
     content="Uncompleted side project by D7mtg that displays the size of popular publications in the database.">
   <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-  <link href="../InterWeb/inter.css" rel="stylesheet">
-  <link href="stylesheet.css" rel="stylesheet">
+  <link href="/InterWeb/inter.css" rel="stylesheet">
+  <link href="/placement/stylesheet.css" rel="stylesheet">
   <meta name="robots" content="noindex" />
   <meta name="googlebot" content="noindex" />
-  <link rel="manifest" href="../manifest.json">
+  <link rel="manifest" href="/manifest.json">
   <script src="https://kit.fontawesome.com/7b42fedff3.js" crossorigin="anonymous"></script>
   <link href="https://use.typekit.net/czh2ozp.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -54,8 +54,8 @@
 
 <body>
   <!--logo-->
-  <a href='../'>
-    <img id="logo" alt="Logo of this website, logo for D7mtg." src="../photos/light.png">
+  <a href='/'>
+    <img id="logo" alt="Logo of this website, logo for D7mtg." src="/photos/light.png">
   </a>
   <div class='line'></div>
   <h1>Publications size database</h1>
@@ -83,15 +83,15 @@
   <div class="" style="display: none;">
     <!-- preloaders-->
     <!-- cursor preloaders-->
-    <img class="preloader" src="../photos/text-light-mode.png" />
-    <img class="preloader" src="../photos/text-light-mode-small.png" />
-    <img class="preloader" src="../photos/link-light-mode.png" />
-    <img class="preloader" src="../photos/link-yellow-mode.png" />
-    <img class="preloader" src="../photos/link-dark-mode.png" />
+    <img class="preloader" src="/photos/text-light-mode.png" />
+    <img class="preloader" src="/photos/text-light-mode-small.png" />
+    <img class="preloader" src="/photos/link-light-mode.png" />
+    <img class="preloader" src="/photos/link-yellow-mode.png" />
+    <img class="preloader" src="/photos/link-dark-mode.png" />
   </div>
   <!-- Development -->
   <!-- Production -->
-  <script src="main.js"></script>
+  <script src="/placement/main.js"></script>
   <script>
     var searchbar = document.getElementById("searchbar");
     var pubname = document.getElementById("pubname");
@@ -107,7 +107,7 @@
         email.innerHTML = emailArray[publicationArray.indexOf(searchbar.value.toLowerCase())];
         link.innerHTML = "<a href='" + linkArray[publicationArray.indexOf(searchbar.value.toLowerCase())] +
           "'>Media Kit</a>";
-        download.innerHTML = "<a class='yellowbutton' href='zip/" + fileArray[publicationArray.indexOf(searchbar.value
+        download.innerHTML = "<a class='yellowbutton' href='/placement/zip/" + fileArray[publicationArray.indexOf(searchbar.value
           .toLowerCase())] + "'><i class='fal fa-cloud-download'></i></a>";
         document.getElementById("noresults").style.display = "none";
         publicationResult.style.display = "block";
