@@ -1,6 +1,7 @@
 import { Fraunces } from '@next/font/google'
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { getProjects } from '../util/firebase'
 import s from './404.module.scss'
@@ -13,6 +14,7 @@ const fraunces = Fraunces({
 
 export default function NotFound({ links }) {
     const [typewriter, setTypewriter] = useState('\u00a0')
+    const router = useRouter()
 
     useEffect(() => {
         const delay = setTimeout(() => {
@@ -34,7 +36,7 @@ export default function NotFound({ links }) {
 
     const handleRandomUrl = e => {
         var i = Math.round(Math.random() * links.length)
-        window.open(links[i], '_self')
+        router.push(links[i])
     }
 
     return <div className={s.root}>
@@ -59,8 +61,7 @@ export default function NotFound({ links }) {
 
 export const getStaticProps = async () => {
     const projects = await getProjects()
-
-    const links = projects.map(p => '/portfolio/' + p.slug)
+    const links = projects.map(p => '/portfolio/projects/' + p.slug)
 
     return {
         props: {

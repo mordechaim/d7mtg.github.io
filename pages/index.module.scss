@@ -1,9 +1,5 @@
 @import "~theme/colors.scss";
 
-.root {
-    background: $primary;
-}
-
 .moreProjects {
     text-align: center;
     padding: 55px 0;
@@ -39,14 +35,5 @@
                 background-color: $primary-dark;
             }
         }
-    }
-}
-
-
-.projectsContainer, .footer {
-    background-color: $white;
-
-    @include dark {
-        background-color: #333333;
     }
 }

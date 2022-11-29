@@ -1,0 +1,9 @@
+@import "~theme/screens";
+
+.root {
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+}

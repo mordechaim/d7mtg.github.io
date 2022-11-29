@@ -1,12 +1,11 @@
 import Link from 'next/link'
-import Lottie from 'lottie-react'
-import animation from 'assets/animations/d7mtg.json'
+import { Logo } from 'components/Logo'
 import s from './Banner.module.scss'
 
 export const Banner = () => {
     return <div className={s.banner}>
 
-        <Lottie className={s.logo} animationData={animation} loop={false} />
+        <Logo className={s.logo} />
 
         <div className={s.menu}>
             <Link href="/portfolio" className={s.menuItem}>Work</Link>

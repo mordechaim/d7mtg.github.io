@@ -3,7 +3,7 @@ import { initialize } from 'config/firebase.config'
 import Head from 'next/head'
 import Script from 'next/script'
 import 'styles/globals.scss'
-import 'styles/mystyle.css'
+import 'lightgallery/css/lightgallery.css'
 
 const inter = Inter({
     subsets: ['latin'],

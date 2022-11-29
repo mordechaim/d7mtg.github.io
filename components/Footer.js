@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import s from './Footer.module.scss'
 
-export default function Footer() {
+export const Footer = () => {
     return <footer className={s.links} itemScope itemType="http://schema.org/LocalBusiness">
             <span itemProp="name">D7mtg</span> is a branding agency based in Brooklyn, N.Y.
             <br /><br />

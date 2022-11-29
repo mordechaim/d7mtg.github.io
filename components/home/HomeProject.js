@@ -10,9 +10,9 @@ export const HomeProject = props => {
         banner,
         name,
         subtitle,
-        metaDescription,
+        homeDescription,
         labels,
-        link
+        slug
     } = props
 
     // use IntersectionObserver to change theme while scrolling
@@ -50,8 +50,8 @@ export const HomeProject = props => {
                 <div className={s.labelContainer}>
                     {labels?.map(({ text, icon }) => <label key={text}><i className={`fa-light fa-${icon}`} />{text}</label>)}
                 </div>
-                <p className={s.description}>{metaDescription}</p>
-                <Link className={s.link} href={link}>
+                <p className={s.description}>{homeDescription}</p>
+                <Link className={s.link} href={'/portfolio/projects/' + slug}>
                     View project <i className="fa-light fa-arrow-right" />
                 </Link>
             </div>
