@@ -18,7 +18,8 @@ const inter = Inter({
         '"Apple Color Emoji"',
         '"Segoe UI Emoji"',
         '"Segoe UI Symbol"'
-    ]
+    ],
+    display: 'swap'
 })
 
 initialize()

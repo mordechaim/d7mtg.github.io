@@ -2,17 +2,7 @@ import Link from 'next/link';
 import s from './Footer.module.scss'
 
 export default function Footer() {
-
-    return <div className={s.footer}>
-        <div className={s.moreProjects}>
-            <Link className={s.button} href='/portfolio'>
-                <i className="fa-solid fa-rectangle-vertical-history"></i>
-                &nbsp;&nbsp;More projects
-            </Link>
-        </div>
-
-
-        <div className={s.links} itemScope itemType="http://schema.org/LocalBusiness">
+    return <footer className={s.links} itemScope itemType="http://schema.org/LocalBusiness">
             <span itemProp="name">D7mtg</span> is a branding agency based in Brooklyn, N.Y.
             <br /><br />
             Reach us at <a href='mailto:hello@d7mtg.com'>hello@d7mtg.com</a> or by phone at <a itemProp="telephone"
@@ -28,7 +18,6 @@ export default function Footer() {
                 <a className={s.label} href="/aleph/V2/"><i className="fa-light fa-paragraph-rtl"></i>&nbsp;Aleph Project</a>
                 <a className={s.label} href="/kosher/"><i className="fa-light fa-file-certificate"></i>&nbsp;Kosher Project</a>
             </div>
-        </div>
-    </div>
+        </footer>
 
 }

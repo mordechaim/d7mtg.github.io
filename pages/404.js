@@ -7,8 +7,8 @@ import s from './404.module.scss'
 
 const fraunces = Fraunces({
     subsets: ['latin'],
-    fallback: ['serif'],
-    weight: '500'
+    weight: '500',
+    display: 'swap'
 })
 
 export default function NotFound({ links }) {
@@ -37,7 +37,7 @@ export default function NotFound({ links }) {
         window.open(links[i], '_self')
     }
 
-    return <div className={s.root} data-no-scroll>
+    return <div className={s.root}>
         <Head>
             <title>404 Not Found</title>
         </Head>

@@ -1,8 +1,9 @@
 @import "~theme/colors";
 
 .root {
+    position: fixed;
     background: $primary;
-    width: 100vw;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -66,7 +67,7 @@
 
     .footer {
         background: $primary;
-        padding: 50px 0;
+        padding: 50px 0 25px;
         font-family: sans-serif;
         width: 50%;
         text-align: center;
