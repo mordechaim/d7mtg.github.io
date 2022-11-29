@@ -48,7 +48,7 @@ export const HomeProject = props => {
                 <h3>{name}</h3>
                 <h4>{subtitle}</h4>
                 <div className={s.labelContainer}>
-                    {labels.map(({ text, icon }) => <label key={text}><i className={`fa-light fa-${icon}`} />{text}</label>)}
+                    {labels?.map(({ text, icon }) => <label key={text}><i className={`fa-light fa-${icon}`} />{text}</label>)}
                 </div>
                 <p className={s.description}>{metaDescription}</p>
                 <Link className={s.link} href={link}>

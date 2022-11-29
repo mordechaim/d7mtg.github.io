@@ -1,8 +1,8 @@
 import { Fraunces } from '@next/font/google'
-import { get, getDatabase, ref } from 'firebase/database'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { getProjects } from '../util/firebase'
 import s from './404.module.scss'
 
 const fraunces = Fraunces({
@@ -58,11 +58,9 @@ export default function NotFound({ links }) {
 }
 
 export const getStaticProps = async () => {
-    const db = getDatabase()
-    const key = ref(db, 'projects')
-    const projects = await get(key)
+    const projects = await getProjects()
 
-    const links = Object.values(projects.toJSON()).map(i => '/portfolio/' + i.slug)
+    const links = projects.map(p => '/portfolio/' + p.slug)
 
     return {
         props: {

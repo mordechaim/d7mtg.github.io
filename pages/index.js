@@ -1,9 +1,8 @@
 import { Banner } from 'components/home/Banner';
-import { get, getDatabase, ref } from 'firebase/database';
-import Head from 'next/head';
 import Footer from '../components/home/Footer';
 import { HomeProject } from '../components/home/HomeProject';
-import s from './index.module.scss'
+import { getProjects } from '../util/firebase';
+import s from './index.module.scss';
 
 export default function Home({ projects }) {
     return <div className={s.root}>
@@ -16,22 +15,11 @@ export default function Home({ projects }) {
 }
 
 export const getStaticProps = async () => {
-
-    const db = getDatabase()
-    const key = ref(db, 'projects')
-    const projects = await get(key)
-
-    const result = Object.values(projects.toJSON()).map(i => ({
-        ...i,
-        metaDescription: transformString(i.metaDescription),
-        labels: Object.values(i.labels)
-    }))
+    const projects = await getProjects()
 
     return {
         props: {
-            projects: result
+            projects
         }
     }
 }
-
-const transformString = s => s.replaceAll('\\n', '\n').replaceAll('\\u00a0', '\u00a0')
