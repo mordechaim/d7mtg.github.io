@@ -27,6 +27,10 @@ initialize()
 function MyApp({ Component, pageProps }) {
     return <main className={inter.className} id='root'>
         <Head>
+
+            <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffd708" />
+            <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#333" />
+            <meta name="msapplication-TileColor" content="#ffd708" />
             <link rel="apple-touch-icon" type="image/png" href="/photos/appleicon.ico" />
             <link rel="apple-touch-icon" type="image/png" href="/photos/appleicon.png" />
             <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -45,7 +49,6 @@ function MyApp({ Component, pageProps }) {
                 content="Your branding project starts here. We apply research and creativity to help you grow your brand and tell the world your story." />
             <meta name="author" content="D7mtg" />
             <meta name="copyright" content="D7mtg" />
-            <meta name="msapplication-TileColor" content="#ffd708" />
             <meta property="og:image" content="/ogpreview.png" />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:site" content="@d7mtg" />

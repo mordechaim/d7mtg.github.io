@@ -40,7 +40,6 @@ export default function NotFound({ links }) {
     return <div className={s.root} data-no-scroll>
         <Head>
             <title>404 Not Found</title>
-            <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffd708" />
         </Head>
 
         <div className={s.line} />
