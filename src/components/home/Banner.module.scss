@@ -11,55 +11,47 @@
     }
 }
 
-.logo {
-    padding-top: 50px;
-    display: block;
-    margin-left: 15%;
 
-    width: 150px;
-    max-width: 70%;
-
-    filter: brightness(0);
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 15% 15px;
+    gap: 10px;
 
     @include md {
-        margin: 0 auto;
+        flex-direction: column;
     }
 
     @include sm {
+        gap: 50px;
+    }
+}
+
+.logo {
+    width: 150px;
+    max-width: 70%;
+    height: 38px;
+
+    filter: brightness(0);
+
+    @include sm {
         position: inherit;
-        padding: 0;
         width: 200px;
-        height: 145px;
+        height: 45px;
     }
 }
 
 .menu {
-    text-decoration: none;
+    display: flex;
+    gap: 20px;
 
-    display: inline;
-    float: right;
-    margin-right: 15%;
-    margin-top: -25px;
-
-    @include md {
-        margin: 10px auto auto;
-        float: none;
-        text-align: center;
-        display: inline-block;
-        width: 100%;
-    }
-
-    .menuItem {
+    .item {
         text-decoration: none;
         color: $black;
         font-size: 1em;
         font-weight: 500;
         color: $black;
-        margin-left: 15px;
-
-        @include md {
-            margin: 10px;
-        }
     }
 }
 
