@@ -7,7 +7,7 @@
         "src": "photos/appleicon.png",
         "type": "image/png"
     }],
-    "theme_color": "#f9d006",
+    "theme_color": "#ffd708",
     "background_color": "#f9d006",
     "display": "standalone"
 }
