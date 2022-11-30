@@ -46,7 +46,7 @@ export default function Project({ project }) {
             </span>
             <div className={s.labels}>
                 {labels?.map(({ text, icon, variant = 'fal' }) => <label key={text}>
-                    <FontAwesomeIcon icon={[variant, icon]} />&nbsp;{text}
+                    <FontAwesomeIcon icon={[variant, icon]} />{text}
                 </label>)}
             </div>
             <p >{projectDescription}</p>
