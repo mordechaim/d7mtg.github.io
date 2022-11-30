@@ -25,9 +25,13 @@ export default function Home({ projects }) {
 }
 
 export const getStaticProps = async () => {
+    let projects = await getProjects()
+    projects = projects.filter(p => p.homeIndex >= 0)
+    projects.sort((a, b) => a.homeIndex - b.homeIndex)
+
     return {
         props: {
-            projects: await getProjects()
+            projects
         }
     }
 }

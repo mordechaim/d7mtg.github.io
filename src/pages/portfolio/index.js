@@ -22,9 +22,13 @@ export default function Portfolio({ projects }) {
 }
 
 export const getStaticProps = async () => {
+    let projects = await getProjects()
+    projects = projects.filter(p => p.portfolioIndex >= 0)
+    projects.sort((a, b) => a.portfolioIndex - b.portfolioIndex)
+
     return {
         props: {
-            projects: await getProjects()
+            projects
         }
     }
 }
