@@ -36,12 +36,14 @@ export default function Project({ project }) {
         <div className={s.line} />
 
         <div className={s.blog}>
-            <h1>
+            <span className={s.title}>
                 <Link id="back" href="/portfolio">
                     <FontAwesomeIcon icon={['fal', 'chevron-left']} />
                 </Link>
-                &nbsp;{name}
-            </h1>
+                <h1>
+                    &nbsp;{name}
+                </h1>
+            </span>
             <div className={s.labels}>
                 {labels?.map(({ text, icon, variant = 'fal' }) => <label key={text}>
                     <FontAwesomeIcon icon={[variant, icon]} />&nbsp;{text}
