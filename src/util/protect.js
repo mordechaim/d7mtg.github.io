@@ -2,7 +2,6 @@ import { getAuth } from 'firebase/auth'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import authConfig from '/config/auth.config'
 
 export const protect = Component => {
     const ProtectedComponent = props => {
@@ -12,7 +11,7 @@ export const protect = Component => {
 
         useEffect(() => {
             if (!loading && !user)
-                router.replace(`${authConfig.loginRoute}?return=${encodeURIComponent(router.asPath)}`)
+                router.replace(`${process.env.NEXT_PUBLIC_LOGIN_URL}?return=${encodeURIComponent(router.asPath)}`)
         }, [user, loading, router])
 
         if (loading)

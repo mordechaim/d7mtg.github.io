@@ -13,7 +13,6 @@ export default function Project({ project }) {
         previewImage,
         projectDescription,
         logo,
-        logoAlt,
         labels,
         images,
         links
@@ -60,9 +59,9 @@ export default function Project({ project }) {
             download={false}
             getCaptionFromTitleOrAlt={false}
             mousewheel>
-            <img className={s.allphotos} src={logo} alt={logoAlt} />
+            <img className={s.allphotos} src={logo?.url} alt={logo?.alt} />
 
-            {images.map(i => <img key={i.src} className={s.allphotos} src={i.src} alt={i.alt} />)}
+            {images.map(i => <img key={i.url} className={s.allphotos} src={i.url} alt={i.alt} />)}
         </LightGallery>
     </>
 }

@@ -51,7 +51,7 @@ export const HomeProject = props => {
                     {labels?.map(({ text, icon }) => <label key={text}><i className={`fa-light fa-${icon}`} />{text}</label>)}
                 </div>
                 <p className={s.description}>{homeDescription}</p>
-                <Link className={s.link} href={'/portfolio/projects/' + slug}>
+                <Link className={s.link} href={process.env.NEXT_PUBLIC_PROJECT_URL_PREFIX + slug}>
                     View project <i className="fa-light fa-arrow-right" />
                 </Link>
             </div>
