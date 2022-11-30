@@ -1,7 +1,8 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-import s from './HomeProject.module.scss'
+import s from './HomeProject.module.scss';
 
 export const HomeProject = props => {
     const {
@@ -48,11 +49,13 @@ export const HomeProject = props => {
                 <h3>{name}</h3>
                 <h4>{subtitle}</h4>
                 <div className={s.labelContainer}>
-                    {labels?.map(({ text, icon }) => <label key={text}><i className={`fa-light fa-${icon}`} />{text}</label>)}
+                    {labels?.map(({ text, icon, variant = 'fal' }) => <label key={text}>
+                        <FontAwesomeIcon icon={[variant, icon]} />&nbsp;{text}
+                    </label>)}
                 </div>
                 <p className={s.description}>{homeDescription}</p>
                 <Link className={s.link} href={process.env.NEXT_PUBLIC_PROJECT_URL_PREFIX + slug}>
-                    View project <i className="fa-light fa-arrow-right" />
+                    View project <FontAwesomeIcon icon={['fal', 'arrow-right']} />
                 </Link>
             </div>
         </div>

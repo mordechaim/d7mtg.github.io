@@ -1,9 +1,10 @@
-import { Banner } from 'components/home/Banner';
-import Link from 'next/link';
-import { Footer } from 'components/Footer';
-import { HomeProject } from 'components/home/HomeProject';
-import { getProjects } from 'util/firebase';
-import s from './index.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Footer } from 'components/Footer'
+import { Banner } from 'components/home/Banner'
+import { HomeProject } from 'components/home/HomeProject'
+import Link from 'next/link'
+import { getProjects } from 'util/firebase'
+import s from './index.module.scss'
 
 export default function Home({ projects }) {
     return <div className={s.root}>
@@ -14,7 +15,7 @@ export default function Home({ projects }) {
 
         <div className={s.moreProjects}>
             <Link className={s.button} href='/portfolio'>
-                <i className="fa-solid fa-rectangle-vertical-history"></i>
+                <FontAwesomeIcon icon={['fas', 'rectangle-vertical-history']} />
                 &nbsp;&nbsp;More projects
             </Link>
         </div>

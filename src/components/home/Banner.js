@@ -1,5 +1,6 @@
-import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Logo } from 'components/Logo'
+import Link from 'next/link'
 import s from './Banner.module.scss'
 
 export const Banner = () => {
@@ -19,7 +20,7 @@ export const Banner = () => {
             <span className={s.subheader}>D7mtg helps founders build brands that are memorable by design.</span>
         </p>
         <div className={s.scrollDown}>
-            <i className="fas fa-arrow-down" />
+            <FontAwesomeIcon icon={['fas', 'arrow-down']}/>
             <p>Keep scrolling</p>
         </div>
     </div>

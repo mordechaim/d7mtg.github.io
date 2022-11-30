@@ -1,10 +1,11 @@
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Logo } from 'components/Logo'
+import LightGallery from 'lightgallery/react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { getProject, getProjects } from 'util/firebase'
 import s from './project.module.scss'
-import LightGallery from 'lightgallery/react'
 
 export default function Project({ project }) {
     const {
@@ -37,18 +38,20 @@ export default function Project({ project }) {
         <div className={s.blog}>
             <h1>
                 <Link id="back" href="/portfolio">
-                    <i className="fal fa-chevron-left" />
+                    <FontAwesomeIcon icon={['fal', 'chevron-left']} />
                 </Link>
                 &nbsp;{name}
             </h1>
             <div className={s.labels}>
-                {labels?.map(({ text, icon }) => <label key={text}><i className={`fa-light fa-${icon}`} />{text}</label>)}
+                {labels?.map(({ text, icon, variant = 'fal' }) => <label key={text}>
+                    <FontAwesomeIcon icon={[variant, icon]} />&nbsp;{text}
+                </label>)}
             </div>
             <p >{projectDescription}</p>
             {links.length && <div className={s.links}>
-                {links.map(l => <a key={l.url} className={s.button} href={l.url}>
-                    <i className={`far fa-${l.icon}`} />
-                    &nbsp;&nbsp;{l.text}
+                {links.map(({ url, icon, variant = 'far', text }) => <a key={url} className={s.button} href={url}>
+                    <FontAwesomeIcon icon={[variant, icon]} />
+                    &nbsp;&nbsp;{text}
                 </a>)}
             </div>}
 
