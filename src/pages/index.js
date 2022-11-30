@@ -1,8 +1,8 @@
 import { Banner } from 'components/home/Banner';
 import Link from 'next/link';
-import { Footer } from '../components/Footer';
-import { HomeProject } from '../components/home/HomeProject';
-import { getProjects } from '../util/firebase';
+import { Footer } from 'components/Footer';
+import { HomeProject } from 'components/home/HomeProject';
+import { getProjects } from 'util/firebase';
 import s from './index.module.scss';
 
 export default function Home({ projects }) {
