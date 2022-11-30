@@ -44,7 +44,7 @@ export const HomeProject = props => {
         }}>
 
             <div className={s.innerContainer}>
-                <img className={s.logo} src={logo} alt={name + ' logo'} />
+                <img className={s.logo} src={logo?.url} alt={logo?.alt} />
                 <h3>{name}</h3>
                 <h4>{subtitle}</h4>
                 <div className={s.labelContainer}>
