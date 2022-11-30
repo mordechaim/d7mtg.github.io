@@ -2,8 +2,8 @@ import { Inter } from '@next/font/google'
 import { initialize } from 'config/firebase.config'
 import Head from 'next/head'
 import Script from 'next/script'
-import 'styles/globals.scss'
 import 'lightgallery/css/lightgallery.css'
+import 'styles/globals.scss'
 
 const inter = Inter({
     subsets: ['latin'],
