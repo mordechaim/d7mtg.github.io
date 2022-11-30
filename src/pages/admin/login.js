@@ -1,7 +1,11 @@
-import { getAuth } from 'firebase/auth';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { getAuth } from 'firebase/auth'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'
+import { Logo } from 'components/Logo'
+import s from './login.module.scss'
+import cx from 'clsx'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function Login(props) {
     const [email, setEmail] = useState('')
@@ -14,7 +18,7 @@ export default function Login(props) {
 
     useEffect(() => {
         if (user) {
-            const route = router.query.return ?? '/admin/edit'
+            const route = router.query.return ?? '/admin'
             router.push(route)
         }
     }, [router, user])
@@ -24,9 +28,15 @@ export default function Login(props) {
         signIn(email, password)
     }
 
-    return <form onSubmit={handleLogin} className={error ? 'border-solid border-red-500' : undefined}>
-        <input name='email' value={email} onChange={e => setEmail(e.target.value)} />
-        <input name='password' type='password' value={password} onChange={e => setPassword(e.target.value)} />
-        <input type='submit' />
-    </form>
+    return <div className={s.root}>
+        <Logo className={s.logo} black />
+        <form onSubmit={handleLogin} className={s.form}>
+            <input className={cx(error && s.error)} name='email' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} />
+            <input className={cx(error && s.error)} name='password' placeholder='Password' type='password' value={password} onChange={e => setPassword(e.target.value)} />
+            <button type='submit'>
+                <FontAwesomeIcon icon={['fal', 'sign-in']} />
+                &nbsp;&nbsp;Log In
+            </button>
+        </form>
+    </div>
 }

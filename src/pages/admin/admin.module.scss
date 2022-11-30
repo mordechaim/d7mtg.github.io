@@ -1,0 +1,26 @@
+@import "~theme/colors";
+
+.root {
+    height: 100%;
+    background: $white;
+    padding: 2rem;
+    color: $black;
+}
+
+.header {
+    border-bottom: solid $gray-300 1px;
+    padding-bottom: 15px;
+
+    h1 {
+        font-weight: 500;
+        font-size: 30px;
+        margin: 0 0 3px;
+    }
+
+    h3 {
+        margin: 0;
+        size: 1rem;
+        font-weight: 400;
+        color: $gray-500;
+    }
+}

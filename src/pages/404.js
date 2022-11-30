@@ -66,6 +66,7 @@ export const getStaticProps = async () => {
     return {
         props: {
             links
-        }
+        },
+        revalidate: 24 * 60 * 60 // one day
     }
 }

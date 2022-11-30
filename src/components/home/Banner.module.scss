@@ -33,8 +33,6 @@
     max-width: 70%;
     height: 38px;
 
-    filter: brightness(0);
-
     @include sm {
         position: inherit;
         width: 200px;

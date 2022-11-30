@@ -7,7 +7,7 @@ export const Banner = () => {
     return <div className={s.banner}>
 
         <div className={s.topbar}>
-            <Logo className={s.logo} />
+            <Logo className={s.logo} black />
             <div className={s.menu}>
                 <Link href="/portfolio" className={s.item}>Work</Link>
                 <Link href="/contact" className={s.item}>Contact</Link>
