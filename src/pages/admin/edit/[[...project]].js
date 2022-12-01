@@ -7,6 +7,7 @@ import * as yup from 'yup'
 import s from './edit.module.scss'
 import { Separator } from 'components/Separator'
 import { protect } from 'util/protect'
+import { useState } from 'react'
 
 const schema = yup.object({
     name: yup.string().required(),
@@ -34,7 +35,16 @@ function Edit({ project: initialValue }) {
         resolver: yupResolver(schema)
     });
 
-    return <form className={s.root} onSubmit={handleSubmit(value => setProject(value.slug, value))}>
+    const [publishing, setPublishing] = useState(false)
+    const [result, setResult] = useState()
+
+    const submitProject = async value => {
+        setPublishing(true)
+        setResult(await setProject(value.slug, value))
+        setPublishing(false)
+    }
+
+    return <form className={s.root} onSubmit={handleSubmit(submitProject)}>
         <div className={s.topBar}>
             <h1>{initialValue?.name ?? 'New Project'}</h1>
         </div>
@@ -82,6 +92,7 @@ function Edit({ project: initialValue }) {
         </div>
 
         <div className={s.bottomBar}>
+            <span>{publishing && 'Publishing...'}</span>
             <Button type='submit'>Publish</Button>
         </div>
     </form>

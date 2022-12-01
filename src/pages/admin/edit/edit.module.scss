@@ -69,10 +69,6 @@
     bottom: 0;
     height: 30px;
     border-top: solid $gray 1px;
-    padding: 1rem 0;
-    justify-content: flex-end;
-    
-    button {
-        margin-right: 75px;
-    }
+    padding: 1rem 75px;
+    justify-content: space-between;
 }

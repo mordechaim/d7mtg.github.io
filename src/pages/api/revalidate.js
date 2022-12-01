@@ -2,6 +2,8 @@ export default function handler(req, res) {
     if (req.method !== 'POST')
         return res.status(405).send()
 
+    console.log(typeof req.body);
+
     const { project } = req.body
 
     if (!project)
