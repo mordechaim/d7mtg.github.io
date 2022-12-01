@@ -7,7 +7,7 @@ import { getProjects } from 'util/firebase'
 import s from './index.module.scss'
 
 export default function Home({ projects }) {
-    return <div className={s.root}>
+    return <>
         <Banner />
         <div className={s.projectsContainer}>
             {projects.map(p => <HomeProject key={p.slug} {...p} />)}
@@ -21,7 +21,7 @@ export default function Home({ projects }) {
         </div>
 
         <Footer className={s.footer} />
-    </div>
+    </>
 }
 
 export const getStaticProps = async () => {

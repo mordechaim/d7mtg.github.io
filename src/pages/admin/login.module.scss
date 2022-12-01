@@ -8,6 +8,7 @@
     flex-direction: column;
     gap: 40px;
     align-items: center;
+    overflow-y: hidden;
 }
 
 .logo {
@@ -25,35 +26,11 @@
     border-radius: 15px;
     font-family: inherit;
 
-    input,
     button {
-        font-family: inherit;
-        border-radius: 5px;
-    }
-
-    input {
-        border: 2px solid rgba(127, 127, 127, 0.5);
-        line-height: 2em;
-        outline: none;
-        padding: 12px 20px;
-        font-size: 1em;
-        transition: 0.3s;
-        background: none;
-
-        &.error {
-            border-color: #ea573a;
-            
-            &::placeholder {
-                color: #ea573a;
-            }
-        }
-    }
-
-    button {
-        font-size: 1em;
         font-weight: 500;
         border: none;
         padding: 1em;
         margin-top: 15px;
+        border-radius: 5px;
     }
 }

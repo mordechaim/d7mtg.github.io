@@ -16,6 +16,7 @@
         "@fortawesome/pro-regular-svg-icons": "^6.2.1",
         "@fortawesome/pro-solid-svg-icons": "^6.2.1",
         "@fortawesome/react-fontawesome": "^0.2.0",
+        "@hookform/resolvers": "^2.9.10",
         "@next/font": "^13.0.5",
         "clsx": "^1.2.1",
         "firebase": "^9.14.0",
@@ -25,7 +26,9 @@
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-firebase-hooks": "^5.1.1",
-        "sass": "^1.56.1"
+        "react-hook-form": "^7.40.0",
+        "sass": "^1.56.1",
+        "yup": "^0.32.11"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.13",

@@ -6,6 +6,7 @@ import { Logo } from 'components/Logo'
 import s from './login.module.scss'
 import cx from 'clsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { TextField } from 'components/TextField'
 
 export default function Login(props) {
     const [email, setEmail] = useState('')
@@ -25,14 +26,15 @@ export default function Login(props) {
 
     const handleLogin = async e => {
         e.preventDefault()
-        signIn(email, password)
+        signIn(email.trim(), password)
     }
 
     return <div className={s.root}>
         <Logo className={s.logo} black />
         <form onSubmit={handleLogin} className={s.form}>
-            <input className={cx(error && s.error)} name='email' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} />
-            <input className={cx(error && s.error)} name='password' placeholder='Password' type='password' value={password} onChange={e => setPassword(e.target.value)} />
+            <TextField error={error} name='email' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} />
+            <TextField error={error} name='password' placeholder='Password' type='password' value={password} onChange={e => setPassword(e.target.value)} />
+            <span>{error?.message}</span>
             <button type='submit'>
                 <FontAwesomeIcon icon={['fal', 'sign-in']} />
                 &nbsp;&nbsp;Log In

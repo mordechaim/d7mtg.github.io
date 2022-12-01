@@ -11,6 +11,7 @@ export default function handler(req, res) {
         res.revalidate('/')
         res.revalidate('/portfolio')
         res.revalidate(process.env.NEXT_PUBLIC_PROJECT_URL_PREFIX + project)
+        res.revalidate('/admin/edit/' + project)
 
         res.status(200).json({ value: 'Revalidation success' })
     } catch {

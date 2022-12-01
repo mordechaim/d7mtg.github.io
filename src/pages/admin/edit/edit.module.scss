@@ -1,0 +1,78 @@
+@import "~theme/colors";
+
+.formContent {
+    height: 100%;
+    padding: 50px 75px;
+
+    h1 {
+        font-weight: 600;
+        font-size: 48px;
+        margin: 0 0 1rem;
+    }
+
+    h3 {
+        margin: 0;
+        size: 1rem;
+        font-weight: 500;
+        font-size: 30px;
+    }
+}
+
+.fields,
+.labels,
+.links {
+    margin: 2rem 0;
+    display: flex;
+    gap: 25px;
+    align-items: flex-end;
+}
+
+.labels,
+.links {
+    margin: 6px 0;
+}
+
+.areaContainer {
+    flex: 1 0 100%;
+    margin: 2rem 0 4rem;
+    height: 200px;
+    display: flex;
+
+    .area {
+        flex: 1 0 100%;
+        textarea {
+            resize: none;
+        }
+    }
+}
+
+.add {
+    margin-top: 0.5rem;
+}
+
+.topBar,
+.bottomBar {
+    position: sticky;
+    display: flex;
+    align-items: center;
+    border-bottom: solid $gray 1px;
+    background: #ffffff0a;
+    backdrop-filter: blur(15px);
+}
+
+.topBar {
+    top: 0;
+    justify-content: center;
+}
+
+.bottomBar {
+    bottom: 0;
+    height: 30px;
+    border-top: solid $gray 1px;
+    padding: 1rem 0;
+    justify-content: flex-end;
+    
+    button {
+        margin-right: 75px;
+    }
+}

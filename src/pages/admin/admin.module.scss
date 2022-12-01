@@ -2,9 +2,7 @@
 
 .root {
     height: 100%;
-    background: $white;
     padding: 2rem;
-    color: $black;
 }
 
 .header {
@@ -21,6 +19,6 @@
         margin: 0;
         size: 1rem;
         font-weight: 400;
-        color: $gray-500;
+        opacity: .5;
     }
 }

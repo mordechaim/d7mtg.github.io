@@ -50,7 +50,7 @@ export default function Project({ project }) {
                 </label>)}
             </div>
             <p >{projectDescription}</p>
-            {links.length && <div className={s.links}>
+            {links.length > 0 && <div className={s.links}>
                 {links.map(({ url, icon, variant = 'far', text }) => <a key={url} className={s.button} href={url}>
                     <FontAwesomeIcon icon={[variant, icon]} />
                     &nbsp;&nbsp;{text}
