@@ -2,7 +2,7 @@ import { Fraunces } from '@next/font/google'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { getProjects } from '../util/firebase'
 import s from './404.module.scss'
 
@@ -14,7 +14,8 @@ const fraunces = Fraunces({
 
 export default function NotFound({ links }) {
     const [typewriter, setTypewriter] = useState('\u00a0')
-    const router = useRouter()
+    const randomLink = useMemo(() => links[Math.floor(Math.random() * links.length)])
+
 
     useEffect(() => {
         const delay = setTimeout(() => {
@@ -34,11 +35,6 @@ export default function NotFound({ links }) {
         return () => clearTimeout(delay)
     }, [])
 
-    const handleRandomUrl = e => {
-        var i = Math.round(Math.random() * links.length)
-        router.push(links[i])
-    }
-
     return <div className={s.root}>
         <Head>
             <title>404 Not Found</title>
@@ -49,12 +45,11 @@ export default function NotFound({ links }) {
         <h2>{typewriter}</h2>
         <h1 className={fraunces.className}>Four, oh four.</h1>
         <p className={s.footer}>
-
             What are you looking for?
             <br /><br />
-            Home page? <a href="https://d7m.tg/">Sure thing.</a><br />
-            Random project from our portfolio? <span className={s.fakelink} onClick={handleRandomUrl}>Go right ahead</span><br />
-            A way to contact us? <Link href="/contact?ref=fourohfour">Look no further.</Link>
+            Home page? <Link href='/'>Sure thing.</Link><br />
+            Random project from our portfolio? <Link href={randomLink}>Go right ahead</Link><br />
+            A way to contact us? <a href='/contact?ref=fourohfour'>Look no further.</a>
         </p>
     </div>
 }
@@ -66,7 +61,6 @@ export const getStaticProps = async () => {
     return {
         props: {
             links
-        },
-        revalidate: 24 * 60 * 60 // one day
+        }
     }
 }
