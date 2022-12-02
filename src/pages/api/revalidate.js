@@ -1,8 +1,6 @@
-export default function handler(req, res) {
+export default async function handler(req, res) {
     if (req.method !== 'POST')
         return res.status(405).send()
-
-    console.log(typeof req.body);
 
     const { project } = req.body
 
@@ -10,10 +8,10 @@ export default function handler(req, res) {
         return res.status(400).json({ error: "Missing 'project' parameter" })
 
     try {
-        res.revalidate('/')
-        res.revalidate('/portfolio')
-        res.revalidate(process.env.NEXT_PUBLIC_PROJECT_URL_PREFIX + project)
-        res.revalidate('/admin/edit/' + project)
+        await res.revalidate('/')
+        await res.revalidate('/portfolio')
+        await res.revalidate(process.env.NEXT_PUBLIC_PROJECT_URL_PREFIX + project)
+        await res.revalidate('/admin/edit/' + project)
 
         res.status(200).json({ value: 'Revalidation success' })
     } catch {
