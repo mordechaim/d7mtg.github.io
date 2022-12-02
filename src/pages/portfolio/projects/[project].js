@@ -1,6 +1,6 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Logo } from 'components/Logo'
+import { Logo } from 'components'
 import LightGallery from 'lightgallery/react'
 import Head from 'next/head'
 import Link from 'next/link'

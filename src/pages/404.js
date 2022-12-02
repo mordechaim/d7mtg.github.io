@@ -1,9 +1,8 @@
 import { Fraunces } from '@next/font/google'
 import Head from 'next/head'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { useEffect, useMemo, useState } from 'react'
-import { getProjects } from '../util/firebase'
+import { getProjects } from 'util/firebase'
 import s from './404.module.scss'
 
 const fraunces = Fraunces({

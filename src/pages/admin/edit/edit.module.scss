@@ -53,6 +53,8 @@
 .topBar,
 .bottomBar {
     position: sticky;
+    left: 0;
+    right: 0;
     display: flex;
     align-items: center;
     border-bottom: solid $gray 1px;
@@ -70,5 +72,5 @@
     height: 30px;
     border-top: solid $gray 1px;
     padding: 1rem 75px;
-    justify-content: space-between;
+    justify-content: flex-end;
 }

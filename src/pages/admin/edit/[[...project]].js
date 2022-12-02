@@ -1,13 +1,11 @@
 import { yupResolver } from '@hookform/resolvers/yup'
-import { Button } from 'components/Button'
-import { TextField } from 'components/TextField'
+import { Button, Separator, TextField } from 'components'
+import { useState } from 'react'
 import { useFieldArray, useForm } from 'react-hook-form'
 import { getProject, getProjects, setProject } from 'util/firebase'
+import { protect } from 'util/protect'
 import * as yup from 'yup'
 import s from './edit.module.scss'
-import { Separator } from 'components/Separator'
-import { protect } from 'util/protect'
-import { useState } from 'react'
 
 const schema = yup.object({
     name: yup.string().required(),
@@ -92,8 +90,9 @@ function Edit({ project: initialValue }) {
         </div>
 
         <div className={s.bottomBar}>
-            <span>{publishing && 'Publishing...'}</span>
-            <Button type='submit'>Publish</Button>
+            <Button type='submit'>
+                Publish{publishing && 'ing...'}
+            </Button>
         </div>
     </form>
 }
@@ -118,7 +117,7 @@ const Labels = ({ control, register, errors }) => {
             variant: '',
             icon: ''
         })}>
-            Add
+            Add Deliverable
         </Button>
     </>
 }
@@ -145,7 +144,7 @@ const Links = ({ control, register, errors }) => {
             variant: '',
             icon: ''
         })}>
-            Add
+            Add External Link
         </Button>
     </>
 }

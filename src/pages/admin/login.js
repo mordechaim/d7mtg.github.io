@@ -1,12 +1,10 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Logo, TextField } from 'components'
 import { getAuth } from 'firebase/auth'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'
-import { Logo } from 'components/Logo'
 import s from './login.module.scss'
-import cx from 'clsx'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { TextField } from 'components/TextField'
 
 export default function Login(props) {
     const [email, setEmail] = useState('')
