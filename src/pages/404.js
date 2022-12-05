@@ -13,7 +13,7 @@ const fraunces = Fraunces({
 
 export default function NotFound({ links }) {
     const [typewriter, setTypewriter] = useState('\u00a0')
-    const randomLink = useMemo(() => links[Math.floor(Math.random() * links.length)])
+    const randomLink = useRef(links[Math.floor(Math.random() * links.length)])
 
 
     useEffect(() => {
@@ -47,7 +47,7 @@ export default function NotFound({ links }) {
             What are you looking for?
             <br /><br />
             Home page? <Link href='/'>Sure thing.</Link><br />
-            Random project from our portfolio? <Link href={randomLink}>Go right ahead</Link><br />
+            Random project from our portfolio? <Link href={randomLink.current}>Go right ahead</Link><br />
             A way to contact us? <a href='/contact?ref=fourohfour'>Look no further.</a>
         </p>
     </div>
