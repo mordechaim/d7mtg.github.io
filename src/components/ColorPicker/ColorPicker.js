@@ -23,12 +23,12 @@ export const ColorPicker = forwardRef(({ value, onChange, ...rest }, ref) => {
     }
 
     useEffect(() => {
-        const input = value.replaceAll(/[^A-Fa-f0-9]/g, '')
+        const input = value?.replaceAll(/[^A-Fa-f0-9]/g, '') ?? ''
         setTextValue('#' + input.substring(0, 6))
     }, [value])
 
     return <TextField ref={ref} onChange={handleTextInput} value={textValue?.substring(1)} {...rest}
         start={<span>#</span>}
-        end={<input className={s.picker} type='color' value={value ?? localValue} onInput={handleColorInput} />}
+        end={<input className={s.picker} type='color' value={(value ?? localValue) || '#000000'} onInput={handleColorInput} />}
     />
 })

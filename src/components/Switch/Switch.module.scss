@@ -1,0 +1,39 @@
+@import "~theme/colors";
+
+.switch {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 14px;
+
+    .toggle {
+        display: flex;
+        align-items: center;
+        padding: 2px;
+        width: 30px;
+        height: 15px;
+        border-radius: 15px;
+        background: $gray;
+        justify-content: flex-start;
+        transition: 0.25s;
+    }
+
+    .thumb {
+        height: 100%;
+        aspect-ratio: 1/1;
+        background: $white;
+        border-radius: 15px;
+        transition: 0.25s;
+    }
+
+    input[type="checkbox"] {
+        display: none;
+
+        &:checked + .toggle {
+            background: $primary-shade;
+            .thumb {
+                transform: translateX(100%);
+            }
+        }
+    }
+}

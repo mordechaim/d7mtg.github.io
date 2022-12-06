@@ -41,7 +41,7 @@ const schema = yup.object({
     })),
     images: yup.array().of(imageSchema()),
     logo: imageSchema().required(),
-    logoDark: imageSchema(),
+    logoDark: imageSchema().default(undefined),
     previewImage: imageSchema(),
     banner: imageSchema().required()
 
@@ -52,7 +52,7 @@ function Edit({ project: initialValue }) {
         defaultValues: initialValue,
         resolver: yupResolver(schema)
     });
-    const { register, handleSubmit, formState: { errors }, control } = form
+    const { register, handleSubmit, formState: { errors } } = form
 
     const [publishing, setPublishing] = useState(false)
 
@@ -73,9 +73,7 @@ function Edit({ project: initialValue }) {
             </div>
 
             <div className={s.formContent} >
-                <div className={s.fields}>
-                    <h3>Overview</h3>
-                </div>
+                <h3>Overview</h3>
 
                 <div className={s.fields}>
                     <TextField label='Project name' {...register('name')} error={errors.name} />
@@ -84,6 +82,15 @@ function Edit({ project: initialValue }) {
                 <div className={s.fields}>
                     <TextField label='Slug' {...register('slug')} error={errors.slug} readOnly={Boolean(initialValue)} disabled={Boolean(initialValue)} />
                     <ColorPickerController name='theme' label='Theme' />
+                </div>
+
+                <div className={s.fields}>
+                    <TextField label='Home Index' {...register('homeIndex')} error={errors?.homeIndex} />
+                    <Switch label='Show on home page' {...register('homeVisible')} />
+                </div>
+                <div className={s.fields}>
+                    <TextField label='Portfolio Index' {...register('portfolioIndex')} error={errors?.portfolioIndex} />
+                    <Switch label='Show on portfolio page' {...register('portfolioVisible')} />
                 </div>
 
                 <Labels />
@@ -96,7 +103,7 @@ function Edit({ project: initialValue }) {
                     <ImageController name='logo' label='Logo' />
                 </div>
                 <div className={s.fields}>
-                    <ImageController name='logoDark' label='Logo Dark mode' />
+                    <ImageController name='logoDark' label='Logo dark mode' />
                 </div>
                 <div className={s.fields}>
                     <ImageController name='previewImage' label='OG Preview' />
@@ -105,24 +112,7 @@ function Edit({ project: initialValue }) {
 
                 <Separator />
 
-                <div className={s.fields}>
-                    <h3>Project page</h3>
-                    <TextField label='Project Index' {...register('projectIndex')} />
-                </div>
-
-                <div className={s.areaContainer}>
-                    <TextField className={s.area} label='Project description' area  {...register('projectDescription')} error={errors.projectDescription} />
-                </div>
-
-                <Links />
-                <ProjectImages control={control} register={register} errors={errors} />
-
-                <Separator />
-
-                <div className={s.fields}>
-                    <h3>Home page</h3>
-                    <TextField label='Home Index' {...register('homeIndex')} />
-                </div>
+                <h3>Home page</h3>
 
                 <div className={s.areaContainer}>
                     <TextField className={s.area} label='Description' area  {...register('homeDescription')} error={errors.homeDescription} />
@@ -132,13 +122,25 @@ function Edit({ project: initialValue }) {
                     <ImageController name='banner' label='Banner Photo' />
                 </div>
 
+                <Separator />
+
+                <h3>Project page</h3>
+
+                <div className={s.areaContainer}>
+                    <TextField className={s.area} label='Project description' area  {...register('projectDescription')} error={errors.projectDescription} />
+                </div>
+
+                <Links />
+                <ProjectImages />
+
+
             </div>
         </form>
     </FormProvider>
 }
 
 const Labels = () => {
-    const { watch, control, register, formState: { errors } } = useFormContext()
+    const { control, register, formState: { errors } } = useFormContext()
     const { fields, append, remove } = useFieldArray({
         name: 'labels',
         control
@@ -147,7 +149,7 @@ const Labels = () => {
     return <>
         {fields.map((f, index) => <div key={f.id} className={index === 0 ? s.fields : s.labels}>
             <TextField label={index === 0 && 'Deliverable'} {...register(`labels.${index}.text`)} error={errors.labels?.[index]?.text} />
-            <IconField label={index === 0 && 'Icon'} register={register} errors={errors} name={`labels.${index}`} watch={watch} />
+            <IconField label={index === 0 && 'Icon'}  name={`labels.${index}`} />
             <RemoveButton onClick={e => remove(index)} />
         </div>)}
         <Button className={s.add} type='button' onClick={e => append({
@@ -162,7 +164,7 @@ const Labels = () => {
 
 
 const Links = () => {
-    const { watch, control, register, formState: { errors } } = useFormContext()
+    const { control, register, formState: { errors } } = useFormContext()
     const { fields, append, remove } = useFieldArray({
         name: 'links',
         control
@@ -172,7 +174,7 @@ const Links = () => {
         {fields.map((f, index) => <div key={f.id} className={index === 0 ? s.fields : s.links}>
             <TextField label={index === 0 && 'External URL'} {...register(`links.${index}.url`)} error={errors.links?.[index]?.url} />
             <TextField label={index === 0 && 'Text'} {...register(`links.${index}.text`)} error={errors.links?.[index]?.text} />
-            <IconField label={index === 0 && 'Icon'} register={register} errors={errors} name={`links.${index}`} watch={watch} />
+            <IconField label={index === 0 && 'Icon'} name={`links.${index}`}/>
             <RemoveButton onClick={e => remove(index)} />
         </div>)}
         <Button className={s.add} type='button' onClick={e => append({
@@ -211,7 +213,6 @@ const ProjectImages = () => {
                     <img src={f.url} href={f.url} height={75} alt={f.alt} />
                 </a>
             </div>
-            <input className={s.urlInput} {...register(`images.${index}.url`)} />
             <TextField className={s.full} label={index === 0 && 'Alt text'} {...register(`images.${index}.alt`)} error={errors.images?.[index]?.alt} />
             <RemoveButton onClick={e => remove(index)} />
         </div>)}
@@ -267,7 +268,6 @@ const ImageController = ({ name, ...rest }) => {
     }
 
     const value = watch(name)
-
 
     return <>
         <ImageUpload onUploadComplete={handleUploadImage} error={get(errors, name)} {...rest} />
