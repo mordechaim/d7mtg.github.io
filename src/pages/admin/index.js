@@ -1,6 +1,6 @@
-import { protect } from 'util/protect'
+import { protect } from 'utils/protect'
 import s from './admin.module.scss'
-import { getProjects } from 'util/firebase'
+import { getProjects } from 'utils/backend'
 
 function Admin({ projects }) {
     return <div className={s.root}>

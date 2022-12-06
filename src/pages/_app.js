@@ -49,6 +49,7 @@ export default MyApp
 
 const Meta = () => {
     return <Head>
+        <meta name="viewport" content="minimum-scale=1" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#333" />
         <meta name="theme-color" content="#ffd708" />
         <meta name="msapplication-TileColor" content="#ffd708" />

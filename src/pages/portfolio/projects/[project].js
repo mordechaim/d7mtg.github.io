@@ -4,7 +4,7 @@ import { Logo } from 'components'
 import LightGallery from 'lightgallery/react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { getProject, getProjects } from 'util/firebase'
+import { getProject, getProjects } from 'utils/backend'
 import s from './project.module.scss'
 
 export default function Project({ project }) {

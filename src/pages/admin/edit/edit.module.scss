@@ -1,14 +1,43 @@
 @import "~theme/colors";
+@import "~theme/screens";
+
+.topBar {
+    position: sticky;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid $gray 1px;
+    background: #ffffff0a;
+    backdrop-filter: blur(15px);
+    padding: 0.5rem 1rem;
+
+    h1 {
+        font-weight: 600;
+        font-size: 40px;
+        margin: auto;
+
+        @include md {
+            margin: 0;
+            font-size: 26px;
+        }
+    }
+
+    @include md {
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    button[type="submit"] {
+        width: 100px;
+    }
+}
 
 .formContent {
     height: 100%;
     padding: 50px 75px;
-
-    h1 {
-        font-weight: 600;
-        font-size: 48px;
-        margin: 0 0 1rem;
-    }
 
     h3 {
         margin: 0;
@@ -18,9 +47,14 @@
     }
 }
 
+.full {
+    flex-basis: 100%;
+}
+
 .fields,
 .labels,
-.links {
+.links,
+.images {
     margin: 2rem 0;
     display: flex;
     gap: 25px;
@@ -30,6 +64,17 @@
 .labels,
 .links {
     margin: 6px 0;
+}
+
+.thumbnail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+}
+
+.urlInput {
+    display: none;
 }
 
 .areaContainer {
@@ -46,31 +91,14 @@
     }
 }
 
+.upload {
+    margin: 2rem 0;
+}
+
+.iconVariant {
+    flex-basis: 100px;
+}
+
 .add {
     margin-top: 0.5rem;
-}
-
-.topBar,
-.bottomBar {
-    position: sticky;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    border-bottom: solid $gray 1px;
-    background: #ffffff0a;
-    backdrop-filter: blur(15px);
-}
-
-.topBar {
-    top: 0;
-    justify-content: center;
-}
-
-.bottomBar {
-    bottom: 0;
-    height: 30px;
-    border-top: solid $gray 1px;
-    padding: 1rem 75px;
-    justify-content: flex-end;
 }

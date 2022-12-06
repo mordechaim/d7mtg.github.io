@@ -1,11 +1,20 @@
 import { yupResolver } from '@hookform/resolvers/yup'
-import { Button, Separator, TextField } from 'components'
+import { Button, ImageUpload, Separator, TextField } from 'components'
 import { useState } from 'react'
 import { useFieldArray, useForm } from 'react-hook-form'
-import { getProject, getProjects, setProject } from 'util/firebase'
-import { protect } from 'util/protect'
+import { getProject, getProjects, setProject } from 'utils/backend'
+import { protect } from 'utils/protect'
 import * as yup from 'yup'
 import s from './edit.module.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+const imageSchema = () => yup.object({
+    url: yup.string().url().required(),
+    alt: yup.string().required(),
+    width: yup.number().required(),
+    height: yup.number().required(),
+    id: yup.string().uuid().required()
+})
 
 const schema = yup.object({
     name: yup.string().required(),
@@ -24,7 +33,11 @@ const schema = yup.object({
         text: yup.string().required(),
         variant: yup.string().matches(/fa[rbsl]/).required(),
         icon: yup.string().required()
-    }))
+    })),
+    images: yup.array().of(imageSchema()),
+    // logo: imageSchema().required(),
+    // logoDark: imageSchema(),
+    // banner: imageSchema().required()
 })
 
 function Edit({ project: initialValue }) {
@@ -34,17 +47,20 @@ function Edit({ project: initialValue }) {
     });
 
     const [publishing, setPublishing] = useState(false)
-    const [result, setResult] = useState()
 
     const submitProject = async value => {
         setPublishing(true)
-        setResult(await setProject(value.slug, value))
+        await setProject(value.slug, value)
         setPublishing(false)
     }
 
     return <form className={s.root} onSubmit={handleSubmit(submitProject)}>
         <div className={s.topBar}>
             <h1>{initialValue?.name ?? 'New Project'}</h1>
+
+            <Button type='submit'>
+                Publish{publishing && 'ing...'}
+            </Button>
         </div>
 
         <div className={s.formContent} >
@@ -64,7 +80,6 @@ function Edit({ project: initialValue }) {
                 <TextField className={s.area} label='Meta description' area  {...register('metaDescription')} error={errors.theme} />
             </div>
 
-            <Separator />
 
             {/* 
             <div className={s.fields}>
@@ -73,6 +88,8 @@ function Edit({ project: initialValue }) {
             </div>
             */}
 
+            <Separator />
+
             <h3>Project page</h3>
 
             <div className={s.areaContainer}>
@@ -80,6 +97,7 @@ function Edit({ project: initialValue }) {
             </div>
 
             <Links control={control} register={register} errors={errors} />
+            <ProjectImages control={control} register={register} errors={errors} />
 
             <Separator />
 
@@ -87,12 +105,6 @@ function Edit({ project: initialValue }) {
             <div className={s.areaContainer}>
                 <TextField className={s.area} label='Description' area  {...register('homeDescription')} error={errors.homeDescription} />
             </div>
-        </div>
-
-        <div className={s.bottomBar}>
-            <Button type='submit'>
-                Publish{publishing && 'ing...'}
-            </Button>
         </div>
     </form>
 }
@@ -106,11 +118,9 @@ const Labels = ({ control, register, errors }) => {
     return <>
         {fields.map((f, index) => <div key={f.id} className={s.labels}>
             <TextField label={index === 0 && 'Deliverable'} {...register(`labels.${index}.text`)} error={errors.labels?.[index]?.text} />
-            <TextField label={index === 0 && 'Icon Variant'} {...register(`labels.${index}.variant`)} error={errors.labels?.[index]?.variant} />
+            <TextField className={s.iconVariant} label={index === 0 && 'Icon Variant'} {...register(`labels.${index}.variant`)} error={errors.labels?.[index]?.variant} />
             <TextField label={index === 0 && 'Icon'} {...register(`labels.${index}.icon`)} error={errors.labels?.[index]?.icon} />
-            <Button className={s.remove} type='button' onClick={e => remove(index)}>
-                Remove
-            </Button>
+            <RemoveButton onClick={e => remove(index)} />
         </div>)}
         <Button className={s.add} type='button' onClick={e => append({
             text: '',
@@ -124,7 +134,7 @@ const Labels = ({ control, register, errors }) => {
 
 
 const Links = ({ control, register, errors }) => {
-    const { fields, update, append, remove } = useFieldArray({
+    const { fields, append, remove } = useFieldArray({
         name: 'links',
         control
     })
@@ -133,11 +143,9 @@ const Links = ({ control, register, errors }) => {
         {fields.map((f, index) => <div key={f.id} className={s.links}>
             <TextField label={index === 0 && 'External URL'} {...register(`links.${index}.url`)} error={errors.links?.[index]?.url} />
             <TextField label={index === 0 && 'Text'} {...register(`links.${index}.text`)} error={errors.links?.[index]?.text} />
-            <TextField label={index === 0 && 'Icon Variant'} {...register(`links.${index}.variant`)} error={errors.links?.[index]?.variant} />
+            <TextField className={s.iconVariant} label={index === 0 && 'Icon Variant'} {...register(`links.${index}.variant`)} error={errors.links?.[index]?.variant} />
             <TextField label={index === 0 && 'Icon'} {...register(`links.${index}.icon`)} error={errors.links?.[index]?.icon} />
-            <Button className={s.remove} type='button' onClick={e => remove(index)}>
-                Remove
-            </Button>
+            <RemoveButton onClick={e => remove(index)} />
         </div>)}
         <Button className={s.add} type='button' onClick={e => append({
             url: '',
@@ -147,6 +155,44 @@ const Links = ({ control, register, errors }) => {
             Add External Link
         </Button>
     </>
+}
+
+const ProjectImages = ({ control, register, errors }) => {
+    const { fields, append, remove } = useFieldArray({
+        name: 'images',
+        control
+    })
+
+    const handleUploadImage = result => {
+        append({
+            url: result.url,
+            name: result.name,
+            id: result.id,
+            width: result.width,
+            height: result.height,
+            alt: result.name,
+        })
+    }
+
+    return <>
+        <ImageUpload className={s.upload} onUploadComplete={handleUploadImage} />
+        {fields.map((f, index) => <div key={f.id} className={s.images}>
+            <div className={s.thumbnail}>
+                <a href={f.url} target='_blank'>
+                    <img src={f.url} href={f.url} height={75} alt={f.alt} />
+                </a>
+            </div>
+            <input className={s.urlInput} {...register(`images.${index}.url`)} />
+            <TextField className={s.full} label={index === 0 && 'Alt text'} {...register(`images.${index}.alt`)} error={errors.images?.[index]?.alt} />
+            <RemoveButton onClick={e => remove(index)} />
+        </div>)}
+    </>
+}
+
+const RemoveButton = props => {
+    return <Button className={s.remove} type='button' variant='secondary' {...props}>
+        <FontAwesomeIcon icon={['fal', 'trash']} />
+    </Button>
 }
 
 export default protect(Edit)

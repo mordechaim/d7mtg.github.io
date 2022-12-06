@@ -1,13 +1,11 @@
-@import '~theme/colors';
+@import "~theme/colors";
 
 .button {
-    background: $primary-shade;
-    color: $white;
     border-radius: 8px;
     padding: 9px 20px;
-    transition: border-color 0.3s, box-shadow 0.5s, color .3s;
+    transition: border-color 0.3s, box-shadow 0.5s, color 0.3s;
     border: none;
-    
+
     &:focus {
         outline: none;
         border-color: $primary;
@@ -17,4 +15,9 @@
         outline: none;
         box-shadow: 0 0 15px $primary;
     }
+}
+
+.primary {
+    background: $primary-shade;
+    color: $white;
 }

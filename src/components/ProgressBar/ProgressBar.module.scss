@@ -1,0 +1,15 @@
+@import "~theme/colors";
+
+.progress {
+    background: $gray;
+    display: flex;
+    height: 6px;
+    width: 100%;
+    border-radius: 6px;
+}
+
+.bar {
+    background: $primary-shade;
+    height: 100%;
+    border-radius: 6px;
+}
