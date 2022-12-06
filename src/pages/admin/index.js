@@ -13,7 +13,7 @@ function Admin({ projects }) {
 
 export default protect(Admin)
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
     return {
         props: {
             projects: await getProjects()

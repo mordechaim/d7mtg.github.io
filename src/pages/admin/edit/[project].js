@@ -9,25 +9,18 @@ function Edit({ project }) {
 
 export default protect(Edit)
 
-export const getStaticPaths = async () => {
-    const projects = await getProjects()
-
-    return {
-        paths: projects.map(p => ({
-            params: {
-                project: p.slug
-            }
-        })),
-        fallback: false
-    }
-}
-
-export const getStaticProps = async ({ params }) => {
+export const getServerSideProps = async ({ params }) => {
     const { project } = params
-    
+    const result = await getProject(project)
+
+    if (!result)
+        return {
+            notFound: true
+        }
+
     return {
         props: {
-            project: await getProject(project)
+            project: result
         }
     }
 }

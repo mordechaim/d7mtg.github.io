@@ -11,8 +11,6 @@ export default async function handler(req, res) {
         await res.revalidate('/')
         await res.revalidate('/portfolio')
         await res.revalidate(process.env.NEXT_PUBLIC_PROJECT_URL_PREFIX + project)
-        await res.revalidate('/admin')
-        await res.revalidate('/admin/edit/' + project)
         await res.revalidate('/404')
 
         res.status(200).json({ value: 'Revalidation success' })

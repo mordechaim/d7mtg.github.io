@@ -79,16 +79,22 @@ export const getStaticPaths = async () => {
                 project: p.slug
             }
         })),
-        fallback: false
+        fallback: 'blocking'
     }
 }
 
 export const getStaticProps = async ({ params }) => {
     const { project } = params
+    const result = await getProject(project)
+
+    if (!result)
+        return {
+            notFound: true
+        }
 
     return {
         props: {
-            project: await getProject(project)
+            project: result
         }
     }
 }

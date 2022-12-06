@@ -25,7 +25,7 @@ export const setProject = async (slug, data) => {
     const db = getFirestore()
     const project = doc(db, 'projects', slug)
     await setDoc(project, data)
-    return await refreshProject(slug)
+    refreshProject(slug)
 }
 
 export const refreshProject = async slug => {
