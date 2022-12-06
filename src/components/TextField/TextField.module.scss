@@ -18,16 +18,6 @@
         transition: color 0.3s;
     }
 
-    input,
-    textarea {
-        outline: none;
-        border: none;
-        border-radius: 8px;
-        padding: 8px 12px;
-        font-family: inherit;
-        width: 100%;
-    }
-
     .container {
         background: $white;
         border: 1px solid #d0d5dd;
@@ -35,12 +25,32 @@
         border-radius: 8px;
         transition: border-color 0.3s, box-shadow 0.3s, color 0.3s;
         width: 100%;
+        min-height: 25px;
         flex: 1 0 100%;
         display: flex;
+
+        & > input,
+        & > textarea {
+            outline: none;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-family: inherit;
+            width: 100%;
+        }
 
         &:focus-within {
             border-color: $primary;
             box-shadow: 0 0 5px $primary;
+        }
+
+        &:has(.start) > input {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        &:has(.end) > input {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
         }
     }
 
@@ -60,4 +70,28 @@
             opacity: 1;
         }
     }
+}
+
+.start,
+.end {
+    display: flex;
+
+    span {
+        display: flex;
+        align-items: center;
+        padding: 0 0.5rem;
+        font-size: 13px;
+    }
+}
+
+.start span {
+    border-right: solid $gray-300 1px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.end span {
+    border-left: solid $gray-300 1px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }

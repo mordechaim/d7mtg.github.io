@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 import { uploadImage } from 'utils/backend'
 import s from './ImageUpload.module.scss'
 
-export const ImageUpload = ({ className, active, error, onUploadComplete, children }) => {
+export const ImageUpload = ({ className, label, active, error, onUploadComplete, children, multiple }) => {
     const chooser = useRef()
     const [files, setFiles] = useState([])
     const [uploading, setUploading] = useState(false)
@@ -72,14 +72,21 @@ export const ImageUpload = ({ className, active, error, onUploadComplete, childr
         e.target.value = ''
     }
 
-    return <div className={cx(s.chooser, active && s.active, error && s.error, className)}
-        onClick={handleChooseFile}
-        onDragOver={handleDragOver}
-        onDrop={handleDrop}>
-        <input ref={chooser} onChange={handleSelectFile} type='file' accept='image/*' multiple='multiple' />
-        <UploadCloud className={s.cloud} />
-        <span><span className={s.coloredText}>Click to upload</span> or drag and drop</span>
-        {progress > 0 && <ProgressBar progress={progress} />}
-        {children}
+    return <div className={cx(s.root, className)}>
+        {label && <label>{label}</label>}
+        <div className={cx(s.chooser, active && s.active, error && s.error)}>
+            <div
+                className={s.dropzone}
+                onClick={handleChooseFile}
+                onDragOver={handleDragOver}
+                onDrop={handleDrop}>
+
+                <input ref={chooser} onChange={handleSelectFile} type='file' accept='image/*' multiple={multiple ? 'multiple' : ''} />
+                <UploadCloud className={s.cloud} />
+                <span className={s.text}><span className={s.coloredText}>Click to upload</span> or drag and drop</span>
+                {progress > 0 && <ProgressBar progress={progress} />}
+            </div>
+            {children}
+        </div>
     </div>
 }

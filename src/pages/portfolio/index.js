@@ -40,14 +40,15 @@ const Header = () => {
 export const ProjectBlock = props => {
     const {
         slug,
-        logo
+        logo,
+        logoDark
     } = props
 
     return <Link href={process.env.NEXT_PUBLIC_PROJECT_URL_PREFIX + slug}>
         <div className={p.root}>
             <div className={p.imageContainer}>
                 <picture>
-                    {logo?.dark && <source srcSet={logo.dark} media="(prefers-color-scheme: dark)" />}
+                    {logoDark && <source srcSet={logoDark.url} media="(prefers-color-scheme: dark)" />}
                     <img className={p.image} src={logo?.url} alt={logo?.alt} />
                 </picture>
             </div>
@@ -57,7 +58,7 @@ export const ProjectBlock = props => {
 
 export const getStaticProps = async () => {
     let projects = await getProjects()
-    projects = projects.filter(p => p.portfolioIndex >= 0)
+    projects = projects.filter(p => p.portfolioVisible)
     projects.sort((a, b) => a.portfolioIndex - b.portfolioIndex)
 
     return {

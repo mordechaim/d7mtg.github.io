@@ -1,0 +1,36 @@
+.picker {
+    appearance: none;
+    background: none;
+    cursor: pointer;
+    height: 100%;
+    width: 40px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+
+    &:focus {
+        border-radius: 0;
+        outline: none;
+    }
+
+    &::-webkit-color-swatch-wrapper {
+        padding: 0;
+    }
+
+    &::-webkit-color-swatch {
+        border: none;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    &::-moz-color-swatch,
+    &::-moz-focus-inner {
+        border: 0;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    &::-moz-focus-inner {
+        padding: 0;
+    }
+}

@@ -25,7 +25,7 @@ export default function Project({ project }) {
             <meta content={`D7mtg | ${name}`} property="og:title" />
             <meta content={metaDescription} property="og:description" />
             <meta name="description" content={metaDescription} />
-            <meta content={previewImage} property="og:image" />
+            <meta content={previewImage?.url} property="og:image" />
         </Head>
 
         <div className={s.logoContainer} >

@@ -86,7 +86,7 @@ const HomeProject = props => {
         </Head>
 
         <div ref={ref} className={p.project} style={{
-            backgroundImage: `linear-gradient(161deg, ${theme}, #00000000), url(${banner})`,
+            backgroundImage: `linear-gradient(161deg, ${theme}, #00000000), url(${banner?.url})`,
             backgroundColor: theme
         }}>
 
@@ -95,7 +95,7 @@ const HomeProject = props => {
                 <h3>{name}</h3>
                 <h4>{subtitle}</h4>
                 <div className={p.labelContainer}>
-                    {labels?.map(({ text, icon, variant = 'fal' }) => <label key={text}>
+                    {labels?.map(({ text, icon, variant }) => <label key={text}>
                         <FontAwesomeIcon icon={[variant, icon]} />&nbsp;{text}
                     </label>)}
                 </div>
@@ -112,7 +112,7 @@ const HomeProject = props => {
 
 export const getStaticProps = async () => {
     let projects = await getProjects()
-    projects = projects.filter(p => p.homeIndex >= 0)
+    projects = projects.filter(p => p.homeVisible)
     projects.sort((a, b) => a.homeIndex - b.homeIndex)
 
     return {

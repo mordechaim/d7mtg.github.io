@@ -38,9 +38,10 @@
 .formContent {
     height: 100%;
     padding: 50px 75px;
+    font-size: 14px;
 
     h3 {
-        margin: 0;
+        margin: 0 auto 0 0 ;
         size: 1rem;
         font-weight: 500;
         font-size: 30px;
@@ -54,11 +55,16 @@
 .fields,
 .labels,
 .links,
-.images {
-    margin: 2rem 0;
+.attachment {
+    margin-top: 2rem;
     display: flex;
-    gap: 25px;
+    gap: 15px;
     align-items: flex-end;
+    flex: 1;
+}
+
+.fields {
+    flex-wrap: wrap;
 }
 
 .labels,
@@ -71,6 +77,11 @@
     align-items: center;
     justify-content: center;
     width: 100px;
+    height: 75px;
+
+    img {
+        max-width: 100px;
+    }
 }
 
 .urlInput {
@@ -91,14 +102,29 @@
     }
 }
 
-.upload {
-    margin: 2rem 0;
+.variant {
+    outline: none;
+    border: none;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    font-family: inherit;
+    padding: 0 0.75rem;
+    border-right: solid $gray-300 1px;
 }
 
-.iconVariant {
-    flex-basis: 100px;
+.faIcon {
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: solid $gray-300 1px;
 }
 
 .add {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+}
+
+.upload {
+    margin-top: 2rem;
+    width: 100%;
 }
