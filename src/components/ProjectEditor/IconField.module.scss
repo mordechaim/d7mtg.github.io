@@ -1,0 +1,19 @@
+@import "~theme/colors";
+
+.variant {
+    outline: none;
+    border: none;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    font-family: inherit;
+    padding: 0 0.75rem;
+    border-right: solid $gray-300 1px;
+}
+
+.faIcon {
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: solid $gray-300 1px;
+}

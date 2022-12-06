@@ -1,59 +1,28 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { Button, ColorPicker, ImageUpload, Separator, Switch, TextField } from 'components'
+import { Button, ColorPicker, ImageUpload, Separator, TextField } from 'components'
+import { IconField } from 'components/ProjectEditor/IconField'
+import { schema } from 'components/ProjectEditor/schema'
 import { useState } from 'react'
-import { Controller, useFieldArray, useForm, get, FormProvider, useFormContext } from 'react-hook-form'
-import { getProject, getProjects, setProject } from 'utils/backend'
-import { protect } from 'utils/protect'
-import * as yup from 'yup'
-import s from './edit.module.scss'
+import { Controller, FormProvider, get, useFieldArray, useForm, useFormContext } from 'react-hook-form'
+import { setProject } from 'utils/backend'
+import s from './ProjectEditor.module.scss'
 
-const imageSchema = () => yup.object({
-    url: yup.string().url().required(),
-    alt: yup.string().required(),
-    width: yup.number().required(),
-    height: yup.number().required(),
-    id: yup.string().uuid().required()
-})
+const defaultValue = {
+    homeVisible: true,
+    portfolioVisible: true,
+    homeIndex: 0,
+    portfolioIndex: 0
+}
 
-const schema = yup.object({
-    name: yup.string().required(),
-    subtitle: yup.string().required(),
-    labels: yup.array().of(yup.object({
-        text: yup.string().required(),
-        variant: yup.string().matches(/fa[rbsl]/).required(),
-        icon: yup.string().required()
-    })),
-    slug: yup.string().matches(/[a-z0-9\-]+/).required(),
-    theme: yup.string().matches(/#[A-Fa-f0-9]{6}/).required(),
-    metaDescription: yup.string().required(),
-    projectDescription: yup.string().required(),
-    homeDescription: yup.string().required(),
-    homeVisible: yup.boolean().required(),
-    portfolioVisible: yup.boolean().required(),
-    homeIndex: yup.number().required(),
-    portfolioIndex: yup.number().required(),
-    links: yup.array().of(yup.object({
-        url: yup.string().url().required(),
-        text: yup.string().required(),
-        variant: yup.string().matches(/fa[rbsl]/).required(),
-        icon: yup.string().required()
-    })),
-    images: yup.array().of(imageSchema()),
-    logo: imageSchema().required(),
-    logoDark: imageSchema().default(undefined),
-    previewImage: imageSchema(),
-    banner: imageSchema().required()
 
-})
-
-function Edit({ project: initialValue }) {
+export const ProjectEditor = ({ project }) => {
     const form = useForm({
-        defaultValues: initialValue,
+        defaultValues: project ?? defaultValue,
         resolver: yupResolver(schema)
     });
-    const { register, handleSubmit, formState: { errors } } = form
 
+    const { register, handleSubmit, formState: { errors } } = form
     const [publishing, setPublishing] = useState(false)
 
     const submitProject = async value => {
@@ -65,7 +34,7 @@ function Edit({ project: initialValue }) {
     return <FormProvider {...form}>
         <form className={s.root} onSubmit={handleSubmit(submitProject)}>
             <div className={s.topBar}>
-                <h1>{initialValue?.name ?? 'New Project'}</h1>
+                <h1>{project?.name ?? 'New Project'}</h1>
 
                 <Button type='submit'>
                     Publish{publishing && 'ing...'}
@@ -78,19 +47,8 @@ function Edit({ project: initialValue }) {
                 <div className={s.fields}>
                     <TextField label='Project name' {...register('name')} error={errors.name} />
                     <TextField label='Subtitle' {...register('subtitle')} error={errors.subtitle} />
-                </div>
-                <div className={s.fields}>
-                    <TextField label='Slug' {...register('slug')} error={errors.slug} readOnly={Boolean(initialValue)} disabled={Boolean(initialValue)} />
+                    <TextField label='Slug' {...register('slug')} error={errors.slug} readOnly={Boolean(project)} disabled={Boolean(project)} />
                     <ColorPickerController name='theme' label='Theme' />
-                </div>
-
-                <div className={s.fields}>
-                    <TextField label='Home Index' {...register('homeIndex')} error={errors?.homeIndex} />
-                    <Switch label='Show on home page' {...register('homeVisible')} />
-                </div>
-                <div className={s.fields}>
-                    <TextField label='Portfolio Index' {...register('portfolioIndex')} error={errors?.portfolioIndex} />
-                    <Switch label='Show on portfolio page' {...register('portfolioVisible')} />
                 </div>
 
                 <Labels />
@@ -149,12 +107,12 @@ const Labels = () => {
     return <>
         {fields.map((f, index) => <div key={f.id} className={index === 0 ? s.fields : s.labels}>
             <TextField label={index === 0 && 'Deliverable'} {...register(`labels.${index}.text`)} error={errors.labels?.[index]?.text} />
-            <IconField label={index === 0 && 'Icon'}  name={`labels.${index}`} />
+            <IconField label={index === 0 && 'Icon'} name={`labels.${index}`} />
             <RemoveButton onClick={e => remove(index)} />
         </div>)}
         <Button className={s.add} type='button' onClick={e => append({
             text: '',
-            variant: '',
+            variant: 'fal',
             icon: ''
         })}>
             Add Deliverable
@@ -174,12 +132,12 @@ const Links = () => {
         {fields.map((f, index) => <div key={f.id} className={index === 0 ? s.fields : s.links}>
             <TextField label={index === 0 && 'External URL'} {...register(`links.${index}.url`)} error={errors.links?.[index]?.url} />
             <TextField label={index === 0 && 'Text'} {...register(`links.${index}.text`)} error={errors.links?.[index]?.text} />
-            <IconField label={index === 0 && 'Icon'} name={`links.${index}`}/>
+            <IconField label={index === 0 && 'Icon'} name={`links.${index}`} />
             <RemoveButton onClick={e => remove(index)} />
         </div>)}
         <Button className={s.add} type='button' onClick={e => append({
             url: '',
-            variant: '',
+            variant: 'fal',
             icon: ''
         })}>
             Add External Link
@@ -217,27 +175,6 @@ const ProjectImages = () => {
             <RemoveButton onClick={e => remove(index)} />
         </div>)}
     </>
-}
-
-const IconField = ({ name, ...rest }) => {
-    const { watch, register, formState: { errors } } = useFormContext()
-    const value = watch(name)
-
-    return <TextField {...register(name + '.icon')} error={get(errors, name)}
-        start={
-            <select className={s.variant} {...register(name + '.variant')}>
-                <option value='far' label='Regular' />
-                <option value='fal' label='Light' />
-                <option value='fas' label='Solid' />
-                <option value='fab' label='Brand' />
-            </select>
-        }
-        end={
-            <div className={s.faIcon}>
-                <FontAwesomeIcon icon={[value.variant, value.icon]} />
-            </div>
-        }
-        {...rest} />
 }
 
 const RemoveButton = props => {
@@ -280,39 +217,4 @@ const ImageController = ({ name, ...rest }) => {
             <TextField className={s.full} label='Alt text' {...register(`${name}.alt`)} error={get(errors, name + '.alt')} />
         </div>}
     </>
-}
-
-export default protect(Edit)
-
-
-export const getStaticPaths = async () => {
-    const projects = await getProjects()
-
-    return {
-        paths: [
-            {
-                params: { project: [] }
-            },
-            ...projects.map(p => ({
-                params: {
-                    project: [p.slug]
-                }
-            }))
-        ],
-        fallback: false
-    }
-}
-
-export const getStaticProps = async ({ params }) => {
-    const { project: array } = params
-    let project = null
-
-    if (array)
-        project = await getProject(array[0])
-
-    return {
-        props: {
-            project
-        }
-    }
 }
