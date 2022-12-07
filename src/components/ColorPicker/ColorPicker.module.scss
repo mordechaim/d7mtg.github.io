@@ -21,6 +21,8 @@
         border: none;
         border-top-right-radius: 8px;
         border-bottom-right-radius: 8px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
     }
 
     &::-moz-color-swatch,
@@ -28,6 +30,8 @@
         border: 0;
         border-top-right-radius: 8px;
         border-bottom-right-radius: 8px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
     }
 
     &::-moz-focus-inner {
