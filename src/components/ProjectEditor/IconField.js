@@ -11,10 +11,10 @@ export const IconField = ({ name, className, ...rest }) => {
     return <TextField {...register(name + '.icon')} error={get(errors, name)}
         start={
             <select className={cx(s.variant, className)} {...register(name + '.variant',)}>
-                <option value='far' label='Regular' />
-                <option value='fal' label='Light' />
-                <option value='fas' label='Solid' />
-                <option value='fab' label='Brand' />
+                <option value='far'>Regular</option>
+                <option value='fal'>Light</option>
+                <option value='fas'>Solid</option>
+                <option value='fab'>Brand</option>
             </select>
         }
         end={<div className={s.faIcon}>
