@@ -22,7 +22,7 @@ export const ProjectEditor = ({ project }) => {
         resolver: yupResolver(schema)
     });
 
-    const { register, handleSubmit, formState: { errors } } = form
+    const { register, handleSubmit, formState: { errors, isDirty } } = form
     const [publishing, setPublishing] = useState(false)
 
     const submitProject = async value => {
@@ -36,7 +36,7 @@ export const ProjectEditor = ({ project }) => {
             <div className={s.topBar}>
                 <h1>{project?.name ?? 'New Project'}</h1>
 
-                <Button type='submit'>
+                <Button type='submit' disabled={!isDirty}>
                     Publish{publishing && 'ing...'}
                 </Button>
             </div>

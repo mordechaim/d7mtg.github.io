@@ -11,13 +11,13 @@
         border-color: $primary;
         box-shadow: 0 0 5px $primary;
     }
-    &:active {
+    &:active:enabled {
         outline: none;
         box-shadow: 0 0 15px $primary;
     }
 }
 
-.primary {
+.primary:enabled {
     background: $primary-shade;
     color: $white;
 }
