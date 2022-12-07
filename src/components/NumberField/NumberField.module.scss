@@ -1,0 +1,28 @@
+.root {
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        appearance: none;
+        margin: 0;
+    }
+
+    input[type="number"] {
+        appearance: textfield;
+        text-align: center;
+    }
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    border: none;
+    &.up {
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+    &.down {
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+}

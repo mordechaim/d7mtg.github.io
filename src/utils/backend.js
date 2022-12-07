@@ -1,4 +1,4 @@
-import { collection, doc, getDoc, getDocs, getFirestore, setDoc } from 'firebase/firestore'
+import { collection, deleteDoc, doc, getDoc, getDocs, getFirestore, setDoc } from 'firebase/firestore'
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage'
 import { v4 as uuidv4 } from 'uuid'
 import { createDeferredPromise } from './promises'
@@ -25,21 +25,29 @@ export const setProject = async (slug, data) => {
     const db = getFirestore()
     const project = doc(db, 'projects', slug)
     await setDoc(project, data)
-    refreshProject(slug)
+    revalidate({ project: slug })
 }
 
-export const refreshProject = async slug => {
-    const result = await fetch('/api/revalidate', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            project: slug
-        })
-    })
+export const deleteProject = async slug => {
+    const db = getFirestore()
+    const project = doc(db, 'projects', slug)
+    await deleteDoc(project)
+    revalidate({ project: slug })
+}
 
-    return await result.json()
+export const getProjectOrder = async () => {
+    const db = getFirestore()
+    const order = doc(db, 'order', '0')
+
+    return (await getDoc(order)).data()
+}
+
+export const setProjectOrder = async data => {
+    const db = getFirestore()
+    const order = doc(db, 'order', '0')
+
+    await setDoc(order, data, { merge: true })
+    revalidate({ home: true, portfolio: true })
 }
 
 export const uploadImage = async (file, progress = () => { }) => {
@@ -82,4 +90,16 @@ export const uploadImage = async (file, progress = () => { }) => {
         width: result.width,
         height: result.height
     }
+}
+
+export const revalidate = async data => {
+    const result = await fetch('/api/revalidate', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+
+    return await result.json()
 }

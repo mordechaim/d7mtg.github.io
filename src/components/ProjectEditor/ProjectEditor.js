@@ -41,9 +41,9 @@ export const ProjectEditor = ({ project }) => {
             <div className={s.topBar}>
                 <h1>{project?.name ?? 'New Project'}</h1>
 
-                <Button type='submit' disabled={!isDirty}>
+                {isDirty && <Button type='submit'>
                     Publish{publishing && 'ing...'}
-                </Button>
+                </Button>}
             </div>
 
             <Section>
@@ -94,7 +94,6 @@ export const ProjectEditor = ({ project }) => {
 
 
             </Section>
-
         </form>
     </FormProvider>
 }

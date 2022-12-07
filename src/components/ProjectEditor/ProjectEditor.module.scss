@@ -7,17 +7,17 @@
     right: 0;
     top: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     border-bottom: solid $gray 1px;
     background: #ffffff0a;
     backdrop-filter: blur(15px);
-    padding: 0.5rem 1rem;
+    padding: 1rem 2rem;
 
     h1 {
-        font-weight: 600;
-        font-size: 40px;
-        margin: auto;
+        font-weight: 500;
+        font-size: 38px;
+        margin: 0;
 
         @include md {
             margin: 0;
