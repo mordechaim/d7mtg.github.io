@@ -1,10 +1,16 @@
 import { ProjectEditor } from 'components'
-import { getProject, getProjects } from 'utils/backend'
+import Head from 'next/head'
+import { getProject } from 'utils/backend'
 import { protect } from 'utils/protect'
 
 
 function Edit({ project }) {
-    return <ProjectEditor project={project} />
+    return <>
+        <Head>
+            <title>{'Admin | ' + project.name}</title>
+        </Head>
+        <ProjectEditor project={project} />
+    </>
 }
 
 export default protect(Edit)

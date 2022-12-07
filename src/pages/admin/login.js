@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Logo, TextField } from 'components'
+import { TextField } from 'components'
 import { getAuth } from 'firebase/auth'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'
@@ -28,7 +29,9 @@ export default function Login(props) {
     }
 
     return <div className={s.root}>
-        <Logo className={s.logo} black />
+        <Head>
+            <title>Admin | Log in</title>
+        </Head>
         <form onSubmit={handleLogin} className={s.form}>
             <TextField error={error} name='email' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} />
             <TextField error={error} name='password' placeholder='Password' type='password' value={password} onChange={e => setPassword(e.target.value)} />

@@ -1,4 +1,5 @@
 @import "~theme/colors";
+@import "~theme/screens";
 
 .root {
     width: 100%;
@@ -6,14 +7,8 @@
     background: linear-gradient(to bottom right, $primary, $primary-shade);
     display: flex;
     flex-direction: column;
-    gap: 40px;
     align-items: center;
     overflow-y: hidden;
-}
-
-.logo {
-    height: 45px;
-    margin: 75px 0;
 }
 
 .form {
@@ -25,6 +20,7 @@
     backdrop-filter: blur(50px);
     border-radius: 15px;
     font-family: inherit;
+    margin: auto 0;
 
     button {
         font-weight: 500;
