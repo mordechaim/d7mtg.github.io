@@ -35,81 +35,21 @@
     }
 }
 
-.formContent {
-    height: 100%;
-    padding: 50px 75px;
-
-    h3 {
-        margin: 0 auto 0 0;
-        size: 1rem;
-        font-weight: 500;
-        font-size: 30px;
-    }
-
-    @include md {
-        padding: 25px;
-    }
-}
-
-.full {
-    flex-basis: 100%;
-}
-
-.fields,
-.labels,
-.links,
-.attachment {
-    margin-top: 2rem;
+.labels {
+    margin: 6px 0;
     display: flex;
     gap: 15px;
     align-items: flex-end;
     flex: 1;
 }
 
-.fields {
-    flex-wrap: wrap;
-}
-
-.labels,
-.links {
-    margin: 6px 0;
-}
-
-.thumbnail {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 75px;
-
-    img {
-        max-width: 100px;
-    }
-}
-
-.urlInput {
-    display: none;
-}
-
 .areaContainer {
     flex: 1 0 100%;
     margin: 2rem 0 4rem;
-    height: 200px;
+    height: 150px;
     display: flex;
 
     .area {
         flex: 1 0 100%;
-        textarea {
-            resize: none;
-        }
     }
-}
-
-.add {
-    margin-top: 1rem;
-}
-
-.upload {
-    margin-top: 2rem;
-    width: 100%;
 }

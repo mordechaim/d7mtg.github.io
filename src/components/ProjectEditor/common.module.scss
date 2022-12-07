@@ -1,0 +1,15 @@
+.fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+    margin: 1rem 0;
+}
+
+.full {
+    flex: 1 1 100%;
+}
+
+.noWrap {
+    flex-wrap: nowrap;
+}

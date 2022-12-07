@@ -84,7 +84,7 @@ export const ImageUpload = ({ className, label, active, error, onUploadComplete,
                 <input ref={chooser} onChange={handleSelectFile} type='file' accept='image/*' multiple={multiple ? 'multiple' : ''} />
                 <UploadCloud className={s.cloud} />
                 <span className={s.text}><span className={s.coloredText}>Click to upload</span> or drag and drop</span>
-                {progress > 0 && <ProgressBar progress={progress} />}
+                <ProgressBar progress={progress} />
             </div>
             {children}
         </div>

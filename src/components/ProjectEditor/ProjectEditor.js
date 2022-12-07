@@ -1,12 +1,17 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { Button, ColorPicker, ImageUpload, Separator, TextField } from 'components'
+import { Button, TextField } from 'components'
 import { IconField } from 'components/ProjectEditor/IconField'
 import { schema } from 'components/ProjectEditor/schema'
 import { useState } from 'react'
-import { Controller, FormProvider, get, useFieldArray, useForm, useFormContext } from 'react-hook-form'
+import { FormProvider, useFieldArray, useForm, useFormContext } from 'react-hook-form'
 import { setProject } from 'utils/backend'
+import { ColorPickerController } from './ColorPickerController'
+import { ImageArrayController } from './ImageArrayController'
+import { ImageController } from './ImageController'
 import s from './ProjectEditor.module.scss'
+import cs from './common.module.scss'
+import { RemoveButton } from './RemoveButton'
+import { Section } from './Section'
 
 const defaultValue = {
     homeVisible: true,
@@ -41,10 +46,11 @@ export const ProjectEditor = ({ project }) => {
                 </Button>
             </div>
 
-            <div className={s.formContent} >
+            <Section>
+
                 <h3>Overview</h3>
 
-                <div className={s.fields}>
+                <div className={cs.fields}>
                     <TextField label='Project name' {...register('name')} error={errors.name} />
                     <TextField label='Subtitle' {...register('subtitle')} error={errors.subtitle} />
                     <TextField label='Slug' {...register('slug')} error={errors.slug} readOnly={Boolean(project)} disabled={Boolean(project)} />
@@ -52,23 +58,19 @@ export const ProjectEditor = ({ project }) => {
                 </div>
 
                 <Labels />
+
                 <div className={s.areaContainer}>
                     <TextField className={s.area} label='Meta description' area  {...register('metaDescription')} error={errors.theme} />
                 </div>
 
-
-                <div className={s.fields}>
+                <div className={cs.fields}>
                     <ImageController name='logo' label='Logo' />
-                </div>
-                <div className={s.fields}>
                     <ImageController name='logoDark' label='Logo dark mode' />
-                </div>
-                <div className={s.fields}>
                     <ImageController name='previewImage' label='OG Preview' />
                 </div>
+            </Section>
 
-
-                <Separator />
+            <Section>
 
                 <h3>Home page</h3>
 
@@ -76,12 +78,11 @@ export const ProjectEditor = ({ project }) => {
                     <TextField className={s.area} label='Description' area  {...register('homeDescription')} error={errors.homeDescription} />
                 </div>
 
-                <div className={s.fields}>
-                    <ImageController name='banner' label='Banner Photo' />
-                </div>
+                <ImageController name='banner' label='Banner Photo' />
 
-                <Separator />
+            </Section>
 
+            <Section>
                 <h3>Project page</h3>
 
                 <div className={s.areaContainer}>
@@ -89,10 +90,11 @@ export const ProjectEditor = ({ project }) => {
                 </div>
 
                 <Links />
-                <ProjectImages />
+                <ImageArrayController name='images' label='Project Images' />
 
 
-            </div>
+            </Section>
+
         </form>
     </FormProvider>
 }
@@ -105,7 +107,7 @@ const Labels = () => {
     })
 
     return <>
-        {fields.map((f, index) => <div key={f.id} className={index === 0 ? s.fields : s.labels}>
+        {fields.map((f, index) => <div key={f.id} className={s.labels}>
             <TextField label={index === 0 && 'Deliverable'} {...register(`labels.${index}.text`)} error={errors.labels?.[index]?.text} />
             <IconField label={index === 0 && 'Icon'} name={`labels.${index}`} />
             <RemoveButton onClick={e => remove(index)} />
@@ -129,7 +131,7 @@ const Links = () => {
     })
 
     return <>
-        {fields.map((f, index) => <div key={f.id} className={index === 0 ? s.fields : s.links}>
+        {fields.map((f, index) => <div key={f.id} className={s.labels}>
             <TextField label={index === 0 && 'External URL'} {...register(`links.${index}.url`)} error={errors.links?.[index]?.url} />
             <TextField label={index === 0 && 'Text'} {...register(`links.${index}.text`)} error={errors.links?.[index]?.text} />
             <IconField label={index === 0 && 'Icon'} name={`links.${index}`} />
@@ -145,76 +147,4 @@ const Links = () => {
     </>
 }
 
-const ProjectImages = () => {
-    const { control, register, formState: { errors } } = useFormContext()
-    const { fields, append, remove } = useFieldArray({
-        name: 'images',
-        control
-    })
 
-    const handleUploadImage = result => {
-        append({
-            url: result.url,
-            name: result.name,
-            id: result.id,
-            width: result.width,
-            height: result.height,
-            alt: result.name,
-        })
-    }
-
-    return <>
-        <ImageUpload className={s.upload} onUploadComplete={handleUploadImage} multiple label='Project images' />
-        {fields.map((f, index) => <div key={f.id} className={s.attachment}>
-            <div className={s.thumbnail}>
-                <a href={f.url} target='_blank'>
-                    <img src={f.url} href={f.url} height={75} alt={f.alt} />
-                </a>
-            </div>
-            <TextField className={s.full} label={index === 0 && 'Alt text'} {...register(`images.${index}.alt`)} error={errors.images?.[index]?.alt} />
-            <RemoveButton onClick={e => remove(index)} />
-        </div>)}
-    </>
-}
-
-const RemoveButton = props => {
-    return <Button className={s.remove} type='button' variant='secondary' {...props}>
-        <FontAwesomeIcon icon={['fal', 'trash']} />
-    </Button>
-}
-
-const ColorPickerController = ({ control, name, ...rest }) => {
-    return <Controller
-        control={control}
-        name={name}
-        render={({ field, fieldState: { error } }) => <ColorPicker {...field} error={error}  {...rest} />}
-    />
-}
-
-const ImageController = ({ name, ...rest }) => {
-    const { register, setValue, watch, formState: { errors } } = useFormContext()
-    const handleUploadImage = result => {
-        setValue(name, {
-            url: result.url,
-            name: result.name,
-            id: result.id,
-            width: result.width,
-            height: result.height,
-            alt: result.name,
-        })
-    }
-
-    const value = watch(name)
-
-    return <>
-        <ImageUpload onUploadComplete={handleUploadImage} error={get(errors, name)} {...rest} />
-        {value && <div className={s.attachment}>
-            <div className={s.thumbnail}>
-                <a href={value.url} target='_blank'>
-                    <img src={value.url} href={value.url} height={75} alt={value.alt} />
-                </a>
-            </div>
-            <TextField className={s.full} label='Alt text' {...register(`${name}.alt`)} error={get(errors, name + '.alt')} />
-        </div>}
-    </>
-}
