@@ -1,3 +1,4 @@
+import { LoadingSpinner } from 'components'
 import { getAuth } from 'firebase/auth'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
@@ -14,11 +15,10 @@ export const protect = Component => {
                 router.replace(`${process.env.NEXT_PUBLIC_LOGIN_URL}?return=${encodeURIComponent(router.asPath)}`)
         }, [user, loading, router])
 
-        if (loading)
-            return
-
-        if (user)
+        if (user && !loading)
             return <Component {...props} />
+
+        return <LoadingSpinner />
     }
 
     return ProtectedComponent
