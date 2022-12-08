@@ -57,3 +57,10 @@
         box-shadow: 0 0 5px #ea573a;
     }
 }
+
+.progressContainer {
+    height: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}

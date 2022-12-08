@@ -56,6 +56,7 @@ const Project = props => {
         theme,
         logo,
         banner,
+        bannerMobile,
         name,
         subtitle,
         homeDescription,
@@ -81,30 +82,41 @@ const Project = props => {
     }, [])
 
 
+    let css =
+        `#banner-${slug} {
+            background-image: linear-gradient(161deg, ${theme}, #00000000), url(${banner.url});
+            background-color: ${theme};
+        }`
+
+    if (bannerMobile) {
+        css +=
+            `
+            @media (max-width: 900px) {
+                #banner-${slug} {
+                    background-image: linear-gradient(161deg, ${theme}, #00000000), url(${bannerMobile.url});
+                } 
+            }`
+    }
+
+
     return <>
         <Head>
             {intersecting && <meta name="theme-color" content={theme} />}
+            <style>{css}</style>
         </Head>
-
-        <div ref={ref} className={p.project} style={{
-            backgroundImage: `linear-gradient(161deg, ${theme}, #00000000), url(${banner?.url})`,
-            backgroundColor: theme
-        }}>
-
-            <div className={p.innerContainer}>
-                <img className={p.logo} src={logo?.url} alt={logo?.alt} />
-                <h3>{name}</h3>
-                <h4>{subtitle}</h4>
-                <div className={p.labelContainer}>
-                    {labels?.map(({ text, icon, variant }) => <label key={text}>
-                        <FontAwesomeIcon icon={[variant, icon]} />&nbsp;{text}
-                    </label>)}
-                </div>
-                <p className={p.description}>{homeDescription}</p>
-                <Link className={p.link} href={process.env.NEXT_PUBLIC_PROJECT_URL_PREFIX + slug}>
-                    View project <FontAwesomeIcon icon={['fal', 'arrow-right']} />
-                </Link>
+        <div ref={ref} className={p.project} id={'banner-' + slug}>
+            <img className={p.logo} src={logo?.url} alt={logo?.alt} />
+            <h3>{name}</h3>
+            <h4>{subtitle}</h4>
+            <div className={p.labelContainer}>
+                {labels?.map(({ text, icon, variant }) => <label key={text}>
+                    <FontAwesomeIcon icon={[variant, icon]} />&nbsp;{text}
+                </label>)}
             </div>
+            <p className={p.description}>{homeDescription}</p>
+            <Link className={p.link} href={process.env.NEXT_PUBLIC_PROJECT_URL_PREFIX + slug}>
+                View project <FontAwesomeIcon icon={['fal', 'arrow-right']} />
+            </Link>
         </div>
     </>
 }

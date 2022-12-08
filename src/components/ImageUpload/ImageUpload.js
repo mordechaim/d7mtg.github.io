@@ -1,6 +1,6 @@
 import UploadCloud from 'assets/icons/upload-cloud.svg'
 import cx from 'clsx'
-import { ProgressBar } from 'components'
+import { Button, ProgressBar } from 'components'
 import { useEffect, useRef, useState } from 'react'
 import { uploadImage } from 'utils/backend'
 import s from './ImageUpload.module.scss'
@@ -84,7 +84,9 @@ export const ImageUpload = ({ className, label, active, error, onUploadComplete,
                 <input ref={chooser} onChange={handleSelectFile} type='file' accept='image/*' multiple={multiple ? 'multiple' : ''} />
                 <UploadCloud className={s.cloud} />
                 <span className={s.text}><span className={s.coloredText}>Click to upload</span> or drag and drop</span>
-                <ProgressBar progress={progress} />
+                <div className={s.progressContainer}>
+                    {uploading && <ProgressBar progress={progress} />}
+                </div>
             </div>
             {children}
         </div>

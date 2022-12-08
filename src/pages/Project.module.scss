@@ -2,12 +2,12 @@
 @import "~theme/screens";
 
 .project {
-    width: 100%;
-
+    position: relative;
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    padding: 0 15%;
 
     color: $gray-300;
     transition: 0.25s;
@@ -16,17 +16,6 @@
         margin-right: 5px;
         font-size: 0.9em;
     }
-
-    @include md {
-        min-height: auto;
-        background-attachment: scroll;
-        height: fit-content;
-    }
-}
-
-.innerContainer {
-    margin-right: 15%;
-    margin-left: 15%;
 
     h3 {
         font-size: 3em;
@@ -44,32 +33,34 @@
         letter-spacing: 3px;
     }
 
-    .labelContainer {
-        margin-top: 50px;
-        margin-bottom: 50px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-
-        label {
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(15px);
-            padding: 5px 10px;
-            border-radius: 5px;
-            display: inline-block;
-            width: fit-content;
-        }
-    }
-
     @include md {
-        margin-right: 25px;
-        margin-left: 25px;
+        min-height: auto;
+        background-attachment: scroll;
+        height: fit-content;
+        padding: 0 25px;
 
         h3 {
             margin-top: 50px;
             font-size: 2.2em;
         }
+    }
+}
+
+.labelContainer {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    label {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(15px);
+        padding: 5px 10px;
+        border-radius: 5px;
+        display: inline-block;
+        width: fit-content;
     }
 }
 

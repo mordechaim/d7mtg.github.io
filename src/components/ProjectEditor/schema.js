@@ -35,5 +35,6 @@ export const schema = yup.object({
     logo: imageSchema().required(),
     logoDark: imageSchema().default(undefined).nullable(),
     previewImage: imageSchema().default(undefined).nullable(),
-    banner: imageSchema().required()
+    banner: imageSchema().required(),
+    bannerMobile: imageSchema().default(undefined).nullable(),
 })

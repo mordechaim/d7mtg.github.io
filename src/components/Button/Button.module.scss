@@ -23,7 +23,7 @@
     color: $white;
 }
 
-.icon {
+.icon, .flat-icon {
     border-radius: 50%;
     aspect-ratio: 1/1;
     max-width: 40px;
@@ -33,6 +33,12 @@
     justify-content: center;
 }
 
-.flat {
+.flat, .flat-icon {
     background: none;
 }
+
+.flat-icon {
+    width: 32px;
+    height: 32px;
+}
+

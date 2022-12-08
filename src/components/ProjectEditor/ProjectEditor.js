@@ -57,8 +57,8 @@ export const ProjectEditor = ({ project }) => {
     return <FormProvider {...form}>
         <form className={s.root} onSubmit={handleSubmit(submitProject)}>
             <div className={s.topBar}>
-                <Link href='/admin' className={isDirty && s.disabled}>
-                    <FontAwesomeIcon icon={['fal', 'chevron-left']}/>
+                <Link href='/admin' className={isDirty ? s.disabled : undefined}>
+                    <FontAwesomeIcon icon={['fal', 'chevron-left']} />
                 </Link>
                 <h1>{project?.name ?? 'New Project'}</h1>
 
@@ -102,7 +102,10 @@ export const ProjectEditor = ({ project }) => {
                     <TextField className={s.area} label='Description' area  {...register('homeDescription')} error={errors.homeDescription} />
                 </div>
 
-                <ImageController name='banner' label='Banner Photo' />
+                <div className={cs.fields}>
+                    <ImageController name='banner' label='Banner Photo' />
+                    <ImageController name='bannerMobile' label='Mobile Banner Photo' />
+                </div>
 
             </Section>
 
