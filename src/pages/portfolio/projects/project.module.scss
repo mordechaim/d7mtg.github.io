@@ -2,10 +2,12 @@
 @import "~theme/screens";
 
 .logoContainer {
-    padding-block: 50px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .logo {
-        margin: 0 auto;
         width: 250px;
     }
 }
