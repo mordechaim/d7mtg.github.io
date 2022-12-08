@@ -4,7 +4,7 @@ import { IconField } from 'components/ProjectEditor/IconField'
 import { schema } from 'components/ProjectEditor/schema'
 import { useState } from 'react'
 import { FormProvider, useFieldArray, useForm, useFormContext } from 'react-hook-form'
-import { setProject } from 'utils/backend'
+import { revalidate, setProject } from 'utils/backend'
 import { ColorPickerController } from './ColorPickerController'
 import { ImageArrayController } from './ImageArrayController'
 import { ImageController } from './ImageController'
@@ -12,9 +12,12 @@ import s from './ProjectEditor.module.scss'
 import cs from './common.module.scss'
 import { RemoveButton } from './RemoveButton'
 import { Section } from './Section'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const defaultValue = {
-    homeVisible: true,
+    homeVisible: false,
     portfolioVisible: true,
     homeIndex: 0,
     portfolioIndex: 0
@@ -27,20 +30,41 @@ export const ProjectEditor = ({ project }) => {
         resolver: yupResolver(schema)
     });
 
-    const { register, handleSubmit, formState: { errors, isDirty } } = form
+    const router = useRouter()
+    const { reset, register, handleSubmit, formState: { errors, isDirty } } = form
     const [publishing, setPublishing] = useState(false)
 
     const submitProject = async value => {
         setPublishing(true)
         await setProject(value.slug, value)
         setPublishing(false)
+
+        revalidate({
+            projects: [value.slug],
+            home: true,
+            portfolio: true,
+            notFound: !project
+        })
+
+        reset(value)
+        router.replace(router.asPath)
+    }
+
+    const handleDiscard = e => {
+        reset()
     }
 
     return <FormProvider {...form}>
         <form className={s.root} onSubmit={handleSubmit(submitProject)}>
             <div className={s.topBar}>
+                <Link href='/admin' className={isDirty && s.disabled}>
+                    <FontAwesomeIcon icon={['fal', 'chevron-left']}/>
+                </Link>
                 <h1>{project?.name ?? 'New Project'}</h1>
 
+                {isDirty && <Button type='button' variant='secondary' onClick={handleDiscard}>
+                    Discard
+                </Button>}
                 {isDirty && <Button type='submit'>
                     Publish{publishing && 'ing...'}
                 </Button>}

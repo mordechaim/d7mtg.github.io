@@ -4,10 +4,10 @@ export default async function handler(req, res) {
 
     // TODO
     const {
-        home = true,
-        portfolio = true,
-        project,
-        notFound = true
+        home,
+        portfolio,
+        projects,
+        notFound
     } = req.body
 
     try {
@@ -15,8 +15,10 @@ export default async function handler(req, res) {
             await res.revalidate('/')
         if (portfolio)
             await res.revalidate('/portfolio')
-        if (project)
-            await res.revalidate(process.env.NEXT_PUBLIC_PROJECT_URL_PREFIX + project)
+        if (projects) {
+            for (const project of projects)
+                await res.revalidate(process.env.NEXT_PUBLIC_PROJECT_URL_PREFIX + project)
+        }
         if (notFound)
             await res.revalidate('/404')
 

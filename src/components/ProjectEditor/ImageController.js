@@ -3,6 +3,7 @@ import { get, useFormContext } from 'react-hook-form'
 import cx from 'clsx'
 import s from './ImageController.module.scss'
 import cs from './common.module.scss'
+import { RemoveButton } from './RemoveButton'
 
 export const ImageController = ({ name, className, ...rest }) => {
     const { register, setValue, watch, formState: { errors } } = useFormContext()
@@ -14,19 +15,30 @@ export const ImageController = ({ name, className, ...rest }) => {
             width: result.width,
             height: result.height,
             alt: result.name,
+        }, {
+            shouldDirty: true
+        })
+    }
+
+    const handleRemove = e => {
+        setValue(name, null, {
+            shouldDirty: true
         })
     }
 
     const value = watch(name)
 
     return <div className={cx(s.column, className)}>
-        <ImageUpload className={cx(cs.full, s.upload)} onUploadComplete={handleUploadImage} error={get(errors, name)} {...rest}>
+        <ImageUpload onUploadComplete={handleUploadImage} error={get(errors, name)} {...rest}>
             {value && <div className={cx(s.thumbnail, s.embedded)}>
                 <a href={value.url} target='_blank'>
-                    <img src={value.url} href={value.url} height={150} alt={value.alt} />
+                    <img src={value.url} href={value.url} alt={value.alt} />
                 </a>
             </div>}
         </ImageUpload>
-        {value && <TextField className={cs.full} label='Alt text' {...register(`${name}.alt`)} error={get(errors, name + '.alt')} />}
+        {value && <div className={cx(cs.fields, cs.noWrap)}>
+            <TextField className={cs.full} label='Alt text' {...register(`${name}.alt`)} error={get(errors, name + '.alt')} />
+            <RemoveButton onClick={handleRemove} />
+        </div>}
     </div>
 }

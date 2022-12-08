@@ -2,9 +2,16 @@
 
 .thumbnail {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    max-height: 150px;
+    height: 150px;
+
+    img {
+        max-width: 150px;
+        max-height: 150px;
+        width: auto;
+        height: auto;
+    }
 }
 
 .embedded {

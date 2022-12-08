@@ -13,11 +13,23 @@
     background: #ffffff0a;
     backdrop-filter: blur(15px);
     padding: 1rem 2rem;
+    gap: 15px;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+
+        &.disabled {
+            pointer-events: none;
+            color: $gray;
+        }
+    }
 
     h1 {
         font-weight: 500;
         font-size: 38px;
         margin: 0;
+        margin-right: auto;
 
         @include md {
             margin: 0;

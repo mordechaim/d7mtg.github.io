@@ -25,29 +25,12 @@ export const setProject = async (slug, data) => {
     const db = getFirestore()
     const project = doc(db, 'projects', slug)
     await setDoc(project, data)
-    revalidate({ project: slug })
 }
 
 export const deleteProject = async slug => {
     const db = getFirestore()
     const project = doc(db, 'projects', slug)
     await deleteDoc(project)
-    revalidate({ project: slug })
-}
-
-export const getProjectOrder = async () => {
-    const db = getFirestore()
-    const order = doc(db, 'order', '0')
-
-    return (await getDoc(order)).data()
-}
-
-export const setProjectOrder = async data => {
-    const db = getFirestore()
-    const order = doc(db, 'order', '0')
-
-    await setDoc(order, data, { merge: true })
-    revalidate({ home: true, portfolio: true })
 }
 
 export const uploadImage = async (file, progress = () => { }) => {

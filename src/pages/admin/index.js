@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { Fragment, useState } from 'react'
 import { useFieldArray, useForm } from 'react-hook-form'
-import { getProjects, setProject } from 'utils/backend'
+import { deleteProject, getProjects, revalidate, setProject } from 'utils/backend'
 import { protect } from 'utils/protect'
 import s from './admin.module.scss'
 
@@ -23,6 +23,8 @@ function Admin({ projects: initialProjects }) {
     const submitOrder = async ({ projects }) => {
         setPublishing(true)
 
+        const toRevalidate = []
+
         for (const p of projects) {
 
             const initial = initialProjects.find(ip => ip.slug === p.slug)
@@ -39,15 +41,34 @@ function Admin({ projects: initialProjects }) {
                     homeIndex: Number(p.homeIndex),
                     portfolioIndex: Number(p.portfolioIndex)
                 })
+                toRevalidate.push(p)
             }
         }
+
+        for (const toDelete of initialProjects) {
+            if (!projects.find(p => p.slug === toDelete.slug)) {
+                await deleteProject(toDelete.slug)
+                toRevalidate.push(toDelete.slug)
+            }
+        }
+
+        revalidate({
+            projects: toRevalidate,
+            home: true,
+            portfolio: true,
+            notFound: true
+        })
 
         setPublishing(false)
         router.replace(router.asPath)
         reset({ projects })
     }
 
-    const { fields } = useFieldArray({
+    const handleDiscard = e => {
+        reset()
+    }
+
+    const { fields, remove } = useFieldArray({
         name: 'projects',
         control
     })
@@ -59,6 +80,9 @@ function Admin({ projects: initialProjects }) {
         <div className={s.topBar}>
             <h1>{initialProjects.length} Project{initialProjects.length === 1 ? '' : 's'}</h1>
 
+            {isDirty && <Button type='button' variant='secondary' onClick={handleDiscard}>
+                Discard
+            </Button>}
             {isDirty && <Button type='submit'>
                 Publish{publishing && 'ing...'}
             </Button>}
@@ -80,9 +104,9 @@ function Admin({ projects: initialProjects }) {
                     <Button variant='icon' disabled={isDirty} type='button' onClick={e => router.push('/admin/edit/' + p.slug)}>
                         <FontAwesomeIcon icon={['fal', 'edit']} />
                     </Button>
-                    {/* <Button variant='icon' disabled={isDirty} type='button'>
-                    <FontAwesomeIcon icon={['fal', 'trash']} />
-                </Button> */}
+                    <Button variant='icon' type='button' onClick={e => remove(index)}>
+                        <FontAwesomeIcon icon={['fal', 'trash']} />
+                    </Button>
                 </Fragment>
             })}
         </div>

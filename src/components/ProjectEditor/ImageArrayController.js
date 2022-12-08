@@ -28,7 +28,7 @@ export const ImageArrayController = ({ name, className, ...rest }) => {
         {fields.map((f, index) => <div key={f.id} className={cx(cs.fields, cs.noWrap)}>
             <div className={s.thumbnail}>
                 <a href={f.url} target='_blank'>
-                    <img src={f.url} href={f.url} width={100} alt={f.alt} />
+                    <img src={f.url} href={f.url} alt={f.alt} />
                 </a>
             </div>
             <TextField className={cs.full} label={index === 0 && 'Alt text'} {...register(`${name}.${index}.alt`)} error={errors[name]?.[index]?.alt} />

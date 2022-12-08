@@ -2,7 +2,7 @@ import * as yup from 'yup'
 
 const imageSchema = () => yup.object({
     url: yup.string().url().required(),
-    alt: yup.string().required(),
+    alt: yup.string(),
     width: yup.number().required(),
     height: yup.number().required(),
     id: yup.string().uuid().required()
@@ -33,7 +33,7 @@ export const schema = yup.object({
     })),
     images: yup.array().of(imageSchema()),
     logo: imageSchema().required(),
-    logoDark: imageSchema().default(undefined),
-    previewImage: imageSchema(),
+    logoDark: imageSchema().default(undefined).nullable(),
+    previewImage: imageSchema().default(undefined).nullable(),
     banner: imageSchema().required()
 })
