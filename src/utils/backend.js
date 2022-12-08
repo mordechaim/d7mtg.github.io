@@ -1,6 +1,5 @@
 import { collection, deleteDoc, doc, getDoc, getDocs, getFirestore, setDoc } from 'firebase/firestore'
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage'
-import { v4 as uuidv4 } from 'uuid'
 import { createDeferredPromise } from './promises'
 
 
@@ -34,8 +33,18 @@ export const deleteProject = async slug => {
 }
 
 export const uploadImage = async (file, progress = () => { }) => {
+    const { promise: sha, resolve: resolveSha } = createDeferredPromise()
+    const reader = new FileReader()
+    reader.onload = async e => {
+        const digest = await crypto.subtle.digest('SHA-256', e.target.result)
+
+        const hashArray = Array.from(new Uint8Array(digest));
+        resolveSha(hashArray.map(b => b.toString(16).padStart(2, '0')).join(''))
+    }
+    reader.readAsArrayBuffer(file)
+    const id = await sha
+
     const storage = getStorage()
-    const id = uuidv4()
     const path = 'images/' + id
     const reference = ref(storage, path)
     const task = uploadBytesResumable(reference, file)
@@ -46,11 +55,11 @@ export const uploadImage = async (file, progress = () => { }) => {
     })
 
     // get image metadata while the file uploads
-    const { promise: dimensions, resolve } = createDeferredPromise()
+    const { promise: dimensions, resolve: resolveDimensions } = createDeferredPromise()
     const img = new Image()
     const fileURL = URL.createObjectURL(file)
     img.onload = () => {
-        resolve({
+        resolveDimensions({
             width: img.width,
             height: img.height
         })

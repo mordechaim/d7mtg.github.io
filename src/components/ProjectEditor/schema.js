@@ -5,7 +5,7 @@ const imageSchema = () => yup.object({
     alt: yup.string(),
     width: yup.number().required(),
     height: yup.number().required(),
-    id: yup.string().uuid().required()
+    id: yup.string().matches(/[0-9a-fA-F]{64}/).required()
 })
 
 export const schema = yup.object({
