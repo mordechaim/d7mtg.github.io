@@ -7,12 +7,12 @@
     border: none;
     cursor: pointer;
 
-    &:focus {
+    &:focus:not(.flat) {
         outline: none;
         border-color: $primary;
         box-shadow: 0 0 5px $primary;
     }
-    &:active:enabled {
+    &:active:enabled:not(.flat) {
         outline: none;
         box-shadow: 0 0 15px $primary;
     }
@@ -31,4 +31,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.flat {
+    background: none;
 }

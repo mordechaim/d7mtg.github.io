@@ -4,15 +4,13 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { getProjects } from 'utils/backend'
-import b from './Banner.module.scss'
-import p from './HomeProject.module.scss'
 import s from './index.module.scss'
 
 export default function Home({ projects }) {
     return <>
         <Banner />
         <div className={s.projectsContainer}>
-            {projects.map(p => <HomeProject key={p.slug} {...p} />)}
+            {projects.map(p => <Project key={p.slug} {...p} />)}
         </div>
 
         <div className={s.moreProjects}>
@@ -28,29 +26,32 @@ export default function Home({ projects }) {
 
 
 const Banner = () => {
-    return <div className={b.banner}>
+    return <div className={s.banner}>
 
-        <div className={b.topbar}>
-            <Logo className={b.logo} black />
-            <div className={b.menu}>
-                <Link href="/portfolio" className={b.item}>Work</Link>
-                <Link href="/contact" className={b.item}>Contact</Link>
+        <div className={s.topbar}>
+            <Logo className={s.logo} black />
+            <div className={s.menu}>
+                <Link href="/portfolio" className={s.item}>Work</Link>
+                <Link href="/contact" className={s.item}>Contact</Link>
             </div>
         </div>
 
-        <p className={b.header}>
+        <p className={s.header}>
             A branding and web agency in Brooklyn.
             <br /><br />
-            <span className={b.subheader}>D7mtg helps founders build brands that are memorable by design.</span>
+            <span className={s.subheader}>D7mtg helps founders build brands that are memorable by design.</span>
         </p>
-        <div className={b.scrollDown}>
-            <FontAwesomeIcon icon={['fas', 'arrow-down']}/>
+        <div className={s.scrollDown}>
+            <FontAwesomeIcon icon={['fas', 'arrow-down']} />
             <p>Keep scrolling</p>
         </div>
     </div>
 }
 
-const HomeProject = props => {
+
+import p from './Project.module.scss'
+
+const Project = props => {
     const {
         theme,
         logo,

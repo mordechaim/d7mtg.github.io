@@ -1,4 +1,143 @@
 @import "~theme/colors.scss";
+@import "~theme/colors";
+@import "~theme/screens";
+
+.banner {
+    min-height: 100vh;
+    padding-bottom: 50px;
+    background-color: $primary;
+
+    @include md {
+        min-height: 700px;
+    }
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 15% 15px;
+    gap: 10px;
+
+    @include md {
+        flex-direction: column;
+    }
+
+    @include sm {
+        gap: 50px;
+    }
+}
+
+.logo {
+    width: 150px;
+    max-width: 70%;
+    height: 38px;
+
+    @include sm {
+        position: inherit;
+        width: 200px;
+        height: 45px;
+    }
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+
+    .item {
+        text-decoration: none;
+        color: $black;
+        font-size: 1em;
+        font-weight: 500;
+        color: $black;
+    }
+}
+
+.header {
+    margin: 150px auto auto;
+    text-align: center;
+    left: 0;
+    right: 0;
+    font-size: 5em;
+    font-weight: 700;
+    letter-spacing: -3px;
+    line-height: 1em;
+    width: 800px;
+
+    @include md {
+        margin-top: 80px;
+        font-size: 3em;
+        width: 60%;
+        overflow-wrap: break-word;
+    }
+
+    @include dark {
+        color: $black;
+    }
+
+    .subheader {
+        font-size: 0.4em;
+        font-weight: 500;
+        width: 500px;
+        margin-right: auto;
+        margin-left: auto;
+        letter-spacing: -0.05em;
+        line-height: 0.9em;
+        display: block;
+
+        @include md {
+            width: 70%;
+            line-height: -15em;
+        }
+    }
+}
+
+.scrollDown {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    background: $primary;
+    color: $black;
+    font-size: 1em;
+
+    text-align: center;
+    line-height: 50px;
+    letter-spacing: -0.05em;
+    transition: 0.25s;
+    -webkit-tap-highlight-color: transparent;
+    margin-top: 200px;
+
+    @include md {
+        display: none;
+    }
+
+    p {
+        margin-right: auto;
+        margin-left: auto;
+        font-weight: 500;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    svg {
+        animation: bounceUpDown 2s ease-in-out infinite;
+    }
+}
+
+@keyframes bounceUpDown {
+    0% {
+        transform: translateY(0px);
+    }
+
+    30% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
 
 .moreProjects {
     text-align: center;

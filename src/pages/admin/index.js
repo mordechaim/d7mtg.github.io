@@ -77,38 +77,85 @@ function Admin({ projects: initialProjects }) {
         <Head>
             <title>Admin | Dashboard</title>
         </Head>
-        <div className={s.topBar}>
-            <h1>{initialProjects.length} Project{initialProjects.length === 1 ? '' : 's'}</h1>
 
-            {isDirty && <Button type='button' variant='secondary' onClick={handleDiscard}>
-                Discard
-            </Button>}
-            {isDirty && <Button type='submit'>
-                Publish{publishing && 'ing...'}
-            </Button>}
-            {!isDirty && <Button type='button' variant='secondary' onClick={e => router.push('/admin/new')}>
-                <FontAwesomeIcon icon='add' />&nbsp;&nbsp;&nbsp;New Project
-            </Button>}
-        </div>
 
-        <div className={s.grid}>
-            {fields.map((p, index) => {
-                return <Fragment key={p.id}>
-                    <img src={p.logo?.url} alt={p.logo?.alt} width={100} />
-                    <span>{p.name}</span>
-                    <Switch {...register(`projects.${index}.homeVisible`)} label='Home' />
-                    <Switch {...register(`projects.${index}.portfolioVisible`)} label='Portfolio' />
-                    <NumberField {...register(`projects.${index}.homeIndex`)} label='Home position' />
-                    <NumberField {...register(`projects.${index}.portfolioIndex`)} label='Portfolio position' />
+        <div className={s.tableContainer}>
+            <div className={s.innerContainer}>
 
-                    <Button variant='icon' disabled={isDirty} type='button' onClick={e => router.push('/admin/edit/' + p.slug)}>
-                        <FontAwesomeIcon icon={['fal', 'edit']} />
-                    </Button>
-                    <Button variant='icon' type='button' onClick={e => remove(index)}>
-                        <FontAwesomeIcon icon={['fal', 'trash']} />
-                    </Button>
-                </Fragment>
-            })}
+                <div className={s.topBar}>
+                    <h2>{initialProjects.length} Project{initialProjects.length === 1 ? '' : 's'}</h2>
+
+                    {isDirty && <Button type='button' variant='secondary' onClick={handleDiscard}>
+                        Discard
+                    </Button>}
+                    {isDirty && <Button type='submit'>
+                        Publish{publishing && 'ing...'}
+                    </Button>}
+                    {!isDirty && <Button type='button' variant='secondary' onClick={e => router.push('/admin/new')}>
+                        <FontAwesomeIcon icon='add' />&nbsp;&nbsp;&nbsp;New Project
+                    </Button>}
+                </div>
+
+                <table>
+                    <colgroup>
+                        <col className={s.name} />
+                        <col className={s.homeVisible} />
+                        <col className={s.portfolioVisible} />
+                        <col className={s.homeIndex} />
+                        <col className={s.portfolioIndex} />
+                        <col className={s.images} />
+                        <col className={s.controls} />
+                    </colgroup>
+                    <thead>
+                        <th >Name</th>
+                        <th >Home page</th>
+                        <th >Portfolio page</th>
+                        <th >Position on Home page</th>
+                        <th>Position on Portfolio page</th>
+                        <th >Images</th>
+                    </thead>
+                    <tbody>
+
+                        {fields.map((p, index) => {
+                            return <tr key={p.id}>
+                                <td>
+                                    <div className={s.flex}>
+                                        <div className={s.thumbnail}>
+                                            <img src={p.logo?.url} alt={p.logo?.alt} />
+                                        </div>
+                                        <span>{p.name}</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <Switch {...register(`projects.${index}.homeVisible`)} />
+                                </td>
+                                <td>
+                                    <Switch {...register(`projects.${index}.portfolioVisible`)} />
+                                </td>
+                                <td>
+                                    <NumberField {...register(`projects.${index}.homeIndex`)} />
+                                </td>
+                                <td>
+                                    <NumberField {...register(`projects.${index}.portfolioIndex`)} />
+                                </td>
+                                <td>
+                                    <span>{p.images.length}</span>
+                                </td>
+                                <td>
+                                    <div className={s.flex}>
+                                        <Button variant='flat' type='button' onClick={e => remove(index)}>
+                                            <FontAwesomeIcon icon={['fal', 'trash']} />
+                                        </Button>
+                                        <Button variant='flat' disabled={isDirty} type='button' onClick={e => router.push('/admin/edit/' + p.slug)}>
+                                            <FontAwesomeIcon icon={['fal', 'pen']} />
+                                        </Button>
+                                    </div>
+                                </td>
+                            </tr>
+                        })}
+                    </tbody>
+                </table>
+            </div>
         </div>
     </form>
 }
