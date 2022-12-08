@@ -22,10 +22,10 @@ export default function Project({ project }) {
     return <>
         <Head>
             <title>{name + ' | Project by D7mtg'}</title>
-            <meta content={`D7mtg | ${name}`} property="og:title" />
-            <meta content={metaDescription} property="og:description" />
+            <meta key="ogtitle" property="og:title" content={`D7mtg | ${name}`} />
+            <meta key="ogdescription" property="og:description"  content={metaDescription}/>
             <meta name="description" content={metaDescription} />
-            <meta content={previewImage?.url} property="og:image" />
+            <meta key="ogimage" property="og:image" content={previewImage?.url} />
         </Head>
 
         <div className={s.logoContainer} >

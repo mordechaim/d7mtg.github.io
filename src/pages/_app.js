@@ -64,14 +64,14 @@ const Meta = () => {
         <meta name="revisit-after" content="1 days" />
         <title>D7mtg Branding Agency</title>
         <meta name="title" content="D7mtg Branding Agency" />
-        <meta property="og:title" content="D7mtg Branding Agency" />
+        <meta key="ogtitle" property="og:title" content="D7mtg Branding Agency" />
         <meta name="description"
             content="Your branding project starts here. We apply research and creativity to help you grow your brand and tell the world your story." />
-        <meta property="og:description"
+        <meta key="ogdescription" property="og:description"
             content="Your branding project starts here. We apply research and creativity to help you grow your brand and tell the world your story." />
         <meta name="author" content="D7mtg" />
         <meta name="copyright" content="D7mtg" />
-        <meta property="og:image" content="/ogpreview.png" />
+        <meta key="ogimage" property="og:image" content="/ogpreview.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@d7mtg" />
         <meta name="twitter:title" content="D7mtg Branding Agency" />
