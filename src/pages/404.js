@@ -47,7 +47,7 @@ export default function NotFound({ links }) {
             What are you looking for?
             <br /><br />
             Home page? <Link href='/'>Sure thing.</Link><br />
-            Random project from our portfolio? <Link href={randomLink.current}>Go right ahead</Link><br />
+            {randomLink.current && <> Random project from our portfolio? <Link href={randomLink.current}>Go right ahead</Link><br /></>}
             A way to contact us? <a href='/contact?ref=fourohfour'>Look no further.</a>
         </p>
     </div>
