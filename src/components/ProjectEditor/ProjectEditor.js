@@ -1,32 +1,24 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Button, TextField } from 'components'
-import { IconField } from 'components/ProjectEditor/IconField'
-import { schema } from 'components/ProjectEditor/schema'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { FormProvider, useFieldArray, useForm, useFormContext } from 'react-hook-form'
 import { revalidate, setProject } from 'utils/backend'
 import { ColorPickerController } from './ColorPickerController'
+import cs from './common.module.scss'
+import { IconField } from './IconField'
 import { ImageArrayController } from './ImageArrayController'
 import { ImageController } from './ImageController'
 import s from './ProjectEditor.module.scss'
-import cs from './common.module.scss'
 import { RemoveButton } from './RemoveButton'
+import { empty, schema } from './schema'
 import { Section } from './Section'
-import { useRouter } from 'next/router'
-import Link from 'next/link'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-const defaultValue = {
-    homeVisible: false,
-    portfolioVisible: true,
-    homeIndex: 0,
-    portfolioIndex: 0
-}
-
 
 export const ProjectEditor = ({ project }) => {
     const form = useForm({
-        defaultValues: project ?? defaultValue,
+        defaultValues: project ?? empty,
         resolver: yupResolver(schema)
     });
 

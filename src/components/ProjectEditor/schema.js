@@ -5,7 +5,7 @@ const imageSchema = () => yup.object({
     alt: yup.string(),
     width: yup.number().required(),
     height: yup.number().required(),
-    id: yup.string().matches(/[0-9a-fA-F]{64}/).required()
+    id: yup.string().matches(/^[0-9a-fA-F]{64}$/).required()
 })
 
 export const schema = yup.object({
@@ -16,8 +16,8 @@ export const schema = yup.object({
         variant: yup.string().matches(/fa[rbsl]/).required(),
         icon: yup.string().required()
     })),
-    slug: yup.string().matches(/[a-z0-9\-]+/).required(),
-    theme: yup.string().matches(/#[A-Fa-f0-9]{6}/).required(),
+    slug: yup.string().matches(/^[a-z0-9\-]+$/).required(),
+    theme: yup.string().matches(/^#[A-Fa-f0-9]{6}$/).required(),
     metaDescription: yup.string().required(),
     projectDescription: yup.string().required(),
     homeDescription: yup.string().required(),
@@ -28,7 +28,7 @@ export const schema = yup.object({
     links: yup.array().of(yup.object({
         url: yup.string().url().required(),
         text: yup.string().required(),
-        variant: yup.string().matches(/fa[rbsl]/).required(),
+        variant: yup.string().matches(/^fa[rbsl]$/).required(),
         icon: yup.string().required()
     })),
     images: yup.array().of(imageSchema()),
@@ -38,3 +38,25 @@ export const schema = yup.object({
     banner: imageSchema().required(),
     bannerMobile: imageSchema().default(undefined).nullable(),
 })
+
+export const empty = {
+    name: '',
+    subtitle: '',
+    labels: [],
+    slug: '',
+    theme: '',
+    metaDescription: '',
+    projectDescription: '',
+    homeDescription: '',
+    homeVisible: false,
+    portfolioVisible: false,
+    homeIndex: 0,
+    portfolioIndex: 0,
+    links: [],
+    images: [],
+    logo: null,
+    logoDark: null,
+    previewImage: null,
+    banner: null,
+    bannerMobile: null,
+}
