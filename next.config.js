@@ -2,7 +2,7 @@
 const withSvgr = require('next-plugin-svgr');
 
 const nextConfig = {
-    reactStrictMode: true,
+    reactStrictMode: false,
     images: {
         domains: [
             'firebasestorage.googleapis.com'
