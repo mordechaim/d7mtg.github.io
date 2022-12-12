@@ -41,8 +41,7 @@
         h1 {
             font-size: 2em;
             font-weight: 700;
-            margin: 5px 0 0 10px;
-            margin-block-start: 0px;
+            margin: 0 0 0 10px;
         }
     }
 
@@ -50,8 +49,13 @@
         font-size: 0.9em;
         font-weight: 400;
         max-width: 100%;
-        padding: 15px 0;
-        white-space: pre-line;
+
+        &:first-of-type {
+            padding-top: 15px
+        }
+        &:last-of-type {
+            padding-bottom: 15px
+        }
     }
 }
 

@@ -91,7 +91,7 @@ export const ProjectEditor = ({ project }) => {
                 <h3>Home page</h3>
 
                 <div className={s.areaContainer}>
-                    <TextField className={s.area} label='Description' area  {...register('homeDescription')} error={errors.homeDescription} />
+                    <TextField className={s.area} label='Description' area placeholder='Markdown supported' {...register('homeDescription')} error={errors.homeDescription} />
                 </div>
 
                 <div className={cs.fields}>
@@ -105,7 +105,7 @@ export const ProjectEditor = ({ project }) => {
                 <h3>Project page</h3>
 
                 <div className={s.areaContainer}>
-                    <TextField className={s.area} label='Project description' area  {...register('projectDescription')} error={errors.projectDescription} />
+                    <TextField className={s.area} label='Project description' area placeholder='Markdown supported'  {...register('projectDescription')} error={errors.projectDescription} />
                 </div>
 
                 <Links />

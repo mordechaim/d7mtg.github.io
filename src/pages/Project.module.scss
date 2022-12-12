@@ -33,6 +33,16 @@
         letter-spacing: 3px;
     }
 
+    p {
+        width: 400px;
+        max-width: 90%;
+        line-height: 1.5em;
+
+        @include md {
+            font-size: 0.9em !important;
+        }
+    }
+
     @include md {
         min-height: auto;
         background-attachment: scroll;
@@ -75,18 +85,6 @@
 
     @include xl {
         display: none;
-    }
-}
-
-.description {
-    width: 400px;
-    max-width: 90%;
-    line-height: 1.5em;
-    white-space: pre-line;
-    font-size: 1em;
-
-    @include md {
-        font-size: 0.9em !important;
     }
 }
 

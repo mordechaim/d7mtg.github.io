@@ -4,6 +4,7 @@ import { Logo } from 'components'
 import LightGallery from 'lightgallery/react'
 import Head from 'next/head'
 import Link from 'next/link'
+import ReactMarkdown from 'react-markdown'
 import { getProject, getProjects } from 'utils/backend'
 import s from './project.module.scss'
 
@@ -23,7 +24,7 @@ export default function Project({ project }) {
         <Head>
             <title>{name + ' | Project by D7mtg'}</title>
             <meta key="ogtitle" property="og:title" content={`D7mtg | ${name}`} />
-            <meta key="ogdescription" property="og:description"  content={metaDescription}/>
+            <meta key="ogdescription" property="og:description" content={metaDescription} />
             <meta name="description" content={metaDescription} />
             <meta key="ogimage" property="og:image" content={previewImage?.url} />
         </Head>
@@ -47,7 +48,7 @@ export default function Project({ project }) {
                     <FontAwesomeIcon icon={[variant, icon]} />{text}
                 </label>)}
             </div>
-            <p >{projectDescription}</p>
+            <ReactMarkdown>{projectDescription}</ReactMarkdown>
             {links.length > 0 && <div className={s.links}>
                 {links.map(({ url, icon, variant = 'far', text }) => <a key={url} className={s.button} href={url}>
                     <FontAwesomeIcon icon={[variant, icon]} />

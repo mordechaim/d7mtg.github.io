@@ -3,6 +3,7 @@ import { Footer, Logo } from 'components'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
+import ReactMarkdown from 'react-markdown'
 import { getProjects } from 'utils/backend'
 import s from './index.module.scss'
 
@@ -98,7 +99,6 @@ const Project = props => {
             }`
     }
 
-
     return <>
         <Head>
             {intersecting && <meta name="theme-color" content={theme} />}
@@ -113,7 +113,7 @@ const Project = props => {
                     <FontAwesomeIcon icon={[variant, icon]} />&nbsp;{text}
                 </label>)}
             </div>
-            <p className={p.description}>{homeDescription}</p>
+            <ReactMarkdown>{homeDescription}</ReactMarkdown>
             <Link className={p.link} href={'/portfolio/projects/' + slug}>
                 View project <FontAwesomeIcon icon={['fal', 'arrow-right']} />
             </Link>
