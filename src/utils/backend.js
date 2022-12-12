@@ -23,7 +23,10 @@ export const getProject = async slug => {
 export const setProject = async (slug, data) => {
     const db = getFirestore()
     const project = doc(db, 'projects', slug)
-    await setDoc(project, data)
+    await setDoc(project, {
+        ...data,
+        updated: new Date().toISOString()
+    })
 }
 
 export const deleteProject = async slug => {
