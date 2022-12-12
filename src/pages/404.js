@@ -55,7 +55,7 @@ export default function NotFound({ links }) {
 
 export const getStaticProps = async () => {
     const projects = await getProjects()
-    const links = projects.map(p => process.env.NEXT_PUBLIC_PROJECT_URL_PREFIX + p.slug)
+    const links = projects.map(p => '/portfolio/projects/' + p.slug)
 
     return {
         props: {

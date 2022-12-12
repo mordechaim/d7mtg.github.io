@@ -114,7 +114,7 @@ const Project = props => {
                 </label>)}
             </div>
             <p className={p.description}>{homeDescription}</p>
-            <Link className={p.link} href={process.env.NEXT_PUBLIC_PROJECT_URL_PREFIX + slug}>
+            <Link className={p.link} href={'/portfolio/projects/' + slug}>
                 View project <FontAwesomeIcon icon={['fal', 'arrow-right']} />
             </Link>
         </div>

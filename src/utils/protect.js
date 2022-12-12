@@ -12,7 +12,7 @@ export const protect = Component => {
 
         useEffect(() => {
             if (!loading && !user)
-                router.replace(`${process.env.NEXT_PUBLIC_LOGIN_URL}?return=${encodeURIComponent(router.asPath)}`)
+                router.replace(`/admin/login?return=${encodeURIComponent(router.asPath)}`)
         }, [user, loading, router])
 
         if (user && !loading)

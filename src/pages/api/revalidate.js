@@ -16,7 +16,7 @@ export default async function handler(req, res) {
             await res.revalidate('/portfolio')
         if (projects) {
             for (const project of projects)
-                await res.revalidate(process.env.NEXT_PUBLIC_PROJECT_URL_PREFIX + project)
+                await res.revalidate('/portfolio/projects/' + project)
         }
         if (notFound)
             await res.revalidate('/404')

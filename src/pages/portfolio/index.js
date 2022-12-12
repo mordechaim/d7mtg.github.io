@@ -44,7 +44,7 @@ export const ProjectBlock = props => {
         logoDark
     } = props
 
-    return <Link href={process.env.NEXT_PUBLIC_PROJECT_URL_PREFIX + slug}>
+    return <Link href={'/portfolio/projects/' + slug}>
         <div className={p.root}>
             <div className={p.imageContainer}>
                 <picture>
