@@ -48,8 +48,10 @@ export default function Project({ project }) {
                     <FontAwesomeIcon icon={[variant, icon]} />{text}
                 </label>)}
             </div>
-            <ReactMarkdown>{projectDescription}</ReactMarkdown>
-            {links.length > 0 && <div className={s.links}>
+            <div className={s.body}>
+                <ReactMarkdown>{projectDescription}</ReactMarkdown>
+            </div>
+            {links?.length > 0 && <div className={s.links}>
                 {links.map(({ url, icon, variant = 'far', text }) => <a key={url} className={s.button} href={url}>
                     <FontAwesomeIcon icon={[variant, icon]} />
                     &nbsp;&nbsp;{text}
@@ -65,7 +67,7 @@ export default function Project({ project }) {
             mousewheel>
             <img className={s.allphotos} src={logo?.url} alt={logo?.alt} />
 
-            {images.map(i => <img key={i.url} className={s.allphotos} src={i.url} alt={i.alt} />)}
+            {images?.map(i => <img key={i.url} className={s.allphotos} src={i.url} alt={i.alt} />)}
         </LightGallery>
     </>
 }
