@@ -7,7 +7,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding: 0 15%;
+    padding: 150px 15%;
 
     color: $gray-300;
     transition: 0.25s;
@@ -20,8 +20,7 @@
     h3 {
         font-size: 3em;
         font-weight: 700;
-        margin-bottom: 0px;
-        margin-top: 150px;
+        margin: 0;
         letter-spacing: -0.05em;
     }
 
@@ -47,11 +46,29 @@
         min-height: auto;
         background-attachment: scroll;
         height: fit-content;
-        padding: 0 25px;
+        padding: 50px 25px;
 
         h3 {
-            margin-top: 50px;
             font-size: 2.2em;
+        }
+    }
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        max-width: 145px;
+        max-height: 60px;
+        height: auto;
+        width: auto;
+        filter: brightness(100);
+        opacity: 0.5;
+
+        @include xl {
+            display: none;
         }
     }
 }
@@ -74,20 +91,6 @@
     }
 }
 
-.logo {
-    max-width: 145px;
-    max-height: 60px;
-    height: auto;
-    width: auto;
-    float: right;
-    filter: brightness(100);
-    opacity: 0.5;
-
-    @include xl {
-        display: none;
-    }
-}
-
 .link {
     font-size: 1em;
     font-weight: 500;
@@ -97,7 +100,6 @@
     transition: 0.25s;
 
     margin-top: 50px;
-    margin-bottom: 150px;
     margin-right: 5px;
 
     /* border soft gradient */
@@ -111,10 +113,6 @@
     &:hover svg {
         transition: 0.5s;
         animation: sideways 1s ease-in-out infinite;
-    }
-
-    @include md {
-        margin-bottom: 50px;
     }
 }
 

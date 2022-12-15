@@ -105,8 +105,10 @@ const Project = props => {
             <style>{css}</style>
         </Head>
         <div ref={ref} className={p.project} id={'banner-' + slug}>
-            <img className={p.logo} src={logo?.url} alt={logo?.alt} />
-            <h3>{name}</h3>
+            <div className={p.heading}>
+                <h3>{name}</h3>
+                <img className={p.logo} src={logo?.url} alt={logo?.alt} />
+            </div>
             <h4>{subtitle}</h4>
             <div className={p.labelContainer}>
                 {labels?.map(({ text, icon, variant }) => <label key={text}>
