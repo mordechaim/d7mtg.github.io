@@ -8,6 +8,7 @@ import { initialize } from 'config/firebase.config'
 import Head from 'next/head'
 import Script from 'next/script'
 
+import 'styles/reset.css'
 import 'lightgallery/css/lightgallery.css'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import 'styles/globals.scss'
