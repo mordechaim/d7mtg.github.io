@@ -3,9 +3,10 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { Button, TextField } from 'components'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
-import { FormProvider, useFieldArray, useForm, useFormContext } from 'react-hook-form'
+import { useEffect, useState } from 'react'
+import { FormProvider, useFieldArray, useForm, useFormContext, useWatch } from 'react-hook-form'
 import { revalidate, setProject } from 'utils/backend'
+import { usePreviewEmitter } from 'utils/preview'
 import { ColorPickerController } from './ColorPickerController'
 import cs from './common.module.scss'
 import { IconField } from './IconField'
@@ -47,6 +48,7 @@ export const ProjectEditor = ({ project }) => {
     }
 
     return <FormProvider {...form}>
+        <Preview initialProject={project}/>
         <form className={s.root} onSubmit={handleSubmit(submitProject)}>
             <div className={s.topBar}>
                 <Link href='/admin' className={isDirty ? s.disabled : undefined}>
@@ -54,6 +56,9 @@ export const ProjectEditor = ({ project }) => {
                 </Link>
                 <h1>{project?.name ?? 'New Project'}</h1>
 
+                <Button type='button' onClick={e => window.open('/admin/preview', '_blank')}>
+                    Preview
+                </Button>
                 {isDirty && <Button type='button' variant='secondary' onClick={handleDiscard}>
                     Discard
                 </Button>}
@@ -165,4 +170,15 @@ const Links = () => {
     </>
 }
 
+
+const Preview = ({ initialProject }) => {
+    const data = useWatch()
+    const emit = usePreviewEmitter(initialProject)
+
+    useEffect(() => {
+        emit(data)
+    }, [data, emit])
+
+    return null
+}
 

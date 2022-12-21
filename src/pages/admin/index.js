@@ -143,11 +143,14 @@ function Admin({ projects: initialProjects }) {
                                 </td>
                                 <td>
                                     <div className={s.flex}>
+                                        <Button variant='flat-icon' disabled={isDirty} type='button' onClick={e => router.push('/admin/edit/' + p.slug)}>
+                                            <FontAwesomeIcon icon={['fal', 'pen']} />
+                                        </Button>
                                         <Button variant='flat-icon' type='button' onClick={e => remove(index)}>
                                             <FontAwesomeIcon icon={['fal', 'trash']} />
                                         </Button>
-                                        <Button variant='flat-icon' disabled={isDirty} type='button' onClick={e => router.push('/admin/edit/' + p.slug)}>
-                                            <FontAwesomeIcon icon={['fal', 'pen']} />
+                                        <Button variant='flat-icon' disabled={isDirty} type='button' onClick={e => router.push('/portfolio/projects/' + p.slug)}>
+                                            <FontAwesomeIcon icon={['fal', 'eye']} />
                                         </Button>
                                     </div>
                                 </td>

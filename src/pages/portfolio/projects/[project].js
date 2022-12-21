@@ -12,12 +12,7 @@ export default function Project({ project }) {
     const {
         name,
         metaDescription,
-        previewImage,
-        projectDescription,
-        logo,
-        labels,
-        images,
-        links
+        previewImage
     } = project
 
     return <>
@@ -36,6 +31,21 @@ export default function Project({ project }) {
         </div>
         <div className={s.line} />
 
+        <Blog {...project} />
+    </>
+}
+
+export const Blog = props => {
+    const {
+        name,
+        projectDescription,
+        logo,
+        labels,
+        images,
+        links
+    } = props
+
+    return <>
         <div className={s.blog}>
             <span className={s.title}>
                 <Link id="back" href="/portfolio">
@@ -71,7 +81,6 @@ export default function Project({ project }) {
         </LightGallery>
     </>
 }
-
 
 export const getStaticPaths = async () => {
     const projects = await getProjects()

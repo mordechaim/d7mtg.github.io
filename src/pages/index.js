@@ -11,7 +11,7 @@ export default function Home({ projects }) {
     return <>
         <Banner />
         <div className={s.projectsContainer}>
-            {projects.map(p => <Project key={p.slug} {...p} />)}
+            {projects.map(p => <HomeProject key={p.slug} {...p} />)}
         </div>
 
         <div className={s.moreProjects}>
@@ -50,9 +50,9 @@ const Banner = () => {
 }
 
 
-import p from './Project.module.scss'
+import hp from './HomeProject.module.scss'
 
-const Project = props => {
+export const HomeProject = props => {
     const {
         theme,
         logo,
@@ -104,19 +104,19 @@ const Project = props => {
             {intersecting && <meta name="theme-color" content={theme} />}
             <style>{css}</style>
         </Head>
-        <div ref={ref} className={p.project} id={'banner-' + slug}>
-            <div className={p.heading}>
+        <div ref={ref} className={hp.project} id={'banner-' + slug}>
+            <div className={hp.heading}>
                 <h3>{name}</h3>
-                <img className={p.logo} src={logo?.url} alt={logo?.alt} />
+                <img className={hp.logo} src={logo?.url} alt={logo?.alt} />
             </div>
             <h4>{subtitle}</h4>
-            <div className={p.labelContainer}>
+            <div className={hp.labelContainer}>
                 {labels?.map(({ text, icon, variant }) => <label key={text}>
                     <FontAwesomeIcon icon={[variant, icon]} />&nbsp;{text}
                 </label>)}
             </div>
             <ReactMarkdown>{homeDescription}</ReactMarkdown>
-            <Link className={p.link} href={'/portfolio/projects/' + slug}>
+            <Link className={hp.link} href={'/portfolio/projects/' + slug}>
                 View project <FontAwesomeIcon icon={['fal', 'arrow-right']} />
             </Link>
         </div>
