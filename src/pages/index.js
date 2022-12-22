@@ -1,10 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Footer, Logo } from 'components'
 import Head from 'next/head'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { getProjects } from 'utils/backend'
+import hp from './HomeProject.module.scss'
 import s from './index.module.scss'
 
 export default function Home({ projects }) {
@@ -49,8 +51,6 @@ const Banner = () => {
     </div>
 }
 
-
-import hp from './HomeProject.module.scss'
 
 export const HomeProject = props => {
     const {
@@ -107,7 +107,7 @@ export const HomeProject = props => {
         <div ref={ref} className={hp.project} id={'banner-' + slug}>
             <div className={hp.heading}>
                 <h3>{name}</h3>
-                <img className={hp.logo} src={logo?.url} alt={logo?.alt} />
+                <Image className={hp.logo} src={logo?.url} width={logo?.width} height={logo?.height} alt={logo?.alt} />
             </div>
             <h4>{subtitle}</h4>
             <div className={hp.labelContainer}>
