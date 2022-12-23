@@ -2,7 +2,7 @@ import cx from 'clsx'
 import { Footer, Logo } from 'components'
 import Head from 'next/head'
 import Link from 'next/link'
-import { getProjects } from 'utils/backend'
+import { getProjects, url } from 'utils/backend'
 import h from './Header.module.scss'
 import s from './index.module.scss'
 import p from './ProjectBlock.module.scss'
@@ -46,15 +46,15 @@ export const ProjectBlock = props => {
 
     return <>
         <Head>
-            {logo && <link href={logo.url} rel='preload' as='image' media='not (prefers-color-scheme: dark)' />}
-            {logoDark && <link href={logoDark.url} rel='preload' as='image' media='(prefers-color-scheme: dark)' />}
+            {logo && <link href={url(logo)} rel='preload' as='image' media='not (prefers-color-scheme: dark)' />}
+            {logoDark && <link href={url(logoDark)} rel='preload' as='image' media='(prefers-color-scheme: dark)' />}
         </Head>
         <Link href={'/portfolio/projects/' + slug}>
             <div className={p.root}>
                 <div className={p.imageContainer}>
                     <picture>
-                        {logoDark && <source srcSet={logoDark.url} media='(prefers-color-scheme: dark)' />}
-                        <img className={p.image} src={logo?.url} alt={logo?.alt} />
+                        {logoDark && <source srcSet={url(logoDark)} media='(prefers-color-scheme: dark)' />}
+                        <img className={p.image} src={logo && url(logo)} alt={logo?.alt} />
                     </picture>
                 </div>
             </div>

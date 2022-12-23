@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
-import { getProjects } from 'utils/backend'
+import { getProjects, url } from 'utils/backend'
 import hp from './HomeProject.module.scss'
 import s from './index.module.scss'
 
@@ -85,7 +85,7 @@ export const HomeProject = props => {
 
     let css =
         `#banner-${slug} {
-            background-image: linear-gradient(161deg, ${theme}, #00000000), url(${banner.url});
+            background-image: linear-gradient(161deg, ${theme}, #00000000), url(${url(banner)});
             background-color: ${theme};
         }`
 
@@ -94,7 +94,7 @@ export const HomeProject = props => {
             `
             @media (max-width: 900px) {
                 #banner-${slug} {
-                    background-image: linear-gradient(161deg, ${theme}, #00000000), url(${bannerMobile.url});
+                    background-image: linear-gradient(161deg, ${theme}, #00000000), url(${url(bannerMobile)});
                 } 
             }`
     }
@@ -102,14 +102,14 @@ export const HomeProject = props => {
     return <>
         <Head>
             {intersecting && <meta name="theme-color" content={theme} />}
-            <link href={banner.url} rel='preload' as='image' media={bannerMobile ? '(min-width: 900.1px)' : undefined} />
-            {bannerMobile && <link href={bannerMobile.url} rel='preload' as='image' media='(max-width: 900px)' />}
+            <link href={url(banner)} rel='preload' as='image' media={bannerMobile ? '(min-width: 900.1px)' : undefined} />
+            {bannerMobile && <link href={url(bannerMobile)} rel='preload' as='image' media='(max-width: 900px)' />}
             <style>{css}</style>
         </Head>
         <div ref={ref} className={hp.project} id={'banner-' + slug}>
             <div className={hp.heading}>
                 <h3>{name}</h3>
-                {logo && <Image className={hp.logo} src={logo.url} width={logo.width} height={logo.height} alt={logo.alt} />}
+                {logo && <Image className={hp.logo} src={url(logo)} width={logo.width} height={logo.height} alt={logo.alt} />}
             </div>
             <h4>{subtitle}</h4>
             <div className={hp.labelContainer}>

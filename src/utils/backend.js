@@ -100,3 +100,7 @@ export const revalidate = async data => {
 
     return await result.json()
 }
+
+export const url = image => {
+    return `https://firebasestorage.googleapis.com/v0/b/d7mtg-bc78c.appspot.com/o/images%2F${image.id}?alt=media`
+}
