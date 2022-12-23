@@ -65,7 +65,7 @@ const Meta = () => {
         <title>D7mtg Branding Agency</title>
         <meta name="title" content="D7mtg Branding Agency" />
         <meta key="ogtitle" property="og:title" content="D7mtg Branding Agency" />
-        <meta name="description"
+        <meta key='description' name="description"
             content="Your branding project starts here. We apply research and creativity to help you grow your brand and tell the world your story." />
         <meta key="ogdescription" property="og:description"
             content="Your branding project starts here. We apply research and creativity to help you grow your brand and tell the world your story." />
@@ -74,10 +74,10 @@ const Meta = () => {
         <meta key="ogimage" property="og:image" content="/ogpreview.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@d7mtg" />
-        <meta name="twitter:title" content="D7mtg Branding Agency" />
-        <meta name="twitter:description"
+        <meta key='twittertitle' name="twitter:title" content="D7mtg Branding Agency" />
+        <meta key='twitterdescription' name="twitter:description"
             content="D7mtg is a branding agency in Brooklyn that thrives on helping brands achieve clarity." />
-        <meta name="twitter:image" content="/photos/twittercard.png" />
+        <meta key='twitterimage' name="twitter:image" content="/photos/twittercard.png" />
         <meta name="yandex-verification" content="6377e7342037f015" />
     </Head>
 }

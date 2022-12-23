@@ -20,9 +20,12 @@ export default function Project({ project }) {
         <Head>
             <title>{name + ' | Project by D7mtg'}</title>
             <meta key="ogtitle" property="og:title" content={`D7mtg | ${name}`} />
+            <meta key='description' name="description" content={metaDescription} />
             <meta key="ogdescription" property="og:description" content={metaDescription} />
-            <meta name="description" content={metaDescription} />
-            <meta key="ogimage" property="og:image" content={previewImage?.url} />
+            <meta key="twitterimage" property="twitter:image" content={previewImage?.url} />
+            <meta key="twittertitle" property="twitter:title" content={`D7mtg | ${name}`} />
+            <meta key="twitterdescription" property="twitter:description" content={metaDescription} />
+            <meta key="twitterimage" property="twitter:image" content={previewImage?.url} />
         </Head>
 
         <div className={s.logoContainer} >
