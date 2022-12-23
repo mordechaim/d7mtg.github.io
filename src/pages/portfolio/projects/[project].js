@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Logo } from 'components'
 import LightGallery from 'lightgallery/react'
 import Head from 'next/head'
+import Image from 'next/image'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import { getProject, getProjects } from 'utils/backend'
@@ -75,9 +76,9 @@ export const Blog = props => {
             download={false}
             getCaptionFromTitleOrAlt={false}
             mousewheel>
-            <img className={s.allphotos} src={logo?.url} alt={logo?.alt} />
+            {logo && <Image className={s.allphotos} src={logo.url} alt={logo.alt} width={logo.width} height={logo.height} />}
 
-            {images?.map(i => <img key={i.url} className={s.allphotos} src={i.url} alt={i.alt} />)}
+            {images?.map((i, index) => <Image key={i.url} className={s.allphotos} src={i.url} alt={i.alt} width={i.width} height={i.height} priority={index < 3} />)}
         </LightGallery>
     </>
 }

@@ -44,16 +44,22 @@ export const ProjectBlock = props => {
         logoDark
     } = props
 
-    return <Link href={'/portfolio/projects/' + slug}>
-        <div className={p.root}>
-            <div className={p.imageContainer}>
-                <picture>
-                    {logoDark && <source srcSet={logoDark.url} media="(prefers-color-scheme: dark)" />}
-                    <img className={p.image} src={logo?.url} alt={logo?.alt} />
-                </picture>
+    return <>
+        <Head>
+            {logo && <link href={logo.url} rel='preload' as='image' media='not (prefers-color-scheme: dark)' />}
+            {logoDark && <link href={logoDark.url} rel='preload' as='image' media='(prefers-color-scheme: dark)' />}
+        </Head>
+        <Link href={'/portfolio/projects/' + slug}>
+            <div className={p.root}>
+                <div className={p.imageContainer}>
+                    <picture>
+                        {logoDark && <source srcSet={logoDark.url} media='(prefers-color-scheme: dark)' />}
+                        <img className={p.image} src={logo?.url} alt={logo?.alt} />
+                    </picture>
+                </div>
             </div>
-        </div>
-    </Link>
+        </Link>
+    </>
 }
 
 export const getStaticProps = async () => {

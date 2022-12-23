@@ -50,7 +50,7 @@ export default MyApp
 
 const Meta = () => {
     return <Head>
-        <meta name="viewport" content="minimum-scale=1" />
+        <meta content="width=device-width,initial-scale=1,user-scalable=yes" name="viewport" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#333" />
         <meta name="theme-color" content="#ffd708" />
         <meta name="msapplication-TileColor" content="#ffd708" />
@@ -59,7 +59,6 @@ const Meta = () => {
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <link href="/favicon.png" rel="shortcut icon" type="image/png" />
         <link rel="manifest" href="/manifest.json" />
-        <meta content="width=device-width,initial-scale=1,user-scalable=yes" name="viewport" />
         <meta name="language" content="English" />
         <meta name="robots" content="index, follow" />
         <meta name="revisit-after" content="1 days" />

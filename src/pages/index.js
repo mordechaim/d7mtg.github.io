@@ -102,12 +102,14 @@ export const HomeProject = props => {
     return <>
         <Head>
             {intersecting && <meta name="theme-color" content={theme} />}
+            <link href={banner.url} rel='preload' as='image' media={bannerMobile ? '(min-width: 900.1px)' : undefined} />
+            {bannerMobile && <link href={bannerMobile.url} rel='preload' as='image' media='(max-width: 900px)' />}
             <style>{css}</style>
         </Head>
         <div ref={ref} className={hp.project} id={'banner-' + slug}>
             <div className={hp.heading}>
                 <h3>{name}</h3>
-                <Image className={hp.logo} src={logo?.url} width={logo?.width} height={logo?.height} alt={logo?.alt} />
+                {logo && <Image className={hp.logo} src={logo.url} width={logo.width} height={logo.height} alt={logo.alt} />}
             </div>
             <h4>{subtitle}</h4>
             <div className={hp.labelContainer}>

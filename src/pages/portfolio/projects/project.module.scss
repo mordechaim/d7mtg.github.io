@@ -110,6 +110,7 @@
 
 .allphotos {
     width: 100%;
+    height: auto;
     clear: inherit;
 
     float: none;
@@ -133,7 +134,6 @@
         height: auto;
         width: auto;
         transition: 0.3s;
-        position: absolute;
         filter: brightness(0);
         opacity: 0.4;
 

@@ -50,7 +50,9 @@ export const uploadImage = async (file, progress = () => { }) => {
     const storage = getStorage()
     const path = 'images/' + id
     const reference = ref(storage, path)
-    const task = uploadBytesResumable(reference, file)
+    const task = uploadBytesResumable(reference, file, {
+        cacheControl: 'public,max-age=31536000'
+    })
 
     task.on('state_changed', snapshot => {
         const percent = snapshot.bytesTransferred / snapshot.totalBytes
